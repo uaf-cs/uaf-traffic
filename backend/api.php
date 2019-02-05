@@ -1,24 +1,16 @@
 <?php
-include 'authstate.php';
+include_once 'trafficdb.php';
+include_once 'authstate.php';
 
-class Session {
+class API {
 
-    private $dbConnection;
+    private $db;
     private $authState;
 
-    public $id;
-    public $date;
-    public $manager;
-    public $organization;
-    public $lat;
-    public $long;
-
-    public $data;
-
     public function __construct($db){
-        $this->dbConnection = $db;
+        $this->db = $db;
 
-        //temp value for testing
+        //temp value until authentication is implemented
         $authenticated = true;
 
         if($authenticated){
@@ -31,7 +23,7 @@ class Session {
     }
 
     function read() {
-        
+        $this->authState->read();
     }
 }
 

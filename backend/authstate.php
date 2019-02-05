@@ -1,21 +1,26 @@
 <?php
+include_once 'api.php';
 
 //base class for keeping track of user's authentication and allowed actions
 abstract class AuthState {
 
-    protected $session;
+    protected $api;
 
-    protected function __construct(Session $session) {
-        $this->session = $session;
+    protected function __construct(API $api) {
+        $this->api = $api;
     }
 
     //abstract functions for operations that depend on state
-    abstract public function create($data): void;
-    abstract public function delete(): void;
+    abstract public function create($data);
+    abstract public function delete();
 
     //functions that can be used by all users
-    public function read():void {
+    public function read() {
+        $db = $this->api->db;
 
+        $sql = $db->prepare('SELECT * from SESSION;');
+        $result = $sql->execute();
+        return $result;
     }
 }
 
@@ -27,11 +32,11 @@ class UserState extends AuthState {
         echo json_encode(array("message" => "Authentication required"));
     }
 
-    function create($data): void {
+    function create($data){
         error();
     }
 
-    function delete(): void {
+    function delete(){
         error();
     }
 
@@ -41,11 +46,11 @@ class UserState extends AuthState {
 //defines actions allowed to be taken when user is logged in as admin
 class AdminState extends AuthState {
     
-    function create($data): void {
+    function create($data){
         //$query = ""
     }
 
-    function delete(): void {
+    function delete() {
 
     }
 }
