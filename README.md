@@ -35,8 +35,3 @@ The app must:
 ## Design and Layout
 
 ![App Layout](applayout.png)
-
-## Product Backlog
-
-- [ ] Item 1
-- [ ] Item 2
