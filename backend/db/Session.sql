@@ -1,0 +1,17 @@
+﻿-- TABLE
+CREATE TABLE Session (
+`id` INTEGER PRIMARY KEY AUTOINCREMENT,
+`date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`manager` NVARCHAR(32) NOT NULL,
+`organization` NVARCHAR(32) NOT NULL,
+`lat` DECIMAL(10,6) NOT NULL,
+`long` DECIMAL(10,6) NOT NULL,
+crossing blob NOT NULL default (x'')
+);
+-- INDEX
+ 
+-- TRIGGER
+ 
+-- VIEW
+ 
+
