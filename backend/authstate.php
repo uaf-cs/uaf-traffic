@@ -4,9 +4,9 @@ include_once 'api.php';
 //base class for keeping track of user's authentication and allowed actions
 abstract class AuthState {
 
-    protected $api;
+    public $api;
 
-    protected function __construct(API $api) {
+    function __construct(API $api) {
         $this->api = $api;
     }
 
@@ -18,8 +18,9 @@ abstract class AuthState {
     public function read() {
         $db = $this->api->db;
 
-        $sql = $db->prepare('SELECT * from SESSION;');
+        $sql = $db->prepare('SELECT * from users;');
         $result = $sql->execute();
+        var_dump($result->fetchArray());
         return $result;
     }
 }
