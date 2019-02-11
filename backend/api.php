@@ -4,8 +4,8 @@ include_once 'authstate.php';
 
 class API {
 
-    private $db;
-    private $authState;
+    public $db;
+    public $authState;
 
     public function __construct($db){
         $this->db = $db;
@@ -26,5 +26,4 @@ class API {
         $this->authState->read();
     }
 }
-
 ?>
