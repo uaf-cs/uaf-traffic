@@ -4,26 +4,33 @@ include_once 'authstate.php';
 
 class API {
 
-    public $db;
+    public $traffic_db;
+    public $auth_db;
+    
     public $authState;
 
     public function __construct($db){
-        $this->db = $db;
-
-        //temp value until authentication is implemented
-        $authenticated = true;
-
-        if($authenticated){
-            $this->authState = new AdminState($this);
-        } else $this->authState = new UserState($this);
+        $this->traffic_db = $db;
+        $this->auth_db = new AuthDB();
+        $this->authState = new UserState($this);
     }
 
-    function create(){
+    function create() {
         $this->authState->create();
     }
 
     function read() {
         $this->authState->read();
+    }
+
+    function login() {
+        if($this->auth_db->isAuthorized()) {
+            $this->authState = new AdminState($this);
+        } 
+    }
+
+    function logout() {
+        $this->authState = new UserState($this);
     }
 }
 ?>
