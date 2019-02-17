@@ -8,7 +8,7 @@ session_start();
 class API {
     public $traffic_db;
     public $auth_db;
-    public $authState;
+    public $authState; //controls CRUD operations
 
     public $isloggedin = false;
     public $userid = '';
@@ -49,20 +49,11 @@ class API {
     function checkForms() {
         if(isset($_GET['login'])) $this->login(); 
         if(isset($_GET['logout'])) $this->logout(); 
-        if(isset($_GET['adduser'])) $this->addUser();
-        if(isset($_GET['readall'])) $this->readAll();
-        if(isset($_GET['upload'])) $this->upload();
-        if(isset($_GET['getUsers'])) $this->getUsers();
+        if(isset($_GET['adduser'])) $this->authState->addUser();
+        if(isset($_GET['readall'])) $this->authState->readAll();
+        if(isset($_GET['upload'])) $this->authState->upload();
+        if(isset($_GET['getUsers'])) $this->authState->getUsers();
     }
-
-    ////////////////////////////
-    //    CRUD Operations    //
-    //////////////////////////
-    function upload() { $this->authState->upload(); }
-    function readAll() { $this->authState->readAll(); }
-    function getUsers() { $this->authState->getUsers(); }
-    function addUser() { $this->authState->addUser(); }
-
 
     ///////////////////////////////
     //  State altering methods   //
@@ -84,6 +75,7 @@ class API {
         $_SESSION['userorganization'] = $this->userorganization;
         $_SESSION['useremail'] = $this->useremail;
     }
+
     function login() {
         if($this->isAuthorized()) {
             $this->isloggedin = true;
@@ -94,6 +86,7 @@ class API {
             }
         } 
     }
+    
     private function isAuthorized() {
         $username = isset($_POST['username'])? $_POST['username'] : '';
         $password = isset($_POST['password'])? $_POST['password'] : '';
