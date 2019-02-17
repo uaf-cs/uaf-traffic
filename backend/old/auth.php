@@ -1,9 +1,11 @@
 <?php
 
-include 'constants.php';
+include_once 'constants.php';
 
 session_name(SITENAME);
 session_start();
+
+
 
 /* TODO: delete this code when testing is finished. It is to allow command line arguments from PHP */
 foreach ($argv as $arg) {
@@ -660,6 +662,13 @@ EOF;
         }
         print "<br>password changed\n";
     }
+}
+
+$auth = new AuthDatabase();
+$auth->authenticate();
+
+if(isset($_GET['adduser'])) {
+    $auth->admin_adduser();
 }
 
 ?>
