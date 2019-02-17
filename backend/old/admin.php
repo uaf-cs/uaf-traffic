@@ -1,7 +1,7 @@
 <?php
 
-include 'auth.php';
-include 'constants.php';
+include_once 'auth.php';
+include_once 'constants.php';
 
 $auth = new AuthDatabase();
 $auth->authenticate();
