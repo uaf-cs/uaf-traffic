@@ -5,7 +5,6 @@
     <body>
         <?php
             (isset($_POST['expiration']) && $_POST['expiration'] != "") ? $expirationTime = $_POST['expiration'] : $expirationTime = 30;
-            echo($expirationTime);
 
             class pinsDB extends SQLite3 {
                 function __construct() {
