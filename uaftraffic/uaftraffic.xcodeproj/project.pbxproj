@@ -16,8 +16,9 @@
 		9D2EC4902223CE63002FA1DD /* UAFBigFancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC48F2223CE63002FA1DD /* UAFBigFancyButton.swift */; };
 		9D2EC4942223D428002FA1DD /* UAFManageSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC4932223D428002FA1DD /* UAFManageSessionsViewController.swift */; };
 		9D2EC4962223D749002FA1DD /* UAFTrafficCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC4952223D749002FA1DD /* UAFTrafficCountViewController.swift */; };
+		9D2EC49822252AC0002FA1DD /* snowmachine.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC49722252AC0002FA1DD /* snowmachine.png */; };
+		9D2EC49A22252B92002FA1DD /* ResumeSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */; };
 		9DE934CE2207B8540000255D /* UAFVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934CD2207B8540000255D /* UAFVehicleView.swift */; };
-		9DE934D32207BADF0000255D /* snowmobile.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE934C32207B3B00000255D /* snowmobile.png */; };
 		9DE934D52207C84F0000255D /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE934D42207C84E0000255D /* gear.png */; };
 		9DE934D72207CA3D0000255D /* UAFPinEntryViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934D62207CA3D0000255D /* UAFPinEntryViewViewController.swift */; };
 		C3A2F09C21FACD060078E15C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2F09B21FACD060078E15C /* AppDelegate.swift */; };
@@ -55,7 +56,8 @@
 		9D2EC48F2223CE63002FA1DD /* UAFBigFancyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAFBigFancyButton.swift; sourceTree = "<group>"; };
 		9D2EC4932223D428002FA1DD /* UAFManageSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAFManageSessionsViewController.swift; sourceTree = "<group>"; };
 		9D2EC4952223D749002FA1DD /* UAFTrafficCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAFTrafficCountViewController.swift; sourceTree = "<group>"; };
-		9DE934C32207B3B00000255D /* snowmobile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowmobile.png; sourceTree = "<group>"; };
+		9D2EC49722252AC0002FA1DD /* snowmachine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = snowmachine.png; path = ../../../assets/snowmachine.png; sourceTree = "<group>"; };
+		9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeSessionViewController.swift; sourceTree = "<group>"; };
 		9DE934CD2207B8540000255D /* UAFVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAFVehicleView.swift; sourceTree = "<group>"; };
 		9DE934D42207C84E0000255D /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		9DE934D62207CA3D0000255D /* UAFPinEntryViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAFPinEntryViewViewController.swift; sourceTree = "<group>"; };
@@ -102,13 +104,13 @@
 			isa = PBXGroup;
 			children = (
 				9DE934D42207C84E0000255D /* gear.png */,
-				9DE934C32207B3B00000255D /* snowmobile.png */,
 				9D2EC4852223B4DD002FA1DD /* bike.png */,
 				9D2EC4862223B4DD002FA1DD /* car.png */,
 				9D2EC4842223B4DC002FA1DD /* mush.png */,
 				9D2EC4882223B4DD002FA1DD /* atv.png */,
 				9D2EC4872223B4DD002FA1DD /* pedestrian.png */,
 				9D2EC4832223B4DC002FA1DD /* plane.png */,
+				9D2EC49722252AC0002FA1DD /* snowmachine.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -147,6 +149,7 @@
 				9D2EC48F2223CE63002FA1DD /* UAFBigFancyButton.swift */,
 				9D2EC4952223D749002FA1DD /* UAFTrafficCountViewController.swift */,
 				9D2EC4932223D428002FA1DD /* UAFManageSessionsViewController.swift */,
+				9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */,
 			);
 			path = uaftraffic;
 			sourceTree = "<group>";
@@ -280,8 +283,8 @@
 				9D2EC48D2223B4DD002FA1DD /* pedestrian.png in Resources */,
 				9D2EC4892223B4DD002FA1DD /* plane.png in Resources */,
 				9D2EC48A2223B4DD002FA1DD /* mush.png in Resources */,
-				9DE934D32207BADF0000255D /* snowmobile.png in Resources */,
 				C3A2F0A621FACD070078E15C /* LaunchScreen.storyboard in Resources */,
+				9D2EC49822252AC0002FA1DD /* snowmachine.png in Resources */,
 				C3A2F0A321FACD070078E15C /* Assets.xcassets in Resources */,
 				C3A2F0A121FACD060078E15C /* Main.storyboard in Resources */,
 			);
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D2EC49A22252B92002FA1DD /* ResumeSessionViewController.swift in Sources */,
 				9DE934CE2207B8540000255D /* UAFVehicleView.swift in Sources */,
 				9D2EC4962223D749002FA1DD /* UAFTrafficCountViewController.swift in Sources */,
 				9D2EC4902223CE63002FA1DD /* UAFBigFancyButton.swift in Sources */,
