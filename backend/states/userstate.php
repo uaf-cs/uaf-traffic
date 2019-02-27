@@ -5,7 +5,7 @@ include_once 'appstate.php';
 //Defines API actions allowed for all users
 class UserState {
 
-    public $api;
+    private $api;
 
     function __construct(API $api) {
         $this->api = $api;

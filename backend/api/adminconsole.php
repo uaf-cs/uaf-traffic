@@ -20,9 +20,12 @@ if($api->isloggedin) {
     print "<form method='post' action='$URL?logout'>\n";
     print "<button type='submit'>Logout</button>\n";
     print "</form>\n";
-    print "<form method='post' action='${URL}?user&account'>\n";
-    print "<button type='submit'>Account</button>\n";
+
+    print "<form action='${URL}?checkpin' method='post'>\n";
+    print "PIN: <input type='text' name='pin'>";
+    print "<button type='submit'>Check PIN </button>\n";
     print "</form>\n";
 }
+
 
 ?>

@@ -6,9 +6,10 @@ session_name(SITENAME);
 session_start();
 
 class API {
-    public $traffic_db;
-    public $auth_db;
-    public $authState; //controls CRUD operations
+    private $traffic_db;
+    private $auth_db;
+    private $pins_db;
+    private $authState; //controls CRUD operations
 
     public $isloggedin = false;
     public $userid = '';
@@ -21,12 +22,15 @@ class API {
     public function __construct(){
         $this->traffic_db = new SQLite3(TRAFFICDB);
         $this->auth_db = new SQLite3(AUTHDB);
+        $this->pins_db = new SQLite3("../db/pins.sqlite3");
 
         $this->getSession();
         if($this->userrole == 'admin') {
+            $this->isloggedin = true;
             $this->authState = new AdminState($this);
         } 
         else if($this->userrole == 'app') {
+            $this->isloggedin = true;
             $this->authState = new AppState($this);
         } 
         else $this->authState = new UserState($this);
@@ -49,6 +53,7 @@ class API {
     function checkForms() {
         if(isset($_GET['login'])) $this->login(); 
         if(isset($_GET['logout'])) $this->logout(); 
+        if(isset($_GET['checkpin'])) $this->checkPIN();
         if(isset($_GET['adduser'])) $this->authState->addUser();
         if(isset($_GET['readall'])) $this->authState->readAll();
         if(isset($_GET['upload'])) $this->authState->upload();
@@ -58,6 +63,26 @@ class API {
     ///////////////////////////////
     //  State altering methods   //
     //////////////////////////////
+    function checkPIN() {
+        $pin = isset($_POST['pin'])? $_POST['pin'] : '';
+        $query = "SELECT * FROM pins "
+                . "WHERE pin = :pin "
+                . "AND expires > DATETIME(CURRENT_TIMESTAMP)";
+        $statement = $this->pins_db->prepare($query);
+        if(!$statement) {
+            print "could not prepare PIN query";
+            return;
+        }
+        $statement->bindValue(':pin', $pin, SQLITE3_TEXT);
+        $result = $statement->execute();
+
+        while($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            $this->authState = new AppState($this);
+            print "PIN accepted. Gimme the data <br />";
+            return true;
+        }
+    }
+
     function getSession() {
         $this->userid = $this->session('userid');
         $this->username = $this->session('username');
