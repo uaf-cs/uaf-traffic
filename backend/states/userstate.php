@@ -21,6 +21,16 @@ class UserState {
         echo json_encode(array("message" => "Authentication required"));
     }
 
+    protected function prepareData(&$result) {
+        $ret = array();
+
+        while($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            array_push($ret, $row);
+        }
+        if(!array_filter($ret)) return "<p style='color: darkred'>Not Found";
+        return $ret;
+    }
+
 
     ///////////////////////////////////////////////////////////////////
     // API Methods requiring admin return 403 error unless logged in //
@@ -30,7 +40,7 @@ class UserState {
     function getUsers() { $this->error(); }
     function addUser() { $this->error(); }
     function userExists($username) { $this->error(); }
-    function createPIN() { $this->error(); }
+    function createPIN(&$pin) { $this->error(); }
 
 
     //////////////////////////////

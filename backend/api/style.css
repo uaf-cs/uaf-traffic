@@ -54,8 +54,9 @@ article {
     padding-top: 30px;
     padding-bottom: 30px;
     margin-left: 35px;
+    margin-right: 130px;
 }
-article > h3 {
+article > h3 {  
     border-width: 5px;
     margin-bottom: 3px;
     background-color: rgba(151, 151, 175, 0.411);

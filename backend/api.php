@@ -8,8 +8,7 @@ session_start();
 class API {
     protected $traffic_db;
     private $auth_db;
-    protected $pins_db;
-    protected $authState; //controls CRUD operations
+    protected $authState;
 
     public $isloggedin = false;
     public $userid = '';
@@ -22,7 +21,6 @@ class API {
     public function __construct(){
         $this->traffic_db = new SQLite3(TRAFFICDB);
         $this->auth_db = new SQLite3(AUTHDB);
-        $this->pins_db = new SQLite3(PINDB);
 
         $this->getSession();
         if($this->userrole == 'admin') {
@@ -54,31 +52,42 @@ class API {
         if(isset($_GET['login'])) $this->login(); 
         if(isset($_GET['logout'])) $this->logout(); 
         if(isset($_GET['checkpin'])) $this->checkPIN();
-        if(isset($_GET['adduser'])) $this->authState->addUser();
-        if(isset($_GET['readall'])) $this->authState->readAll();
-        if(isset($_GET['upload'])) $this->authState->upload();
-        if(isset($_GET['getusers'])) $this->authState->getUsers();
-        if(isset($_GET['createpin'])) $this->authState->createPIN();
-        if(isset($_GET['getpins'])) $this->getPINS();
     }
 
     function getPINS() {
         return $this->authState->getPINS();
     }
 
+    function getUsers() {
+        return $this->authState->getUsers();
+    }
+
+    function getUser() {
+        if(!isset($_POST['username']) || $_POST['username'] == "") 
+            return;
+        $name = $_POST['username'];
+        return $this->authState->getUser($name);
+    }
+
+    function createPIN() {
+        (isset($_POST['expiration']) && $_POST['expiration'] != "") ? $expirationTime = $_POST['expiration'] : $expirationTime = 30;
+        $this->authState->createPIN($expirationTime);
+    }
+
+    function deletePINS() {
+        $this->authState->deletePINS();
+    }
+
     ///////////////////////////////
     //  State altering methods   //
     //////////////////////////////
     function checkPIN() {
+        $pins_db = new SQLite3(PINDB);
         $pin = isset($_POST['pin'])? $_POST['pin'] : '';
         $query = "SELECT * FROM pins "
                 . "WHERE pin = :pin "
                 . "AND expires > DATETIME(CURRENT_TIMESTAMP)";
-        $statement = $this->pins_db->prepare($query);
-        if(!$statement) {
-            print "could not prepare PIN query";
-            return;
-        }
+        $statement = $pins_db->prepare($query);
         $statement->bindValue(':pin', $pin, SQLITE3_TEXT);
         $result = $statement->execute();
 
@@ -88,6 +97,7 @@ class API {
             return true;
         }
         $statement->close();
+        $pins_db->close();
 
     }
 
