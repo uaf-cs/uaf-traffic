@@ -5,10 +5,12 @@ include_once 'appstate.php';
 //Defines API actions allowed for all users
 class UserState {
 
-    private $api;
+    protected $api;
+    private $traffic_db;
 
     function __construct(API $api) {
         $this->api = $api;
+        $this->traffic_db = new SQLite3(TRAFFICDB);
     }
 
     /////////////////////////////
@@ -28,6 +30,7 @@ class UserState {
     function getUsers() { $this->error(); }
     function addUser() { $this->error(); }
     function userExists($username) { $this->error(); }
+    function createPIN() { $this->error(); }
 
 
     //////////////////////////////
