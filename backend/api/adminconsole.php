@@ -152,7 +152,13 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
                 <td>Full name: <input type='text' name='fullname'/></td>
             </tr>
             <tr>
-                <td>Role: <input type='text' name='role'/></td>
+                <td>
+                    Role: 
+                    <select name="role">
+                        <option value="admin">Admin</option> 
+                        <option value="user">User</option>
+                    </select>
+                </td>
                 <td>Organization: <input type='text' name='organization'/></td>
                 <td>Email: <input type='text' name='email'/></td>
             </tr>
