@@ -18,6 +18,8 @@
 		9D2EC4962223D749002FA1DD /* UAFTrafficCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC4952223D749002FA1DD /* UAFTrafficCountViewController.swift */; };
 		9D2EC49822252AC0002FA1DD /* snowmachine.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC49722252AC0002FA1DD /* snowmachine.png */; };
 		9D2EC49A22252B92002FA1DD /* ResumeSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */; };
+		9DBF1482222CE05000285979 /* SessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1481222CE05000285979 /* SessionManagerTests.swift */; };
+		9DBF1484222CF1F100285979 /* SessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1483222CF1F100285979 /* SessionTests.swift */; };
 		9DE934CE2207B8540000255D /* UAFVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934CD2207B8540000255D /* UAFVehicleView.swift */; };
 		9DE934D52207C84F0000255D /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE934D42207C84E0000255D /* gear.png */; };
 		9DE934D72207CA3D0000255D /* UAFPinEntryViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934D62207CA3D0000255D /* UAFPinEntryViewViewController.swift */; };
@@ -58,6 +60,8 @@
 		9D2EC4952223D749002FA1DD /* UAFTrafficCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAFTrafficCountViewController.swift; sourceTree = "<group>"; };
 		9D2EC49722252AC0002FA1DD /* snowmachine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = snowmachine.png; path = ../../../assets/snowmachine.png; sourceTree = "<group>"; };
 		9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeSessionViewController.swift; sourceTree = "<group>"; };
+		9DBF1481222CE05000285979 /* SessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerTests.swift; sourceTree = "<group>"; };
+		9DBF1483222CF1F100285979 /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		9DE934CD2207B8540000255D /* UAFVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAFVehicleView.swift; sourceTree = "<group>"; };
 		9DE934D42207C84E0000255D /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		9DE934D62207CA3D0000255D /* UAFPinEntryViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAFPinEntryViewViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 			children = (
 				C3A2F0B021FACD070078E15C /* uaftrafficTests.swift */,
 				C3A2F0B221FACD070078E15C /* Info.plist */,
+				9DBF1481222CE05000285979 /* SessionManagerTests.swift */,
+				9DBF1483222CF1F100285979 /* SessionTests.swift */,
 			);
 			path = uaftrafficTests;
 			sourceTree = "<group>";
@@ -325,6 +331,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DBF1484222CF1F100285979 /* SessionTests.swift in Sources */,
+				9DBF1482222CE05000285979 /* SessionManagerTests.swift in Sources */,
 				C3A2F0B121FACD070078E15C /* uaftrafficTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
