@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SessionManager
+@testable import uaftraffic
 
 class SessionManagerTests: XCTestCase {
 	var sessionManager: SessionManager!

@@ -534,14 +534,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VL2QAQ3CXK;
+				DEVELOPMENT_TEAM = M3D3RN4KN5;
 				INFOPLIST_FILE = uaftrafficTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Metzgar-Research.uaftrafficTests";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uaf.cs.uaftrafficTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -555,14 +555,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VL2QAQ3CXK;
+				DEVELOPMENT_TEAM = M3D3RN4KN5;
 				INFOPLIST_FILE = uaftrafficTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Metzgar-Research.uaftrafficTests";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uaf.cs.uaftrafficTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -575,14 +575,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VL2QAQ3CXK;
+				DEVELOPMENT_TEAM = M3D3RN4KN5;
 				INFOPLIST_FILE = uaftrafficUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Metzgar-Research.uaftrafficUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uaf.cs.uaftrafficUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -595,14 +595,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VL2QAQ3CXK;
+				DEVELOPMENT_TEAM = M3D3RN4KN5;
 				INFOPLIST_FILE = uaftrafficUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Metzgar-Research.uaftrafficUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uaf.cs.uaftrafficUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

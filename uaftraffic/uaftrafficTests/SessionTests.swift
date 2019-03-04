@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Session
+@testable import uaftraffic
 
 class SessionTests: XCTestCase {
 	let session: Session!
