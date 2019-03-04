@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UAFTrafficCountViewController: UIViewController {
+class TrafficCountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

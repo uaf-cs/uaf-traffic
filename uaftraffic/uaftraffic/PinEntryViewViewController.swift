@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UAFPinEntryViewViewController: UIViewController {
+class PinEntryViewViewController: UIViewController {
 	@IBAction func cancelButtonTapped(_ sender: Any) {
 		self.dismiss(animated: true, completion: nil)
 	}

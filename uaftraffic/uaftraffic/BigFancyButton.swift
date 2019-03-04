@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UAFBigFancyButton: UIButton {
+class BigFancyButton: UIButton {
     let normalBackgroundColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0)
     let highlightedBackgroundColor = UIColor(red:0.80, green:0.80, blue:0.80, alpha:1.0)
     
