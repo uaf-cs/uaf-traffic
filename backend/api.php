@@ -6,9 +6,9 @@ session_name(SITENAME);
 session_start();
 
 class API {
-    public $traffic_db;
-    public $auth_db;
-    public $authState; //controls CRUD operations
+    protected $traffic_db;
+    private $auth_db;
+    protected $authState;
 
     public $isloggedin = false;
     public $userid = '';
@@ -24,9 +24,11 @@ class API {
 
         $this->getSession();
         if($this->userrole == 'admin') {
+            $this->isloggedin = true;
             $this->authState = new AdminState($this);
         } 
         else if($this->userrole == 'app') {
+            $this->isloggedin = true;
             $this->authState = new AppState($this);
         } 
         else $this->authState = new UserState($this);
@@ -49,15 +51,56 @@ class API {
     function checkForms() {
         if(isset($_GET['login'])) $this->login(); 
         if(isset($_GET['logout'])) $this->logout(); 
-        if(isset($_GET['adduser'])) $this->authState->addUser();
-        if(isset($_GET['readall'])) $this->authState->readAll();
-        if(isset($_GET['upload'])) $this->authState->upload();
-        if(isset($_GET['getUsers'])) $this->authState->getUsers();
+        if(isset($_GET['checkpin'])) $this->checkPIN();
+    }
+
+    function getPINS() {
+        return $this->authState->getPINS();
+    }
+
+    function getUsers() {
+        return $this->authState->getUsers();
+    }
+
+    function getUser() {
+        if(!isset($_POST['username']) || $_POST['username'] == "") 
+            return;
+        $name = $_POST['username'];
+        return $this->authState->getUser($name);
+    }
+
+    function createPIN() {
+        (isset($_POST['expiration']) && $_POST['expiration'] != "") ? $expirationTime = $_POST['expiration'] : $expirationTime = 30;
+        $this->authState->createPIN($expirationTime);
+    }
+
+    function deletePINS() {
+        $this->authState->deletePINS();
     }
 
     ///////////////////////////////
     //  State altering methods   //
     //////////////////////////////
+    function checkPIN() {
+        $pins_db = new SQLite3(PINDB);
+        $pin = isset($_POST['pin'])? $_POST['pin'] : '';
+        $query = "SELECT * FROM pins "
+                . "WHERE pin = :pin "
+                . "AND expires > DATETIME(CURRENT_TIMESTAMP)";
+        $statement = $pins_db->prepare($query);
+        $statement->bindValue(':pin', $pin, SQLITE3_TEXT);
+        $result = $statement->execute();
+
+        while($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            $this->authState = new AppState($this);
+            print "PIN accepted. Gimme the data <br />";
+            return true;
+        }
+        $statement->close();
+        $pins_db->close();
+
+    }
+
     function getSession() {
         $this->userid = $this->session('userid');
         $this->username = $this->session('username');

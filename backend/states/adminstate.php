@@ -1,20 +1,18 @@
 <?php
 //Overrides API actions for users logged in as Admin
 class AdminState extends UserState {
-    
+
+    private $pin_db;
+    private $auth_db;
+
+    function __construct(API $api) {
+        parent::__construct($api);
+        $this->pin_db = new SQLite3(PINDB);
+        $this->auth_db = new SQLite3(AUTHDB);
+    }
+
     function upload(){}
     function delete() {}
-
-    function getUsers() {
-        $db = $this->api->auth_db;
-
-        $sql = $db->prepare('SELECT * from users;');
-        $result = $sql->execute();
-        echo "<pre>";
-        print_r($result->fetchArray());
-        echo "</pre>";
-        return $result;
-    }
 
     function addUser() {
         $username = $this->post('username');
@@ -57,17 +55,55 @@ class AdminState extends UserState {
 
     }
 
-    function userExists($username) {
-        $sql = "SELECT username FROM users WHERE username = :username";
-        $stmt = $this->prepare($sql);
+    function getUsers() {
+        $sql = $this->auth_db->prepare('SELECT * FROM users;');
+        $result = $sql->execute();
+
+        return $this->prepareData($result);
+    }
+
+    function getUser(&$username) {
+        $stmt = $this->auth_db->prepare("SELECT * FROM users WHERE username = :username");
         $stmt->bindValue(':username', $username);
         $result = $stmt->execute();
-        if ($result->numColumns()) {
-            while ($row = $result->fetchArray()) {
-                return true;
-            }
+
+        return $this->prepareData($result);
+    }
+
+    function createPIN(&$expirationTime) {
+        $pin = sprintf("%04d", random_int(0000,9999));
+        $insert = <<<EOF
+        INSERT INTO pins(pin, expires)
+        VALUES( $pin, DATETIME(CURRENT_TIMESTAMP, '+$expirationTime minutes'));
+EOF;
+
+       if($this->pin_db->exec($insert)) {
+            $result = "<br/> PIN Created: <br/> "
+                    . "<p style='color:midnightblue; font-size:30px;'> " . $pin . "<p>"
+                    . "<p style='font-size:15px;'> expires in " . $expirationTime . " minutes <br/>";
+            print $result;
         }
-        return false;
+    }
+
+    function getPINS() {
+        $statement = $this->pin_db->prepare("SELECT * FROM pins");
+        $result = $statement->execute();
+
+        return $this->prepareData($result);
+    }
+
+    function getPIN(&$pin) {
+        $stmt = $this->pin_db->prepare("SELECT * FROM pins WHERE pin = :pin");
+        $stmt->bindValue(':pin', $pin);
+        $result = $stmt->execute();
+ 
+        return $this->prepareData($result);
+    }
+
+    function deletePINS() {
+        $stmt = $this->pin_db->prepare("DELETE FROM pins");
+        $result = $stmt->execute();
+
     }
 
 }

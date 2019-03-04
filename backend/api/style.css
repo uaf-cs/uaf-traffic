@@ -1,0 +1,63 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1; font-family: arial;}
+h1{font-size: 25px;}h2{font-size: 21px;}h3{font-size: 18px;}h4{font-size: 16px;}
+
+
+body,html {
+	background-color: rgba(168, 191, 255, 0.562);
+}
+header {
+    background: rgb(69, 108, 153);
+    padding: 15px 30px;
+    height: 50px;
+    margin: auto;
+}
+header > nav {
+    float: right;
+    text-align: right;
+    color: rgb(255, 251, 251);
+}
+header > nav > ul > li {
+    float:right;
+    margin: 1px;
+}
+
+nav {
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 8px 5px;
+}
+nav ul {
+    list-style: none;
+}
+
+#logo {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 30px;
+    margin-right: 75px;
+    color: #FFF;
+}
+body > section {
+    text-align: center;
+    margin: auto;
+    padding: 1px 0px;
+    border-bottom: 1px solid #999;
+    color: #333;
+    background: rgba(128, 165, 245, 0.733);
+}
+article {
+    border-bottom: 2px dotted #999;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: 35px;
+    margin-right: 130px;
+}
+article > h3 {  
+    border-width: 5px;
+    margin-bottom: 3px;
+    background-color: rgba(151, 151, 175, 0.411);
+}
