@@ -26,7 +26,6 @@
 		C3A2F0A121FACD060078E15C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A2F09F21FACD060078E15C /* Main.storyboard */; };
 		C3A2F0A321FACD070078E15C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A2F0A221FACD070078E15C /* Assets.xcassets */; };
 		C3A2F0A621FACD070078E15C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A2F0A421FACD070078E15C /* LaunchScreen.storyboard */; };
-		C3A2F0B121FACD070078E15C /* uaftrafficTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2F0B021FACD070078E15C /* uaftrafficTests.swift */; };
 		C3A2F0BC21FACD070078E15C /* uaftrafficUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2F0BB21FACD070078E15C /* uaftrafficUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +69,6 @@
 		C3A2F0A521FACD070078E15C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3A2F0A721FACD070078E15C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3A2F0AC21FACD070078E15C /* uaftrafficTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uaftrafficTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3A2F0B021FACD070078E15C /* uaftrafficTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uaftrafficTests.swift; sourceTree = "<group>"; };
 		C3A2F0B221FACD070078E15C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3A2F0B721FACD070078E15C /* uaftrafficUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uaftrafficUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A2F0BB21FACD070078E15C /* uaftrafficUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uaftrafficUITests.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 		C3A2F0AF21FACD070078E15C /* uaftrafficTests */ = {
 			isa = PBXGroup;
 			children = (
-				C3A2F0B021FACD070078E15C /* uaftrafficTests.swift */,
 				C3A2F0B221FACD070078E15C /* Info.plist */,
 				9DBF1481222CE05000285979 /* SessionManagerTests.swift */,
 				9DBF1483222CF1F100285979 /* SessionTests.swift */,
@@ -329,7 +326,6 @@
 			files = (
 				9DBF1484222CF1F100285979 /* SessionTests.swift in Sources */,
 				9DBF1482222CE05000285979 /* SessionManagerTests.swift in Sources */,
-				C3A2F0B121FACD070078E15C /* uaftrafficTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
