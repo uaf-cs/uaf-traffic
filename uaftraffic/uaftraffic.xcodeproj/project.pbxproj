@@ -21,7 +21,6 @@
 		9DBF1482222CE05000285979 /* SessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1481222CE05000285979 /* SessionManagerTests.swift */; };
 		9DBF1484222CF1F100285979 /* SessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1483222CF1F100285979 /* SessionTests.swift */; };
 		9DE934CE2207B8540000255D /* UAFVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934CD2207B8540000255D /* UAFVehicleView.swift */; };
-		9DE934D52207C84F0000255D /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE934D42207C84E0000255D /* gear.png */; };
 		9DE934D72207CA3D0000255D /* UAFPinEntryViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934D62207CA3D0000255D /* UAFPinEntryViewViewController.swift */; };
 		C3A2F09C21FACD060078E15C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2F09B21FACD060078E15C /* AppDelegate.swift */; };
 		C3A2F0A121FACD060078E15C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A2F09F21FACD060078E15C /* Main.storyboard */; };
@@ -63,7 +62,6 @@
 		9DBF1481222CE05000285979 /* SessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerTests.swift; sourceTree = "<group>"; };
 		9DBF1483222CF1F100285979 /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		9DE934CD2207B8540000255D /* UAFVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAFVehicleView.swift; sourceTree = "<group>"; };
-		9DE934D42207C84E0000255D /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		9DE934D62207CA3D0000255D /* UAFPinEntryViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UAFPinEntryViewViewController.swift; sourceTree = "<group>"; };
 		C3A2F09821FACD060078E15C /* uaftraffic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uaftraffic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A2F09B21FACD060078E15C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 		9DE934C22207AEC90000255D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				9DE934D42207C84E0000255D /* gear.png */,
 				9D2EC4852223B4DD002FA1DD /* bike.png */,
 				9D2EC4862223B4DD002FA1DD /* car.png */,
 				9D2EC4842223B4DC002FA1DD /* mush.png */,
@@ -282,7 +279,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DE934D52207C84F0000255D /* gear.png in Resources */,
 				9D2EC48C2223B4DD002FA1DD /* car.png in Resources */,
 				9D2EC48B2223B4DD002FA1DD /* bike.png in Resources */,
 				9D2EC48E2223B4DD002FA1DD /* atv.png in Resources */,
