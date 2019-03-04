@@ -72,10 +72,10 @@ class API {
 
     function createUser() {
         $username = $this->post('username');
-        // if($username == '' || $this->userExists($username)) {
-        //     print "Invalid Username/Username exists";
-        //     return;
-        // }
+        if($username == '' || $this->userExists($username)) {
+            print "$username is an invalid username, try again";
+            return;
+        }
         $hash = password_hash($this->post('password'), PASSWORD_DEFAULT);
         $sql = "INSERT INTO users (username, hash, role, fullname, organization, email, lockedout, authfailures) "
             . "VALUES (:username, :hash, :role, :fullname, :organization, :email, :lockedout, :authfailures)";        
@@ -96,6 +96,16 @@ class API {
         } else {
             print "<br>Inserted new user $username";
         }
+    }
+
+    function userExists($username) {
+        $query = "SELECT * FROM users "
+                . "WHERE username = :username";
+        $statement = $this->auth_db->prepare($query);
+        $statement->bindValue(':username', $username);
+        $result = $statement->execute();
+        $row = $result->fetchArray(SQLITE3_ASSOC);
+        return !empty($row);
     }
 
     function createPIN() {
