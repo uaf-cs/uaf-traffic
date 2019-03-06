@@ -10,38 +10,41 @@
 import Foundation
 
 class SessionManager{
-    //let fileurl = dir.URLByAppendingPathComponent("sessions.txt")
-    //String(contentsOfFile: <LocalFileDirPath>)
-    
-//    let fileManager = FileManager.default
-//    do {
-//    let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
-//    let fileURL = documentDirectory.appendingPathComponent(name)
-//    let image = #imageLiteral(resourceName: "Notifications")
-//    if let imageData = UIImageJPEGRepresentation(image, 0.5) {
-//    try imageData.write(to: fileURL)
-//    return true
-//    }
-//    } catch {
-//    print(error)
-//    }
-//    return false
-    
-    
-    
-    func getSessions() -> Sessions {
-        
+    func getSessions() -> String {
+        var text2: String?
+        let file = "file.txt"
+
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent(file)
+            //reading
+            do {
+                text2 = try String(contentsOf: fileURL, encoding: .utf8)
+            }
+            catch {return error.localizedDescription}
+        }
+        return text2!
     }
     
     func writeSessions() {
-        let fileManager = FileManager.default
-        do{
-            
-        }
-    }
-    
-    func deleteSessions(){
-        <#function body#>
+        let file = "file.txt"
         
-    }
+        let text = "some text" //just a text
+        
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let fileURL = dir.appendingPathComponent(file)
+            
+            //writing
+            do {
+                try text.write(to: fileURL, atomically: false, encoding: .utf8)
+            }
+            catch {/* error handling here */}
+            
+            }
+        }
+    
+//    func deleteSessions(){
+//
+//    }
 }
+
