@@ -142,6 +142,31 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
 
  </article>
 
+ <article>
+    <h3> Create User </h3>
+    <form method="post" action="<?php echo $URL;?>?createuser">
+        <table>
+            <tr>
+                <td>Username: <input type='text' name='username'/></td>
+                <td>Password: <input type='password' name='password'/></td>
+                <td>Full name: <input type='text' name='fullname'/></td>
+            </tr>
+            <tr>
+                <td>
+                    Role: 
+                    <select name="role">
+                        <option value="admin">Admin</option> 
+                        <option value="user">User</option>
+                    </select>
+                </td>
+                <td>Organization: <input type='text' name='organization'/></td>
+                <td>Email: <input type='text' name='email'/></td>
+            </tr>
+            <td><button type='submit'>Submit</button></td>
+        </table>
+    </form>
+ </article>
+
 <?php
 }
 ?>

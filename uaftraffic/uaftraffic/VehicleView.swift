@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class UAFVehicleView: UIImageView {
+@IBDesignable class VehicleView: UIImageView {
 	@IBInspectable var vehicleType: String!
 	@IBInspectable var direction: String!
 	
