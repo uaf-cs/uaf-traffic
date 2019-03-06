@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24B702DB222D0E45007D7755 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B702DA222D0E45007D7755 /* SessionManager.swift */; };
+		24B702DD222D132E007D7755 /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B702DC222D132E007D7755 /* Sessions.swift */; };
 		9D2EC4892223B4DD002FA1DD /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC4832223B4DC002FA1DD /* plane.png */; };
 		9D2EC48A2223B4DD002FA1DD /* mush.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC4842223B4DC002FA1DD /* mush.png */; };
 		9D2EC48B2223B4DD002FA1DD /* bike.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC4852223B4DD002FA1DD /* bike.png */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24B702DA222D0E45007D7755 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		24B702DC222D132E007D7755 /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
 		9D2EC4832223B4DC002FA1DD /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plane.png; path = ../../../assets/plane.png; sourceTree = "<group>"; };
 		9D2EC4842223B4DC002FA1DD /* mush.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mush.png; path = ../../../assets/mush.png; sourceTree = "<group>"; };
 		9D2EC4852223B4DD002FA1DD /* bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bike.png; path = ../../../assets/bike.png; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 				9D2EC4952223D749002FA1DD /* TrafficCountViewController.swift */,
 				9D2EC4932223D428002FA1DD /* ManageSessionsViewController.swift */,
 				9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */,
+				24B702DA222D0E45007D7755 /* SessionManager.swift */,
+				24B702DC222D132E007D7755 /* Sessions.swift */,
 			);
 			path = uaftraffic;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D2EC49A22252B92002FA1DD /* ResumeSessionViewController.swift in Sources */,
+
 				9DE934CE2207B8540000255D /* VehicleView.swift in Sources */,
 				9D2EC4962223D749002FA1DD /* TrafficCountViewController.swift in Sources */,
 				9D2EC4902223CE63002FA1DD /* BigFancyButton.swift in Sources */,
