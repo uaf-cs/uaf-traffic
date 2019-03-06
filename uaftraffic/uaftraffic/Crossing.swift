@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class Crossing {
+    let _type = String()
+    let _from = String()
+    let _to = String()
+    let _time = Date()
+    
+}
