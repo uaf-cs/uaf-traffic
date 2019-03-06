@@ -10,7 +10,7 @@ import XCTest
 @testable import uaftraffic
 
 class SessionTests: XCTestCase {
-	let session: Session!
+	var session: Session!
 	
     override func setUp() {
         session = Session()
