@@ -10,7 +10,7 @@ import XCTest
 @testable import uaftraffic
 
 class SessionTests: XCTestCase {
-	let session: Session!
+	var session: Session!
 	
     override func setUp() {
         session = Session()
@@ -30,7 +30,7 @@ class SessionTests: XCTestCase {
 
 	// addCrossing method should work
 	func testAddCrossing() {
-		session.addCrossing("car", "w", "n" )
+        session.addCrossing(type: "car", from: "w", to: "n")
 		XCTAssertEqual(session.crossings[0].type, "car")
 		XCTAssertEqual(session.crossings[0].from, "w")
 		XCTAssertEqual(session.crossings[0].to, "n")
@@ -39,16 +39,15 @@ class SessionTests: XCTestCase {
 	
 	// addCrossing should work multiple times
 	func testAddTwoCrossings() {
-		
 		// Test first crossing
-		session.addCrossing("car", "w", "n" )
-		XCTAssertEqual(session.crossings[0].type, "car")
+		session.addCrossing(type: "car", from: "w", to: "n")
+        XCTAssertEqual(session.crossings[0].type, "car")
 		XCTAssertEqual(session.crossings[0].from, "w")
 		XCTAssertEqual(session.crossings[0].to, "n")
 		XCTAssertEqual(session.crossings.count, 1)
 		
 		// Test second crossing
-		session.addCrossing("pedestrian", "e", "s" )
+		session.addCrossing(type: "pedestrian", from: "e", to: "s")
 		XCTAssertEqual(session.crossings[1].type, "pedestrian")
 		XCTAssertEqual(session.crossings[1].from, "e")
 		XCTAssertEqual(session.crossings[1].to, "s")
@@ -58,18 +57,18 @@ class SessionTests: XCTestCase {
 	// undo should remove the last crossing
 	func testUndo() {
 		// Test first crossing
-		session.addCrossing("car", "w", "n" )
-		XCTAssertEqual(session.crossings[0].type, "car")
-		XCTAssertEqual(session.crossings[0].from, "w")
-		XCTAssertEqual(session.crossings[0].to, "n")
-		XCTAssertEqual(session.crossings.count, 1)
-		
-		// Test second crossing
-		session.addCrossing("pedestrian", "e", "s" )
-		XCTAssertEqual(session.crossings[1].type, "pedestrian")
-		XCTAssertEqual(session.crossings[1].from, "e")
-		XCTAssertEqual(session.crossings[1].to, "s")
-		XCTAssertEqual(session.crossings.count, 2)
+        session.addCrossing(type: "car", from: "w", to: "n")
+        XCTAssertEqual(session.crossings[0].type, "car")
+        XCTAssertEqual(session.crossings[0].from, "w")
+        XCTAssertEqual(session.crossings[0].to, "n")
+        XCTAssertEqual(session.crossings.count, 1)
+        
+        // Test second crossing
+        session.addCrossing(type: "pedestrian", from: "e", to: "s")
+        XCTAssertEqual(session.crossings[1].type, "pedestrian")
+        XCTAssertEqual(session.crossings[1].from, "e")
+        XCTAssertEqual(session.crossings[1].to, "s")
+        XCTAssertEqual(session.crossings.count, 2)
 		
 		// Test undo second crossing
 		session.undo()

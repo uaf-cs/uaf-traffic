@@ -29,7 +29,7 @@ class SessionManagerTests: XCTestCase {
 	func testWriteSingleSession() {
 		let session = Session()
 		session.name = "test session"
-		sessionManager.writeSession(session)
+        sessionManager.writeSession(session: session)
 		let sessions = sessionManager.getSessions()
 		XCTAssertEqual(sessions[0], session)
 	}
@@ -39,7 +39,7 @@ class SessionManagerTests: XCTestCase {
 		// First
 		let session = Session()
 		session.name = "test session"
-		sessionManager.writeSession(session)
+		sessionManager.writeSession(session: session)
 		
 		// Second
 		let altManager = SessionManager()
@@ -51,9 +51,9 @@ class SessionManagerTests: XCTestCase {
 	func testDeleteSession() {
 		let session1 = Session()
 		let session2 = Session()
-		sessionManager.writeSession(session1)
-		sessionManager.writeSession(session2)
-		sessionManager.deleteSession(session2)
+        sessionManager.writeSession(session: session1)
+        sessionManager.writeSession(session: session2)
+        sessionManager.deleteSession(session: session2)
 		let remainingSessions = sessionManager.getSessions()
 		XCTAssertEqual(remainingSessions.count, 1)
 		XCTAssertEqual(remainingSessions[0], session1)
@@ -63,9 +63,9 @@ class SessionManagerTests: XCTestCase {
 	func testDeleteSessionAlt() {
 		let session1 = Session()
 		let session2 = Session()
-		sessionManager.writeSession(session1)
-		sessionManager.writeSession(session2)
-		sessionManager.deleteSession(session1)
+        sessionManager.writeSession(session: session1)
+        sessionManager.writeSession(session: session2)
+        sessionManager.deleteSession(session: session1)
 		let remainingSessions = sessionManager.getSessions()
 		XCTAssertEqual(remainingSessions.count, 1)
 		XCTAssertEqual(remainingSessions[0], session2)
@@ -75,11 +75,11 @@ class SessionManagerTests: XCTestCase {
 	func testDeleteSessionMultipleManagers() {
 		let session1 = Session()
 		let session2 = Session()
-		sessionManager.writeSession(session1)
-		sessionManager.writeSession(session2)
+        sessionManager.writeSession(session: session1)
+        sessionManager.writeSession(session: session2)
 		
 		let sessionManager2 = SessionManager()
-		sessionManager2.deleteSession(session2)
+        sessionManager2.deleteSession(session: session2)
 		let remainingSessions = sessionManager2.getSessions()
 		XCTAssertEqual(remainingSessions.count, 1)
 		XCTAssertEqual(remainingSessions[0], session1)
@@ -89,11 +89,11 @@ class SessionManagerTests: XCTestCase {
 	func testDeleteSessionMultipleManagersAlt() {
 		let session1 = Session()
 		let session2 = Session()
-		sessionManager.writeSession(session1)
-		sessionManager.writeSession(session2)
+        sessionManager.writeSession(session: session1)
+        sessionManager.writeSession(session: session2)
 		
 		let sessionManager2 = SessionManager()
-		sessionManager2.deleteSession(session1)
+        sessionManager2.deleteSession(session: session1)
 		let remainingSessions = sessionManager2.getSessions()
 		XCTAssertEqual(remainingSessions.count, 1)
 		XCTAssertEqual(remainingSessions[0], session2)
