@@ -4,6 +4,7 @@ class AdminState extends UserState {
 
     private $pin_db;
     private $auth_db;
+    private $traffic_db;
 
     function __construct(API $api) {
         parent::__construct($api);

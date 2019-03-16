@@ -37,13 +37,21 @@ if (!$api->isloggedin) {
         <nav>  
         <ul>
             <li>
-            <form method="post" action= "<?php echo $URL;?>?pinmenu">
-            <button type="submit">PIN options</button>
-            </form>
+                <form method="post" action="<?php echo $URL;?>?datamenu">
+                <button type="submit">View Traffic Data</button>
+                </form>
+
+            </li>
             <li> 
-            <form method="post" action="<?php echo $URL;?>?accountmenu">
-            <button type="submit">Manage User/Admin Accounts</button>
-            </form>
+                <form method="post" action= "<?php echo $URL;?>?pinmenu">
+                <button type="submit">Create PIN</button>
+                </form>
+            </li>
+            <li>
+                <form method="post" action="<?php echo $URL;?>?accountmenu">
+                <button type="submit">Manage User/Admin Accounts</button>
+                </form>
+            </li>
         </ul>
 		</nav> 
 </section>
@@ -84,9 +92,14 @@ if(isset($_GET['pinmenu']) or isset($_GET['getpins']) or isset($_GET['createpin'
     </form>
     <?php 
     if(isset($_GET['getpins'])) {
-        print "<pre>";
-        print_r($api->getPINS());
-        print "</pre>";
+        $results = $api->getPINS();
+
+        foreach($results as & $row) {
+            print "<article> PIN: ";
+            print "<p style='color:midnightblue; font-size:30px;'> " . $row['pin'] . "<p>"
+            . "<p style='font-size:15px;'> expires:<br/> " . $row['expires'] . "<br/>";
+            print "</article>";
+        }
     }?>
 
  </article>
@@ -142,7 +155,7 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
 
  </article>
 
- <article>
+<article>
     <h3> Create User </h3>
     <form method="post" action="<?php echo $URL;?>?createuser">
         <table>
@@ -165,11 +178,24 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
             <td><button type='submit'>Submit</button></td>
         </table>
     </form>
- </article>
+</article>
 
 <?php
 }
+
+////////////////////
+//  Account Menu //
+///////////////////
+if(isset($_GET['datamenu'])) {
 ?>
+<pre>
+    <?php print_r($api->readData()); ?>
+</pre>
+
+
+
+<?php
+}?>
 
 </body>
 </html>

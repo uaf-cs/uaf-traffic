@@ -117,6 +117,10 @@ class API {
         $this->authState->deletePINS();
     }
 
+    function readData() {
+        return $this->authState->readData();
+    }
+
     ///////////////////////////////
     //  State altering methods   //
     //////////////////////////////

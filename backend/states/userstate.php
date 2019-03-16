@@ -27,7 +27,7 @@ class UserState {
         while($row = $result->fetchArray(SQLITE3_ASSOC)) {
             array_push($ret, $row);
         }
-        if(!array_filter($ret)) return "<p style='color: darkred'>Not Found";
+        if(!array_filter($ret)) print "<p style='color: darkred'>Not Found";
         return $ret;
     }
 
@@ -54,6 +54,12 @@ class UserState {
         echo "<pre>";
         print_r($result->fetchArray());
         echo "</pre>";
+    }
+
+    public function readData() {
+        $statement = $this->traffic_db->prepare("SELECT * FROM palliatives");
+        $result = $statement->execute();
+        return $this->prepareData($result);
     }
 }
 
