@@ -24,13 +24,10 @@ if (!$api->isloggedin) {
             <?php 
                 print $api->userfullname . "<br/>";
                 print "<p style= 'color:orange;'>" . $api->userrole; ?> <br/>
-
-			<ul>
-            <li>
+            
             <form method="post" action="<?php echo $URL;?>?logout">
             <button type="submit">Logout</button>
             </form>
-            </ul>
 		</nav>
 </header>
 <section>
@@ -40,13 +37,14 @@ if (!$api->isloggedin) {
                 <form method="post" action="<?php echo $URL;?>?datamenu">
                 <button type="submit">View Traffic Data</button>
                 </form>
-
             </li>
-            <li> 
+        
+            <li>
                 <form method="post" action= "<?php echo $URL;?>?pinmenu">
                 <button type="submit">Create PIN</button>
                 </form>
             </li>
+        
             <li>
                 <form method="post" action="<?php echo $URL;?>?accountmenu">
                 <button type="submit">Manage User/Admin Accounts</button>
@@ -126,6 +124,7 @@ if(isset($_GET['pinmenu']) or isset($_GET['getpins']) or isset($_GET['createpin'
 ///////////////////
 if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getuser'])) {
 ?>
+
 <article>
     <h3> Find User </h3>
     <form action = "<?php echo $URL;?>?getuser" method="post">
@@ -158,28 +157,39 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
 <article>
     <h3> Create User </h3>
     <form method="post" action="<?php echo $URL;?>?createuser">
-        <table>
-            <tr>
-                <td>Username: <input type='text' name='username'/></td>
-                <td>Password: <input type='password' name='password'/></td>
-                <td>Full name: <input type='text' name='fullname'/></td>
-            </tr>
-            <tr>
-                <td>
-                    Role: 
-                    <select name="role">
-                        <option value="admin">Admin</option> 
-                        <option value="user">User</option>
-                    </select>
-                </td>
-                <td>Organization: <input type='text' name='organization'/></td>
-                <td>Email: <input type='text' name='email'/></td>
-            </tr>
-            <td><button type='submit'>Submit</button></td>
-        </table>
+    <fieldset>
+        <p>
+        <label> Role: </label>
+            <select name="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option> 
+            </select>
+        </p>
+
+        <p>
+            <label> Username:</label> <input type='text' name='username'/>
+        </p>
+
+        <p>
+            <label>Password:</label> <input type='password' name='password'/>
+        </p>
+
+        <p>
+            <label>Full name:</label> <input type='text' name='fullname'/>
+        </p>
+
+        <p>
+            <label> Organization: </label> <input type='text' name='organization'/>
+        </p>
+
+        <p>
+            <label>Email:</label> <input type='text' name='email'/>
+        </p>
+
+        <button type='submit'>Create Account</button>
+        </fieldset>
     </form>
 </article>
-
 <?php
 }
 
