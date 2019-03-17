@@ -107,5 +107,50 @@ EOF;
 
     }
 
+    function makePage() {
+        ?>
+        <body>
+        <div class="header">
+
+            <div class="leftbox">
+                <h3>UAFTRAFFIC</h3>
+                <p>Admin Console <p>
+            </div>
+
+            <div class="rightbox">
+                <?php 
+                print "<p style= 'font-size:20px;'>" . $this->api->userfullname . "</p>";
+                print "<p style= 'font-size:18px; color:orange;'>" . $this->api->userrole; ?>
+            </div>
+        </div>
+        <div class="navbar">
+            <form method="post" action="<?php echo ADMINURL; ?>?myaccount">
+                <button type="submit">Account</button>
+            </form>
+            <form method="post" action="<?php echo ADMINURL; ?>?logout">
+                <button type="submit">Logout</button>
+            </form>
+
+        </div>
+
+        <div class="main">
+            <div class="sidebar">
+                <form method="post" action="<?php echo ADMINURL; ?>?datamenu">
+                    <button type="submit">View Traffic Data</button>
+                </form>
+
+                <form method="post" action="<?php echo ADMINURL; ?>?pinmenu">
+                    <button type="submit">Manage PINs</button>
+                </form>
+
+                <form method="post" action="<?php echo ADMINURL; ?>?accountmenu">
+                    <button type="submit">Manage User/Admin Accounts</button>
+                </form>
+            </div>
+
+            <div class="mainbody">
+        <?php
+    }
+
 }
 ?>

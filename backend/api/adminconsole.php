@@ -1,8 +1,11 @@
+<!doctype html>
+<link rel ="stylesheet" href="style.css">
+<title>UAFTRAFFIC</title>
+
 <?php
 include_once '../api.php';
 
 $URL = 'adminconsole.php';
-
 $api = new API();
 
 //redirect to login page if user is not logged in
@@ -10,55 +13,8 @@ if (!$api->isloggedin) {
     header("Location: login.php");
     exit();
 }
-?>
+$api->makePage();
 
-<!doctype html>
-<link rel ="stylesheet" href="style.css">
-<title>UAFTRAFFIC</title>
-
-<body>
-	<div class= "header">
-
-        <div class="leftbox"> 
-            <h3>UAFTRAFFIC</h3> 
-            <p>Admin Console <p>
-        </div>
-
-		<div class="rightbox">
-            <?php 
-                print "<p style= 'font-size:20px;'>" . $api->userfullname . "</p>";
-                print "<p style= 'font-size:18px; color:orange;'>" . $api->userrole; ?>
-        </div>
-    </div>
-<div class="navbar">
-    <form method="post" action="<?php echo $URL;?>?myaccount">
-        <button type="submit">Account</button>
-    </form>
-
-    <form method="post" action="<?php echo $URL;?>?logout">
-        <button type="submit">Logout</button>
-    </form>
-
-</div>
-
-<div class="main">
-    <div class="sidebar">
-        <form method="post" action="<?php echo $URL;?>?datamenu">
-        <button type="submit">View Traffic Data</button>
-        </form>
-
-        <form method="post" action= "<?php echo $URL;?>?pinmenu">
-        <button type="submit">Manage PINs</button>
-        </form>
-
-        <form method="post" action="<?php echo $URL;?>?accountmenu">
-        <button type="submit">Manage User/Admin Accounts</button>
-        </form>
-    </div>
-
-    <div class="mainbody">
-
-<?php
 ////////////////
 //  PIN Menu //
 ///////////////
@@ -148,6 +104,7 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
     <h3> Create User </h3>
     <form method="post" action="<?php echo $URL;?>?createuser">
     <fieldset>
+
         <p>
         <label> Role: </label>
             <select name="role">
@@ -156,25 +113,11 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
             </select>
         </p>
 
-        <p>
-            <label> Username:</label> <input type='text' name='username'/>
-        </p>
-
-        <p>
-            <label>Password:</label> <input type='password' name='password'/>
-        </p>
-
-        <p>
-            <label>Full name:</label> <input type='text' name='fullname'/>
-        </p>
-
-        <p>
-            <label> Organization: </label> <input type='text' name='organization'/>
-        </p>
-
-        <p>
-            <label>Email:</label> <input type='text' name='email'/>
-        </p>
+        <p><label> Username:</label> <input type='text' name='username'/></p>
+        <p><label>Password:</label> <input type='password' name='password'/></p>
+        <p><label>Full name:</label> <input type='text' name='fullname'/></p>
+        <p><label> Organization: </label> <input type='text' name='organization'/></p>
+        <p><label>Email:</label> <input type='text' name='email'/></p>
 
         <button type='submit' style='width:100%;'>Create Account</button>
         </fieldset>
@@ -203,7 +146,6 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
     <?php
         foreach($results as & $row) {
             print("<tr>");
-
             print("<td class='name'>" . $row['fullname'] . "</td>");
             print("<td>" . $row['username'] . "</td>");
             print("<td>" . $row['role'] . "</td>");

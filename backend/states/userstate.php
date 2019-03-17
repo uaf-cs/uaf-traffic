@@ -41,6 +41,40 @@ class UserState {
     function addUser() { $this->error(); }
     function userExists($username) { $this->error(); }
     function createPIN(&$pin) { $this->error(); }
+    
+    function makePage() {
+        ?>
+        <body>
+        <div class="header">
+
+            <div class="leftbox">
+                <h3>UAFTRAFFIC</h3>
+                <p>Admin Console <p>
+            </div>
+
+            <div class="rightbox">
+            </div>
+        </div>
+        <div class="navbar">
+            <form method="post" action="<?php echo ADMINURL; ?>?myaccount">
+                <button type="submit">Sign In</button>
+            </form>
+            <form method="post" action="<?php echo ADMINURL; ?>?logout">
+                <button type="submit">Register</button>
+            </form>
+
+        </div>
+
+        <div class="main">
+            <div class="sidebar">
+                <form method="post" action="<?php echo ADMINURL; ?>?datamenu">
+                    <button type="submit">View Traffic Data</button>
+                </form>
+            </div>
+
+            <div class="mainbody">
+        <?php
+    }
 
 
     //////////////////////////////

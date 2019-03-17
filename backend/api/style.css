@@ -114,6 +114,7 @@ fieldset legend {
     margin-left: -5px;
     font-size: 20px;
     font-weight: bold;
+    align-self:center;
 }
 
 fieldset form  { 
@@ -159,10 +160,11 @@ article > h3 {
 
 table, td {
     border-bottom: 1px solid black;
-    padding: 20px 20px 10px 10px;
+    padding: 10px 20px 10px 20px;
     margin-top: 10px;
     border-collapse: collapse;
     text-align:center;
+    min-width: 100px;
 }
 
 table {
@@ -170,10 +172,10 @@ table {
 }   
 
 th {
-    background-color: black;
+    background-color: midnightblue;
     color: white;
     text-align: center;
-    padding: 5px;
+    padding: 10px 20px 10px 20px;
 }
 
 .name {
