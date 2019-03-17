@@ -12,47 +12,51 @@ if (!$api->isloggedin) {
 }
 ?>
 
-
 <!doctype html>
 <link rel ="stylesheet" href="style.css">
 <title>UAFTRAFFIC</title>
 
 <body>
-	<header>
-        <div id="logo"><h3 style='color:goldenrod;'>UAFTRAFFIC</h3> Admin Console </div>
-		<nav>
+	<div class= "header">
+
+        <div class="leftbox"> 
+            <h3>UAFTRAFFIC</h3> 
+            <p>Admin Console <p>
+        </div>
+
+		<div class="rightbox">
             <?php 
-                print $api->userfullname . "<br/>";
-                print "<p style= 'color:orange;'>" . $api->userrole; ?> <br/>
-            
-            <form method="post" action="<?php echo $URL;?>?logout">
-            <button type="submit">Logout</button>
-            </form>
-		</nav>
-</header>
-<section>
-        <nav>  
-        <ul>
-            <li>
-                <form method="post" action="<?php echo $URL;?>?datamenu">
-                <button type="submit">View Traffic Data</button>
-                </form>
-            </li>
-        
-            <li>
-                <form method="post" action= "<?php echo $URL;?>?pinmenu">
-                <button type="submit">Create PIN</button>
-                </form>
-            </li>
-        
-            <li>
-                <form method="post" action="<?php echo $URL;?>?accountmenu">
-                <button type="submit">Manage User/Admin Accounts</button>
-                </form>
-            </li>
-        </ul>
-		</nav> 
-</section>
+                print "<p style= 'font-size:20px;'>" . $api->userfullname . "</p>";
+                print "<p style= 'font-size:18px; color:orange;'>" . $api->userrole; ?>
+        </div>
+    </div>
+<div class="navbar">
+    <form method="post" action="<?php echo $URL;?>?myaccount">
+        <button type="submit">Account</button>
+    </form>
+
+    <form method="post" action="<?php echo $URL;?>?logout">
+        <button type="submit">Logout</button>
+    </form>
+
+</div>
+
+<div class="main">
+    <div class="sidebar">
+        <form method="post" action="<?php echo $URL;?>?datamenu">
+        <button type="submit">View Traffic Data</button>
+        </form>
+
+        <form method="post" action= "<?php echo $URL;?>?pinmenu">
+        <button type="submit">Manage PINs</button>
+        </form>
+
+        <form method="post" action="<?php echo $URL;?>?accountmenu">
+        <button type="submit">Manage User/Admin Accounts</button>
+        </form>
+    </div>
+
+    <div class="mainbody">
 
 <?php
 ////////////////
@@ -72,8 +76,8 @@ if(isset($_GET['pinmenu']) or isset($_GET['getpins']) or isset($_GET['createpin'
 <h3> Create PIN </h3>
     <form action = "<?php echo $URL;?>?createpin" method="post">
             Expiration time (minutes):
-            <input type="number" name="expiration" value="expiration"/>
-            <input type="submit" value="Create PIN"/>
+            <input type="number" min="1" max="60" step="1" value = "1" name="expiration">
+            <button type="submit">Create PIN</button>
     </form>
     <?php
         if(isset($_GET['createpin'])) {
@@ -141,20 +145,6 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
  </article>
 
 <article>
-    <h3> View User Accounts </h3>
-    <form method="post" action="<?php echo $URL;?>?getusers">
-                    <button type="submit">View All</button>
-    </form>
-    <?php 
-    if(isset($_GET['getusers'])) {
-        print "<pre>";
-        print_r($api->getUsers());
-        print "</pre>";
-    }?>
-
- </article>
-
-<article>
     <h3> Create User </h3>
     <form method="post" action="<?php echo $URL;?>?createuser">
     <fieldset>
@@ -186,10 +176,24 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
             <label>Email:</label> <input type='text' name='email'/>
         </p>
 
-        <button type='submit'>Create Account</button>
+        <button type='submit' style='width:100%;'>Create Account</button>
         </fieldset>
     </form>
 </article>
+
+<article>
+    <h3> View User Accounts </h3>
+    <form method="post" action="<?php echo $URL;?>?getusers">
+                    <button type="submit">View All</button>
+    </form>
+    <?php 
+    if(isset($_GET['getusers'])) {
+        print "<pre>";
+        print_r($api->getUsers());
+        print "</pre>";
+    }?>
+
+ </article>
 <?php
 }
 
@@ -206,6 +210,7 @@ if(isset($_GET['datamenu'])) {
 
 <?php
 }?>
-
+</div>
+</div>
 </body>
 </html>

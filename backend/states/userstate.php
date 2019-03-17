@@ -57,7 +57,7 @@ class UserState {
     }
 
     public function readData() {
-        $statement = $this->traffic_db->prepare("SELECT * FROM palliatives");
+        $statement = $this->traffic_db->prepare("SELECT * FROM users"); //placeholder until traffic data created
         $result = $statement->execute();
         return $this->prepareData($result);
     }
