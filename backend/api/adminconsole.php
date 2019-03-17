@@ -188,12 +188,33 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
     </form>
     <?php 
     if(isset($_GET['getusers'])) {
-        print "<pre>";
-        print_r($api->getUsers());
-        print "</pre>";
-    }?>
+        $results = $api->getUsers();
+        ?>
+        
+        <div style = "overflow-x:auto;">
+        <table>
+            <tr>
+                <th> Name </th>
+                <th> Username </th>
+                <th> Role </th>
+                <th> Organization </th>
+                <th> Email </th>
+            </tr>
+    <?php
+        foreach($results as & $row) {
+            print("<tr>");
 
- </article>
+            print("<td class='name'>" . $row['fullname'] . "</td>");
+            print("<td>" . $row['username'] . "</td>");
+            print("<td>" . $row['role'] . "</td>");
+            print("<td>" . $row['organization'] . "</td>");
+            print("<td>" . $row['email'] . "</td>");
+            print("</tr>");
+        }
+    }
+?>
+    </table></div>
+    </article>
 <?php
 }
 
