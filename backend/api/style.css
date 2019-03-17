@@ -3,8 +3,9 @@
 body {
     line-height:1;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgba(168, 191, 255, 0.562);
+    background-color: rgba(238, 238, 238, 0.76);
     margin:0;
+    overflow:hidden;
 }
 
 .header {
@@ -71,12 +72,6 @@ button {
     margin-left:5px;
 }
 
-.main{
-    display:flex;
-    height:100%;
-    min-height: 800px;
-}
-
 .sidebar {
     flex: 20%;
     flex-direction: column;
@@ -94,9 +89,14 @@ button {
     margin-top: 10px;
 }
 
+.main{
+    display:flex;
+    height:85vh;
+}
 .mainbody {
     flex: 90%;
-    background-color: rgba(168, 191, 255, 0.562);
+    background-color: rgba(190, 197, 216, 0.459);
+    overflow: auto;
 }
 
 fieldset { 
@@ -114,7 +114,6 @@ fieldset legend {
     margin-left: -5px;
     font-size: 20px;
     font-weight: bold;
-    align-self:center;
 }
 
 fieldset form  { 
@@ -150,7 +149,7 @@ article {
     padding-top: 30px;
     padding-bottom: 30px;
     margin-left: 35px;
-    margin-right: 130px;
+    margin-right: 35px;
 }
 article > h3 {  
     border-width: 5px;

@@ -1,7 +1,6 @@
 <!doctype html>
 <link rel ="stylesheet" href="style.css">
 <title>UAFTRAFFIC</title>
-
 <?php
 include_once '../api.php';
 
@@ -134,7 +133,6 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
         $results = $api->getUsers();
         ?>
         
-        <div style = "overflow-x:auto;">
         <table>
             <tr>
                 <th> Name </th>
@@ -155,7 +153,7 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
         }
     }
 ?>
-    </table></div>
+    </table>
     </article>
 <?php
 }
@@ -173,7 +171,5 @@ if(isset($_GET['datamenu'])) {
 
 <?php
 }?>
-</div>
-</div>
 </body>
 </html>
