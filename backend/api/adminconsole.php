@@ -95,7 +95,7 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
     <?php 
     if(isset($_GET['getuser'])) {
         print "<pre>";
-        print_r($api->getUser());
+        print_r($api->getUser($_POST['username']));
         print "</pre>";
     }?>
 
@@ -142,15 +142,24 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
                 <th> Role </th>
                 <th> Organization </th>
                 <th> Email </th>
+                <th style='background-color:rgba(1,1,1,0); border:hidden; border-left: 2px solid black;'> </th>
             </tr>
     <?php
+    
         foreach($results as & $row) {
             print("<tr>");
-            print("<td class='name'>" . $row['fullname'] . "</td>");
+
+            print("<td class='name'>".$row['fullname'] . "</td>");
+
             print("<td>" . $row['username'] . "</td>");
             print("<td>" . $row['role'] . "</td>");
             print("<td>" . $row['organization'] . "</td>");
             print("<td>" . $row['email'] . "</td>");
+
+            print("<td style='padding:5px;'> "
+                . "<form method='post' action='account.php'>");
+            print("<button type='submit'"
+                . "name='username' value='".$row['username']."'>Edit</td>");
             print("</tr>");
         }
     }

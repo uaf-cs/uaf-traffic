@@ -134,10 +134,13 @@ form label {
     display: table-cell; 
     padding-bottom: 20px;
     padding-right:20px;
+    font-size:18px;
+    font-style:italic;
 }
 
 form input { 
     display: table-cell;
+    font-size:18px;
     margin-bottom: 10px;
     margin-right: 10px;
     width:300px; 
@@ -187,6 +190,21 @@ th {
     font-size: 110%;
 }
 
-tr:nth-child(even) {
+tr:nth-child(even) td:not(:nth-child(6)) {
     background-color: #4e567a38;
+}
+
+td:nth-child(6) {
+    border:hidden;
+    background-color: rgba(0,0,0,0);
+    border-left: 2px solid black;
+    text-align:left;
+}
+
+td button {
+    color: black;
+    font-size: 18px;
+    font-style: italic;
+    padding:5px;
+    background-color: rgba(32, 32, 93, 0.2);
 }
