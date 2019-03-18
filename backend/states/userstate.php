@@ -56,10 +56,10 @@ class UserState {
             </div>
         </div>
         <div class="navbar">
-            <form method="post" action="<?php echo ADMINURL; ?>?myaccount">
+            <form method="post" action="<?php echo LOGINURL; ?>">
                 <button type="submit">Sign In</button>
             </form>
-            <form method="post" action="<?php echo ADMINURL; ?>?logout">
+            <form method="post" action="<?php echo ADMINURL; ?>?register">
                 <button type="submit">Register</button>
             </form>
 

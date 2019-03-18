@@ -124,7 +124,7 @@ EOF;
             </div>
         </div>
         <div class="navbar">
-            <form method="post" action="<?php echo ADMINURL; ?>?myaccount">
+            <form method="post" action="<?php echo ACCOUNTURL; ?>">
                 <button type="submit">Account</button>
             </form>
             <form method="post" action="<?php echo ADMINURL; ?>?logout">

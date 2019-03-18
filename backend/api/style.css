@@ -64,6 +64,11 @@ button {
     font-size: 18px;
     cursor: pointer;
     font-family: 'Courier New', Courier, monospace;
+    transition-duration: 0.3s;
+}
+
+button:hover{
+    background-color: rgba(91, 111, 165, 0.753);
 }
 
 .navbar button {
