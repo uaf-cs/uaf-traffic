@@ -43,24 +43,6 @@ class Session: Codable{
         case crossings
     }
     
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(lat, forKey: .lat)
-        try container.encode(long, forKey: .long)
-        try container.encode(id, forKey: .id)
-        try container.encode(name, forKey: .name)
-        try container.encode(crossings, forKey: .crossings)
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        lat = try values.decode(Float.self, forKey: .lat)
-        long = try values.decode(Float.self, forKey: .long)
-        id = try values.decode(String.self, forKey: .id)
-        name = try values.decode(String.self, forKey: .name)
-        crossings = [try values.decode(Crossing.self, forKey: .crossings)]
-    }
-    
     init(lat: Float, long: Float, id: String, name: String, crossings: [Crossing]) {
         self.lat = lat
         self.long = long
@@ -141,5 +123,24 @@ class Session: Codable{
 //
 //        self.init(lat: lat, long: long, id: id, name: name, crossings: crossings)
 //    }
+
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(lat, forKey: .lat)
+//        try container.encode(long, forKey: .long)
+//        try container.encode(id, forKey: .id)
+//        try container.encode(name, forKey: .name)
+//        try container.encode(crossings, forKey: .crossings)
+//    }
+//
+//    required init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        lat = try values.decode(Float.self, forKey: .lat)
+//        long = try values.decode(Float.self, forKey: .long)
+//        id = try values.decode(String.self, forKey: .id)
+//        name = try values.decode(String.self, forKey: .name)
+//        crossings = [try values.decode(Crossing.self, forKey: .crossings)]
+//    }
+
 
 
