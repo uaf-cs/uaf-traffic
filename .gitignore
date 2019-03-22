@@ -2,3 +2,5 @@
 /db/*
 *.sqlite3
 uaftraffic/uaftraffic.xcodeproj/project.xcworkspace/xcuserdata
+.vagrant/*
+*.log

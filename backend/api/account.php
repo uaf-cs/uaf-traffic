@@ -25,8 +25,9 @@ else $name = $api->username;
 print("<pre>");
 print_r($api->getUser($name));
 print("</pre>");
-
 ?>
 
+<article>
+    <h3> <?php print($api->userfullname) ?> </h3>
 
-
+</article>
