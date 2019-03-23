@@ -18,16 +18,37 @@ $api->makePage();
 
 
 //if passed a username and user is admin, go to that users account page
-if(isset($_POST['username'])) $name = $_POST['username'];
+if(isset($_POST['username'])) $user = $api->getUser($_POST['username']);
 //else go to signed in users account page
-else $name = $api->username;
+else $user = $api->getUser($api->username);
 
-print("<pre>");
-print_r($api->getUser($name));
-print("</pre>");
 ?>
 
 <article>
-    <h3> <?php print($api->userfullname) ?> </h3>
+    <h3> Update User Information </h3>
+    <form method="post" action="<?php echo $URL;?>?updateuser">
+    <fieldset>
+        <p>
+        <label> Role: </label>
+            <select name="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option> 
+            </select>
+        </p>
 
+        <p><label> Username: </label> <input type="text" name="username" value=<?php echo $user['username'];?>> </p>
+        <p><label>Password: </label> <input type='password' name='password'/></p>
+        <p><label>Full name: </label> <input type="text" name="fullname" value=<?php echo $user['fullname'];?>> </p>
+        <p><label> Organization: </label> <input type='text' name='organization' value=<?php echo $user['organization'];?>></p>
+        <p><label>Email:</label> <input type='text' name='email' value='<?php echo $user['email'];?>'></p>
+
+        <?php if($api->userrole=="admin") {?>
+            <p><label> Locked Out: </label> <input type="checkbox" name="lockedout" value=<?php echo $user['lockedout']; ?>> </p>
+
+
+        <?php } ?>
+
+        <button type='submit' style='width:100%;'>Save Changes</button>
+        </fieldset>
+    </form>
 </article>

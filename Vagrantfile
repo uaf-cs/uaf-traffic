@@ -54,8 +54,8 @@ Vagrant.configure("2") do |config|
     ln -fs /vagrant/ /var/www/html
 
     echo -e "\nTurning on PHP error reporting\n"
-    sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php/7.0/apache2/php.ini
-    sed -i "s/display_errors = .*/display_errors = On/" /etc/php/7.0/apache2/php.ini
+    #sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php/7.0/apache2/php.ini
+    #sed -i "s/display_errors = .*/display_errors = On/" /etc/php/7.0/apache2/php.ini
 
     echo -e "\nRestarting services and finishing up\n"
     service apache2 restart

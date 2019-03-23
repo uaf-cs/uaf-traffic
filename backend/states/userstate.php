@@ -25,10 +25,12 @@ class UserState {
         $ret = array();
 
         while($row = $result->fetchArray(SQLITE3_ASSOC)) {
-            array_push($ret, $row);
+            $ret[] = $row;
         }
         if(!array_filter($ret)) print "<p style='color: darkred'>Not Found";
-        return $ret;
+        
+        if (count($ret) >1) return $ret; //AAAAAAAAAAAAAAHHHHHHHH
+        else return $result->fetchArray(SQLITE3_ASSOC);
     }
 
 

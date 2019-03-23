@@ -18,6 +18,7 @@ class API
     public $userfullname = '';
     public $userorganization = '';
     public $useremail = '';
+    public $lockedout = false;
 
     public function __construct()
     {
