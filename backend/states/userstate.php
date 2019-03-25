@@ -40,7 +40,7 @@ class UserState {
     function upload() { $this->error(); }
     function delete() { $this->error(); }
     function getUsers() { $this->error(); }
-    function addUser() { $this->error(); }
+    function createUser() { $this->error(); }
     function userExists($username) { $this->error(); }
     function createPIN(&$pin) { $this->error(); }
     

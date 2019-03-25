@@ -15,44 +15,35 @@ class AdminState extends UserState {
     function upload(){}
     function delete() {}
 
-    function addUser() {
-        $username = $this->post('username');
-
-        if($username == '') {
-            print "Username is required";
+    function createUser() {
+        $username = $this->api->post('username');
+        if ($username == '' || $this->api->userExists($username)) {
+            print "$username is an invalid username, try again";
             return;
         }
-        if($this->userExists($username)) {
-            print "<br>Username $username already exists";
-            return;
-        }
-
-        $password = $this->post('password');
-        $fullname = $this->post('fullname');
-        $organization = $this->post('organization');
-        $email = $this->post('email');
-        $lockedout = 0;
-        $authfailures = 0;
-        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $hash = password_hash($this->api->post('password'), PASSWORD_DEFAULT);
         $sql = "INSERT INTO users (username, hash, role, fullname, organization, email, lockedout, authfailures) "
-            . "VALUES (:username, :hash, :role, :fullname, :organization, :email, :lockedout, :authfailures)";        
-        $stmt = $this->prepare($sql);
+            . "VALUES (:username, :hash, :role, :fullname, :organization, :email, :lockedout, :authfailures)";
+        $stmt = $this->auth_db->prepare($sql);
         $stmt->bindValue(':username', $username);
         $stmt->bindValue(':hash', $hash);
-        $stmt->bindValue(':fullname', $fullname);
-        $stmt->bindValue(':organization', $organization);
-        $stmt->bindValue(':email', $email);
-        $stmt->bindValue(':lockedout', $lockedout);
-        $stmt->bindValue(':authfailures', $authfailures);
+        $stmt->bindValue(':fullname', $this->api->post('fullname'));
+        $stmt->bindValue(':organization', $this->api->post('organization'));
+        $stmt->bindValue(':email', $this->api->post('email'));
+        $stmt->bindValue(':role', $this->api->post('role'));
+        $stmt->bindValue(':lockedout', 0);
+        $stmt->bindValue(':authfailures', 0);
         $result = $stmt->execute();
-        if (!$result) { 
+        if (!$result) {
             print "INSERT query failed";
             echo `whoami`;
             print "Error code: $this->lastErrorCode()} {$this->lastErrorMsg()}";
         } else {
-            $lastId = $this->lastInsertRowID();
-            print "<br>Inserted new user $lastId";
+            print "<br>Inserted new user $username";
         }
+    }
+
+    function modifyUser() {
 
     }
 

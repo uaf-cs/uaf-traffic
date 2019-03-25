@@ -38,6 +38,15 @@ Vagrant.configure("2") do |config|
   #can access VM web server at localhost:8080
   config.vm.network "forwarded_port", guest: 80, host: 8080
 
+
+  #change the sync folder location to /var/www/html
+  #so local changes automatically deploy
+  config.vm.synced_folder ".", "/var/www/html",
+    owner: "www-data",  
+    group: "www-data",
+    mount_options: ['dmode=755', 'fmode=755']
+
+  
   # Provision Instructions
   # can be rerun with vagrant --provision
   # might switch to a configuration tool like puppet
@@ -48,14 +57,6 @@ Vagrant.configure("2") do |config|
     echo -e "\nInstalling dependencies: apache2, php, sqlite\n"
     apt-get update
     apt-get install -y apache2 libapache2-mod-php php php-sqlite3 php-dev
-    
-    echo -e "\nCreating sym link from project folder to /var/www/html \n"
-    rm -rf /var/www/html
-    ln -fs /vagrant/ /var/www/html
-
-    echo -e "\nTurning on PHP error reporting\n"
-    #sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php/7.0/apache2/php.ini
-    #sed -i "s/display_errors = .*/display_errors = On/" /etc/php/7.0/apache2/php.ini
 
     echo -e "\nRestarting services and finishing up\n"
     service apache2 restart

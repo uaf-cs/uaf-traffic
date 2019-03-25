@@ -81,31 +81,7 @@ class API
 
     function createUser()
     {
-        $username = $this->post('username');
-        if ($username == '' || $this->userExists($username)) {
-            print "$username is an invalid username, try again";
-            return;
-        }
-        $hash = password_hash($this->post('password'), PASSWORD_DEFAULT);
-        $sql = "INSERT INTO users (username, hash, role, fullname, organization, email, lockedout, authfailures) "
-            . "VALUES (:username, :hash, :role, :fullname, :organization, :email, :lockedout, :authfailures)";
-        $stmt = $this->auth_db->prepare($sql);
-        $stmt->bindValue(':username', $username);
-        $stmt->bindValue(':hash', $hash);
-        $stmt->bindValue(':fullname', $this->post('fullname'));
-        $stmt->bindValue(':organization', $this->post('organization'));
-        $stmt->bindValue(':email', $this->post('email'));
-        $stmt->bindValue(':role', $this->post('role'));
-        $stmt->bindValue(':lockedout', 0);
-        $stmt->bindValue(':authfailures', 0);
-        $result = $stmt->execute();
-        if (!$result) {
-            print "INSERT query failed";
-            echo `whoami`;
-            print "Error code: $this->lastErrorCode()} {$this->lastErrorMsg()}";
-        } else {
-            print "<br>Inserted new user $username";
-        }
+        $this->authState->createUser();
     }
 
     function userExists($username)
