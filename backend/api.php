@@ -62,6 +62,7 @@ class API
         if (isset($_GET['logout'])) $this->logout();
         if (isset($_GET['checkpin'])) $this->checkPIN();
         if (isset($_GET['createuser'])) $this->createUser();
+        if (isset($_GET['forgot'])) $this->forgotPass();
     }
 
     function getPINS()
@@ -213,6 +214,31 @@ class API
         session_destroy();
         $this->getSession();
         session_start();
+    }
+    function forgotPass() 
+    {
+        $useremail = $this->post('email');
+        if($this->emailExists()) {
+            // $to = $email;
+            $subject = "UAFTraffic password change request";
+            $txt = "We have a password change request for you.";
+            $headers = "From: noreply@uaftraffic.org";
+
+            mail($useremail,$subject,$txt,$headers);
+        }
+        print("Email sent!");
+    }
+
+
+    function emailExists($useremail) 
+    {
+        $query = "SELECT * FROM users "
+            . "WHERE email = :email";
+        $statement = $this->auth_db->prepare($query);
+        $statement->bindValue(':email', $useremail);
+        $result = $statement->execute();
+        $row = $result->fetchArray(SQLITE3_ASSOC);
+        return !empty($row);    
     }
 }
 ?> 

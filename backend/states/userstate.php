@@ -64,6 +64,9 @@ class UserState {
             <form method="post" action="<?php echo ADMINURL; ?>?register">
                 <button type="submit">Register</button>
             </form>
+            <form method="post" action="<?php echo FORGOT; ?>">
+                <button type="submit"> Forgot Password </button>
+            </form>
 
         </div>
 
