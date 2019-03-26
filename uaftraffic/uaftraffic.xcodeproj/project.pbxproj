@@ -10,16 +10,17 @@
 		24B702E2222FBCCD007D7755 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B702DA222D0E45007D7755 /* SessionManager.swift */; };
 		24B702E3222FBCCD007D7755 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B702DC222D132E007D7755 /* Session.swift */; };
 		9D2EC4892223B4DD002FA1DD /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC4832223B4DC002FA1DD /* plane.png */; };
-		9D2EC48A2223B4DD002FA1DD /* mush.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC4842223B4DC002FA1DD /* mush.png */; };
+		9D2EC48A2223B4DD002FA1DD /* atv.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC4842223B4DC002FA1DD /* atv.png */; };
 		9D2EC48B2223B4DD002FA1DD /* bike.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC4852223B4DD002FA1DD /* bike.png */; };
 		9D2EC48C2223B4DD002FA1DD /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC4862223B4DD002FA1DD /* car.png */; };
 		9D2EC48D2223B4DD002FA1DD /* pedestrian.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC4872223B4DD002FA1DD /* pedestrian.png */; };
-		9D2EC48E2223B4DD002FA1DD /* atv.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC4882223B4DD002FA1DD /* atv.png */; };
+		9D2EC48E2223B4DD002FA1DD /* mush.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC4882223B4DD002FA1DD /* mush.png */; };
 		9D2EC4902223CE63002FA1DD /* BigFancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC48F2223CE63002FA1DD /* BigFancyButton.swift */; };
 		9D2EC4942223D428002FA1DD /* ManageSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC4932223D428002FA1DD /* ManageSessionsViewController.swift */; };
 		9D2EC4962223D749002FA1DD /* TrafficCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC4952223D749002FA1DD /* TrafficCountViewController.swift */; };
 		9D2EC49822252AC0002FA1DD /* snowmachine.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC49722252AC0002FA1DD /* snowmachine.png */; };
 		9D2EC49A22252B92002FA1DD /* ResumeSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */; };
+		9D430E2E224A26AD000298D8 /* ManageSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D430E2D224A26AD000298D8 /* ManageSessionCell.swift */; };
 		9DBF1482222CE05000285979 /* SessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1481222CE05000285979 /* SessionManagerTests.swift */; };
 		9DBF1484222CF1F100285979 /* SessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1483222CF1F100285979 /* SessionTests.swift */; };
 		9DE934CE2207B8540000255D /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934CD2207B8540000255D /* VehicleView.swift */; };
@@ -51,17 +52,18 @@
 /* Begin PBXFileReference section */
 		24B702DA222D0E45007D7755 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		24B702DC222D132E007D7755 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		9D2EC4832223B4DC002FA1DD /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plane.png; path = ../../../assets/plane.png; sourceTree = "<group>"; };
-		9D2EC4842223B4DC002FA1DD /* mush.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mush.png; path = ../../../assets/mush.png; sourceTree = "<group>"; };
-		9D2EC4852223B4DD002FA1DD /* bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bike.png; path = ../../../assets/bike.png; sourceTree = "<group>"; };
-		9D2EC4862223B4DD002FA1DD /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car.png; path = ../../../assets/car.png; sourceTree = "<group>"; };
-		9D2EC4872223B4DD002FA1DD /* pedestrian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pedestrian.png; path = ../../../assets/pedestrian.png; sourceTree = "<group>"; };
-		9D2EC4882223B4DD002FA1DD /* atv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = atv.png; path = ../../../assets/atv.png; sourceTree = "<group>"; };
+		9D2EC4832223B4DC002FA1DD /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
+		9D2EC4842223B4DC002FA1DD /* atv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = atv.png; sourceTree = "<group>"; };
+		9D2EC4852223B4DD002FA1DD /* bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bike.png; sourceTree = "<group>"; };
+		9D2EC4862223B4DD002FA1DD /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
+		9D2EC4872223B4DD002FA1DD /* pedestrian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pedestrian.png; sourceTree = "<group>"; };
+		9D2EC4882223B4DD002FA1DD /* mush.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mush.png; sourceTree = "<group>"; };
 		9D2EC48F2223CE63002FA1DD /* BigFancyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigFancyButton.swift; sourceTree = "<group>"; };
 		9D2EC4932223D428002FA1DD /* ManageSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageSessionsViewController.swift; sourceTree = "<group>"; };
 		9D2EC4952223D749002FA1DD /* TrafficCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficCountViewController.swift; sourceTree = "<group>"; };
-		9D2EC49722252AC0002FA1DD /* snowmachine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = snowmachine.png; path = ../../../assets/snowmachine.png; sourceTree = "<group>"; };
+		9D2EC49722252AC0002FA1DD /* snowmachine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowmachine.png; sourceTree = "<group>"; };
 		9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeSessionViewController.swift; sourceTree = "<group>"; };
+		9D430E2D224A26AD000298D8 /* ManageSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageSessionCell.swift; sourceTree = "<group>"; };
 		9DBF1481222CE05000285979 /* SessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerTests.swift; sourceTree = "<group>"; };
 		9DBF1483222CF1F100285979 /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		9DE934CD2207B8540000255D /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
@@ -109,13 +111,14 @@
 			children = (
 				9D2EC4852223B4DD002FA1DD /* bike.png */,
 				9D2EC4862223B4DD002FA1DD /* car.png */,
-				9D2EC4842223B4DC002FA1DD /* mush.png */,
-				9D2EC4882223B4DD002FA1DD /* atv.png */,
+				9D2EC4842223B4DC002FA1DD /* atv.png */,
+				9D2EC4882223B4DD002FA1DD /* mush.png */,
 				9D2EC4872223B4DD002FA1DD /* pedestrian.png */,
 				9D2EC4832223B4DC002FA1DD /* plane.png */,
 				9D2EC49722252AC0002FA1DD /* snowmachine.png */,
 			);
-			path = Assets;
+			name = Assets;
+			path = ../../assets;
 			sourceTree = "<group>";
 		};
 		C3A2F08F21FACD060078E15C = {
@@ -151,6 +154,7 @@
 				9DE934D62207CA3D0000255D /* PinEntryViewViewController.swift */,
 				9D2EC48F2223CE63002FA1DD /* BigFancyButton.swift */,
 				9D2EC4932223D428002FA1DD /* ManageSessionsViewController.swift */,
+				9D430E2D224A26AD000298D8 /* ManageSessionCell.swift */,
 				9D2EC4952223D749002FA1DD /* TrafficCountViewController.swift */,
 				9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */,
 				24B702DA222D0E45007D7755 /* SessionManager.swift */,
@@ -284,10 +288,10 @@
 			files = (
 				9D2EC48C2223B4DD002FA1DD /* car.png in Resources */,
 				9D2EC48B2223B4DD002FA1DD /* bike.png in Resources */,
-				9D2EC48E2223B4DD002FA1DD /* atv.png in Resources */,
+				9D2EC48E2223B4DD002FA1DD /* mush.png in Resources */,
 				9D2EC48D2223B4DD002FA1DD /* pedestrian.png in Resources */,
 				9D2EC4892223B4DD002FA1DD /* plane.png in Resources */,
-				9D2EC48A2223B4DD002FA1DD /* mush.png in Resources */,
+				9D2EC48A2223B4DD002FA1DD /* atv.png in Resources */,
 				C3A2F0A621FACD070078E15C /* LaunchScreen.storyboard in Resources */,
 				9D2EC49822252AC0002FA1DD /* snowmachine.png in Resources */,
 				C3A2F0A321FACD070078E15C /* Assets.xcassets in Resources */,
@@ -319,6 +323,7 @@
 				24B702E2222FBCCD007D7755 /* SessionManager.swift in Sources */,
 				24B702E3222FBCCD007D7755 /* Session.swift in Sources */,
 				9D2EC49A22252B92002FA1DD /* ResumeSessionViewController.swift in Sources */,
+				9D430E2E224A26AD000298D8 /* ManageSessionCell.swift in Sources */,
 				9DE934CE2207B8540000255D /* VehicleView.swift in Sources */,
 				9D2EC4962223D749002FA1DD /* TrafficCountViewController.swift in Sources */,
 				9D2EC4902223CE63002FA1DD /* BigFancyButton.swift in Sources */,

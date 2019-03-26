@@ -90,4 +90,14 @@ class Session: Codable, Equatable {
     func undo() {
         crossings.removeLast()
     }
+    
+    func dateString() -> String {
+        if crossings.count == 0 {
+            return "Never"
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d yyyy, h:mm a"
+        return formatter.string(from: crossings.first!.time)
+    }
 }

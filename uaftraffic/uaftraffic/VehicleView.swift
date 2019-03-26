@@ -52,19 +52,23 @@ import UIKit
             let heightBoundSize = CGFloat(230.0)
             
             if center.x > screenSize.width - widthBoundSize {
-                print(direction!, "-> e")
+                addCrossing(from: direction!, to: "e")
             } else if center.x < widthBoundSize {
-                print(direction!, "-> w")
+                addCrossing(from: direction!, to: "w")
             } else if center.y < heightBoundSize {
-                print(direction!, "-> n")
+                addCrossing(from: direction!, to: "n")
             } else if center.y > screenSize.height - heightBoundSize {
-                print(direction!, "-> s")
+                addCrossing(from: direction!, to: "s")
             } else {
-                print("not counted")
-                print(center.x)
-                print(center.y)
+                print("not counted:", center.x, center.y)
             }
             center = startLocation
         }
+    }
+    
+    func addCrossing(from: String, to: String) {
+        print(from, "->", to)
+        let userInfo:[String: String] = ["type": vehicleType, "from": from, "to": to]
+        NotificationCenter.default.post(name: .addCrossing, object: nil, userInfo: userInfo)
     }
 }
