@@ -21,6 +21,7 @@ class AdminState extends UserState {
             print "$username is an invalid username, try again";
             return;
         }
+        $username = trim(preg_replace('/\s+/', '', $username));
         $hash = password_hash($this->api->post('password'), PASSWORD_DEFAULT);
         $sql = "INSERT INTO users (username, hash, role, fullname, organization, email, lockedout, authfailures) "
             . "VALUES (:username, :hash, :role, :fullname, :organization, :email, :lockedout, :authfailures)";
