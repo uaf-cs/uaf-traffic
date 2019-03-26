@@ -77,4 +77,11 @@ class SessionTests: XCTestCase {
 		XCTAssertEqual(session.crossings[0].to, "n")
 		XCTAssertEqual(session.crossings.count, 1)
 	}
+    
+    // Sessions should randomly generate an ID for themselves
+    func testRandomId() {
+        let sess1 = Session()
+        let sess2 = Session()
+        XCTAssertNotEqual(sess1.id, sess2.id)
+    }
 }
