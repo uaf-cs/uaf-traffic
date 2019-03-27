@@ -42,13 +42,25 @@ else $user = $api->getUser($api->username);
         <p><label> Organization: </label> <input type='text' name='organization' value=<?php echo $user['organization'];?>></p>
         <p><label>Email:</label> <input type='text' name='email' value='<?php echo $user['email'];?>'></p>
 
-        <?php if($api->userrole=="admin") {?>
-            <p><label> Locked Out: </label> <input type="checkbox" name="lockedout" value=<?php echo $user['lockedout']; ?>> </p>
-
-
-        <?php } ?>
-
         <button type='submit' style='width:100%;'>Save Changes</button>
         </fieldset>
     </form>
+</article>
+
+<article> <h3> Admin Actions </h3>
+<?php if($api->userrole=="admin") {?>
+    <?php if($user['lockedout'] == true)  {
+        $background = "darkred";
+    } ?>
+
+
+
+    <p> <label></label>
+        <form action = "<?php echo $URL;?>?deleteUser" method="post">
+            <button type="submit" style="background:darkred;">
+                DELETE USER
+            </button>
+    </p>
+
+<?php } ?>
 </article>
