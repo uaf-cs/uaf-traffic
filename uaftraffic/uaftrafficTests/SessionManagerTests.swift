@@ -13,16 +13,35 @@ class SessionManagerTests: XCTestCase {
 	var sessionManager: SessionManager!
 	
     override func setUp() {
+        emptyDocumentsDirectory()
 		sessionManager = SessionManager()
     }
 
     override func tearDown() {
 		sessionManager = nil
+        emptyDocumentsDirectory()
+    }
+    
+    func emptyDocumentsDirectory() {
+        let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        var fileURLs = [URL]()
+        do {
+            fileURLs = try FileManager.default.contentsOfDirectory(at: documentsdirectory, includingPropertiesForKeys: nil)
+        } catch {
+            print("Failed to list documents directory")
+        }
+        for file in fileURLs {
+            do {
+                try FileManager.default.removeItem(at: file)
+            } catch {
+                print("Failed to delete file %s", file.relativeString)
+            }
+        }
     }
 
 	// A SessionManager with no sessions associated should return an empty array.
     func testEmptySessionManager() {
-        XCTAssertEqual(sessionManager.getSessions(), [])
+        XCTAssertTrue(sessionManager.getSessions().isEmpty)
     }
 
 	// A session, once written, should be readable
@@ -61,8 +80,8 @@ class SessionManagerTests: XCTestCase {
 	
 	// A session, once written, should be deletable (alternate)
 	func testDeleteSessionAlt() {
-		let session1 = Session()
-		let session2 = Session()
+        let session1 = Session()
+        let session2 = Session()
         sessionManager.writeSession(session: session1)
         sessionManager.writeSession(session: session2)
         sessionManager.deleteSession(session: session1)
@@ -73,8 +92,8 @@ class SessionManagerTests: XCTestCase {
 	
 	// A session, once written, should be deletable from a different manager
 	func testDeleteSessionMultipleManagers() {
-		let session1 = Session()
-		let session2 = Session()
+        let session1 = Session()
+        let session2 = Session()
         sessionManager.writeSession(session: session1)
         sessionManager.writeSession(session: session2)
 		
@@ -87,8 +106,8 @@ class SessionManagerTests: XCTestCase {
 	
 	// A session, once written, should be deletable from a different manager (alternate)
 	func testDeleteSessionMultipleManagersAlt() {
-		let session1 = Session()
-		let session2 = Session()
+        let session1 = Session()
+        let session2 = Session()
         sessionManager.writeSession(session: session1)
         sessionManager.writeSession(session: session2)
 		

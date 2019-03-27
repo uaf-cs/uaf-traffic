@@ -100,50 +100,78 @@
         <scene sceneID="be7-U5-Kmy">
             <objects>
                 <tableViewController id="2vO-fa-LIB" customClass="ManageSessionsViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4lx-f3-qJj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="4lx-f3-qJj">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sessionCell" rowHeight="80" id="nvb-99-Bod">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sessionCell" rowHeight="80" id="nvb-99-Bod" customClass="ManageSessionCell" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="768" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nvb-99-Bod" id="RrE-o7-12E">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Session name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weR-S7-f7e">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weR-S7-f7e">
                                             <rect key="frame" x="20" y="18" width="107" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Session time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmN-LQ-LTc">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmN-LQ-LTc">
                                             <rect key="frame" x="20" y="47" width="98" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="i3K-af-Mhy"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4E-ZT-Ovq">
-                                            <rect key="frame" x="688" y="0.0" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4E-ZT-Ovq">
+                                            <rect key="frame" x="688" y="0.0" width="80" height="79.5"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="bWI-Fi-QCl"/>
+                                            </constraints>
                                             <state key="normal" title="Upload">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="uploadSession:" destination="nvb-99-Bod" eventType="touchUpInside" id="u9g-7u-Bk8"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy6-Pf-cWf">
-                                            <rect key="frame" x="608" y="0.0" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy6-Pf-cWf">
+                                            <rect key="frame" x="608" y="0.0" width="80" height="79.5"/>
                                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="xiT-3Q-g34"/>
+                                            </constraints>
                                             <state key="normal" title="Delete">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="deleteSession:" destination="nvb-99-Bod" eventType="touchUpInside" id="r5J-JR-qnc"/>
+                                            </connections>
                                         </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fmN-LQ-LTc" secondAttribute="bottom" constant="1" id="5p1-d9-WQh"/>
+                                        <constraint firstItem="fmN-LQ-LTc" firstAttribute="top" secondItem="weR-S7-f7e" secondAttribute="bottom" constant="8" symbolic="YES" id="80d-Pl-9UK"/>
+                                        <constraint firstItem="wy6-Pf-cWf" firstAttribute="top" secondItem="p4E-ZT-Ovq" secondAttribute="top" id="DhZ-Ro-joM"/>
+                                        <constraint firstItem="wy6-Pf-cWf" firstAttribute="top" secondItem="RrE-o7-12E" secondAttribute="top" id="YKq-MF-c2X"/>
+                                        <constraint firstItem="weR-S7-f7e" firstAttribute="leading" secondItem="RrE-o7-12E" secondAttribute="leadingMargin" id="a0D-q1-SGI"/>
+                                        <constraint firstItem="p4E-ZT-Ovq" firstAttribute="leading" secondItem="wy6-Pf-cWf" secondAttribute="trailing" id="azS-gq-M5G"/>
+                                        <constraint firstItem="wy6-Pf-cWf" firstAttribute="baseline" secondItem="p4E-ZT-Ovq" secondAttribute="firstBaseline" id="kGT-ra-qST"/>
+                                        <constraint firstItem="wy6-Pf-cWf" firstAttribute="centerY" secondItem="RrE-o7-12E" secondAttribute="centerY" id="u9R-u5-55h"/>
+                                        <constraint firstItem="weR-S7-f7e" firstAttribute="top" secondItem="RrE-o7-12E" secondAttribute="topMargin" constant="7" id="vA0-xP-Inx"/>
+                                        <constraint firstAttribute="trailing" secondItem="p4E-ZT-Ovq" secondAttribute="trailing" id="xUZ-4j-hNt"/>
+                                        <constraint firstItem="weR-S7-f7e" firstAttribute="leading" secondItem="fmN-LQ-LTc" secondAttribute="leading" id="yIQ-rA-hl3"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="sessionName" destination="weR-S7-f7e" id="pbw-4l-G98"/>
+                                    <outlet property="sessionTime" destination="fmN-LQ-LTc" id="v5F-gq-dAQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -405,19 +433,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HDE-KW-PSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.65625" y="-671.484375"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Y0U-Li-zgG">
-            <objects>
-                <viewController id="fa0-iS-aZi" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NEq-xN-bFD">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ucu-BZ-MtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

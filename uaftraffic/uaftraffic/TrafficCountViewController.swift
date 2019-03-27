@@ -8,12 +8,17 @@
 
 import UIKit
 
+extension Notification.Name {
+    static let addCrossing = Notification.Name("addCrossing")
+}
+
 class TrafficCountViewController: UIViewController {
+    let session = Session()
+    let sessionManager = SessionManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.addCrossing(notification:)), name: .addCrossing, object: nil)
     }
     
     @IBAction func endSessionButtonTapped(_ sender: Any) {
@@ -38,8 +43,15 @@ class TrafficCountViewController: UIViewController {
     
     func endSession(name: String) {
         print("Ending session")
-        print(name)
+        session.name = name
+        sessionManager.writeSession(session: session)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func addCrossing(notification: Notification) {
+        let userInfo = notification.userInfo! as! Dictionary<String, String>
+        print("got crossing:", userInfo)
+        session.addCrossing(type: userInfo["type"]!, from: userInfo["from"]!, to: userInfo["to"]!)
     }
     
     /*

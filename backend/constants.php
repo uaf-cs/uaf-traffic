@@ -8,5 +8,6 @@ const ADMINURL = "adminconsole.php";
 const ACCOUNTURL = "account.php";
 const LOGINURL = "login.php";
 const APIURL = "../api.php";
+const FORGOT = "forgot.php";
 
 ?>

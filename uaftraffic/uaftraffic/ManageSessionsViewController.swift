@@ -9,10 +9,12 @@
 import UIKit
 
 class ManageSessionsViewController: UITableViewController {
+    let sessionManager = SessionManager()
+    var sessions = [Session]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        sessions = sessionManager.getSessions()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -26,20 +28,21 @@ class ManageSessionsViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        print(sessions.count)
+        return sessions.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath) as! ManageSessionCell
+        let session = sessions[indexPath.row]
+        cell.sessionName?.text = session.name
+        cell.sessionTime?.text = session.dateString()
+        print(session.name)
 
         return cell
     }

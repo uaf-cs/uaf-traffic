@@ -17,6 +17,11 @@ class AdminState extends UserState {
 
     function createUser() {
         $username = $this->api->post('username');
+        $username = preg_replace(
+            "/(\t|\n|\v|\f|\r| |\xC2\x85|\xc2\xa0|\xe1\xa0\x8e|\xe2\x80[\x80-\x8D]|\xe2\x80\xa8|\xe2\x80\xa9|\xe2\x80\xaF|\xe2\x81\x9f|\xe2\x81\xa0|\xe3\x80\x80|\xef\xbb\xbf)+/",
+            "_",
+            $username
+        );
         if ($username == '' || $this->api->userExists($username)) {
             print "$username is an invalid username, try again";
             return;
