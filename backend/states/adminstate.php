@@ -12,9 +12,6 @@ class AdminState extends UserState {
         $this->auth_db = new SQLite3(AUTHDB);
     }
 
-    function upload(){}
-    function delete() {}
-
     function createUser() {
         $username = $this->api->post('username');
         $username = preg_replace(
@@ -48,8 +45,12 @@ class AdminState extends UserState {
         }
     }
 
-    function modifyUser() {
-        
+    function deleteUser(&$username) {
+        print $username . " deleted";
+        $sql = $this->auth_db->prepare("DELETE FROM users WHERE username = :username");
+        $sql->bindValue(':username', $username);
+        $result = $sql->execute();
+        return $this->prepareData($result);
     }
 
     function getUsers() {
@@ -140,7 +141,7 @@ EOF;
                 </form>
 
                 <form method="post" action="<?php echo ADMINURL; ?>?accountmenu">
-                    <button type="submit">Manage User/Admin Accounts</button>
+                    <button type="submit">Manage User Accounts</button>
                 </form>
             </div>
 

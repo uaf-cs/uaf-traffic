@@ -41,6 +41,7 @@ class UserState {
     function delete() { $this->error(); }
     function getUsers() { $this->error(); }
     function createUser() { $this->error(); }
+    function deleteUser() { $this->error(); }
     function userExists($username) { $this->error(); }
     function createPIN(&$pin) { $this->error(); }
     

@@ -50,10 +50,6 @@ class API
         return isset($_SESSION[$id]) ? $_SESSION[$id] : '';
     }
 
-    function makePage()
-    {
-        $this->authState->makePage();    
-    }
 
     //checks if any functions have been called on page load
     function checkForms()
@@ -65,25 +61,18 @@ class API
         if (isset($_GET['forgot'])) $this->forgotPass();
     }
 
-    function getPINS()
-    {
-        return $this->authState->getPINS();
-    }
 
-    function getUsers()
-    {
-        return $this->authState->getUsers();
-    }
-
-    function getUser(&$username)
-    {
-        return $this->authState->getUser($username);
-    }
-
-    function createUser()
-    {
-        $this->authState->createUser();
-    }
+    //////////////////////////////////////
+    //   AuthState Deferred Functions   //
+    /////////////////////////////////////
+    function makePage() { $this->authState->makePage(); }
+    function getPINS() { return $this->authState->getPINS(); }
+    function getUsers() { return $this->authState->getUsers(); }
+    function getUser(&$username) { return $this->authState->getUser($username); }
+    function createUser() { $this->authState->createUser(); }
+    function deleteUser(&$username) { $this->authState->deleteUser($username); }
+    function deletePINS() { $this->authState->deletePINS(); }
+    function readData() { return $this->authState->readData(); }
 
     function userExists($username)
     {
@@ -102,15 +91,6 @@ class API
         $this->authState->createPIN($expirationTime);
     }
 
-    function deletePINS()
-    {
-        $this->authState->deletePINS();
-    }
-
-    function readData()
-    {
-        return $this->authState->readData();
-    }
 
     ///////////////////////////////
     //  State altering methods   //

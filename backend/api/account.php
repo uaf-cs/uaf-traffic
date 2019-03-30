@@ -56,11 +56,18 @@ else $user = $api->getUser($api->username);
 
 
     <p> <label></label>
-        <form action = "<?php echo $URL;?>?deleteUser" method="post">
-            <button type="submit" style="background:darkred;">
+        <form action = "<?php echo $URL;?>?deleteuser" method="post">
+            <button type="submit" style="background:darkred;"  name='todelete' value="<?php echo $user['username'] ?>">
                 DELETE USER
             </button>
+
     </p>
+
+    <?php 
+    if(isset($_GET['deleteuser'])) {
+        $api->deleteUser($_POST['todelete']);
+        header("Location: adminconsole.php?getusers");
+    }?>
 
 <?php } ?>
 </article>
