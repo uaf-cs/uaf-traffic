@@ -374,12 +374,15 @@
                                 <action selector="endSessionButtonTapped:" destination="BYZ-38-t0r" id="PAR-3z-Ga2"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Undo" id="069-es-cxg">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Undo" id="069-es-cxg">
                             <connections>
                                 <action selector="undoButtonTapped:" destination="BYZ-38-t0r" id="yls-oQ-u65"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="undoButton" destination="069-es-cxg" id="kQJ-6F-uoc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
