@@ -83,10 +83,6 @@ class Session: Codable, Equatable {
         crossings.append(newCrossing)
     }
 
-    func getCrossings()-> [Crossing] {
-        return self.crossings
-    }
-
     func undo() {
         crossings.removeLast()
     }
