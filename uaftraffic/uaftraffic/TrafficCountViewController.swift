@@ -22,10 +22,14 @@ class TrafficCountViewController: UIViewController {
     }
     
     @IBAction func endSessionButtonTapped(_ sender: Any) {
-        let confirmation = UIAlertController(title: "End Session", message: "Are you sure you want to end this session?", preferredStyle: .alert)
-        confirmation.addAction(UIAlertAction(title: "Yes, end session", style: .destructive, handler: getSessionName))
-        confirmation.addAction(UIAlertAction(title: "No, continue", style: .cancel, handler: nil))
-        present(confirmation, animated: true, completion: nil)
+        if session.crossings.count == 0 {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            let confirmation = UIAlertController(title: "End Session", message: "Are you sure you want to end this session?", preferredStyle: .alert)
+            confirmation.addAction(UIAlertAction(title: "Yes, end session", style: .destructive, handler: getSessionName))
+            confirmation.addAction(UIAlertAction(title: "No, continue", style: .cancel, handler: nil))
+            present(confirmation, animated: true, completion: nil)
+        }
     }
     
     func getSessionName(sender: UIAlertAction) {
@@ -36,6 +40,14 @@ class TrafficCountViewController: UIViewController {
         namePrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak namePrompt] _ in
             guard let name = namePrompt!.textFields!.first!.text else { return }
             self.endSession(name: name)
+        }))
+        namePrompt.addAction(UIAlertAction(title: "Quit without saving", style: .destructive, handler: { _ in
+            let confirmation = UIAlertController(title: "Quit without saving", message: "Are you sure you want to quit without saving?", preferredStyle: .alert)
+            confirmation.addAction(UIAlertAction(title: "Yes, discard data", style: .destructive, handler: { _ in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            confirmation.addAction(UIAlertAction(title: "No, continue", style: .cancel, handler: nil))
+            self.present(confirmation, animated: true, completion: nil)
         }))
         namePrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(namePrompt, animated: true, completion: nil)
