@@ -15,17 +15,22 @@ extension Notification.Name {
 class TrafficCountViewController: UIViewController {
     @IBOutlet weak var undoButton: UIBarButtonItem!
     
-    let session = Session()
+    var session = Session()
     let sessionManager = SessionManager()
+    var isResumedSession = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.addCrossing(notification:)), name: .addCrossing, object: nil)
+        updateUndoButtonStatus()
     }
     
     @IBAction func endSessionButtonTapped(_ sender: Any) {
-        if session.crossings.count == 0 {
-            self.dismiss(animated: true, completion: nil)
+        if isResumedSession {
+            sessionManager.writeSession(session: session)
+            dismiss(animated: true, completion: nil)
+        } else if session.crossings.count == 0 {
+            dismiss(animated: true, completion: nil)
         } else {
             let confirmation = UIAlertController(title: "End Session", message: "Are you sure you want to end this session?", preferredStyle: .alert)
             confirmation.addAction(UIAlertAction(title: "Yes, end session", style: .destructive, handler: getSessionName))
@@ -36,9 +41,7 @@ class TrafficCountViewController: UIViewController {
     
     @IBAction func undoButtonTapped(_ sender: Any) {
         session.undo()
-        if session.crossings.count == 0 {
-            undoButton.isEnabled = false
-        }
+        updateUndoButtonStatus()
     }
     
     func getSessionName(sender: UIAlertAction) {
@@ -73,7 +76,11 @@ class TrafficCountViewController: UIViewController {
         let userInfo = notification.userInfo! as! Dictionary<String, String>
         print("got crossing:", userInfo)
         session.addCrossing(type: userInfo["type"]!, from: userInfo["from"]!, to: userInfo["to"]!)
-        undoButton.isEnabled = true
+        updateUndoButtonStatus()
+    }
+    
+    func updateUndoButtonStatus() {
+        undoButton.isEnabled = session.crossings.count != 0
     }
     
     /*

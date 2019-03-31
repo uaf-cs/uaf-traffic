@@ -21,6 +21,7 @@
 		9D2EC49822252AC0002FA1DD /* snowmachine.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EC49722252AC0002FA1DD /* snowmachine.png */; };
 		9D2EC49A22252B92002FA1DD /* ResumeSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */; };
 		9D430E2E224A26AD000298D8 /* ManageSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D430E2D224A26AD000298D8 /* ManageSessionCell.swift */; };
+		9D62C55F2250D1D90080E0EF /* ResumeSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62C55E2250D1D90080E0EF /* ResumeSessionCell.swift */; };
 		9DBF1482222CE05000285979 /* SessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1481222CE05000285979 /* SessionManagerTests.swift */; };
 		9DBF1484222CF1F100285979 /* SessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1483222CF1F100285979 /* SessionTests.swift */; };
 		9DE934CE2207B8540000255D /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934CD2207B8540000255D /* VehicleView.swift */; };
@@ -64,6 +65,7 @@
 		9D2EC49722252AC0002FA1DD /* snowmachine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snowmachine.png; sourceTree = "<group>"; };
 		9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeSessionViewController.swift; sourceTree = "<group>"; };
 		9D430E2D224A26AD000298D8 /* ManageSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageSessionCell.swift; sourceTree = "<group>"; };
+		9D62C55E2250D1D90080E0EF /* ResumeSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeSessionCell.swift; sourceTree = "<group>"; };
 		9DBF1481222CE05000285979 /* SessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerTests.swift; sourceTree = "<group>"; };
 		9DBF1483222CF1F100285979 /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		9DE934CD2207B8540000255D /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				9D430E2D224A26AD000298D8 /* ManageSessionCell.swift */,
 				9D2EC4952223D749002FA1DD /* TrafficCountViewController.swift */,
 				9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */,
+				9D62C55E2250D1D90080E0EF /* ResumeSessionCell.swift */,
 				24B702DA222D0E45007D7755 /* SessionManager.swift */,
 				24B702DC222D132E007D7755 /* Session.swift */,
 			);
@@ -328,6 +331,7 @@
 				9D2EC4962223D749002FA1DD /* TrafficCountViewController.swift in Sources */,
 				9D2EC4902223CE63002FA1DD /* BigFancyButton.swift in Sources */,
 				9DE934D72207CA3D0000255D /* PinEntryViewViewController.swift in Sources */,
+				9D62C55F2250D1D90080E0EF /* ResumeSessionCell.swift in Sources */,
 				9D2EC4942223D428002FA1DD /* ManageSessionsViewController.swift in Sources */,
 				C3A2F09C21FACD060078E15C /* AppDelegate.swift in Sources */,
 			);

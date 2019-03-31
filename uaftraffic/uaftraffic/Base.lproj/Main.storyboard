@@ -70,13 +70,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="flo-cR-a8K">
-                                <rect key="frame" x="0.0" y="28" width="768" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="sessionCell" rowHeight="80" id="UtM-8P-giT" customClass="ResumeSessionCell" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="768" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="flo-cR-a8K" id="PAC-bF-OgR">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UtM-8P-giT" id="GmX-Qh-t5V">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7f-hv-nR4">
+                                            <rect key="frame" x="20" y="18" width="107" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htT-G0-06d">
+                                            <rect key="frame" x="20" y="47" width="98" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="yQh-ev-EMH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="n7f-hv-nR4" firstAttribute="top" secondItem="GmX-Qh-t5V" secondAttribute="topMargin" constant="7" id="03Y-2i-eWh"/>
+                                        <constraint firstItem="n7f-hv-nR4" firstAttribute="leading" secondItem="GmX-Qh-t5V" secondAttribute="leadingMargin" id="QBU-k8-4xS"/>
+                                        <constraint firstItem="htT-G0-06d" firstAttribute="top" secondItem="n7f-hv-nR4" secondAttribute="bottom" constant="8" symbolic="YES" id="ejD-i4-AYc"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="htT-G0-06d" secondAttribute="bottom" constant="1" id="iyn-w3-0my"/>
+                                        <constraint firstItem="n7f-hv-nR4" firstAttribute="leading" secondItem="htT-G0-06d" secondAttribute="leading" id="uSv-TQ-b31"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="sessionName" destination="n7f-hv-nR4" id="70U-OI-X6G"/>
+                                    <outlet property="sessionTime" destination="htT-G0-06d" id="Q2p-hj-yK9"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Pwz-96-jPE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -374,7 +403,7 @@
                                 <action selector="endSessionButtonTapped:" destination="BYZ-38-t0r" id="PAR-3z-Ga2"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Undo" id="069-es-cxg">
+                        <barButtonItem key="rightBarButtonItem" title="Undo" id="069-es-cxg">
                             <connections>
                                 <action selector="undoButtonTapped:" destination="BYZ-38-t0r" id="yls-oQ-u65"/>
                             </connections>
@@ -450,4 +479,7 @@
         <image name="pedestrian.png" width="807" height="1278"/>
         <image name="snowmachine.png" width="980" height="644"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pwz-96-jPE"/>
+    </inferredMetricsTieBreakers>
 </document>
