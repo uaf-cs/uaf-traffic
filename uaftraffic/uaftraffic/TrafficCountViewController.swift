@@ -32,6 +32,10 @@ class TrafficCountViewController: UIViewController {
         }
     }
     
+    @IBAction func undoButtonTapped(_ sender: Any) {
+        session.undo()
+    }
+    
     func getSessionName(sender: UIAlertAction) {
         let namePrompt = UIAlertController(title: "Session Name", message: "What should this session be called?", preferredStyle: .alert)
         namePrompt.addTextField { textField in
