@@ -146,10 +146,10 @@
 			children = (
 				9DE934C22207AEC90000255D /* Assets */,
 				C3A2F09B21FACD060078E15C /* AppDelegate.swift */,
-				C3A2F09F21FACD060078E15C /* Main.storyboard */,
 				C3A2F0A221FACD070078E15C /* Assets.xcassets */,
 				C3A2F0A421FACD070078E15C /* LaunchScreen.storyboard */,
 				C3A2F0A721FACD070078E15C /* Info.plist */,
+				C3A2F09F21FACD060078E15C /* Main.storyboard */,
 				9DE934CD2207B8540000255D /* VehicleView.swift */,
 				9DE934D62207CA3D0000255D /* PinEntryViewViewController.swift */,
 				9D2EC48F2223CE63002FA1DD /* BigFancyButton.swift */,

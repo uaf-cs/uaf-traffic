@@ -42,9 +42,27 @@ class ManageSessionsViewController: UITableViewController {
         let session = sessions[indexPath.row]
         cell.sessionName?.text = session.name
         cell.sessionTime?.text = session.dateString()
-        print(session.name)
-
+        cell.deleteButton.addTarget(self, action: #selector(self.deleteSession), for: .touchUpInside)
         return cell
+    }
+    
+    @objc func deleteSession(sender: UIButton) {
+        let cell = sender.superview!.superview! as! ManageSessionCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let index = indexPath.row
+        let session = sessions[index]
+        let confirmationMessage = "Are you sure you want to delete " + session.name + "?"
+        
+        let confirmation = UIAlertController(title: "Delete session", message: confirmationMessage, preferredStyle: .alert)
+        confirmation.addAction(UIAlertAction(title: "Yes, discard data", style: .destructive, handler: { _ in
+            self.tableView.beginUpdates()
+            self.sessionManager.deleteSession(session: session)
+            self.sessions = self.sessionManager.getSessions()
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.tableView.endUpdates()
+        }))
+        confirmation.addAction(UIAlertAction(title: "No, keep data", style: .cancel, handler: nil))
+        present(confirmation, animated: true, completion: nil)
     }
 
     /*

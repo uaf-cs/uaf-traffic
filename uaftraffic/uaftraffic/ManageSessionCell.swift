@@ -11,21 +11,14 @@ import UIKit
 class ManageSessionCell: UITableViewCell {
     @IBOutlet var sessionName: UILabel?
     @IBOutlet var sessionTime: UILabel?
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var uploadButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
-    @IBAction func deleteSession(_ sender: Any) {
-    }
-    
-    @IBAction func uploadSession(_ sender: Any) {
     }
 }
