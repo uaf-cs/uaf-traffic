@@ -84,4 +84,12 @@ class SessionTests: XCTestCase {
         let sess2 = Session()
         XCTAssertNotEqual(sess1.id, sess2.id)
     }
+    
+    // Trying to call undo() on an empty session shouldn't crash
+    func testEmptyUndo() {
+        let session = Session()
+        XCTAssertEqual(session.crossings.count, 0)
+        session.undo()
+        XCTAssertEqual(session.crossings.count, 0)
+    }
 }
