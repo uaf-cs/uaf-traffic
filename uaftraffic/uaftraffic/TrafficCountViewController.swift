@@ -14,6 +14,7 @@ extension Notification.Name {
 
 class TrafficCountViewController: UIViewController {
     @IBOutlet weak var undoButton: UIBarButtonItem!
+    @IBOutlet weak var countLabel: UILabel!
     
     var session = Session()
     let sessionManager = SessionManager()
@@ -22,7 +23,7 @@ class TrafficCountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.addCrossing(notification:)), name: .addCrossing, object: nil)
-        updateUndoButtonStatus()
+        crossingCountChanged()
     }
     
     @IBAction func endSessionButtonTapped(_ sender: Any) {
@@ -41,7 +42,7 @@ class TrafficCountViewController: UIViewController {
     
     @IBAction func undoButtonTapped(_ sender: Any) {
         session.undo()
-        updateUndoButtonStatus()
+        crossingCountChanged()
     }
     
     func getSessionName(sender: UIAlertAction) {
@@ -76,11 +77,12 @@ class TrafficCountViewController: UIViewController {
         let userInfo = notification.userInfo! as! Dictionary<String, String>
         print("got crossing:", userInfo)
         session.addCrossing(type: userInfo["type"]!, from: userInfo["from"]!, to: userInfo["to"]!)
-        updateUndoButtonStatus()
+        crossingCountChanged()
     }
     
-    func updateUndoButtonStatus() {
+    func crossingCountChanged() {
         undoButton.isEnabled = session.crossings.count != 0
+        countLabel.text = "Total Counted: " + String(session.crossings.count)
     }
     
     /*
