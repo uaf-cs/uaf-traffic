@@ -69,18 +69,16 @@ class AdminState extends UserState {
     }
 
     function createPIN(&$expirationTime) {
-        $pin = sprintf("%04d", random_int(0000,9999));
-        $insert = <<<EOF
-        INSERT INTO pins(pin, expires)
-        VALUES( $pin, DATETIME(CURRENT_TIMESTAMP, '+$expirationTime minutes'));
-EOF;
-
-       if($this->pin_db->exec($insert)) {
-            $result = "<br/> PIN Created: <br/> "
-                    . "<p style='color:midnightblue; font-size:30px;'> " . $pin . "<p>"
-                    . "<p style='font-size:15px;'> expires in " . $expirationTime . " minutes <br/>";
-            print $result;
-        }
+        $pin = str_pad(random_int(0000,9999), 4, 0, STR_PAD_BOTH);
+        $stmt = $this->pin_db->prepare("INSERT INTO pins(pin, expires) VALUES(:pin, DATETIME(CURRENT_TIMESTAMP, '+$expirationTime minutes'))");
+        $stmt->bindValue(':pin',$pin);
+        $result = $stmt->execute();
+        if($result) {
+                $response = "<br/> PIN Created: <br/> "
+                        . "<p style='color:midnightblue; font-size:30px;'> " . $pin . "<p>"
+                        . "<p style='font-size:15px;'> expires in " . $expirationTime . " minutes <br/>";
+                print $response;
+            }
     }
 
     function getPINS() {
