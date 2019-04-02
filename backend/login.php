@@ -3,12 +3,10 @@
 <title>UAFTRAFFIC</title>
 
 <?php
-include_once '../api.php';
-include_once "../constants.php";
+include_once "api/constants.php";
+include_once APIURL;
 
 $api = new API();
-$URL = 'adminconsole.php';
-
 $api->makePage();
 
 ?>

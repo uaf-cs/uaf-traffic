@@ -1,4 +1,4 @@
 <?php
-header("Location: /api/adminconsole.php");
+header("Location: /adminconsole.php");
 die();
 ?>

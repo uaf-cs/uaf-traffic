@@ -2,9 +2,10 @@
 <link rel ="stylesheet" href="style.css">
 <title>UAFTRAFFIC</title>
 <?php
-include_once '../api.php';
+include_once "api/constants.php";
+include_once APIURL;
 
-$URL = 'adminconsole.php';
+$URL = ADMINURL;
 $api = new API();
 
 //redirect to login page if user is not logged in
@@ -22,8 +23,8 @@ $api->makePage();
 if(isset($_GET['pinmenu']) or isset($_GET['getpins']) or isset($_GET['createpin']) or isset($_GET['deletepins'])) {
 ?>
 <article>
-<h3> Check PIN Status: </h3> 
-    <form action = "<?php echo $URL;?>?checkpin" method="post">
+<h3> Check PIN Status: (For testing purposes) </h3> 
+    <form action = "checkpin.php" method="post">
             <input type='text' name='pin'>
             <button type='submit'>Check PIN </button>
     </form>

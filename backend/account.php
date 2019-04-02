@@ -3,8 +3,8 @@
 <title>UAFTRAFFIC</title>
 
 <?php
-include_once '../api.php';
-include_once "../constants.php";
+include_once "api/constants.php";
+include_once APIURL;
 
 $api = new API();
 
@@ -56,7 +56,7 @@ else $user = $api->getUser($api->username);
 
 
     <p> <label></label>
-        <form action = "<?php echo $URL;?>?deleteuser" method="post">
+        <form action = "account.php?deleteuser" method="post">
             <button type="submit" style="background:darkred;"  name='todelete' value="<?php echo $user['username'] ?>">
                 DELETE USER
             </button>

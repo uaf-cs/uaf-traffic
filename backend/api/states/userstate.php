@@ -37,11 +37,11 @@ class UserState {
     ///////////////////////////////////////////////////////////////////
     // API Methods requiring admin return 403 error unless logged in //
     //////////////////////////////////////////////////////////////////
-    function upload() { $this->error(); }
+    function upload(&$jsonData) { $this->error(); }
     function delete() { $this->error(); }
     function getUsers() { $this->error(); }
     function createUser() { $this->error(); }
-    function deleteUser() { $this->error(); }
+    function deleteUser(&$username) { $this->error(); }
     function userExists($username) { $this->error(); }
     function createPIN(&$pin) { $this->error(); }
     
@@ -86,18 +86,8 @@ class UserState {
     //////////////////////////////
     //   Public API Functions  //
     ////////////////////////////
-    public function readAll() {
-        $db = $this->api->traffic_db;
-
-        $sql = $db->prepare('SELECT * from users;');
-        $result = $sql->execute();
-        echo "<pre>";
-        print_r($result->fetchArray());
-        echo "</pre>";
-    }
-
     public function readData() {
-        $statement = $this->traffic_db->prepare("SELECT * FROM users"); //placeholder until traffic data created
+        $statement = $this->traffic_db->prepare("SELECT * FROM session"); //placeholder until traffic data created
         $result = $statement->execute();
         return $this->prepareData($result);
     }
