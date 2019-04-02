@@ -1,6 +1,7 @@
 <?php
-include_once 'states/userstate.php';
 include_once 'constants.php';
+include_once 'states/userstate.php';
+
 
 session_name(SITENAME);
 session_start();

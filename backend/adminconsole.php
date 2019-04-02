@@ -2,9 +2,10 @@
 <link rel ="stylesheet" href="style.css">
 <title>UAFTRAFFIC</title>
 <?php
-include_once '../api.php';
+include_once "api/constants.php";
+include_once APIURL;
 
-$URL = 'adminconsole.php';
+$URL = ADMINURL;
 $api = new API();
 
 //redirect to login page if user is not logged in
