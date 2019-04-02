@@ -37,7 +37,7 @@ class UserState {
     ///////////////////////////////////////////////////////////////////
     // API Methods requiring admin return 403 error unless logged in //
     //////////////////////////////////////////////////////////////////
-    function upload() { $this->error(); }
+    function upload(&$jsonData) { $this->error(); }
     function delete() { $this->error(); }
     function getUsers() { $this->error(); }
     function createUser() { $this->error(); }

@@ -7,8 +7,6 @@ include_once "api/constants.php";
 include_once APIURL;
 
 $api = new API();
-$URL = 'adminconsole.php';
-
 $api->makePage();
 
 ?>

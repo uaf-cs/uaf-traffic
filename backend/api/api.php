@@ -67,6 +67,7 @@ class API
     //   AuthState Deferred Functions   //
     /////////////////////////////////////
     function makePage() { $this->authState->makePage(); }
+    function upload(&$jsonData) { $this->authState->upload($jsonData); }
     function getPINS() { return $this->authState->getPINS(); }
     function getUsers() { return $this->authState->getUsers(); }
     function getUser(&$username) { return $this->authState->getUser($username); }
@@ -96,10 +97,10 @@ class API
     ///////////////////////////////
     //  State altering methods   //
     //////////////////////////////
-    function checkPIN()
+    function checkPIN(&$pin)
     {
         $pins_db = new SQLite3(PINDB);
-        $pin = isset($_POST['pin']) ? $_POST['pin'] : '';
+        $pin = isset($_POST['pin']) ? $_POST['pin'] : $pin;
         $query = "SELECT * FROM pins "
             . "WHERE pin = :pin "
             . "AND expires > DATETIME(CURRENT_TIMESTAMP)";
@@ -107,13 +108,18 @@ class API
         $statement->bindValue(':pin', $pin, SQLITE3_TEXT);
         $result = $statement->execute();
 
-        while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+        if($result) {
+            $this->isloggedin = True;
+            $this->userrole = 'app';
+            $this->setSession();
             $this->authState = new AppState($this);
-            print "PIN accepted. Gimme the data <br />";
-            return true;
-        }
+            return http_response_code(200);
+            
+        }else http_response_code(403);
+
         $statement->close();
         $pins_db->close();
+        
     }
 
     function getSession()
