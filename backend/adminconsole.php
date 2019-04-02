@@ -169,19 +169,6 @@ if(isset($_GET['accountmenu']) || isset($_GET['getusers']) || isset($_GET['getus
     </article>
 <?php
 }
-
-////////////////////
-//  Account Menu //
-///////////////////
-if(isset($_GET['datamenu'])) {
 ?>
-<pre>
-    <?php print_r($api->readData()); ?>
-</pre>
-
-
-
-<?php
-}?>
 </body>
 </html>

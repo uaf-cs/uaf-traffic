@@ -73,7 +73,7 @@ class UserState {
 
         <div class="main">
             <div class="sidebar">
-                <form method="post" action="<?php echo ADMINURL; ?>?datamenu">
+                <form method="post" action="<?php echo DATAURL?>">
                     <button type="submit">View Traffic Data</button>
                 </form>
             </div>
