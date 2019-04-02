@@ -82,14 +82,14 @@ class AdminState extends UserState {
     }
 
     function getPINS() {
-        $statement = $this->pin_db->prepare("SELECT * FROM pins");
+        $statement = $this->pin_db->prepare("SELECT * FROM pins WHERE expires > DATETIME(CURRENT_TIMESTAMP)");
         $result = $statement->execute();
 
         return $this->prepareData($result);
     }
 
     function getPIN(&$pin) {
-        $stmt = $this->pin_db->prepare("SELECT * FROM pins WHERE pin = :pin");
+        $stmt = $this->pin_db->prepare("SELECT * FROM pins WHERE pin = :pin AND expires > DATETIME(CURRENT_TIMESTAMP)");
         $stmt->bindValue(':pin', $pin);
         $result = $stmt->execute();
  

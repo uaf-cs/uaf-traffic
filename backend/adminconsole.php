@@ -34,7 +34,7 @@ if(isset($_GET['pinmenu']) or isset($_GET['getpins']) or isset($_GET['createpin'
 <h3> Create PIN </h3>
     <form action = "<?php echo $URL;?>?createpin" method="post">
             Expiration time (minutes):
-            <input type="number" min="1" max="60" step="1" value = "1" name="expiration">
+            <input type="number" min="1" max="60" step="1" value = "5" name="expiration">
             <button type="submit">Create PIN</button>
     </form>
     <?php
