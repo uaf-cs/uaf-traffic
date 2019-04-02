@@ -22,6 +22,8 @@
 		9D2EC49A22252B92002FA1DD /* ResumeSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */; };
 		9D430E2E224A26AD000298D8 /* ManageSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D430E2D224A26AD000298D8 /* ManageSessionCell.swift */; };
 		9D62C55F2250D1D90080E0EF /* ResumeSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62C55E2250D1D90080E0EF /* ResumeSessionCell.swift */; };
+		9D62C5612250E27E0080E0EF /* SessionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62C5602250E27E0080E0EF /* SessionDetailsViewController.swift */; };
+		9D62C563225329CC0080E0EF /* SessionDetailsCrossingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62C562225329CC0080E0EF /* SessionDetailsCrossingCell.swift */; };
 		9DBF1482222CE05000285979 /* SessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1481222CE05000285979 /* SessionManagerTests.swift */; };
 		9DBF1484222CF1F100285979 /* SessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1483222CF1F100285979 /* SessionTests.swift */; };
 		9DE934CE2207B8540000255D /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934CD2207B8540000255D /* VehicleView.swift */; };
@@ -66,6 +68,8 @@
 		9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeSessionViewController.swift; sourceTree = "<group>"; };
 		9D430E2D224A26AD000298D8 /* ManageSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageSessionCell.swift; sourceTree = "<group>"; };
 		9D62C55E2250D1D90080E0EF /* ResumeSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeSessionCell.swift; sourceTree = "<group>"; };
+		9D62C5602250E27E0080E0EF /* SessionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailsViewController.swift; sourceTree = "<group>"; };
+		9D62C562225329CC0080E0EF /* SessionDetailsCrossingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailsCrossingCell.swift; sourceTree = "<group>"; };
 		9DBF1481222CE05000285979 /* SessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerTests.swift; sourceTree = "<group>"; };
 		9DBF1483222CF1F100285979 /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		9DE934CD2207B8540000255D /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
@@ -155,11 +159,13 @@
 				9DE934CD2207B8540000255D /* VehicleView.swift */,
 				9DE934D62207CA3D0000255D /* PinEntryViewViewController.swift */,
 				9D2EC48F2223CE63002FA1DD /* BigFancyButton.swift */,
-				9D2EC4932223D428002FA1DD /* ManageSessionsViewController.swift */,
-				9D430E2D224A26AD000298D8 /* ManageSessionCell.swift */,
 				9D2EC4952223D749002FA1DD /* TrafficCountViewController.swift */,
 				9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */,
 				9D62C55E2250D1D90080E0EF /* ResumeSessionCell.swift */,
+				9D2EC4932223D428002FA1DD /* ManageSessionsViewController.swift */,
+				9D430E2D224A26AD000298D8 /* ManageSessionCell.swift */,
+				9D62C5602250E27E0080E0EF /* SessionDetailsViewController.swift */,
+				9D62C562225329CC0080E0EF /* SessionDetailsCrossingCell.swift */,
 				24B702DA222D0E45007D7755 /* SessionManager.swift */,
 				24B702DC222D132E007D7755 /* Session.swift */,
 			);
@@ -333,6 +339,8 @@
 				9DE934D72207CA3D0000255D /* PinEntryViewViewController.swift in Sources */,
 				9D62C55F2250D1D90080E0EF /* ResumeSessionCell.swift in Sources */,
 				9D2EC4942223D428002FA1DD /* ManageSessionsViewController.swift in Sources */,
+				9D62C5612250E27E0080E0EF /* SessionDetailsViewController.swift in Sources */,
+				9D62C563225329CC0080E0EF /* SessionDetailsCrossingCell.swift in Sources */,
 				C3A2F09C21FACD060078E15C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,6 +28,12 @@ class Crossing: Codable, Equatable {
         self.to = to
         self.time = time
     }
+    
+    func dateString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d yyyy, h:mm a"
+        return formatter.string(from: time)
+    }
 }
 
 class Session: Codable, Equatable {

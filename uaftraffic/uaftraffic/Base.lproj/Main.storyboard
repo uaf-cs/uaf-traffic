@@ -165,9 +165,6 @@
                                             <state key="normal" title="Upload">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
-                                            <connections>
-                                                <action selector="uploadSession:" destination="2vO-fa-LIB" eventType="touchUpInside" id="sB4-IP-EJs"/>
-                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy6-Pf-cWf">
                                             <rect key="frame" x="608" y="0.0" width="80" height="79.5"/>
@@ -200,6 +197,7 @@
                                     <outlet property="sessionName" destination="weR-S7-f7e" id="pbw-4l-G98"/>
                                     <outlet property="sessionTime" destination="fmN-LQ-LTc" id="v5F-gq-dAQ"/>
                                     <outlet property="uploadButton" destination="p4E-ZT-Ovq" id="S36-9L-Wpn"/>
+                                    <segue destination="onB-Lu-8RF" kind="show" id="FV5-I5-8Yo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -219,6 +217,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbg-bw-QZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="813.28125" y="610.546875"/>
+        </scene>
+        <!--Session Details View Controller-->
+        <scene sceneID="3vs-hu-WgQ">
+            <objects>
+                <tableViewController id="onB-Lu-8RF" customClass="SessionDetailsViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aD9-eF-yj1">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="crossingCell" rowHeight="70" id="kV0-17-sAM" customClass="SessionDetailsCrossingCell" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="768" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kV0-17-sAM" id="KmA-bJ-3r3">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv.png" translatesAutoresizingMaskIntoConstraints="NO" id="0gx-s5-QGg">
+                                            <rect key="frame" x="20" y="0.0" width="70" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="70" id="RUH-LE-Ifd"/>
+                                                <constraint firstAttribute="width" constant="70" id="jPu-Fl-OsS"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FW-bi-wq5">
+                                            <rect key="frame" x="706" y="24.5" width="38" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="From → To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlM-N0-xnZ">
+                                            <rect key="frame" x="110" y="17" width="126" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="0gx-s5-QGg" secondAttribute="bottom" id="3pK-5k-pjr"/>
+                                        <constraint firstItem="dlM-N0-xnZ" firstAttribute="centerY" secondItem="KmA-bJ-3r3" secondAttribute="centerY" id="5Wo-4A-cId"/>
+                                        <constraint firstItem="0gx-s5-QGg" firstAttribute="top" secondItem="KmA-bJ-3r3" secondAttribute="top" id="bcL-00-yBv"/>
+                                        <constraint firstItem="dlM-N0-xnZ" firstAttribute="leading" secondItem="0gx-s5-QGg" secondAttribute="trailing" constant="20" id="ixN-dF-ljm"/>
+                                        <constraint firstAttribute="trailing" secondItem="6FW-bi-wq5" secondAttribute="trailing" constant="24" id="oUV-Jp-GxG"/>
+                                        <constraint firstItem="6FW-bi-wq5" firstAttribute="centerY" secondItem="KmA-bJ-3r3" secondAttribute="centerY" id="q5x-fh-kzt"/>
+                                        <constraint firstItem="0gx-s5-QGg" firstAttribute="leading" secondItem="KmA-bJ-3r3" secondAttribute="leading" constant="20" id="r3g-6w-hxP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="direction" destination="dlM-N0-xnZ" id="x0E-WV-8OE"/>
+                                    <outlet property="time" destination="6FW-bi-wq5" id="WPt-mT-I9f"/>
+                                    <outlet property="vehicle" destination="0gx-s5-QGg" id="pqx-eO-Bry"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="onB-Lu-8RF" id="ZW1-84-BH5"/>
+                            <outlet property="delegate" destination="onB-Lu-8RF" id="tFb-IG-Xll"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qEi-lw-g9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1595.3125" y="610.546875"/>
         </scene>
         <!--Count Traffic-->
         <scene sceneID="tne-QT-ifu">
@@ -264,7 +325,7 @@
                                 <rect key="frame" x="550" y="138" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmobile"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -304,7 +365,7 @@
                                 <rect key="frame" x="550" y="786" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmobile"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -336,7 +397,7 @@
                                 <rect key="frame" x="20" y="678" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmobile"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -376,7 +437,7 @@
                                 <rect key="frame" x="648" y="678" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmobie"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
