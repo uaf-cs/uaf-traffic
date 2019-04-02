@@ -38,14 +38,14 @@ class Crossing: Codable, Equatable {
 
 class Session: Codable, Equatable {
     var lat : Float
-    var long : Float
+    var lon : Float
     var id : String
     var name : String
     var crossings : [Crossing]
     
-    enum CodingKeys:String,CodingKey {
+    enum CodingKeys: String, CodingKey {
         case lat
-        case long
+        case lon
         case id
         case name
         case crossings
@@ -53,7 +53,7 @@ class Session: Codable, Equatable {
     
     init() {
         self.lat = 0
-        self.long = 0
+        self.lon = 0
         self.id = ""
         self.name = ""
         self.crossings = []
@@ -63,7 +63,7 @@ class Session: Codable, Equatable {
     
     init(lat: Float, long: Float, id: String, name: String, crossings: [Crossing]) {
         self.lat = lat
-        self.long = long
+        self.lon = long
         self.id = id
         self.name = name
         self.crossings = crossings
@@ -72,7 +72,7 @@ class Session: Codable, Equatable {
     static func ==(lhs: Session, rhs: Session) -> Bool{
         return
             lhs.lat == rhs.lat &&
-            lhs.long == rhs.long &&
+            lhs.lon == rhs.lon &&
             lhs.id == rhs.id &&
             lhs.name == rhs.name &&
             lhs.crossings == rhs.crossings
