@@ -108,7 +108,8 @@ class API
         $statement->bindValue(':pin', $pin, SQLITE3_TEXT);
         $result = $statement->execute();
 
-        if($result) {
+        $row = $result->fetchArray(SQLITE3_ASSOC);
+        if(count($row) > 1) {
             $this->isloggedin = True;
             $this->userrole = 'app';
             $this->setSession();
