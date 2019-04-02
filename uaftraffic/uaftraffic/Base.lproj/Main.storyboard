@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjI-32-ngG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-761.71875" y="28.710937499999996"/>
+            <point key="canvasLocation" x="-698" y="28"/>
         </scene>
         <!--Resume Session-->
         <scene sceneID="Lux-tB-tbr">
@@ -197,7 +197,7 @@
                                     <outlet property="sessionName" destination="weR-S7-f7e" id="pbw-4l-G98"/>
                                     <outlet property="sessionTime" destination="fmN-LQ-LTc" id="v5F-gq-dAQ"/>
                                     <outlet property="uploadButton" destination="p4E-ZT-Ovq" id="S36-9L-Wpn"/>
-                                    <segue destination="onB-Lu-8RF" kind="show" id="FV5-I5-8Yo"/>
+                                    <segue destination="onB-Lu-8RF" kind="show" identifier="sessionDetail" id="FV5-I5-8Yo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -213,10 +213,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="cr6-xH-cCG" kind="presentation" identifier="pinEntry" id="Wjf-7Z-zrT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbg-bw-QZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813.28125" y="610.546875"/>
+            <point key="canvasLocation" x="813" y="611"/>
         </scene>
         <!--Session Details View Controller-->
         <scene sceneID="3vs-hu-WgQ">
@@ -280,6 +283,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEi-lw-g9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1595.3125" y="610.546875"/>
+        </scene>
+        <!--Enter PIN-->
+        <scene sceneID="DK1-U9-wU4">
+            <objects>
+                <viewController id="Id6-VF-3ka" customClass="PinEntryViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ipu-6P-DXo">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1234" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sFf-61-Hyt">
+                                <rect key="frame" x="20" y="92" width="728" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="Id6-VF-3ka" eventType="editingChanged" id="yLy-nf-6TF"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HMf-5R-HaK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Enter PIN" id="jc1-3k-ec8">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ps5-jB-STO">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="Id6-VF-3ka" id="dC5-v1-3Ik"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="ps5-jB-STO" id="J5A-oh-qL6"/>
+                        <outlet property="pinField" destination="sFf-61-Hyt" id="41E-D0-ErK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cvb-BT-TlA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2361.71875" y="1319.53125"/>
         </scene>
         <!--Count Traffic-->
         <scene sceneID="tne-QT-ifu">
@@ -539,6 +580,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HDE-KW-PSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.65625" y="-671.484375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Efs-fp-qvh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cr6-xH-cCG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uJM-G5-e8S">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Id6-VF-3ka" kind="relationship" relationship="rootViewController" id="LZA-fF-IAx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="owr-MF-kRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1595" y="1320"/>
         </scene>
     </scenes>
     <resources>

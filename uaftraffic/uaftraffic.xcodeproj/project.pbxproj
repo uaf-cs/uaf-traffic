@@ -24,10 +24,12 @@
 		9D62C55F2250D1D90080E0EF /* ResumeSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62C55E2250D1D90080E0EF /* ResumeSessionCell.swift */; };
 		9D62C5612250E27E0080E0EF /* SessionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62C5602250E27E0080E0EF /* SessionDetailsViewController.swift */; };
 		9D62C563225329CC0080E0EF /* SessionDetailsCrossingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62C562225329CC0080E0EF /* SessionDetailsCrossingCell.swift */; };
+		9D62C565225337630080E0EF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D62C564225337630080E0EF /* NetworkManager.swift */; };
+		9D62C567225337F50080E0EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D62C566225337F40080E0EF /* Settings.bundle */; };
 		9DBF1482222CE05000285979 /* SessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1481222CE05000285979 /* SessionManagerTests.swift */; };
 		9DBF1484222CF1F100285979 /* SessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1483222CF1F100285979 /* SessionTests.swift */; };
 		9DE934CE2207B8540000255D /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934CD2207B8540000255D /* VehicleView.swift */; };
-		9DE934D72207CA3D0000255D /* PinEntryViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934D62207CA3D0000255D /* PinEntryViewViewController.swift */; };
+		9DE934D72207CA3D0000255D /* PinEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934D62207CA3D0000255D /* PinEntryViewController.swift */; };
 		C3A2F09C21FACD060078E15C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2F09B21FACD060078E15C /* AppDelegate.swift */; };
 		C3A2F0A121FACD060078E15C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A2F09F21FACD060078E15C /* Main.storyboard */; };
 		C3A2F0A321FACD070078E15C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A2F0A221FACD070078E15C /* Assets.xcassets */; };
@@ -70,10 +72,12 @@
 		9D62C55E2250D1D90080E0EF /* ResumeSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeSessionCell.swift; sourceTree = "<group>"; };
 		9D62C5602250E27E0080E0EF /* SessionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailsViewController.swift; sourceTree = "<group>"; };
 		9D62C562225329CC0080E0EF /* SessionDetailsCrossingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailsCrossingCell.swift; sourceTree = "<group>"; };
+		9D62C564225337630080E0EF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9D62C566225337F40080E0EF /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9DBF1481222CE05000285979 /* SessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerTests.swift; sourceTree = "<group>"; };
 		9DBF1483222CF1F100285979 /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		9DE934CD2207B8540000255D /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
-		9DE934D62207CA3D0000255D /* PinEntryViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinEntryViewViewController.swift; sourceTree = "<group>"; };
+		9DE934D62207CA3D0000255D /* PinEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinEntryViewController.swift; sourceTree = "<group>"; };
 		C3A2F09821FACD060078E15C /* uaftraffic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uaftraffic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A2F09B21FACD060078E15C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3A2F0A021FACD060078E15C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,18 +160,20 @@
 				C3A2F0A421FACD070078E15C /* LaunchScreen.storyboard */,
 				C3A2F0A721FACD070078E15C /* Info.plist */,
 				C3A2F09F21FACD060078E15C /* Main.storyboard */,
-				9DE934CD2207B8540000255D /* VehicleView.swift */,
-				9DE934D62207CA3D0000255D /* PinEntryViewViewController.swift */,
 				9D2EC48F2223CE63002FA1DD /* BigFancyButton.swift */,
 				9D2EC4952223D749002FA1DD /* TrafficCountViewController.swift */,
+				9DE934CD2207B8540000255D /* VehicleView.swift */,
 				9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */,
 				9D62C55E2250D1D90080E0EF /* ResumeSessionCell.swift */,
 				9D2EC4932223D428002FA1DD /* ManageSessionsViewController.swift */,
 				9D430E2D224A26AD000298D8 /* ManageSessionCell.swift */,
+				9DE934D62207CA3D0000255D /* PinEntryViewController.swift */,
 				9D62C5602250E27E0080E0EF /* SessionDetailsViewController.swift */,
 				9D62C562225329CC0080E0EF /* SessionDetailsCrossingCell.swift */,
 				24B702DA222D0E45007D7755 /* SessionManager.swift */,
 				24B702DC222D132E007D7755 /* Session.swift */,
+				9D62C564225337630080E0EF /* NetworkManager.swift */,
+				9D62C566225337F40080E0EF /* Settings.bundle */,
 			);
 			path = uaftraffic;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				C3A2F0A621FACD070078E15C /* LaunchScreen.storyboard in Resources */,
 				9D2EC49822252AC0002FA1DD /* snowmachine.png in Resources */,
 				C3A2F0A321FACD070078E15C /* Assets.xcassets in Resources */,
+				9D62C567225337F50080E0EF /* Settings.bundle in Resources */,
 				C3A2F0A121FACD060078E15C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,9 +343,10 @@
 				9DE934CE2207B8540000255D /* VehicleView.swift in Sources */,
 				9D2EC4962223D749002FA1DD /* TrafficCountViewController.swift in Sources */,
 				9D2EC4902223CE63002FA1DD /* BigFancyButton.swift in Sources */,
-				9DE934D72207CA3D0000255D /* PinEntryViewViewController.swift in Sources */,
+				9DE934D72207CA3D0000255D /* PinEntryViewController.swift in Sources */,
 				9D62C55F2250D1D90080E0EF /* ResumeSessionCell.swift in Sources */,
 				9D2EC4942223D428002FA1DD /* ManageSessionsViewController.swift in Sources */,
+				9D62C565225337630080E0EF /* NetworkManager.swift in Sources */,
 				9D62C5612250E27E0080E0EF /* SessionDetailsViewController.swift in Sources */,
 				9D62C563225329CC0080E0EF /* SessionDetailsCrossingCell.swift in Sources */,
 				C3A2F09C21FACD060078E15C /* AppDelegate.swift in Sources */,
