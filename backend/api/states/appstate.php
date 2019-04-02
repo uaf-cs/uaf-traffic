@@ -13,20 +13,17 @@ class AppState extends UserState {
 
 
     function upload(&$jsonData) {
-        $sql = "INSERT INTO session (date, lat, long, crossing) "
-                . "VALUES (DATETIME(CURRENT_TIMESTAMP), :lat, :long, :crossing)";
+        $sql = "INSERT INTO session (date, lat, lon, crossing) "
+                . "VALUES (DATETIME(CURRENT_TIMESTAMP), :lat, :lon, :crossing)";
         $stmt = $this->traffic_db->prepare($sql);
         
         $data = json_decode($jsonData);
 
         $stmt->bindValue(':lat', $data->lat);
-        $stmt->bindValue(':long', $data->long);
-        $stmt->bindValue(':crossing', $data->crossings);
+        $stmt->bindValue(':lon', $data->lon);
+        $stmt->bindValue(':crossing',json_encode($data->crossings), SQLITE3_BLOB);
         
         $result = $stmt->execute();
-        if($result) {
-            return http_response_code(200);
-        } else return http_response_code(403);
     }
 
 }
