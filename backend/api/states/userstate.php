@@ -86,18 +86,8 @@ class UserState {
     //////////////////////////////
     //   Public API Functions  //
     ////////////////////////////
-    public function readAll() {
-        $db = $this->api->traffic_db;
-
-        $sql = $db->prepare('SELECT * from users;');
-        $result = $sql->execute();
-        echo "<pre>";
-        print_r($result->fetchArray());
-        echo "</pre>";
-    }
-
     public function readData() {
-        $statement = $this->traffic_db->prepare("SELECT * FROM users"); //placeholder until traffic data created
+        $statement = $this->traffic_db->prepare("SELECT * FROM session"); //placeholder until traffic data created
         $result = $statement->execute();
         return $this->prepareData($result);
     }
