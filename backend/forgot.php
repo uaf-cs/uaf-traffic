@@ -3,17 +3,15 @@
 <title>UAFTRAFFIC</title>
 
 <?php
-include_once "api/constants.php";
-include_once APIURL;
+include_once "api/api.php";
 
 $api = new API();
-$URL = 'adminconsole.php';
 
 $api->makePage();
 
 ?>
 
-<form action="<?php echo APIURL?>?forgot" method='post'>
+<form action="<?php echo SITEINFO::APIURL?>?forgot" method='post'>
     <fieldset>
         <legend> Forgot your password? </legend>
         <p><label> Email: </label> <input type='text' name='email'></p>

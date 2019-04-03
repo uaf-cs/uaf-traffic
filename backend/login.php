@@ -3,15 +3,14 @@
 <title>UAFTRAFFIC</title>
 
 <?php
-include_once "api/constants.php";
-include_once APIURL;
+include_once "api/api.php";
 
 $api = new API();
 $api->makePage();
 
 ?>
 
-<form action="<?php echo ADMINURL?>?login" method='post'>
+<form action="<?php echo SITEINFO::ADMINURL?>?login" method='post'>
     <fieldset>
         <legend> Log in to continue </legend>
         <p><label> Username: </label> <input type='text' name='username'></p>

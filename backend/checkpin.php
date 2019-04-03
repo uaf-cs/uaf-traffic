@@ -1,6 +1,5 @@
 <?php
-include_once "api/constants.php";
-include_once APIURL;
+include_once "api/api.php";
 
 $api = new API();
 

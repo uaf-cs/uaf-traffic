@@ -8,8 +8,8 @@ class AdminState extends UserState {
 
     function __construct(API $api) {
         parent::__construct($api);
-        $this->pin_db = new SQLite3(PINDB);
-        $this->auth_db = new SQLite3(AUTHDB);
+        $this->pin_db = new SQLite3(SITEINFO::PINDB);
+        $this->auth_db = new SQLite3(SITEINFO::AUTHDB);
     }
 
     function createUser() {
@@ -119,10 +119,10 @@ class AdminState extends UserState {
             </div>
         </div>
         <div class="navbar">
-            <form method="post" action="<?php echo ACCOUNTURL; ?>">
+            <form method="post" action="<?php echo SITEINFO::ACCOUNTURL; ?>">
                 <button type="submit">Account</button>
             </form>
-            <form method="post" action="<?php echo ADMINURL; ?>?logout">
+            <form method="post" action="<?php echo SITEINFO::ADMINURL; ?>?logout">
                 <button type="submit">Logout</button>
             </form>
 
@@ -130,15 +130,15 @@ class AdminState extends UserState {
 
         <div class="main">
             <div class="sidebar">
-                <form method="post" action="<?php echo DATAURL; ?>">
+                <form method="post" action="<?php echo SITEINFO::DATAURL; ?>">
                     <button type="submit">View Traffic Data</button>
                 </form>
 
-                <form method="post" action="<?php echo ADMINURL; ?>?pinmenu">
+                <form method="post" action="<?php echo SITEINFO::ADMINURL; ?>?pinmenu">
                     <button type="submit">Manage PINs</button>
                 </form>
 
-                <form method="post" action="<?php echo ADMINURL; ?>?accountmenu">
+                <form method="post" action="<?php echo SITEINFO::ADMINURL; ?>?accountmenu">
                     <button type="submit">Manage User Accounts</button>
                 </form>
             </div>

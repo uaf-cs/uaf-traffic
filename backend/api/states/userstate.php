@@ -10,7 +10,7 @@ class UserState {
 
     function __construct(API $api) {
         $this->api = $api;
-        $this->traffic_db = new SQLite3(TRAFFICDB);
+        $this->traffic_db = new SQLite3(SITEINFO::TRAFFICDB);
     }
 
     /////////////////////////////
@@ -61,10 +61,10 @@ class UserState {
             </div>
         </div>
         <div class="navbar">
-            <form method="post" action="<?php echo LOGINURL; ?>">
+            <form method="post" action="<?php echo SITEINFO::LOGINURL; ?>">
                 <button type="submit">Sign In</button>
             </form>
-            <form method="post" action="<?php echo ADMINURL; ?>?register">
+            <form method="post" action="<?php echo SITEINFO::ADMINURL; ?>?register">
                 <button type="submit">Register</button>
             </form>
             <form method="post" action="<?php echo FORGOT; ?>">
@@ -75,7 +75,7 @@ class UserState {
 
         <div class="main">
             <div class="sidebar">
-                <form method="post" action="<?php echo DATAURL?>">
+                <form method="post" action="<?php echo SITEINFO::DATAURL?>">
                     <button type="submit">View Traffic Data</button>
                 </form>
             </div>

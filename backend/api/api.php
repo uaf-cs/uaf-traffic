@@ -1,9 +1,9 @@
 <?php
-include_once 'constants.php';
+include_once 'siteinfo.php';
 include_once 'states/userstate.php';
 
 
-session_name(SITENAME);
+session_name(SITEINFO::SITENAME);
 session_start();
 
 class API
@@ -23,8 +23,8 @@ class API
 
     public function __construct()
     {
-        $this->traffic_db = new SQLite3(TRAFFICDB);
-        $this->auth_db = new SQLite3(AUTHDB);
+        $this->traffic_db = new SQLite3(SITEINFO::TRAFFICDB);
+        $this->auth_db = new SQLite3(SITEINFO::AUTHDB);
 
         $this->getSession();
         if ($this->userrole == 'admin') {

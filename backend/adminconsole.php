@@ -2,10 +2,9 @@
 <link rel ="stylesheet" href="style.css">
 <title>UAFTRAFFIC</title>
 <?php
-include_once "api/constants.php";
-include_once APIURL;
+include_once "api/api.php";
 
-$URL = ADMINURL;
+$URL = SITEINFO::ADMINURL;
 $api = new API();
 
 //redirect to login page if user is not logged in
