@@ -16,16 +16,17 @@ foreach($results as & $row) {
     //$trafficData->addPoints($row['crossing']);
     print "<article>";
     print "<h3> Traffic Data <br>" . $row['date'] . "<br>";
-    print "<h4>Location (Lat Long): ". $row['lat'] .", " . $row['lon'] . "</h4></h3>";
+    print "<h4>Location (Lat Long): ". $row['lat'] .", " . $row['lon'] . "</h4></h3>";  
 
-    // foreach(json_decode($row['crossing']) as & $crossing) {
-    //     print($crossing);
+    print "<img src='graphs/".$row['date']."map.png'>";
+    // $crosses = json_decode($row['crossing'], TRUE);
+
+    // foreach($crosses as $cross) {
+    //     foreach($cross as $key => $val) {
+    //         print "$key : $val <br>";
+    //     }
     // }
 
-    //just dump everything until we can nail down a format to use
-    print "<pre>";
-    print_r($row['crossing']);
-    print "</pre>";
 
     print "</article>";
 }?>
