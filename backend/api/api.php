@@ -99,7 +99,7 @@ class API
     //////////////////////////////
     function checkPIN(&$pin)
     {
-        $pins_db = new SQLite3(PINDB);
+        $pins_db = new SQLite3(SITEINFO::PINDB);
         $pin = isset($_POST['pin']) ? $_POST['pin'] : $pin;
         $query = "SELECT * FROM pins "
             . "WHERE pin = :pin "
