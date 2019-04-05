@@ -5,7 +5,8 @@ class TrafficSession {
     public $date;
     public $lat;
     public $lon;
-
+    public $id;
+    
     public $vehicleCount = self::vehicleArray;
 
     //first letter is from
@@ -37,6 +38,7 @@ class TrafficSession {
         $this->date = $data['date'];
         $this->lat = $data['lat'];
         $this->lon = $data['lon'];
+        $this->id = $data['id'];
 
         $crossings = json_decode($data['crossing'], TRUE);
 
@@ -59,6 +61,10 @@ class TrafficSession {
     public function viewByDirection($from, $to) {
         $direction = $from . $to;
         return $this->directionalCount[$direction];
+    }
+
+    public function getData() {
+
     }
 }
 ?>

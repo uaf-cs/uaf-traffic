@@ -18,7 +18,7 @@ foreach($results as & $row) {
     print "<h3> Traffic Data <br>" . $row['date'] . "<br>";
     print "<h4>Location (Lat Long): ". $row['lat'] .", " . $row['lon'] . "</h4></h3>";  
 
-    print "<img src='graphs/".$row['date']."map.png'>";
+    print "<img src='graphs/".$row['id']."map.png'>";
     // $crosses = json_decode($row['crossing'], TRUE);
 
     // foreach($crosses as $cross) {

@@ -265,6 +265,6 @@ foreach($results as & $row) {
     $arrowSettings);
 
 
-    $graph->Render("graphs/".$sesh->date."map.png");
+    $graph->Render("graphs/".$sesh->id."map.png");
 }
 ?>
