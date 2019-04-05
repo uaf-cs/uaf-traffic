@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
 
     echo -e "\nInstalling dependencies: apache2, php, sqlite\n"
     apt-get update
-    apt-get install -y apache2 libapache2-mod-php php php-sqlite3 php-dev
+    apt-get install -y apache2 libapache2-mod-php php php-sqlite3 php-dev php-gd
 
     echo -e "\nRestarting services and finishing up\n"
     service apache2 restart
