@@ -7,22 +7,29 @@
 //
 
 import UIKit
+import CoreLocation
 
 extension Notification.Name {
     static let addCrossing = Notification.Name("addCrossing")
 }
 
-class TrafficCountViewController: UIViewController {
+class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var undoButton: UIBarButtonItem!
     @IBOutlet weak var countLabel: UILabel!
-    
-    var session = Session()
+	@IBOutlet weak var compassArrow: UIImageView!
+	@IBOutlet weak var compassLetters: UIImageView!
+	
+	let locationManager = CLLocationManager()
+	var session = Session()
     let sessionManager = SessionManager()
     var isResumedSession = false
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.addCrossing(notification:)), name: .addCrossing, object: nil)
+		locationManager.delegate = self
+		locationManager.startUpdatingHeading()
         crossingCountChanged()
     }
     
@@ -85,14 +92,8 @@ class TrafficCountViewController: UIViewController {
         countLabel.text = "Total Counted: " + String(session.crossings.count)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+		let angle = abs((newHeading.trueHeading * .pi/180) - (2.0 * .pi))
+		compassLetters.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+	}
 }
