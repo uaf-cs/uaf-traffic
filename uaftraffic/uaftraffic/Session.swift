@@ -90,7 +90,9 @@ class Session: Codable, Equatable {
     }
 
     func undo() {
-        crossings.removeLast()
+        if !(crossings.count == 0) {
+            crossings.removeLast()
+        }
     }
     
     func dateString() -> String {
