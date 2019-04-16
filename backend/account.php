@@ -30,13 +30,20 @@ else $user = $api->getUser($api->username);
     <fieldset>
         <p>
         <label> Role: </label>
-            <select name="role">
-                <option value="user">User</option>
-                <option value="admin">Admin</option> 
+            <select name="role"?>
+                <?php 
+                if ($user['role'] == 'admin') {
+                    print "<option value = 'admin'>Admin</option>";
+                    print "<option value = 'user'>User</option>";
+                } else {
+                    print "<option value = 'user'>User</option>";
+                    print "<option value = 'admin'>Admin</option>";
+                }
+                ?>
             </select>
         </p>
 
-        <p><label>Username: </label> <input type="text" name="username" disabled="true" value=<?php echo $user['username'];?>> </p>
+        <p><label>Username: </label> <input type="text" name="username" value=<?php echo $user['username'];?>> </p>
         <p><label>Password: </label> <input type='password' name='password'/></p>
         <p><label>Full name: </label> <input type="text" name="fullname" value=<?php echo $user['fullname'];?>> </p>
         <p><label>Organization: </label> <input type='text' name='organization' value=<?php echo $user['organization'];?>></p>

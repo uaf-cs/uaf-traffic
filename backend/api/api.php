@@ -225,14 +225,16 @@ class API
 
     function updateUser() 
     {   
+        $username = $this->post('username');
+
         if (isset($_POST['password']))
         {
             $hash = password_hash($this->post('password'), PASSWORD_DEFAULT);
             $sql = "update users "
-                .  "set password= :hash, role= :role, fullname= :fullname, organization= :organization, email= :email"
-                .  "where username= :username";
+                .  "set hash= :hash, role= :role, fullname= :fullname, organization= :organization, email= :email"
+                .  " where username= :username";
             $stmt = $this->auth_db->prepare($sql);
-            $stmt->bindValue(':username', $this->post('username'));
+            $stmt->bindValue(':username', $username);
             $stmt->bindValue(':hash', $hash);
             $stmt->bindValue(':fullname', $this->post('fullname'));
             $stmt->bindValue(':organization', $this->post('organization'));
@@ -243,9 +245,9 @@ class API
         {
             $sql = "update users "
                 .  "set role= :role, fullname= :fullname, organization= :organization, email= :email"
-                .  "where username= :username";
+                .  " where username= :username";
             $stmt = $this->auth_db->prepare($sql);
-            $stmt->bindValue(':username', $this->post('username'));
+            $stmt->bindValue(':username', $username);
             $stmt->bindValue(':fullname', $this->post('fullname'));
             $stmt->bindValue(':organization', $this->post('organization'));
             $stmt->bindValue(':email', $this->post('email'));
