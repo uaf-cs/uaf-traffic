@@ -4,8 +4,9 @@
 
 <?php
 include_once "api/api.php";
-
+$URL = SITEINFO::ADMINURL;
 $api = new API();
+
 
 //redirect to login page if user is not logged in
 if (!$api->isloggedin) {
@@ -35,10 +36,10 @@ else $user = $api->getUser($api->username);
             </select>
         </p>
 
-        <p><label> Username: </label> <input type="text" name="username" value=<?php echo $user['username'];?>> </p>
+        <p><label>Username: </label> <input type="text" name="username" disabled="true" value=<?php echo $user['username'];?>> </p>
         <p><label>Password: </label> <input type='password' name='password'/></p>
         <p><label>Full name: </label> <input type="text" name="fullname" value=<?php echo $user['fullname'];?>> </p>
-        <p><label> Organization: </label> <input type='text' name='organization' value=<?php echo $user['organization'];?>></p>
+        <p><label>Organization: </label> <input type='text' name='organization' value=<?php echo $user['organization'];?>></p>
         <p><label>Email:</label> <input type='text' name='email' value='<?php echo $user['email'];?>'></p>
 
         <button type='submit' style='width:100%;'>Save Changes</button>

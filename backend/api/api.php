@@ -60,6 +60,7 @@ class API
         if (isset($_GET['checkpin'])) $this->checkPIN();
         if (isset($_GET['createuser'])) $this->createUser();
         if (isset($_GET['forgot'])) $this->forgotPass();
+        if (isset($_GET['updateuser'])) $this->updateUser();
     }
 
 
@@ -217,6 +218,50 @@ class API
         print("Email sent!");
     }
 
+    function changePass()
+    {
+        
+    }
+
+    function updateUser() 
+    {   
+        if (isset($_POST['password']))
+        {
+            $hash = password_hash($this->post('password'), PASSWORD_DEFAULT);
+            $sql = "update users "
+                .  "set password= :hash, role= :role, fullname= :fullname, organization= :organization, email= :email"
+                .  "where username= :username";
+            $stmt = $this->auth_db->prepare($sql);
+            $stmt->bindValue(':username', $this->post('username'));
+            $stmt->bindValue(':hash', $hash);
+            $stmt->bindValue(':fullname', $this->post('fullname'));
+            $stmt->bindValue(':organization', $this->post('organization'));
+            $stmt->bindValue(':email', $this->post('email'));
+            $stmt->bindValue(':role', $this->post('role'));
+        }
+        else 
+        {
+            $sql = "update users "
+                .  "set role= :role, fullname= :fullname, organization= :organization, email= :email"
+                .  "where username= :username";
+            $stmt = $this->auth_db->prepare($sql);
+            $stmt->bindValue(':username', $this->post('username'));
+            $stmt->bindValue(':fullname', $this->post('fullname'));
+            $stmt->bindValue(':organization', $this->post('organization'));
+            $stmt->bindValue(':email', $this->post('email'));
+            $stmt->bindValue(':role', $this->post('role'));
+        }
+        $result = $stmt->execute();
+        if (!$result) {
+            print "UPDATE query failed";
+            echo `whoami`;
+            print "Error code: $this->lastErrorCode()} {$this->lastErrorMsg()}";
+        } else {
+            print "<br>Updated user $username";
+        }
+    }
+
+
 
     function emailExists($useremail) 
     {
@@ -228,5 +273,7 @@ class API
         $row = $result->fetchArray(SQLITE3_ASSOC);
         return !empty($row);    
     }
+
+
 }
 ?> 
