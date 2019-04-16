@@ -53,9 +53,22 @@ class SessionManager {
                 sessionData.append(decodeSession)
             }
         }
+        sessionData.sort {(session1,session2) -> Bool in
+            return session1.crossings.first!.time.compare(session2.crossings.first!.time) == ComparisonResult.orderedDescending
+        }
         return sessionData
-        
     }
+    
+//    for dat in testArray {
+//    let date = dateFormatter.date(from: dat)
+//    if let date = date {
+//    convertedArray.append(date)
+//    }
+//    }
+//
+//    var ready = convertedArray.sorted(by: { $0.compare($1) == .orderedDescending })
+
+    
     
     func deleteSession(session: Session) {
         let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
