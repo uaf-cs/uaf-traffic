@@ -30,8 +30,7 @@ class SessionDetailsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "crossingCell", for: indexPath) as! SessionDetailsCrossingCell
         let crossing = session.crossings[indexPath.row]
-        cell.vehicle.image = UIImage(named: crossing.type + ".png")
-        print(crossing.type)
+        cell.vehicle.image = UIImage(named: crossing.type + "-black")
         cell.direction.text = directionName(crossing.from) + " → " + directionName(crossing.to)
         cell.time.text = crossing.dateString()
         return cell
@@ -49,6 +48,7 @@ class SessionDetailsViewController: UITableViewController {
             return "West"
         default:
             assert(false, "Unrecognized direction")
+            return ""
         }
     }
 
