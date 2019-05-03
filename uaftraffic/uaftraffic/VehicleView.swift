@@ -66,8 +66,10 @@ import AVFoundation
             } else {
                 print("not counted:", center.x, center.y)
                 playError()
+                UIView.animate(withDuration: 0.2) { () -> Void in
+                    self.center = self.startLocation
+                }
             }
-            center = startLocation
         } else if gesture.state == .cancelled {
             center = startLocation
         }
@@ -78,6 +80,15 @@ import AVFoundation
         let userInfo:[String: String] = ["type": vehicleType, "from": from, "to": to]
         NotificationCenter.default.post(name: .addCrossing, object: nil, userInfo: userInfo)
         playDing()
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            self.transform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
+        }, completion: { (Bool) -> Void in
+            self.center = self.startLocation
+            UIView.animate(withDuration: 0.1) { () -> Void in
+                self.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }
+        })
+        print("done")
     }
     
     func playDing() {
