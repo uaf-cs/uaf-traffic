@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 @IBDesignable class VehicleView: UIImageView {
 	@IBInspectable var vehicleType: String!
 	@IBInspectable var direction: String!
     var startLocation = CGPoint()
     var dragRecognizer = UIGestureRecognizer()
+    var audioPlayer = AVAudioPlayer()
 	
     /*
     // Only override draw() if you perform custom drawing.
@@ -61,6 +63,7 @@ import UIKit
                 addCrossing(from: direction!, to: "s")
             } else {
                 print("not counted:", center.x, center.y)
+                playError()
             }
             center = startLocation
         }
@@ -70,5 +73,29 @@ import UIKit
         print(from, "->", to)
         let userInfo:[String: String] = ["type": vehicleType, "from": from, "to": to]
         NotificationCenter.default.post(name: .addCrossing, object: nil, userInfo: userInfo)
+        playDing()
+    }
+    
+    func playDing() {
+        print("ding!")
+        let url = Bundle.main.url(forResource: "ding", withExtension: "mp3")
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url!)
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
+        audioPlayer.play()
+    }
+    
+    func playError() {
+        let url = Bundle.main.url(forResource: "error", withExtension: "mp3")
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url!)
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
+        audioPlayer.play()
     }
 }
