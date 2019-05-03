@@ -25,14 +25,17 @@ import AVFoundation
     */
     override init(frame: CGRect) {
         super.init(frame: frame)
+        startLocation = center
     }
 
     override init(image: UIImage?) {
         super.init(image: image)
+        startLocation = center
     }
 
     override init(image: UIImage?, highlightedImage: UIImage?) {
         super.init(image: image, highlightedImage: highlightedImage)
+        startLocation = center
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,12 +43,11 @@ import AVFoundation
         super.init(coder: aDecoder)
         addGestureRecognizer(dragRecognizer)
         dragRecognizer.addTarget(self, action: #selector(dragAction))
+        startLocation = center
     }
 
     @objc func dragAction(_ gesture: UIPanGestureRecognizer) {
-        if gesture.state == .began {
-            startLocation = center
-        } else if gesture.state == .changed {
+        if gesture.state == .changed {
             let translation = gesture.translation(in: gesture.view?.superview)
             center = CGPoint(x: startLocation.x + translation.x, y: startLocation.y + translation.y)
         } else if gesture.state == .ended {
@@ -65,6 +67,8 @@ import AVFoundation
                 print("not counted:", center.x, center.y)
                 playError()
             }
+            center = startLocation
+        } else if gesture.state == .cancelled {
             center = startLocation
         }
     }
