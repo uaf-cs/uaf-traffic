@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		24B702E2222FBCCD007D7755 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B702DA222D0E45007D7755 /* SessionManager.swift */; };
 		24B702E3222FBCCD007D7755 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B702DC222D132E007D7755 /* Session.swift */; };
+		9D272DD9227C3083005C5969 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D272DD8227C3083005C5969 /* ding.mp3 */; };
+		9D272DDB227C308A005C5969 /* error.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D272DDA227C308A005C5969 /* error.mp3 */; };
 		9D2EC4902223CE63002FA1DD /* BigFancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC48F2223CE63002FA1DD /* BigFancyButton.swift */; };
 		9D2EC4942223D428002FA1DD /* ManageSessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC4932223D428002FA1DD /* ManageSessionsViewController.swift */; };
 		9D2EC4962223D749002FA1DD /* TrafficCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC4952223D749002FA1DD /* TrafficCountViewController.swift */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		24B702DA222D0E45007D7755 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		24B702DC222D132E007D7755 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		9D272DD8227C3083005C5969 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
+		9D272DDA227C308A005C5969 /* error.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = error.mp3; sourceTree = "<group>"; };
 		9D2EC48F2223CE63002FA1DD /* BigFancyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigFancyButton.swift; sourceTree = "<group>"; };
 		9D2EC4932223D428002FA1DD /* ManageSessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageSessionsViewController.swift; sourceTree = "<group>"; };
 		9D2EC4952223D749002FA1DD /* TrafficCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficCountViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 		9DE934C22207AEC90000255D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				9D272DD8227C3083005C5969 /* ding.mp3 */,
+				9D272DDA227C308A005C5969 /* error.mp3 */,
 			);
 			name = Assets;
 			path = ../../assets;
@@ -281,9 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A2F0A621FACD070078E15C /* LaunchScreen.storyboard in Resources */,
+				9D272DD9227C3083005C5969 /* ding.mp3 in Resources */,
 				C3A2F0A321FACD070078E15C /* Assets.xcassets in Resources */,
 				9D62C567225337F50080E0EF /* Settings.bundle in Resources */,
 				C3A2F0A121FACD060078E15C /* Main.storyboard in Resources */,
+				9D272DDB227C308A005C5969 /* error.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
