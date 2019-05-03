@@ -88,11 +88,9 @@ import AVFoundation
                 self.transform = CGAffineTransform(scaleX: 1, y: 1)
             }
         })
-        print("done")
     }
     
     func playDing() {
-        print("ding!")
         let url = Bundle.main.url(forResource: "ding", withExtension: "mp3")
         do {
             try audioPlayer = AVAudioPlayer(contentsOf: url!)
