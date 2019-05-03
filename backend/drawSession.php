@@ -21,6 +21,7 @@ $line_settings = [
     "car" => array("R"=>200,"G"=>50,"B"=>0),
     "pedestrian" => array("R"=>10,"G"=>50,"B"=>200),
     "snowmachine" => array("R"=>100,"G"=>50,"B"=>100),
+    "" => array("R"=>100,"G"=>50,"B"=>100),
 ];
 
 $fromNorth = array('x' => $width/2 - $width/$laneSize, 'y' => $padding);
