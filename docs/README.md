@@ -2,7 +2,7 @@
 
 ## Front End App
 
-- Class Diagrams
+- Class Diagrams - in progress
 
 ## Back End App
 
