@@ -55,7 +55,13 @@ import AVFoundation
             let widthBoundSize = CGFloat(120.0)
             let heightBoundSize = CGFloat(230.0)
             
-            if center.x > screenSize.width - widthBoundSize {
+            if (center.x > screenSize.width - widthBoundSize || center.x < widthBoundSize) && (center.y > screenSize.height - heightBoundSize || center.y < heightBoundSize){
+                print("not counted:", center.x, center.y)
+                playError()
+                UIView.animate(withDuration: 0.2) { () -> Void in
+                    self.center = self.startLocation
+                }
+            }else if center.x > screenSize.width - widthBoundSize {
                 addCrossing(from: direction!, to: "e")
             } else if center.x < widthBoundSize {
                 addCrossing(from: direction!, to: "w")
