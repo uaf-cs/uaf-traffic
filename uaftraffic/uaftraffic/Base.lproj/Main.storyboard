@@ -414,7 +414,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="16A-qB-o4Z" userLabel="car S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
