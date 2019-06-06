@@ -54,7 +54,15 @@ class SessionManager {
             }
         }
         sessionData.sort {(session1,session2) -> Bool in
+            if session1.crossings.count == 0{
+                return false;
+            }
+            else if session2.crossings.count == 0{
+                return true;
+            }
+            else{
             return session1.crossings.first!.time.compare(session2.crossings.first!.time) == ComparisonResult.orderedDescending
+            }
         }
         return sessionData
     }
