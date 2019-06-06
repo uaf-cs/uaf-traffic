@@ -450,7 +450,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="PaG-Uc-Wwm" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="20" y="570" width="100" height="100"/>
+                                <rect key="frame" x="20" y="551" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
@@ -486,14 +486,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-Vi-QgP" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="648" y="570" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -546,6 +538,14 @@
                                     <constraint firstAttribute="width" secondItem="doH-yU-baY" secondAttribute="height" multiplier="1:1" id="FqX-Sd-P07"/>
                                     <constraint firstAttribute="width" constant="256" id="yLd-mX-NXA"/>
                                 </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-Vi-QgP" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="648" y="551" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
