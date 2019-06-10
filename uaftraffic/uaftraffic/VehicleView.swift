@@ -15,6 +15,7 @@ import AVFoundation
     var startLocation = CGPoint()
     var dragRecognizer = UIGestureRecognizer()
     var audioPlayer = AVAudioPlayer()
+    var centerSet = false
 	
     /*
     // Only override draw() if you perform custom drawing.
@@ -25,17 +26,17 @@ import AVFoundation
     */
     override init(frame: CGRect) {
         super.init(frame: frame)
-        startLocation = center
+        //startLocation = center
     }
 
     override init(image: UIImage?) {
         super.init(image: image)
-        startLocation = center
+        //startLocation = center
     }
 
     override init(image: UIImage?, highlightedImage: UIImage?) {
         super.init(image: image, highlightedImage: highlightedImage)
-        startLocation = center
+        //startLocation = center
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,10 +44,14 @@ import AVFoundation
         super.init(coder: aDecoder)
         addGestureRecognizer(dragRecognizer)
         dragRecognizer.addTarget(self, action: #selector(dragAction))
-        startLocation = center
+        //startLocation = center
     }
 
     @objc func dragAction(_ gesture: UIPanGestureRecognizer) {
+        if centerSet == false {
+            startLocation = center
+            centerSet = true
+        }
         if gesture.state == .changed {
             let translation = gesture.translation(in: gesture.view?.superview)
             center = CGPoint(x: startLocation.x + translation.x, y: startLocation.y + translation.y)
