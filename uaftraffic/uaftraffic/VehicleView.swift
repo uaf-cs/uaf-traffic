@@ -16,6 +16,7 @@ import AVFoundation
     var dragRecognizer = UIGestureRecognizer()
     var audioPlayer = AVAudioPlayer()
     var centerSet = false
+    var orientation = UIDevice.current.orientation
 	
     /*
     // Only override draw() if you perform custom drawing.
@@ -48,6 +49,10 @@ import AVFoundation
     }
 
     @objc func dragAction(_ gesture: UIPanGestureRecognizer) {
+        if orientation != UIDevice.current.orientation{
+            centerSet = false
+            orientation = UIDevice.current.orientation
+        }
         if centerSet == false {
             startLocation = center
             centerSet = true
