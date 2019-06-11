@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cum-J2-gna">
-    <device id="ipad9_7" orientation="landscape">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="cum-J2-gna" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E30-H9-zrg">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akq-B0-M0s" customClass="BigFancyButton" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="20" y="177" width="984" height="139.5"/>
+                                <rect key="frame" x="20" y="359.5" width="728" height="103"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="akq-B0-M0s" secondAttribute="height" multiplier="728:103" id="ucb-bx-6hN"/>
                                 </constraints>
@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iad-kE-I7w" customClass="BigFancyButton" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="20" y="324.5" width="984" height="139"/>
+                                <rect key="frame" x="20" y="470.5" width="728" height="103"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iad-kE-I7w" secondAttribute="height" multiplier="728:103" id="mtG-Gw-JcY"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMT-d5-p6V" customClass="BigFancyButton" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="20" y="471.5" width="984" height="139.5"/>
+                                <rect key="frame" x="20" y="581.5" width="728" height="103"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pMT-d5-p6V" secondAttribute="height" multiplier="728:103" id="8MB-5a-23k"/>
                                 </constraints>
@@ -52,13 +52,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UAF TRAFFIC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7jO-pG-Ytc">
-                                <rect key="frame" x="20" y="46" width="984" height="86"/>
+                                <rect key="frame" x="20" y="137" width="728" height="86"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="75"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vm-Au-VuK">
-                                <rect key="frame" x="264" y="20" width="240" height="137.5"/>
+                                <rect key="frame" x="264" y="20" width="240" height="320"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,15 +91,15 @@
             <objects>
                 <tableViewController id="oPD-qi-Agw" customClass="ResumeSessionViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zvD-p1-EKu">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="sessionCell" rowHeight="80" id="UtM-8P-giT" customClass="ResumeSessionCell" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="1024" height="80"/>
+                                <rect key="frame" x="0.0" y="28" width="768" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UtM-8P-giT" id="GmX-Qh-t5V">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7f-hv-nR4">
@@ -155,15 +155,15 @@
             <objects>
                 <tableViewController id="2vO-fa-LIB" customClass="ManageSessionsViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="4lx-f3-qJj">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="sessionCell" rowHeight="80" id="nvb-99-Bod" customClass="ManageSessionCell" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="1024" height="80"/>
+                                <rect key="frame" x="0.0" y="28" width="768" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nvb-99-Bod" id="RrE-o7-12E">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weR-S7-f7e">
@@ -179,7 +179,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy6-Pf-cWf">
-                                            <rect key="frame" x="864" y="-0.5" width="80" height="80.5"/>
+                                            <rect key="frame" x="608" y="-0.5" width="80" height="80.5"/>
                                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="OMZ-Bz-xdQ"/>
@@ -190,7 +190,7 @@
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4E-ZT-Ovq">
-                                            <rect key="frame" x="944" y="-0.5" width="80" height="80.5"/>
+                                            <rect key="frame" x="688" y="-0.5" width="80" height="80.5"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="DyW-XW-Od9"/>
@@ -249,15 +249,15 @@
             <objects>
                 <tableViewController id="onB-Lu-8RF" customClass="SessionDetailsViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aD9-eF-yj1">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="crossingCell" rowHeight="70" id="kV0-17-sAM" customClass="SessionDetailsCrossingCell" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="1024" height="70"/>
+                                <rect key="frame" x="0.0" y="28" width="768" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kV0-17-sAM" id="KmA-bJ-3r3">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv-black" translatesAutoresizingMaskIntoConstraints="NO" id="0gx-s5-QGg">
@@ -268,7 +268,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="6FW-bi-wq5">
-                                            <rect key="frame" x="966" y="24.5" width="38" height="21"/>
+                                            <rect key="frame" x="710" y="24.5" width="38" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -314,7 +314,7 @@
             <objects>
                 <viewController id="Id6-VF-3ka" customClass="PinEntryViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ipu-6P-DXo">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1234" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sFf-61-Hyt">
@@ -352,17 +352,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TrafficCountViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_bg" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-td-ix4">
-                                <rect key="frame" x="174" y="46" width="676" height="676.00000000000023"/>
+                                <rect key="frame" x="0.0" y="128" width="768" height="768.00000000000023"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1:1" id="hry-Ud-D1f"/>
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="XSM-fo-cL4" userLabel="atv N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="282.5" y="46" width="93.5" height="103"/>
+                                <rect key="frame" x="123.5" y="128" width="106" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XSM-fo-cL4" secondAttribute="height" multiplier="108:119" id="Iaa-Hc-utX"/>
                                 </constraints>
@@ -372,7 +372,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="zJn-OE-EM8" userLabel="bike N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="376" y="46" width="92.5" height="103"/>
+                                <rect key="frame" x="229.5" y="128" width="105.5" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zJn-OE-EM8" secondAttribute="height" multiplier="107:119" id="rDT-fp-q6H"/>
                                 </constraints>
@@ -382,7 +382,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="vbJ-X3-YNf" userLabel="car N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="468.5" y="46" width="87" height="103"/>
+                                <rect key="frame" x="335" y="128" width="98" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vbJ-X3-YNf" secondAttribute="height" multiplier="100:119" id="NSE-Ta-EEY"/>
                                 </constraints>
@@ -392,7 +392,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="lSv-YX-51Y" userLabel="atv S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="277" y="617.5" width="95.5" height="104.5"/>
+                                <rect key="frame" x="117" y="777" width="108.5" height="119"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lSv-YX-51Y" secondAttribute="height" multiplier="54:59" id="kO2-aZ-H8f"/>
                                 </constraints>
@@ -402,7 +402,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="0yB-mL-HrH" userLabel="bike S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="372.5" y="617.5" width="95" height="104.5"/>
+                                <rect key="frame" x="225.5" y="777" width="108" height="119"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0yB-mL-HrH" secondAttribute="height" multiplier="107:118" id="F3e-TD-cGb"/>
                                 </constraints>
@@ -412,7 +412,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="16A-qB-o4Z" userLabel="car S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="467.5" y="617.5" width="89" height="104.5"/>
+                                <rect key="frame" x="333.5" y="777" width="101" height="119"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="16A-qB-o4Z" secondAttribute="height" multiplier="50:59" id="eJo-Fc-Cyy"/>
                                 </constraints>
@@ -422,7 +422,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="85e-eK-tpb" userLabel="pedestrian S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="556.5" y="617.5" width="94" height="104.5"/>
+                                <rect key="frame" x="434.5" y="777" width="107" height="119"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="85e-eK-tpb" secondAttribute="height" multiplier="53:59" id="azS-7s-Tue"/>
                                 </constraints>
@@ -432,7 +432,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-dZ-bvE" userLabel="snowmachine S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="650.5" y="617.5" width="95" height="104.50000000000011"/>
+                                <rect key="frame" x="541.5" y="777" width="107.5" height="119.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pXf-dZ-bvE" secondAttribute="height" multiplier="106:117" id="jrO-xx-fJG"/>
                                 </constraints>
@@ -442,7 +442,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="2SP-7L-IF1" userLabel="car W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="174" y="340" width="88" height="88"/>
+                                <rect key="frame" x="0.0" y="462" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2SP-7L-IF1" secondAttribute="height" multiplier="1:1" id="nQj-iv-Xtz"/>
                                 </constraints>
@@ -452,7 +452,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="PaG-Uc-Wwm" userLabel="pedestrian W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="174" y="428" width="88" height="101"/>
+                                <rect key="frame" x="0.0" y="562" width="100" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PaG-Uc-Wwm" secondAttribute="height" multiplier="20:23" id="zeB-NB-Geu"/>
                                 </constraints>
@@ -462,7 +462,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="s3O-c3-SQe" userLabel="bike W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="174" y="245" width="88" height="95"/>
+                                <rect key="frame" x="0.0" y="354" width="100" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="s3O-c3-SQe" secondAttribute="height" multiplier="25:27" id="lDC-F1-54J"/>
                                 </constraints>
@@ -472,7 +472,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="xfL-mG-5zd" userLabel="atv W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="174" y="149" width="88" height="96"/>
+                                <rect key="frame" x="0.0" y="245" width="100" height="109"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xfL-mG-5zd" secondAttribute="height" multiplier="100:109" id="bpt-yY-QKf"/>
                                 </constraints>
@@ -482,7 +482,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="pcN-s6-wxM" userLabel="car E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="762" y="340" width="88" height="88"/>
+                                <rect key="frame" x="668" y="462" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pcN-s6-wxM" secondAttribute="height" multiplier="1:1" id="B7v-Xj-L1V"/>
                                 </constraints>
@@ -492,7 +492,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="4zQ-mK-S1h" userLabel="bike E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="762" y="245" width="88" height="95"/>
+                                <rect key="frame" x="668" y="354" width="100" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4zQ-mK-S1h" secondAttribute="height" multiplier="25:27" id="oiq-P4-DGr"/>
                                 </constraints>
@@ -502,7 +502,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="m6l-Gn-Kcd" userLabel="atv E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="762" y="149" width="88" height="96"/>
+                                <rect key="frame" x="668" y="245" width="100" height="109"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="m6l-Gn-Kcd" secondAttribute="height" multiplier="100:109" id="hSV-Nr-3ve"/>
                                 </constraints>
@@ -515,22 +515,22 @@
                                 <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Counted: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eG0-yF-zc3">
-                                <rect key="frame" x="20" y="720" width="984" height="28"/>
+                                <rect key="frame" x="20" y="894" width="728" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="Ghw-BI-xnd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="Ghw-BI-xnd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="AlR-uj-EeW">
-                                <rect key="frame" x="399.5" y="271.5" width="225" height="225"/>
+                                <rect key="frame" x="256" y="384" width="256" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AlR-uj-EeW" secondAttribute="height" multiplier="1:1" id="Vq5-i7-kZt"/>
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-r5-Jna" userLabel="snowmachine W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="174" y="529" width="88" height="88.500000000000114"/>
+                                <rect key="frame" x="0.0" y="677" width="100" height="100.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Buc-r5-Jna" secondAttribute="height" multiplier="1:1" id="8Vo-T4-hVy"/>
                                 </constraints>
@@ -540,7 +540,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-c1-rUZ" userLabel="snowmachine E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="762" y="529" width="88" height="88.500000000000114"/>
+                                <rect key="frame" x="668" y="677" width="100" height="100.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dIX-c1-rUZ" secondAttribute="height" multiplier="1:1" id="PTQ-6y-eYA"/>
                                 </constraints>
@@ -550,7 +550,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-Vi-QgP" userLabel="pedestrian E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="762" y="428" width="88" height="101"/>
+                                <rect key="frame" x="668" y="562" width="100" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XGN-Vi-QgP" secondAttribute="height" multiplier="20:23" id="pEG-Bb-oj4"/>
                                 </constraints>
@@ -560,7 +560,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="EmS-7P-Car" userLabel="pedestrian N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="555.5" y="46" width="91.5" height="103"/>
+                                <rect key="frame" x="433" y="128" width="104.5" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EmS-7P-Car" secondAttribute="height" multiplier="106:119" id="lsG-xg-Kfd"/>
                                 </constraints>
@@ -570,7 +570,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-S2-9Tu" userLabel="snowmachine N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="647" y="46" width="92.5" height="103.00000000000011"/>
+                                <rect key="frame" x="537.5" y="128" width="105" height="117.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2b8-S2-9Tu" secondAttribute="height" multiplier="53:59" id="fRu-WA-JXU"/>
                                 </constraints>
@@ -580,7 +580,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass_rot" translatesAutoresizingMaskIntoConstraints="NO" id="doH-yU-baY">
-                                <rect key="frame" x="399.5" y="271.5" width="225" height="225"/>
+                                <rect key="frame" x="256" y="384" width="256" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="doH-yU-baY" secondAttribute="height" multiplier="1:1" id="FqX-Sd-P07"/>
                                 </constraints>
@@ -695,7 +695,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813.28125" y="-671.484375"/>
+            <point key="canvasLocation" x="813.28125" y="-671.875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bNb-Zq-yrB">
@@ -703,7 +703,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ldj-v3-OQm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aqn-br-gkO">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -721,7 +721,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l1Q-uA-bpj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ffI-9Z-NJw">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -739,7 +739,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sl9-pk-Zgj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ipy-gV-yk0">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -757,7 +757,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cr6-xH-cCG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uJM-G5-e8S">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
