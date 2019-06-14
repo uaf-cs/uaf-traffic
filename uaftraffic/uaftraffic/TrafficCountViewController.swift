@@ -48,10 +48,11 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func optionsButtonTapped(_ sender: Any){
-        let settings = UIAlertController(title: "Settings", message: "", preferredStyle: .alert)
-        settings.addAction(UIAlertAction(title: "Rotate display", style: .default, handler: rotationOptions))
+        let settings = UIAlertController(title: "Options", message: "", preferredStyle: .alert)
+        settings.addAction(UIAlertAction(title: "Rotate compass", style: .default, handler: rotationOptions))
         settings.addAction(UIAlertAction(title: "Vehicle selection", style: .default, handler: vehicleOptions))
         settings.addAction(UIAlertAction(title: "Road selection", style: .default, handler: roadOptions))
+        present(settings, animated: true, completion: nil)
     }
     
     func rotationOptions(sender: UIAlertAction){
