@@ -47,6 +47,13 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func optionsButtonTapped(_ sender: Any){
+        let settings = UIAlertController(title: "Settings", message: "", preferredStyle: .alert)
+        settings.addAction(UIAlertAction(title: "Direction", style: .default, handler: nil))
+        settings.addAction(UIAlertAction(title: "Vehicle selection", style: .default, handler: nil))
+        settings.addAction(UIAlertAction(title: "Road selection", style: .default, handler: nil))
+    }
+    
     @IBAction func undoButtonTapped(_ sender: Any) {
         session.undo()
         crossingCountChanged()
