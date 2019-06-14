@@ -62,8 +62,13 @@ import AVFoundation
             center = CGPoint(x: startLocation.x + translation.x, y: startLocation.y + translation.y)
         } else if gesture.state == .ended {
             let screenSize = UIScreen.main.bounds.size
-            let widthBoundSize = CGFloat(120.0)
-            let heightBoundSize = CGFloat(230.0)
+            var widthBoundSize = screenSize.width / 7
+            var heightBoundSize = 3 * screenSize.height / 10
+            if(UIDevice.current.orientation == UIDeviceOrientation.landscapeLeft) ||
+                (UIDevice.current.orientation == UIDeviceOrientation.landscapeRight){
+                widthBoundSize = 3 * screenSize.width / 10
+                heightBoundSize = screenSize.height / 7
+            }
             
             if (center.x > screenSize.width - widthBoundSize || center.x < widthBoundSize) && (center.y > screenSize.height - heightBoundSize || center.y < heightBoundSize){
                 print("not counted:", center.x, center.y)
