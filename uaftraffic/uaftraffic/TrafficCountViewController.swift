@@ -67,15 +67,23 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     }
     func rotateNorth(_ sender: UIAlertAction){
         print("Rotating to North")
+        compassLetters.transform = CGAffineTransform(rotationAngle: (0))
+        compassArrow.transform = CGAffineTransform(rotationAngle: (0))
     }
     func rotateEast(_ sender: UIAlertAction){
+         compassLetters.transform = CGAffineTransform(rotationAngle: (.pi * 3/2))
+         compassArrow.transform = CGAffineTransform(rotationAngle: (.pi * 3/2))
         print("Rotating to East")
     }
     func rotateSouth(_ sender: UIAlertAction){
         print("Rotating to South")
+        compassLetters.transform = CGAffineTransform(rotationAngle: (.pi))
+        compassArrow.transform = CGAffineTransform(rotationAngle: (.pi))
     }
     func rotateWest(_ sender: UIAlertAction){
         print("Rotating to West")
+        compassLetters.transform = CGAffineTransform(rotationAngle: (.pi/2))
+        compassArrow.transform = CGAffineTransform(rotationAngle: (.pi/2))
     }
     
     func vehicleOptions(sender: UIAlertAction){
@@ -147,5 +155,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
 	func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         let angle = abs((newHeading.trueHeading * .pi/180) - (2.0 * .pi))
         compassLetters.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+        //variable will be necessary here (or in options menu, if that implementation is preferred) to ensure that directions remain accurate
+        //It may also need reimplementation to adjust for the engagement/disengagement of roads.
 	}
 }
