@@ -41,6 +41,14 @@ class Session: Codable, Equatable {
     var lon : Float
     var id : String
     var name : String
+    var hasNorthLink : Bool = true
+    var hasSouthLink : Bool = true
+    var hasWestLink : Bool = true
+    var hasEastLink : Bool = true
+    var vehicle1Type : String = "ATV"
+    // add veicle 2-5
+    // add north-south road name
+    // add east-west road name
     var crossings : [Crossing]
     
     enum CodingKeys: String, CodingKey {
