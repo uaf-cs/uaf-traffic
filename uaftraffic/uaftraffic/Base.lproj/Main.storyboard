@@ -362,9 +362,9 @@
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="XSM-fo-cL4" userLabel="atv N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="123.5" y="128" width="106" height="117"/>
+                                <rect key="frame" x="91.5" y="128" width="117" height="117"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="XSM-fo-cL4" secondAttribute="height" multiplier="108:119" id="Iaa-Hc-utX"/>
+                                    <constraint firstAttribute="width" secondItem="XSM-fo-cL4" secondAttribute="height" multiplier="1:1" id="Iaa-Hc-utX"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
@@ -372,9 +372,9 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="zJn-OE-EM8" userLabel="bike N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="229.5" y="128" width="105.5" height="117"/>
+                                <rect key="frame" x="208.5" y="128" width="117" height="117"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="zJn-OE-EM8" secondAttribute="height" multiplier="107:119" id="rDT-fp-q6H"/>
+                                    <constraint firstAttribute="width" secondItem="zJn-OE-EM8" secondAttribute="height" multiplier="1:1" id="rDT-fp-q6H"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
@@ -382,9 +382,9 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="vbJ-X3-YNf" userLabel="car N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="335" y="128" width="98" height="117"/>
+                                <rect key="frame" x="325.5" y="128" width="117" height="117"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="vbJ-X3-YNf" secondAttribute="height" multiplier="100:119" id="NSE-Ta-EEY"/>
+                                    <constraint firstAttribute="width" secondItem="vbJ-X3-YNf" secondAttribute="height" multiplier="1:1" id="NSE-Ta-EEY"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
@@ -392,9 +392,9 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="lSv-YX-51Y" userLabel="atv S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="117" y="777" width="108.5" height="119"/>
+                                <rect key="frame" x="86.5" y="777" width="119" height="119"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="lSv-YX-51Y" secondAttribute="height" multiplier="54:59" id="kO2-aZ-H8f"/>
+                                    <constraint firstAttribute="width" secondItem="lSv-YX-51Y" secondAttribute="height" multiplier="1:1" id="kO2-aZ-H8f"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
@@ -402,9 +402,9 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="0yB-mL-HrH" userLabel="bike S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="225.5" y="777" width="108" height="119"/>
+                                <rect key="frame" x="205.5" y="777" width="119" height="119"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="0yB-mL-HrH" secondAttribute="height" multiplier="107:118" id="F3e-TD-cGb"/>
+                                    <constraint firstAttribute="width" secondItem="0yB-mL-HrH" secondAttribute="height" multiplier="1:1" id="F3e-TD-cGb"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
@@ -412,9 +412,9 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="16A-qB-o4Z" userLabel="car S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="333.5" y="777" width="101" height="119"/>
+                                <rect key="frame" x="324.5" y="777" width="119" height="119"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="16A-qB-o4Z" secondAttribute="height" multiplier="50:59" id="eJo-Fc-Cyy"/>
+                                    <constraint firstAttribute="width" secondItem="16A-qB-o4Z" secondAttribute="height" multiplier="1:1" id="eJo-Fc-Cyy"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
@@ -422,9 +422,9 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="85e-eK-tpb" userLabel="pedestrian S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="434.5" y="777" width="107" height="119"/>
+                                <rect key="frame" x="443.5" y="777" width="119" height="119"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="85e-eK-tpb" secondAttribute="height" multiplier="53:59" id="azS-7s-Tue"/>
+                                    <constraint firstAttribute="width" secondItem="85e-eK-tpb" secondAttribute="height" multiplier="1:1" id="azS-7s-Tue"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
@@ -432,9 +432,9 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-dZ-bvE" userLabel="snowmachine S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="541.5" y="777" width="107.5" height="119.00000000000011"/>
+                                <rect key="frame" x="562.5" y="777" width="119" height="119.00000000000011"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="pXf-dZ-bvE" secondAttribute="height" multiplier="106:117" id="jrO-xx-fJG"/>
+                                    <constraint firstAttribute="width" secondItem="pXf-dZ-bvE" secondAttribute="height" multiplier="1:1" id="jrO-xx-fJG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
@@ -560,9 +560,9 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="EmS-7P-Car" userLabel="pedestrian N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="433" y="128" width="104.5" height="117"/>
+                                <rect key="frame" x="442.5" y="128" width="117" height="117"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="EmS-7P-Car" secondAttribute="height" multiplier="106:119" id="lsG-xg-Kfd"/>
+                                    <constraint firstAttribute="width" secondItem="EmS-7P-Car" secondAttribute="height" multiplier="1:1" id="lsG-xg-Kfd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
@@ -570,9 +570,9 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-S2-9Tu" userLabel="snowmachine N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="537.5" y="128" width="105" height="117.00000000000011"/>
+                                <rect key="frame" x="559.5" y="128" width="117" height="117.00000000000011"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="2b8-S2-9Tu" secondAttribute="height" multiplier="53:59" id="fRu-WA-JXU"/>
+                                    <constraint firstAttribute="width" secondItem="2b8-S2-9Tu" secondAttribute="height" multiplier="1:1" id="fRu-WA-JXU"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
