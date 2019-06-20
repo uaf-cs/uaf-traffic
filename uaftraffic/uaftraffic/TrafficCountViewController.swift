@@ -154,7 +154,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     
 	/*func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         let angle = abs((newHeading.trueHeading * .pi/180) - (2.0 * .pi))
-        compassLetters.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+        compassArrow.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
         //variable will be necessary here (or in options menu, if that implementation is preferred) to ensure that directions remain accurate
         //It may also need reimplementation to adjust for the engagement/disengagement of roads.
 	}*/
