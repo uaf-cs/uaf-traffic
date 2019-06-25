@@ -758,6 +758,34 @@
             </objects>
             <point key="canvasLocation" x="47.65625" y="-671.484375"/>
         </scene>
+        <!--Direction Select View Controller-->
+        <scene sceneID="Mg6-Vl-t9m">
+            <objects>
+                <tableViewController id="Esh-TZ-2RZ" customClass="DirectionSelectViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="deY-SL-ZEj">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="62" id="lpA-J9-Ldr">
+                                <rect key="frame" x="0.0" y="28" width="768" height="62"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lpA-J9-Ldr" id="JT9-g7-B1P">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="61.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Esh-TZ-2RZ" id="mvu-6o-aJm"/>
+                            <outlet property="delegate" destination="Esh-TZ-2RZ" id="Pvv-Xf-RSu"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJY-2F-sfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813.28125" y="-1327.1484375"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Efs-fp-qvh">
             <objects>
