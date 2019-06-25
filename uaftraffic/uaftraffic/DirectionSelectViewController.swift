@@ -6,4 +6,8 @@
 //  Copyright © 2019 University of Alaska Fairbanks. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class DirectionSelectViewController: UITableViewController {
+    
+}
