@@ -791,6 +791,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Direction Select" id="3S0-t0-lcS">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="NM1-yT-nMW">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="Esh-TZ-2RZ" id="hB2-yT-6mQ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="v88-Bb-Dcl">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="hq1-kA-Exp"/>
