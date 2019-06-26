@@ -37,6 +37,8 @@ class DirectionSelectViewController: UITableViewController {
         default:
             assert(false, "too many rows")
         }
+        let directionSwitch = UISwitch()
+        cell.accessoryView = directionSwitch
         return cell
     }
 }
