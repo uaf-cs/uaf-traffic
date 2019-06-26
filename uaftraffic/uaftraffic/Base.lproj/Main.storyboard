@@ -751,14 +751,14 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Wa5-Qg-Edf"/>
+                        <segue destination="Esh-TZ-2RZ" kind="relationship" relationship="rootViewController" id="c3P-s7-5mi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HDE-KW-PSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.65625" y="-671.484375"/>
         </scene>
-        <!--Direction Select View Controller-->
+        <!--Direction Select-->
         <scene sceneID="Mg6-Vl-t9m">
             <objects>
                 <tableViewController id="Esh-TZ-2RZ" customClass="DirectionSelectViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
@@ -790,10 +790,17 @@
                             <outlet property="delegate" destination="Esh-TZ-2RZ" id="Pvv-Xf-RSu"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Direction Select" id="3S0-t0-lcS">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="v88-Bb-Dcl">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="hq1-kA-Exp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJY-2F-sfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813.28125" y="-1327.1484375"/>
+            <point key="canvasLocation" x="813" y="-671"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Efs-fp-qvh">
@@ -826,6 +833,6 @@
         <image name="snowmachine" width="980" height="644"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pwz-96-jPE"/>
+        <segue reference="hq1-kA-Exp"/>
     </inferredMetricsTieBreakers>
 </document>
