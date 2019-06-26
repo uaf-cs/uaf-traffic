@@ -680,18 +680,11 @@
                                 <action selector="endSessionButtonTapped:" destination="BYZ-38-t0r" id="PAR-3z-Ga2"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Undo" id="069-es-cxg">
-                                <connections>
-                                    <action selector="undoButtonTapped:" destination="BYZ-38-t0r" id="yls-oQ-u65"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Options" id="WbD-dv-2vh" userLabel="Options Button">
-                                <connections>
-                                    <action selector="optionsButtonTapped:" destination="BYZ-38-t0r" id="T2a-wh-9gG"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Undo" id="069-es-cxg">
+                            <connections>
+                                <action selector="undoButtonTapped:" destination="BYZ-38-t0r" id="yls-oQ-u65"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="compassArrow" destination="AlR-uj-EeW" id="zsm-Lf-T9s"/>
@@ -702,7 +695,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1595" y="-671"/>
+            <point key="canvasLocation" x="2362" y="-671"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bNb-Zq-yrB">
@@ -798,7 +791,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="v88-Bb-Dcl">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="hq1-kA-Exp"/>
+                                <segue destination="kCr-cG-KDd" kind="show" id="xf5-hy-SlP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -806,6 +799,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJY-2F-sfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="813" y="-671"/>
+        </scene>
+        <!--Vehicle Select-->
+        <scene sceneID="1pw-9y-U00">
+            <objects>
+                <tableViewController id="kCr-cG-KDd" customClass="VehicleSelectViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9mx-Cz-G4N">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="lWs-2L-6kM" rowHeight="62" style="IBUITableViewCellStyleDefault" id="7tx-uE-8BG">
+                                <rect key="frame" x="0.0" y="28" width="768" height="62"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7tx-uE-8BG" id="fMr-87-blO">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="61.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lWs-2L-6kM">
+                                            <rect key="frame" x="20" y="0.0" width="728" height="61.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kCr-cG-KDd" id="QhT-DG-gvU"/>
+                            <outlet property="delegate" destination="kCr-cG-KDd" id="scT-5o-tMA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Vehicle Select" id="Eqm-hd-fN6">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="Gd7-qn-LoZ">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="4q4-yw-6C6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="teV-Ke-v9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1594.53125" y="-671.484375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Efs-fp-qvh">
@@ -838,6 +875,6 @@
         <image name="snowmachine" width="980" height="644"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hq1-kA-Exp"/>
+        <segue reference="4q4-yw-6C6"/>
     </inferredMetricsTieBreakers>
 </document>

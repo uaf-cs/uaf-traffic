@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24B702E2222FBCCD007D7755 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B702DA222D0E45007D7755 /* SessionManager.swift */; };
 		24B702E3222FBCCD007D7755 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B702DC222D132E007D7755 /* Session.swift */; };
+		2653FC6D22C43A9000D65962 /* VehicleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2653FC6C22C43A9000D65962 /* VehicleSelectViewController.swift */; };
 		2654A1ED22C1990B00A4FE25 /* DirectionSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1EC22C1990B00A4FE25 /* DirectionSelectViewController.swift */; };
 		9D272DD9227C3083005C5969 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D272DD8227C3083005C5969 /* ding.mp3 */; };
 		9D272DDB227C308A005C5969 /* error.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D272DDA227C308A005C5969 /* error.mp3 */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		24B702DA222D0E45007D7755 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		24B702DC222D132E007D7755 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		2653FC6C22C43A9000D65962 /* VehicleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSelectViewController.swift; sourceTree = "<group>"; };
 		2654A1EC22C1990B00A4FE25 /* DirectionSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionSelectViewController.swift; sourceTree = "<group>"; };
 		9D272DD8227C3083005C5969 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
 		9D272DDA227C308A005C5969 /* error.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = error.mp3; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				C3A2F09F21FACD060078E15C /* Main.storyboard */,
 				9D2EC48F2223CE63002FA1DD /* BigFancyButton.swift */,
 				2654A1EC22C1990B00A4FE25 /* DirectionSelectViewController.swift */,
+				2653FC6C22C43A9000D65962 /* VehicleSelectViewController.swift */,
 				9D2EC4952223D749002FA1DD /* TrafficCountViewController.swift */,
 				9DE934CD2207B8540000255D /* VehicleView.swift */,
 				9D2EC49922252B92002FA1DD /* ResumeSessionViewController.swift */,
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24B702E2222FBCCD007D7755 /* SessionManager.swift in Sources */,
+				2653FC6D22C43A9000D65962 /* VehicleSelectViewController.swift in Sources */,
 				24B702E3222FBCCD007D7755 /* Session.swift in Sources */,
 				9D2EC49A22252B92002FA1DD /* ResumeSessionViewController.swift in Sources */,
 				9D430E2E224A26AD000298D8 /* ManageSessionCell.swift in Sources */,

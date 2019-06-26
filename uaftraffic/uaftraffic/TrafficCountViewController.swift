@@ -47,7 +47,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    @IBAction func optionsButtonTapped(_ sender: Any){
+    /*@IBAction func optionsButtonTapped(_ sender: Any){
         let settings = UIAlertController(title: "Options", message: "", preferredStyle: .alert)
         settings.addAction(UIAlertAction(title: "Rotate compass", style: .default, handler: rotationOptions))
         settings.addAction(UIAlertAction(title: "Vehicle selection", style: .default, handler: vehicleOptions))
@@ -105,7 +105,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         road.addAction(UIAlertAction(title: "West", style: .default, handler: nil))
         road.addAction(UIAlertAction(title: "Back", style: .cancel, handler: optionsButtonTapped))
         present(road, animated: true, completion: nil)
-    }
+    }*/
     
     @IBAction func undoButtonTapped(_ sender: Any) {
         session.undo()
