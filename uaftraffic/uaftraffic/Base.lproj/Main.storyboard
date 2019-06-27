@@ -835,6 +835,7 @@
                     <navigationItem key="navigationItem" title="Vehicle Select" id="Eqm-hd-fN6">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Gd7-qn-LoZ">
                             <connections>
+                                <action selector="getSessionNameWithSender:" destination="kCr-cG-KDd" id="it2-2z-y30"/>
                                 <segue destination="BYZ-38-t0r" kind="show" id="4q4-yw-6C6"/>
                             </connections>
                         </barButtonItem>
