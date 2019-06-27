@@ -46,9 +46,12 @@ class Session: Codable, Equatable {
     var hasWestLink : Bool = true
     var hasEastLink : Bool = true
     var vehicle1Type : String = "ATV"
-    // add veicle 2-5
-    // add north-south road name
-    // add east-west road name
+    var vehicle2Type : String = "Bicycle"
+    var vehicle3Type : String = "Car"
+    var vehicle4Type : String = "Pedestrian"
+    var vehicle5Type : String = "Snowmachine"
+    var NSRoadName : String = ""
+    var EWRoadName : String = ""
     var crossings : [Crossing]
     
     enum CodingKeys: String, CodingKey {
