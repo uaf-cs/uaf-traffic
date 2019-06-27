@@ -40,7 +40,6 @@ class VehicleSelectViewController: UITableViewController {
      session.name = name
      let sessionManager = SessionManager()
      sessionManager.writeSession(session: session)
-     self.dismiss(animated: true, completion: nil)
      }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
