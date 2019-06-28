@@ -22,7 +22,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
 	let locationManager = CLLocationManager()
 	var session = Session()
     let sessionManager = SessionManager()
-    var isResumedSession = false
+    var isResumedSession = true
 	
 
     override func viewDidLoad() {
@@ -46,66 +46,6 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
             present(confirmation, animated: true, completion: nil)
         }
     }
-    
-    /*@IBAction func optionsButtonTapped(_ sender: Any){
-        let settings = UIAlertController(title: "Options", message: "", preferredStyle: .alert)
-        settings.addAction(UIAlertAction(title: "Rotate compass", style: .default, handler: rotationOptions))
-        settings.addAction(UIAlertAction(title: "Vehicle selection", style: .default, handler: vehicleOptions))
-        settings.addAction(UIAlertAction(title: "Road selection", style: .default, handler: roadOptions))
-        settings.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        present(settings, animated: true, completion: nil)
-    }
-    func rotationOptions(sender: UIAlertAction){
-        let rotational = UIAlertController(title: "Rotation Options", message: "which direction are you facing?", preferredStyle: .alert)
-        rotational.addAction(UIAlertAction(title: "North", style: .default, handler: rotateNorth))
-        rotational.addAction(UIAlertAction(title: "East", style: .default, handler: rotateEast))
-        rotational.addAction(UIAlertAction(title: "South", style: .default, handler: rotateSouth))
-        rotational.addAction(UIAlertAction(title: "West", style: .default, handler: rotateWest))
-        rotational.addAction(UIAlertAction(title: "Back", style: .cancel, handler: optionsButtonTapped))
-        //all rotation calls will need to change the appearance of the compass, the from direction of all vehicles, and the to direction of all vehicles, most likely with the assistance of if statements in VehicleView.
-        present(rotational, animated: true, completion: nil)
-    }
-    func rotateNorth(_ sender: UIAlertAction){
-        print("Rotating to North")
-        compassLetters.transform = CGAffineTransform(rotationAngle: (0))
-        compassArrow.transform = CGAffineTransform(rotationAngle: (0))
-    }
-    func rotateEast(_ sender: UIAlertAction){
-         compassLetters.transform = CGAffineTransform(rotationAngle: (.pi * 3/2))
-         compassArrow.transform = CGAffineTransform(rotationAngle: (.pi * 3/2))
-        print("Rotating to East")
-    }
-    func rotateSouth(_ sender: UIAlertAction){
-        print("Rotating to South")
-        compassLetters.transform = CGAffineTransform(rotationAngle: (.pi))
-        compassArrow.transform = CGAffineTransform(rotationAngle: (.pi))
-    }
-    func rotateWest(_ sender: UIAlertAction){
-        print("Rotating to West")
-        compassLetters.transform = CGAffineTransform(rotationAngle: (.pi/2))
-        compassArrow.transform = CGAffineTransform(rotationAngle: (.pi/2))
-    }
-    
-    func vehicleOptions(sender: UIAlertAction){
-        let vehicular = UIAlertController(title: "Vehicle Options", message: "select the vehicles you are recording right now", preferredStyle: .alert)
-        vehicular.addAction(UIAlertAction(title: "ATV", style: .default, handler: nil))
-        vehicular.addAction(UIAlertAction(title: "Bicicle", style: .default, handler: nil))
-        vehicular.addAction(UIAlertAction(title: "Car", style: .default, handler: nil))
-        vehicular.addAction(UIAlertAction(title: "Pedestrian", style: .default, handler: nil))
-        vehicular.addAction(UIAlertAction(title: "Snowmachine", style: .default, handler: nil))
-        vehicular.addAction(UIAlertAction(title: "Back", style: .cancel, handler: optionsButtonTapped))
-        present(vehicular, animated: true, completion: nil)
-    }
-    
-    func roadOptions(sender: UIAlertAction){
-        let road = UIAlertController(title: "Road Options", message: "select the applicable streets", preferredStyle: .alert)
-        road.addAction(UIAlertAction(title: "North", style: .default, handler: nil))
-        road.addAction(UIAlertAction(title: "East", style: .default, handler: nil))
-        road.addAction(UIAlertAction(title: "South", style: .default, handler: nil))
-        road.addAction(UIAlertAction(title: "West", style: .default, handler: nil))
-        road.addAction(UIAlertAction(title: "Back", style: .cancel, handler: optionsButtonTapped))
-        present(road, animated: true, completion: nil)
-    }*/
     
     @IBAction func undoButtonTapped(_ sender: Any) {
         session.undo()
