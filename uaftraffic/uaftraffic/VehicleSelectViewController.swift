@@ -10,6 +10,8 @@ import UIKit
 
 class VehicleSelectViewController: UITableViewController {
     
+    var session = Session()
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -36,13 +38,18 @@ class VehicleSelectViewController: UITableViewController {
      }
      
      func saveSession(name: String) {
-     let session = Session()
      session.name = name
      let sessionManager = SessionManager()
      sessionManager.writeSession(session: session)
      performSegue(withIdentifier: "StartSession", sender: self)
 
      }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! TrafficCountViewController
+        vc.session = session
+        vc.isResumedSession = true
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
