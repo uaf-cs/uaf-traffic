@@ -37,8 +37,8 @@ class Crossing: Codable, Equatable {
 }
 
 class Session: Codable, Equatable {
-    var lat : Float
-    var lon : Float
+    var lat : String
+    var lon : String
     var id : String
     var name : String
     var hasNorthLink : Bool = true
@@ -63,8 +63,8 @@ class Session: Codable, Equatable {
     }
     
     init() {
-        self.lat = 0
-        self.lon = 0
+        self.lat = "0.00"
+        self.lon = "0.00"
         self.id = ""
         self.name = ""
         self.crossings = []
@@ -72,7 +72,7 @@ class Session: Codable, Equatable {
         self.id = randomString()
     }
     
-    init(lat: Float, long: Float, id: String, name: String, crossings: [Crossing]) {
+    init(lat: String, long: String, id: String, name: String, crossings: [Crossing]) {
         self.lat = lat
         self.lon = long
         self.id = id
