@@ -9,6 +9,7 @@
 import UIKit
 
 class DirectionSelectViewController: UITableViewController {
+    var session = Session()
     
     @IBAction func cancelButtonTapped(_ sender: Any){
     self.dismiss(animated: true, completion: nil)
@@ -27,9 +28,33 @@ class DirectionSelectViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         if cell?.accessoryType == UITableViewCell.AccessoryType.none{
             cell?.accessoryType = UITableViewCell.AccessoryType.checkmark
+            switch cell?.textLabel?.text{
+            case "North":
+                session.hasNorthLink = true
+            case "South":
+                session.hasSouthLink = true
+            case "East":
+                session.hasEastLink = true
+            case "West":
+                session.hasWestLink = true
+            default:
+                assert(false, "unrecognized direction")
+            }
         }
         else{
             cell?.accessoryType = UITableViewCell.AccessoryType.none
+            switch cell?.textLabel?.text{
+            case "North":
+                session.hasNorthLink = false
+            case "South":
+                session.hasSouthLink = false
+            case "East":
+                session.hasEastLink = false
+            case "West":
+                session.hasWestLink = false
+            default:
+                assert(false, "unrecognized direction")
+            }
         }
     }
     

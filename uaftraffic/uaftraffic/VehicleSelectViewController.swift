@@ -11,6 +11,7 @@ import UIKit
 class VehicleSelectViewController: UITableViewController {
     
     var session = Session()
+    var vehicleArray: [String] = []
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -55,10 +56,15 @@ class VehicleSelectViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: false)
         let cell = tableView.cellForRow(at: indexPath)
         if cell?.accessoryType == UITableViewCell.AccessoryType.none{
-            cell?.accessoryType = UITableViewCell.AccessoryType.checkmark
+            if vehicleArray.count != 5 {
+                cell?.accessoryType = UITableViewCell.AccessoryType.checkmark
+                vehicleArray.append((cell?.textLabel?.text)!)
+            }
         }
         else{
             cell?.accessoryType = UITableViewCell.AccessoryType.none
+            let i = vehicleArray.firstIndex(of: (cell?.textLabel?.text)!)
+            vehicleArray.remove(at: i!)
         }
     }
     
