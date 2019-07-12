@@ -51,6 +51,17 @@ class VehicleSelectViewController: UITableViewController {
         vc.isResumedSession = true
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let cell = tableView.cellForRow(at: indexPath)
+        if cell?.accessoryType == UITableViewCell.AccessoryType.none{
+            cell?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        }
+        else{
+            cell?.accessoryType = UITableViewCell.AccessoryType.none
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let counter = indexPath.row
@@ -73,8 +84,7 @@ class VehicleSelectViewController: UITableViewController {
         default:
             assert(false, "too many rows")
         }
-        let vehicleSwitch = UISwitch()
-        cell.accessoryView = vehicleSwitch
+        cell.accessoryType = UITableViewCell.AccessoryType.none
         return cell
     }
 }
