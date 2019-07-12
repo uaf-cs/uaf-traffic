@@ -40,6 +40,15 @@ class VehicleSelectViewController: UITableViewController {
      
      func saveSession(name: String) {
      session.name = name
+        if vehicleArray.count < 5{
+            let blankArray = Array(repeating: "", count: 5 - vehicleArray.count)
+            vehicleArray.append(contentsOf: blankArray)
+        }
+        session.vehicle1Type = vehicleArray[0]
+        session.vehicle2Type = vehicleArray[1]
+        session.vehicle3Type = vehicleArray[2]
+        session.vehicle4Type = vehicleArray[3]
+        session.vehicle5Type = vehicleArray[4]
      let sessionManager = SessionManager()
      sessionManager.writeSession(session: session)
      performSegue(withIdentifier: "StartSession", sender: self)
