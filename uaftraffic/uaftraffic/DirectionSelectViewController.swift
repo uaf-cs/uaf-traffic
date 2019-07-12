@@ -10,9 +10,15 @@ import UIKit
 
 class DirectionSelectViewController: UITableViewController {
     var session = Session()
+    var directionCount = 4
     
     @IBAction func cancelButtonTapped(_ sender: Any){
     self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! VehicleSelectViewController
+        vc.session = session
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,20 +46,24 @@ class DirectionSelectViewController: UITableViewController {
             default:
                 assert(false, "unrecognized direction")
             }
+            directionCount += 1
         }
         else{
-            cell?.accessoryType = UITableViewCell.AccessoryType.none
-            switch cell?.textLabel?.text{
-            case "North":
-                session.hasNorthLink = false
-            case "South":
-                session.hasSouthLink = false
-            case "East":
-                session.hasEastLink = false
-            case "West":
-                session.hasWestLink = false
-            default:
-                assert(false, "unrecognized direction")
+            if directionCount > 2{
+                cell?.accessoryType = UITableViewCell.AccessoryType.none
+                switch cell?.textLabel?.text{
+                case "North":
+                    session.hasNorthLink = false
+                case "South":
+                    session.hasSouthLink = false
+                case "East":
+                    session.hasEastLink = false
+                case "West":
+                    session.hasWestLink = false
+                default:
+                    assert(false, "unrecognized direction")
+                }
+                directionCount -= 1
             }
         }
     }
