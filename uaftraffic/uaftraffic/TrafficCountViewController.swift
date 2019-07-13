@@ -34,17 +34,17 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func endSessionButtonTapped(_ sender: Any) {
-        if isResumedSession {
+        //if isResumedSession {
             sessionManager.writeSession(session: session)
             dismiss(animated: true, completion: nil)
-        } else if session.crossings.count == 0 {
+       /* } else if session.crossings.count == 0 {
             dismiss(animated: true, completion: nil)
         } else {
             let confirmation = UIAlertController(title: "End Session", message: "Are you sure you want to end this session?", preferredStyle: .alert)
             confirmation.addAction(UIAlertAction(title: "Yes, end session", style: .destructive, handler: getSessionName))
             confirmation.addAction(UIAlertAction(title: "No, continue", style: .cancel, handler: nil))
             present(confirmation, animated: true, completion: nil)
-        }
+        }*/
     }
     
     @IBAction func undoButtonTapped(_ sender: Any) {
@@ -52,7 +52,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         crossingCountChanged()
     }
     
-    func getSessionName(sender: UIAlertAction) {
+    /*func getSessionName(sender: UIAlertAction) {
         let namePrompt = UIAlertController(title: "Session Name", message: "What should this session be called?", preferredStyle: .alert)
         namePrompt.addTextField { textField in
             textField.placeholder = "Intersection of main and 3rd"
@@ -78,7 +78,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         session.name = name
         sessionManager.writeSession(session: session)
         self.dismiss(animated: true, completion: nil)
-    }
+    }*/
     
     @objc func addCrossing(notification: Notification) {
         let userInfo = notification.userInfo! as! Dictionary<String, String>
