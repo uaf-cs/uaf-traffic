@@ -591,6 +591,13 @@
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="SpN-Wr-yNh">
                                 <rect key="frame" x="0.0" y="128" width="768" height="116"/>
                             </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-Me-ewU">
+                                <rect key="frame" x="0.0" y="128" width="110" height="768"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="b3s-Eb-n8l">
+                                <rect key="frame" x="658" y="128" width="110" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -631,6 +638,7 @@
                             <constraint firstItem="zJn-OE-EM8" firstAttribute="trailing" secondItem="vbJ-X3-YNf" secondAttribute="leading" id="LTg-D2-VqN"/>
                             <constraint firstItem="0yB-mL-HrH" firstAttribute="trailing" secondItem="16A-qB-o4Z" secondAttribute="leading" id="NxJ-oL-7DF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SpN-Wr-yNh" secondAttribute="trailing" id="OeJ-xG-DvF"/>
+                            <constraint firstItem="bc2-Me-ewU" firstAttribute="leading" secondItem="vj5-td-ix4" secondAttribute="leading" id="PGY-KM-LKF"/>
                             <constraint firstItem="2b8-S2-9Tu" firstAttribute="bottom" secondItem="m6l-Gn-Kcd" secondAttribute="top" priority="250" id="PUy-FX-EAR"/>
                             <constraint firstItem="pXf-dZ-bvE" firstAttribute="leading" secondItem="85e-eK-tpb" secondAttribute="trailing" id="PZF-Hm-LFV"/>
                             <constraint firstItem="dIX-c1-rUZ" firstAttribute="bottom" secondItem="pXf-dZ-bvE" secondAttribute="top" priority="250" id="Q2z-p9-Olh"/>
@@ -646,6 +654,8 @@
                             <constraint firstItem="XSM-fo-cL4" firstAttribute="trailing" secondItem="zJn-OE-EM8" secondAttribute="leading" id="Xah-Vo-bnx"/>
                             <constraint firstItem="16A-qB-o4Z" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerX" id="YYG-0g-XoO"/>
                             <constraint firstItem="dIX-c1-rUZ" firstAttribute="centerX" secondItem="XGN-Vi-QgP" secondAttribute="centerX" id="ZSx-O2-VBQ"/>
+                            <constraint firstItem="bc2-Me-ewU" firstAttribute="trailing" secondItem="2SP-7L-IF1" secondAttribute="trailing" id="aIR-A2-sLb"/>
+                            <constraint firstItem="bc2-Me-ewU" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="aLw-5V-T7h"/>
                             <constraint firstItem="lSv-YX-51Y" firstAttribute="height" secondItem="16A-qB-o4Z" secondAttribute="height" id="aSK-km-sO0"/>
                             <constraint firstItem="m6l-Gn-Kcd" firstAttribute="bottom" secondItem="4zQ-mK-S1h" secondAttribute="top" id="aiF-DE-u0t"/>
                             <constraint firstItem="2SP-7L-IF1" firstAttribute="centerX" secondItem="s3O-c3-SQe" secondAttribute="centerX" id="b5C-es-yy7"/>
@@ -655,6 +665,7 @@
                             <constraint firstItem="xfL-mG-5zd" firstAttribute="top" secondItem="XSM-fo-cL4" secondAttribute="bottom" id="d3N-dD-AM3"/>
                             <constraint firstItem="SpN-Wr-yNh" firstAttribute="bottom" secondItem="XSM-fo-cL4" secondAttribute="bottom" constant="7" id="fEf-Os-guJ"/>
                             <constraint firstItem="pXf-dZ-bvE" firstAttribute="height" secondItem="16A-qB-o4Z" secondAttribute="height" id="gJu-KM-q3z"/>
+                            <constraint firstItem="bc2-Me-ewU" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="gl9-5B-qPH"/>
                             <constraint firstItem="0yB-mL-HrH" firstAttribute="height" secondItem="16A-qB-o4Z" secondAttribute="height" priority="999" id="gnC-Pz-qti"/>
                             <constraint firstItem="vj5-td-ix4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7bM-o9-myX" secondAttribute="bottom" id="hB7-un-act"/>
                             <constraint firstItem="xfL-mG-5zd" firstAttribute="leading" secondItem="vj5-td-ix4" secondAttribute="leading" id="hGr-7y-XG1"/>
@@ -704,9 +715,11 @@
                         <outlet property="compassArrow" destination="AlR-uj-EeW" id="zsm-Lf-T9s"/>
                         <outlet property="compassLetters" destination="doH-yU-baY" id="ouV-si-wG7"/>
                         <outlet property="countLabel" destination="eG0-yF-zc3" id="KM8-3Y-8fU"/>
+                        <outlet property="eastBlocker" destination="b3s-Eb-n8l" id="HI1-Qp-Vuc"/>
                         <outlet property="northBlocker" destination="SpN-Wr-yNh" id="7p6-wp-s8n"/>
                         <outlet property="southBlocker" destination="8wM-Nh-KIp" id="WEu-cB-IHl"/>
                         <outlet property="undoButton" destination="069-es-cxg" id="kQJ-6F-uoc"/>
+                        <outlet property="westBlocker" destination="bc2-Me-ewU" id="fno-2d-cic"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
