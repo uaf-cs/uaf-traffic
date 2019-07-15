@@ -100,7 +100,7 @@ import AVFoundation
         print(from, "->", to)
         let userInfo:[String: String] = ["type": vehicleType, "from": from, "to": to]
         NotificationCenter.default.post(name: .addCrossing, object: nil, userInfo: userInfo)
-        playDing()
+//        playDing()
         UIView.animate(withDuration: 0.5, animations: { () -> Void in
             self.transform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
         }, completion: { (Bool) -> Void in
@@ -111,7 +111,7 @@ import AVFoundation
         })
     }
     
-    func playDing() {
+    /*func playDing() {
         let url = Bundle.main.url(forResource: "ding", withExtension: "mp3")
         do {
             try audioPlayer = AVAudioPlayer(contentsOf: url!)
@@ -120,7 +120,7 @@ import AVFoundation
             return
         }
         audioPlayer.play()
-    }
+    }*/
     
     func playError() {
         let url = Bundle.main.url(forResource: "error", withExtension: "mp3")

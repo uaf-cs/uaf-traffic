@@ -6,6 +6,7 @@
 //  Copyright © 2019 University of Alaska Fairbanks. All rights reserved.
 //
 
+import AVFoundation
 import Foundation
 
 class Crossing: Codable, Equatable {
@@ -53,6 +54,7 @@ class Session: Codable, Equatable {
     var NSRoadName : String = ""
     var EWRoadName : String = ""
     var crossings : [Crossing]
+    var audioPlayer = AVAudioPlayer()
     
     enum CodingKeys: String, CodingKey {
         case lat
@@ -97,19 +99,24 @@ class Session: Codable, Equatable {
 
     func addCrossing( type: String, from: String, to: String ) {
         if (from == "n" || to == "n") && !hasNorthLink {
+            playError()
             return
         }
         else if (from == "e" || to == "e") && !hasEastLink {
+            playError()
             return
         }
         else if (from == "s" || to == "s") && !hasSouthLink {
+            playError()
             return
         }
         else if (from == "w" || to == "w") && !hasWestLink {
+            playError()
             return
         }
         let newCrossing = Crossing(type: type, from: from, to: to, time: Date())
         crossings.append(newCrossing)
+        playDing()
     }
 
     func undo() {
@@ -126,5 +133,27 @@ class Session: Codable, Equatable {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d yyyy, h:mm a"
         return formatter.string(from: crossings.first!.time)
+    }
+    
+    func playDing() {
+        let url = Bundle.main.url(forResource: "ding", withExtension: "mp3")
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url!)
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
+        audioPlayer.play()
+    }
+    
+    func playError() {
+        let url = Bundle.main.url(forResource: "error", withExtension: "mp3")
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url!)
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
+        audioPlayer.play()
     }
 }
