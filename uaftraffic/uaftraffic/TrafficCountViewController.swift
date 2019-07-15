@@ -18,8 +18,8 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var countLabel: UILabel!
 	@IBOutlet weak var compassArrow: UIImageView!
 	@IBOutlet weak var compassLetters: UIImageView!
-//    @IBOutlet weak var northBlocker: UIImageView!
-//    @IBOutlet weak var eastBlocker: UIImageView!
+    @IBOutlet weak var northBlocker: UIImageView!
+    //    @IBOutlet weak var eastBlocker: UIImageView!
     @IBOutlet weak var southBlocker: UIImageView!
 //    @IBOutlet weak var westBlocker: UIImageView!
 	
@@ -35,7 +35,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
 		locationManager.delegate = self
 		locationManager.startUpdatingHeading()
         crossingCountChanged()
-//        northBlocker.isHidden = session.hasNorthLink
+        northBlocker.isHidden = session.hasNorthLink
 //        eastBlocker.isHidden = session.hasEastLink
         southBlocker.isHidden = session.hasSouthLink
 //        westBlocker.isHidden = session.hasWestLink

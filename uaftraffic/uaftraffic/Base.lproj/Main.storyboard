@@ -588,6 +588,9 @@
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="8wM-Nh-KIp">
                                 <rect key="frame" x="0.0" y="787" width="768" height="109"/>
                             </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="SpN-Wr-yNh">
+                                <rect key="frame" x="0.0" y="128" width="768" height="116"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -627,6 +630,7 @@
                             <constraint firstItem="Buc-r5-Jna" firstAttribute="centerY" secondItem="dIX-c1-rUZ" secondAttribute="centerY" priority="250" id="L6J-9d-dbM"/>
                             <constraint firstItem="zJn-OE-EM8" firstAttribute="trailing" secondItem="vbJ-X3-YNf" secondAttribute="leading" id="LTg-D2-VqN"/>
                             <constraint firstItem="0yB-mL-HrH" firstAttribute="trailing" secondItem="16A-qB-o4Z" secondAttribute="leading" id="NxJ-oL-7DF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SpN-Wr-yNh" secondAttribute="trailing" id="OeJ-xG-DvF"/>
                             <constraint firstItem="2b8-S2-9Tu" firstAttribute="bottom" secondItem="m6l-Gn-Kcd" secondAttribute="top" priority="250" id="PUy-FX-EAR"/>
                             <constraint firstItem="pXf-dZ-bvE" firstAttribute="leading" secondItem="85e-eK-tpb" secondAttribute="trailing" id="PZF-Hm-LFV"/>
                             <constraint firstItem="dIX-c1-rUZ" firstAttribute="bottom" secondItem="pXf-dZ-bvE" secondAttribute="top" priority="250" id="Q2z-p9-Olh"/>
@@ -649,6 +653,7 @@
                             <constraint firstItem="pcN-s6-wxM" firstAttribute="centerX" secondItem="4zQ-mK-S1h" secondAttribute="centerX" id="bVn-Wr-nu1"/>
                             <constraint firstItem="85e-eK-tpb" firstAttribute="leading" secondItem="16A-qB-o4Z" secondAttribute="trailing" id="cJH-YK-e6S"/>
                             <constraint firstItem="xfL-mG-5zd" firstAttribute="top" secondItem="XSM-fo-cL4" secondAttribute="bottom" id="d3N-dD-AM3"/>
+                            <constraint firstItem="SpN-Wr-yNh" firstAttribute="bottom" secondItem="XSM-fo-cL4" secondAttribute="bottom" constant="7" id="fEf-Os-guJ"/>
                             <constraint firstItem="pXf-dZ-bvE" firstAttribute="height" secondItem="16A-qB-o4Z" secondAttribute="height" id="gJu-KM-q3z"/>
                             <constraint firstItem="0yB-mL-HrH" firstAttribute="height" secondItem="16A-qB-o4Z" secondAttribute="height" priority="999" id="gnC-Pz-qti"/>
                             <constraint firstItem="vj5-td-ix4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7bM-o9-myX" secondAttribute="bottom" id="hB7-un-act"/>
@@ -677,6 +682,8 @@
                             <constraint firstItem="PaG-Uc-Wwm" firstAttribute="centerY" secondItem="XGN-Vi-QgP" secondAttribute="centerY" priority="250" id="tko-dl-qmb"/>
                             <constraint firstItem="4zQ-mK-S1h" firstAttribute="bottom" secondItem="pcN-s6-wxM" secondAttribute="top" id="uDY-Ix-w9Q"/>
                             <constraint firstItem="pcN-s6-wxM" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="uFX-vU-RAq"/>
+                            <constraint firstItem="SpN-Wr-yNh" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="vLI-cD-IxB"/>
+                            <constraint firstItem="SpN-Wr-yNh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vuX-Tp-gqN"/>
                             <constraint firstItem="EmS-7P-Car" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="wwC-xM-69c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -697,6 +704,7 @@
                         <outlet property="compassArrow" destination="AlR-uj-EeW" id="zsm-Lf-T9s"/>
                         <outlet property="compassLetters" destination="doH-yU-baY" id="ouV-si-wG7"/>
                         <outlet property="countLabel" destination="eG0-yF-zc3" id="KM8-3Y-8fU"/>
+                        <outlet property="northBlocker" destination="SpN-Wr-yNh" id="7p6-wp-s8n"/>
                         <outlet property="southBlocker" destination="8wM-Nh-KIp" id="WEu-cB-IHl"/>
                         <outlet property="undoButton" destination="069-es-cxg" id="kQJ-6F-uoc"/>
                     </connections>
