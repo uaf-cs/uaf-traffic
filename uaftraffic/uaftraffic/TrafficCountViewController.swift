@@ -35,10 +35,10 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
 		locationManager.delegate = self
 		locationManager.startUpdatingHeading()
         crossingCountChanged()
-//        northBlocker.isHidden = !session.hasNorthLink
-//        eastBlocker.isHidden = !session.hasEastLink
-        southBlocker.isHidden = !session.hasSouthLink
-//        westBlocker.isHidden = !session.hasWestLink
+//        northBlocker.isHidden = session.hasNorthLink
+//        eastBlocker.isHidden = session.hasEastLink
+        southBlocker.isHidden = session.hasSouthLink
+//        westBlocker.isHidden = session.hasWestLink
     }
     
     @IBAction func endSessionButtonTapped(_ sender: Any) {
