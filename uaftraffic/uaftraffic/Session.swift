@@ -96,6 +96,18 @@ class Session: Codable, Equatable {
     }
 
     func addCrossing( type: String, from: String, to: String ) {
+        if (from == "n" || to == "n") && !hasNorthLink {
+            return
+        }
+        else if (from == "e" || to == "e") && !hasEastLink {
+            return
+        }
+        else if (from == "s" || to == "s") && !hasSouthLink {
+            return
+        }
+        else if (from == "w" || to == "w") && !hasWestLink {
+            return
+        }
         let newCrossing = Crossing(type: type, from: from, to: to, time: Date())
         crossings.append(newCrossing)
     }
