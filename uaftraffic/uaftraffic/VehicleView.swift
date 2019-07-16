@@ -12,11 +12,17 @@ import AVFoundation
 @IBDesignable class VehicleView: UIImageView {
 	@IBInspectable var vehicleType: String!
 	@IBInspectable var direction: String!
+    @IBOutlet weak var northBlock: UIImageView!
+    @IBOutlet weak var southBlock: UIImageView!
+    @IBOutlet weak var eastBlock: UIImageView!
+    @IBOutlet weak var westBlock: UIImageView!
     var startLocation = CGPoint()
     var dragRecognizer = UIGestureRecognizer()
     var audioPlayer = AVAudioPlayer()
     var centerSet = false
-    var orientation = UIDevice.current.orientation
+    var screenWidth = UIScreen.main.bounds.width
+//    var screenHeight = UIScreen.main.bounds.height
+//    var orientation = UIDevice.current.orientation
 	
     /*
     // Only override draw() if you perform custom drawing.
@@ -49,9 +55,9 @@ import AVFoundation
     }
 
     @objc func dragAction(_ gesture: UIPanGestureRecognizer) {
-        if orientation != UIDevice.current.orientation{
+        if screenWidth != UIScreen.main.bounds.width{
             centerSet = false
-            orientation = UIDevice.current.orientation
+            screenWidth = UIScreen.main.bounds.width
         }
         if centerSet == false {
             startLocation = center
@@ -61,28 +67,19 @@ import AVFoundation
             let translation = gesture.translation(in: gesture.view?.superview)
             center = CGPoint(x: startLocation.x + translation.x, y: startLocation.y + translation.y)
         } else if gesture.state == .ended {
-            let screenSize = UIScreen.main.bounds.size
-            var widthBoundSize = screenSize.width / 7
-            var heightBoundSize = 3 * screenSize.height / 10
-            if(UIDevice.current.orientation == UIDeviceOrientation.landscapeLeft) ||
-                (UIDevice.current.orientation == UIDeviceOrientation.landscapeRight){
-                widthBoundSize = 3 * screenSize.width / 10
-                heightBoundSize = screenSize.height / 7
-            }
-            
-            if (center.x > screenSize.width - widthBoundSize || center.x < widthBoundSize) && (center.y > screenSize.height - heightBoundSize || center.y < heightBoundSize){
+            if (center.x > eastBlock.frame.minX || center.x < westBlock.frame.maxX) && (center.y > southBlock.frame.minY || center.y < northBlock.frame.maxY){
                 print("not counted:", center.x, center.y)
                 playError()
                 UIView.animate(withDuration: 0.2) { () -> Void in
                     self.center = self.startLocation
                 }
-            }else if center.x > screenSize.width - widthBoundSize {
+            }else if center.x > eastBlock.frame.minX {
                 addCrossing(from: direction!, to: "e")
-            } else if center.x < widthBoundSize {
+            } else if center.x < westBlock.frame.maxX {
                 addCrossing(from: direction!, to: "w")
-            } else if center.y < heightBoundSize {
+            } else if center.y < northBlock.frame.maxY {
                 addCrossing(from: direction!, to: "n")
-            } else if center.y > screenSize.height - heightBoundSize {
+            } else if center.y > southBlock.frame.minY {
                 addCrossing(from: direction!, to: "s")
             } else {
                 print("not counted:", center.x, center.y)

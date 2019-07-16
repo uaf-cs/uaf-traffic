@@ -370,6 +370,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="hvh-rF-jWp"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="ekq-eH-Qi1"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="LmP-PS-qWA"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="GDW-OC-U5b"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="zJn-OE-EM8" userLabel="bike N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="220.5" y="128" width="109" height="109"/>
@@ -380,6 +386,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="Jgd-P4-PUu"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="sjJ-1M-N4Q"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="L1j-41-4RF"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="Y9h-F6-sVj"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="vbJ-X3-YNf" userLabel="car N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="329.5" y="128" width="109" height="109"/>
@@ -390,6 +402,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="AXj-Z7-wj3"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="bWC-dt-hFL"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="YfW-HJ-C9S"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="0HT-Lj-z5C"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="lSv-YX-51Y" userLabel="atv S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="111.5" y="787" width="109" height="109"/>
@@ -400,6 +418,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="FRu-hP-VlQ"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="M7m-CF-1fW"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="uk0-BJ-4St"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="Lr7-ul-DAz"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="0yB-mL-HrH" userLabel="bike S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="220.5" y="787" width="109" height="109"/>
@@ -410,6 +434,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="KSU-me-Sil"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="u6d-A5-JBR"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="FfW-bE-9eT"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="1mf-eX-SaT"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="16A-qB-o4Z" userLabel="car S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="329.5" y="787" width="109" height="109"/>
@@ -420,6 +450,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="SzA-oa-JI6"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="Z6M-eg-USK"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="WqK-Mb-gz3"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="g1L-ot-uR1"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="85e-eK-tpb" userLabel="pedestrian S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="438.5" y="787" width="109" height="109"/>
@@ -430,6 +466,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="ETF-Il-h7Q"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="38M-dC-GPL"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="XKm-bR-c4L"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="see-Ic-iWJ"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-dZ-bvE" userLabel="snowmachine S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="547.5" y="787" width="109" height="109"/>
@@ -440,6 +482,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="LIB-1m-jZq"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="3So-o1-cwY"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="qaI-jb-xXz"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="Aj7-wo-9Tx"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="2SP-7L-IF1" userLabel="car W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="457" width="110" height="110"/>
@@ -450,6 +498,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="UlJ-Me-ctL"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="gd4-eb-fEK"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="mRq-XA-ShX"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="JfP-VA-Eqo"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="PaG-Uc-Wwm" userLabel="pedestrian W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="567" width="110" height="110"/>
@@ -460,6 +514,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="vnU-cv-8Gd"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="L3e-U7-TKQ"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="1Sx-h1-xBY"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="tfQ-9m-1KD"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="s3O-c3-SQe" userLabel="bike W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="347" width="110" height="110"/>
@@ -470,6 +530,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="TF5-2f-dlv"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="YoG-se-vf1"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="bds-Rj-hQm"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="tAf-VC-yuh"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="xfL-mG-5zd" userLabel="atv W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="237" width="110" height="110"/>
@@ -480,6 +546,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="oXC-Te-Qrm"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="15q-Mu-3mY"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="NFT-xc-fkI"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="Phn-Ls-rbJ"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="pcN-s6-wxM" userLabel="car E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="658" y="457" width="110" height="110"/>
@@ -490,6 +562,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="mAb-56-ljg"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="eSM-dF-5HL"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="vqb-WO-eCK"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="gMV-H0-qaM"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="4zQ-mK-S1h" userLabel="bike E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="658" y="347" width="110" height="110"/>
@@ -500,6 +578,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="46o-RZ-LTl"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="rSQ-Tv-dIa"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="LH3-DY-ug4"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="fab-SQ-uC4"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="m6l-Gn-Kcd" userLabel="atv E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="658" y="237" width="110" height="110"/>
@@ -510,6 +594,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="j2t-Nv-UZd"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="q38-3u-qXC"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="Efr-Ha-tHr"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="mTP-Wm-x5h"/>
+                                </connections>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-o9-myX">
                                 <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
@@ -538,6 +628,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="JgS-EE-e8R"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="VF6-UL-keW"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="d3R-ks-sHS"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="xng-It-JhR"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-c1-rUZ" userLabel="snowmachine E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="658" y="677" width="110" height="110"/>
@@ -548,6 +644,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="N1k-md-AlU"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="P30-fq-BNN"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="BST-LZ-48n"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="YJP-p8-8YV"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-Vi-QgP" userLabel="pedestrian E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="658" y="567" width="110" height="110"/>
@@ -558,6 +660,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="jFr-wu-Xcp"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="JfF-wK-HOr"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="uz0-Wf-6fL"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="1KR-jW-lkV"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="EmS-7P-Car" userLabel="pedestrian N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="438.5" y="128" width="109" height="109"/>
@@ -568,6 +676,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="Scn-qj-Pcx"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="FCg-tk-V3A"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="JaM-Vk-fzr"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="SiA-IN-ejG"/>
+                                </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-S2-9Tu" userLabel="snowmachine N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="547.5" y="128" width="109" height="109"/>
@@ -578,6 +692,12 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="pbd-Xv-tGb"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="lQl-5w-Pav"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="EWQ-pm-YMn"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="46c-dL-6bq"/>
+                                </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass_rot" translatesAutoresizingMaskIntoConstraints="NO" id="doH-yU-baY">
                                 <rect key="frame" x="256" y="384" width="256" height="256"/>
