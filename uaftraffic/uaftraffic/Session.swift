@@ -42,15 +42,15 @@ class Session: Codable, Equatable {
     var lon : String
     var id : String
     var name : String
-    var hasNorthLink : Bool = true
-    var hasSouthLink : Bool = true
-    var hasWestLink : Bool = true
-    var hasEastLink : Bool = true
-    var vehicle1Type : String = "atv"
-    var vehicle2Type : String = "bike"
-    var vehicle3Type : String = "car"
-    var vehicle4Type : String = "pedestrian"
-    var vehicle5Type : String = "snowmachine"
+    var hasNorthLink : Bool
+    var hasSouthLink : Bool
+    var hasWestLink : Bool
+    var hasEastLink : Bool
+    var vehicle1Type : String
+    var vehicle2Type : String
+    var vehicle3Type : String
+    var vehicle4Type : String
+    var vehicle5Type : String
     var NSRoadName : String = ""
     var EWRoadName : String = ""
     var crossings : [Crossing]
@@ -61,6 +61,15 @@ class Session: Codable, Equatable {
         case lon
         case id
         case name
+        case hasNorthLink
+        case hasSouthLink
+        case hasWestLink
+        case hasEastLink
+        case vehicle1Type
+        case vehicle2Type
+        case vehicle3Type
+        case vehicle4Type
+        case vehicle5Type
         case crossings
     }
     
@@ -69,16 +78,34 @@ class Session: Codable, Equatable {
         self.lon = "0.00"
         self.id = ""
         self.name = ""
+        self.hasNorthLink = true
+        self.hasSouthLink = true
+        self.hasWestLink = true
+        self.hasEastLink = true
+        self.vehicle1Type = "atv"
+        self.vehicle2Type = "bike"
+        self.vehicle3Type = "plane"
+        self.vehicle4Type = "pedestrian"
+        self.vehicle5Type = "snowmachine"
         self.crossings = []
         
         self.id = randomString()
     }
     
-    init(lat: String, long: String, id: String, name: String, crossings: [Crossing]) {
+    init(lat: String, long: String, id: String, name: String, hasNorthLink: Bool, hasSouthLink: Bool, hasWestLink: Bool, hasEastLink: Bool, vehicle1Type: String, vehicle2Type: String, vehicle3Type: String, vehicle4Type: String, vehicle5Type: String, crossings: [Crossing]) {
         self.lat = lat
         self.lon = long
         self.id = id
         self.name = name
+        self.hasNorthLink = hasNorthLink
+        self.hasSouthLink = hasSouthLink
+        self.hasWestLink = hasWestLink
+        self.hasEastLink = hasEastLink
+        self.vehicle1Type = vehicle1Type
+        self.vehicle2Type = vehicle2Type
+        self.vehicle3Type = vehicle3Type
+        self.vehicle4Type = vehicle4Type
+        self.vehicle5Type = vehicle5Type
         self.crossings = crossings
     }
     
@@ -88,7 +115,16 @@ class Session: Codable, Equatable {
             lhs.lon == rhs.lon &&
             lhs.id == rhs.id &&
             lhs.name == rhs.name &&
-            lhs.crossings == rhs.crossings
+            lhs.crossings == rhs.crossings &&
+            lhs.hasNorthLink == rhs.hasNorthLink &&
+            lhs.hasSouthLink == rhs.hasSouthLink &&
+            lhs.hasEastLink == rhs.hasEastLink &&
+            lhs.hasWestLink == rhs.hasWestLink &&
+            lhs.vehicle1Type == rhs.vehicle1Type &&
+            lhs.vehicle2Type == rhs.vehicle2Type &&
+            lhs.vehicle3Type == rhs.vehicle3Type &&
+            lhs.vehicle4Type == rhs.vehicle4Type &&
+            lhs.vehicle5Type == rhs.vehicle5Type
     }
     
     func randomString() -> String {
