@@ -18,7 +18,7 @@ class VehicleSelectViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7;
+        return 6;
     }
     
      @IBAction func getSessionName(sender: Any) {
@@ -92,8 +92,6 @@ class VehicleSelectViewController: UITableViewController {
         case 4:
             cell.textLabel?.text = "pedestrian"
         case 5:
-            cell.textLabel?.text = "plane"
-        case 6:
             cell.textLabel?.text = "snowmachine"
             // more vehicles can be added, just be sure to address the row count as well
         default:
