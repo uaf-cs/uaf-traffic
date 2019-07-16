@@ -57,6 +57,7 @@ import AVFoundation
 
     @objc func dragAction(_ gesture: UIPanGestureRecognizer) {
         if !isActive {return}
+        self.layer.zPosition = 20
         if screenWidth != UIScreen.main.bounds.width{
             centerSet = false
             screenWidth = UIScreen.main.bounds.width
