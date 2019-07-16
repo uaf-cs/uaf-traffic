@@ -22,6 +22,26 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var eastBlocker: UIImageView!
     @IBOutlet weak var southBlocker: UIImageView!
     @IBOutlet weak var westBlocker: UIImageView!
+    @IBOutlet weak var north1: VehicleView!
+    @IBOutlet weak var north2: VehicleView!
+    @IBOutlet weak var north3: VehicleView!
+    @IBOutlet weak var north4: VehicleView!
+    @IBOutlet weak var north5: VehicleView!
+    @IBOutlet weak var south1: VehicleView!
+    @IBOutlet weak var south2: VehicleView!
+    @IBOutlet weak var south3: VehicleView!
+    @IBOutlet weak var south4: VehicleView!
+    @IBOutlet weak var south5: VehicleView!
+    @IBOutlet weak var west1: VehicleView!
+    @IBOutlet weak var west2: VehicleView!
+    @IBOutlet weak var west3: VehicleView!
+    @IBOutlet weak var west4: VehicleView!
+    @IBOutlet weak var west5: VehicleView!
+    @IBOutlet weak var east1: VehicleView!
+    @IBOutlet weak var east2: VehicleView!
+    @IBOutlet weak var east3: VehicleView!
+    @IBOutlet weak var east4: VehicleView!
+    @IBOutlet weak var east5: VehicleView!
     
 	let locationManager = CLLocationManager()
 	var session = Session()
@@ -39,6 +59,47 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         eastBlocker.isHidden = session.hasEastLink
         southBlocker.isHidden = session.hasSouthLink
         westBlocker.isHidden = session.hasWestLink
+        north1.vehicleType = session.vehicle1Type
+        north1.image = UIImage(named: session.vehicle1Type + ".pdf")
+        north2.vehicleType = session.vehicle2Type
+        north2.image = UIImage(named: session.vehicle2Type + ".pdf")
+        north3.vehicleType = session.vehicle3Type
+        north3.image = UIImage(named: session.vehicle3Type + ".pdf")
+        north4.vehicleType = session.vehicle4Type
+        north4.image = UIImage(named: session.vehicle4Type + ".pdf")
+        north5.vehicleType = session.vehicle5Type
+        north5.image = UIImage(named: session.vehicle5Type + ".pdf")
+        south1.vehicleType = session.vehicle1Type
+        south1.image = UIImage(named: session.vehicle1Type + ".pdf")
+        south2.vehicleType = session.vehicle2Type
+        south2.image = UIImage(named: session.vehicle2Type + ".pdf")
+        south3.vehicleType = session.vehicle3Type
+        south3.image = UIImage(named: session.vehicle3Type + ".pdf")
+        south4.vehicleType = session.vehicle4Type
+        south4.image = UIImage(named: session.vehicle4Type + ".pdf")
+        south5.vehicleType = session.vehicle5Type
+        south5.image = UIImage(named: session.vehicle5Type + ".pdf")
+        east1.vehicleType = session.vehicle1Type
+        east1.image = UIImage(named: session.vehicle1Type + ".pdf")
+        east2.vehicleType = session.vehicle2Type
+        east2.image = UIImage(named: session.vehicle2Type + ".pdf")
+        east3.vehicleType = session.vehicle3Type
+        east3.image = UIImage(named: session.vehicle3Type + ".pdf")
+        east4.vehicleType = session.vehicle4Type
+        east4.image = UIImage(named: session.vehicle4Type + ".pdf")
+        east5.vehicleType = session.vehicle5Type
+        east5.image = UIImage(named: session.vehicle5Type + ".pdf")
+        west1.vehicleType = session.vehicle1Type
+        west1.image = UIImage(named: session.vehicle1Type + ".pdf")
+        west2.vehicleType = session.vehicle2Type
+        west2.image = UIImage(named: session.vehicle2Type + ".pdf")
+        west3.vehicleType = session.vehicle3Type
+        west3.image = UIImage(named: session.vehicle3Type + ".pdf")
+        west4.vehicleType = session.vehicle4Type
+        west4.image = UIImage(named: session.vehicle4Type + ".pdf")
+        west5.vehicleType = session.vehicle5Type
+        west5.image = UIImage(named: session.vehicle5Type + ".pdf")
+        
     }
     
     @IBAction func endSessionButtonTapped(_ sender: Any) {

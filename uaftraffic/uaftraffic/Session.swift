@@ -46,11 +46,11 @@ class Session: Codable, Equatable {
     var hasSouthLink : Bool = true
     var hasWestLink : Bool = true
     var hasEastLink : Bool = true
-    var vehicle1Type : String = "ATV"
-    var vehicle2Type : String = "Bicycle"
-    var vehicle3Type : String = "Car"
-    var vehicle4Type : String = "Pedestrian"
-    var vehicle5Type : String = "Snowmachine"
+    var vehicle1Type : String = "atv"
+    var vehicle2Type : String = "bike"
+    var vehicle3Type : String = "car"
+    var vehicle4Type : String = "pedestrian"
+    var vehicle5Type : String = "snowmachine"
     var NSRoadName : String = ""
     var EWRoadName : String = ""
     var crossings : [Crossing]

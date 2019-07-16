@@ -82,19 +82,19 @@ class VehicleSelectViewController: UITableViewController {
         let counter = indexPath.row
         switch counter{
         case 0:
-            cell.textLabel?.text = "ATV"
+            cell.textLabel?.text = "atv"
         case 1:
-            cell.textLabel?.text = "Bicycle"
+            cell.textLabel?.text = "bike"
         case 2:
-            cell.textLabel?.text = "Car"
+            cell.textLabel?.text = "car"
         case 3:
-            cell.textLabel?.text = "Mush"
+            cell.textLabel?.text = "mush"
         case 4:
-            cell.textLabel?.text = "Pedestrian"
+            cell.textLabel?.text = "pedestrian"
         case 5:
-            cell.textLabel?.text = "Plane"
+            cell.textLabel?.text = "plane"
         case 6:
-            cell.textLabel?.text = "Snowmachine"
+            cell.textLabel?.text = "snowmachine"
             // more vehicles can be added, just be sure to address the row count as well
         default:
             assert(false, "too many rows")
