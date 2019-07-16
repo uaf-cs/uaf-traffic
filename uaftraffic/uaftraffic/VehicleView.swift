@@ -21,6 +21,7 @@ import AVFoundation
     var audioPlayer = AVAudioPlayer()
     var centerSet = false
     var screenWidth = UIScreen.main.bounds.width
+    var isActive: Bool = true
 //    var screenHeight = UIScreen.main.bounds.height
 //    var orientation = UIDevice.current.orientation
 	
@@ -55,6 +56,7 @@ import AVFoundation
     }
 
     @objc func dragAction(_ gesture: UIPanGestureRecognizer) {
+        if !isActive {return}
         if screenWidth != UIScreen.main.bounds.width{
             centerSet = false
             screenWidth = UIScreen.main.bounds.width
@@ -73,13 +75,13 @@ import AVFoundation
                 UIView.animate(withDuration: 0.2) { () -> Void in
                     self.center = self.startLocation
                 }
-            }else if center.x > eastBlock.frame.minX {
+            }else if center.x > eastBlock.frame.minX && eastBlock.isHidden {
                 addCrossing(from: direction!, to: "e")
-            } else if center.x < westBlock.frame.maxX {
+            } else if center.x < westBlock.frame.maxX && westBlock.isHidden {
                 addCrossing(from: direction!, to: "w")
-            } else if center.y < northBlock.frame.maxY {
+            } else if center.y < northBlock.frame.maxY && northBlock.isHidden {
                 addCrossing(from: direction!, to: "n")
-            } else if center.y > southBlock.frame.minY {
+            } else if center.y > southBlock.frame.minY && southBlock.isHidden {
                 addCrossing(from: direction!, to: "s")
             } else {
                 print("not counted:", center.x, center.y)

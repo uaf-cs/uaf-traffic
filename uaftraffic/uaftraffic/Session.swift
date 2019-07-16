@@ -134,22 +134,6 @@ class Session: Codable, Equatable {
     }
 
     func addCrossing( type: String, from: String, to: String ) {
-        if (from == "n" || to == "n") && !hasNorthLink {
-            playError()
-            return
-        }
-        else if (from == "e" || to == "e") && !hasEastLink {
-            playError()
-            return
-        }
-        else if (from == "s" || to == "s") && !hasSouthLink {
-            playError()
-            return
-        }
-        else if (from == "w" || to == "w") && !hasWestLink {
-            playError()
-            return
-        }
         let newCrossing = Crossing(type: type, from: from, to: to, time: Date())
         crossings.append(newCrossing)
         playDing()
@@ -173,17 +157,6 @@ class Session: Codable, Equatable {
     
     func playDing() {
         let url = Bundle.main.url(forResource: "ding", withExtension: "mp3")
-        do {
-            try audioPlayer = AVAudioPlayer(contentsOf: url!)
-        } catch let error {
-            print(error.localizedDescription)
-            return
-        }
-        audioPlayer.play()
-    }
-    
-    func playError() {
-        let url = Bundle.main.url(forResource: "error", withExtension: "mp3")
         do {
             try audioPlayer = AVAudioPlayer(contentsOf: url!)
         } catch let error {
