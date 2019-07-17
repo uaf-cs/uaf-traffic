@@ -159,6 +159,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         eastCheck()
         southCheck()
         westCheck()
+        countLabel.layer.zPosition = 21
     }
     
     @IBAction func endSessionButtonTapped(_ sender: Any) {
