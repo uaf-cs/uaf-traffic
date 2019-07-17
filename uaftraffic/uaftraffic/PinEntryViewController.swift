@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PinEntryViewController: UIViewController {
     @IBOutlet weak var pinField: UITextField!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var errorMessage: UITextField!
+    var audioPlayer = AVAudioPlayer()
     
     let networkManager = NetworkManager()
     
@@ -35,7 +38,9 @@ class PinEntryViewController: UIViewController {
                     }
                 } else {
                     print("invalid pin")
+                    self.playError()
                     DispatchQueue.main.async {
+                        self.errorMessage.text = "invalid pin"
                         self.pinField.text = ""
                         self.pinField.isEnabled = true
                         self.cancelButton.isEnabled = true
@@ -43,5 +48,16 @@ class PinEntryViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func playError() {
+        let url = Bundle.main.url(forResource: "error", withExtension: "mp3")
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url!)
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
+        audioPlayer.play()
     }
 }
