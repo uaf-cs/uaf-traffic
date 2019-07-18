@@ -12,6 +12,7 @@ class SessionDetailsCrossingCell: UITableViewCell {
     @IBOutlet weak var vehicle: UIImageView!
     @IBOutlet weak var direction: UILabel!
     @IBOutlet weak var time: UILabel!
+    var selectLabel: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()

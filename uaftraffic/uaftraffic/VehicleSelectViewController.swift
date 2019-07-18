@@ -63,40 +63,44 @@ class VehicleSelectViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        let cell = tableView.cellForRow(at: indexPath)
-        if cell?.accessoryType == UITableViewCell.AccessoryType.none{
+        let cell = tableView.cellForRow(at: indexPath) as! SessionDetailsCrossingCell
+        if cell.accessoryType == UITableViewCell.AccessoryType.none{
             if vehicleArray.count != 5 {
-                cell?.accessoryType = UITableViewCell.AccessoryType.checkmark
-                vehicleArray.append((cell?.textLabel?.text)!)
+                cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+                vehicleArray.append((cell.selectLabel))
             }
         }
         else{
-            cell?.accessoryType = UITableViewCell.AccessoryType.none
-            let i = vehicleArray.firstIndex(of: (cell?.textLabel?.text)!)
+            cell.accessoryType = UITableViewCell.AccessoryType.none
+            let i = vehicleArray.firstIndex(of: (cell.selectLabel))
             vehicleArray.remove(at: i!)
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "crossingCell", for: indexPath) as! SessionDetailsCrossingCell
         let counter = indexPath.row
         switch counter{
         case 0:
-            cell.textLabel?.text = "atv"
+            cell.selectLabel = "atv"
         case 1:
-            cell.textLabel?.text = "bike"
+            cell.selectLabel = "bike"
         case 2:
-            cell.textLabel?.text = "car"
+            cell.selectLabel = "car"
         case 3:
-            cell.textLabel?.text = "mush"
+            cell.selectLabel = "mush"
         case 4:
-            cell.textLabel?.text = "pedestrian"
+            cell.selectLabel = "pedestrian"
         case 5:
-            cell.textLabel?.text = "snowmachine"
+            cell.selectLabel = "snowmachine"
             // more vehicles can be added, just be sure to address the row count as well
         default:
             assert(false, "too many rows")
         }
+        cell.direction.text = ""
+        cell.time.text = ""
+        cell.selectionStyle = UITableViewCell.SelectionStyle.gray
+        cell.vehicle.image = UIImage(named: cell.selectLabel + "-black")
         cell.accessoryType = UITableViewCell.AccessoryType.none
         return cell
     }
