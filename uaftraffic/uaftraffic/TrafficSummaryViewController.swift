@@ -11,6 +11,8 @@ import UIKit
 
 class TrafficSummaryViewController: UITableViewController{
     var session = Session()
+    var boundFor: [String] = []
+    var sortedCount: [[Int]] = [[]]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         var count: Int = 0
@@ -33,12 +35,11 @@ class TrafficSummaryViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! TrafficSummaryHeaderCell
-        var names: [String] = []
-        if session.hasNorthLink {names.append("Southbound")}
-        if session.hasSouthLink {names.append("Northbound")}
-        if session.hasWestLink {names.append("Eastbound")}
-        if session.hasEastLink {names.append("Westbound")}
-        cell.directionLabel.text = names[section]
+        if session.hasNorthLink {boundFor.append("Southbound")}
+        if session.hasSouthLink {boundFor.append("Northbound")}
+        if session.hasWestLink {boundFor.append("Eastbound")}
+        if session.hasEastLink {boundFor.append("Westbound")}
+        cell.directionLabel.text = boundFor[section]
         return cell
     }
     
@@ -58,6 +59,13 @@ class TrafficSummaryViewController: UITableViewController{
             cell.selectLabel = session.vehicle5Type
         default:
             assert(false, "too many rows")
+        }
+        //var test = sortedCount[indexPath.section][indexPath.row]
+        let direction = boundFor[indexPath.section]
+        switch direction{
+        
+        default:
+            assert(false, "unrecognized direction")
         }
         cell.vehicle.image = UIImage(named: cell.selectLabel + "-black")
         return cell
