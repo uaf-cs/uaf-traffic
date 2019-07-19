@@ -56,16 +56,16 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         northBlocker.isHidden = session.hasNorthLink
         northGrey.isHidden = session.hasNorthLink
         if session.hasNorthLink{
-            north1.vehicleType = session.vehicle1Type
-            north1.image = UIImage(named: session.vehicle1Type + ".pdf")
-            north2.vehicleType = session.vehicle2Type
-            north2.image = UIImage(named: session.vehicle2Type + ".pdf")
+            north5.vehicleType = session.vehicle1Type
+            north5.image = UIImage(named: session.vehicle1Type + ".pdf")
+            north4.vehicleType = session.vehicle2Type
+            north4.image = UIImage(named: session.vehicle2Type + ".pdf")
             north3.vehicleType = session.vehicle3Type
             north3.image = UIImage(named: session.vehicle3Type + ".pdf")
-            north4.vehicleType = session.vehicle4Type
-            north4.image = UIImage(named: session.vehicle4Type + ".pdf")
-            north5.vehicleType = session.vehicle5Type
-            north5.image = UIImage(named: session.vehicle5Type + ".pdf")
+            north2.vehicleType = session.vehicle4Type
+            north2.image = UIImage(named: session.vehicle4Type + ".pdf")
+            north1.vehicleType = session.vehicle5Type
+            north1.image = UIImage(named: session.vehicle5Type + ".pdf")
         }
         else{
             north1.isActive = false
@@ -80,16 +80,16 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         eastBlocker.isHidden = session.hasEastLink
         eastGrey.isHidden = session.hasEastLink
         if session.hasEastLink{
-            east1.vehicleType = session.vehicle1Type
-            east1.image = UIImage(named: session.vehicle1Type + ".pdf")
-            east2.vehicleType = session.vehicle2Type
-            east2.image = UIImage(named: session.vehicle2Type + ".pdf")
+            east5.vehicleType = session.vehicle1Type
+            east5.image = UIImage(named: session.vehicle1Type + ".pdf")
+            east4.vehicleType = session.vehicle2Type
+            east4.image = UIImage(named: session.vehicle2Type + ".pdf")
             east3.vehicleType = session.vehicle3Type
             east3.image = UIImage(named: session.vehicle3Type + ".pdf")
-            east4.vehicleType = session.vehicle4Type
-            east4.image = UIImage(named: session.vehicle4Type + ".pdf")
-            east5.vehicleType = session.vehicle5Type
-            east5.image = UIImage(named: session.vehicle5Type + ".pdf")
+            east2.vehicleType = session.vehicle4Type
+            east2.image = UIImage(named: session.vehicle4Type + ".pdf")
+            east1.vehicleType = session.vehicle5Type
+            east1.image = UIImage(named: session.vehicle5Type + ".pdf")
 
         }
         else{
