@@ -31,6 +31,17 @@ class TrafficSummaryViewController: UITableViewController{
         return 5
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! TrafficSummaryHeaderCell
+        var names: [String] = []
+        if session.hasNorthLink {names.append("Southbound")}
+        if session.hasSouthLink {names.append("Northbound")}
+        if session.hasWestLink {names.append("Eastbound")}
+        if session.hasEastLink {names.append("Westbound")}
+        cell.directionLabel.text = names[section]
+        return cell
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "crossingCell", for: indexPath) as! TrafficSummaryViewCell
         let counter = indexPath.row

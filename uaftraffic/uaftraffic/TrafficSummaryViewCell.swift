@@ -19,3 +19,9 @@ class TrafficSummaryViewCell: UITableViewCell{
     var selectLabel: String = ""
     
 }
+
+class TrafficSummaryHeaderCell: UITableViewCell{
+
+    @IBOutlet weak var directionLabel: UILabel!
+    
+}
