@@ -244,7 +244,7 @@
             </objects>
             <point key="canvasLocation" x="813" y="611"/>
         </scene>
-        <!--Session Details View Controller-->
+        <!--Session Details-->
         <scene sceneID="3vs-hu-WgQ">
             <objects>
                 <tableViewController id="onB-Lu-8RF" customClass="SessionDetailsViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
@@ -304,6 +304,13 @@
                             <outlet property="delegate" destination="onB-Lu-8RF" id="tFb-IG-Xll"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Session Details" id="mAP-bC-lHs">
+                        <barButtonItem key="rightBarButtonItem" title="Summary" id="Ur8-p6-MaP">
+                            <connections>
+                                <segue destination="HTX-up-wcD" kind="show" id="76K-jA-IRV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEi-lw-g9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -374,7 +381,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_bg" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-td-ix4">
-                                <rect key="frame" x="0.0" y="128" width="768" height="768"/>
+                                <rect key="frame" x="0.0" y="128" width="768" height="768.00000000000023"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1:1" id="hry-Ud-D1f"/>
                                 </constraints>
@@ -492,7 +499,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-dZ-bvE" userLabel="snowmachine S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="547.5" y="787" width="109" height="109"/>
+                                <rect key="frame" x="547.5" y="787" width="109" height="109.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pXf-dZ-bvE" secondAttribute="height" multiplier="1:1" id="jrO-xx-fJG"/>
                                 </constraints>
@@ -638,7 +645,7 @@
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-r5-Jna" userLabel="snowmachine W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="677" width="110" height="110"/>
+                                <rect key="frame" x="0.0" y="677" width="110" height="110.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Buc-r5-Jna" secondAttribute="height" multiplier="1:1" id="8Vo-T4-hVy"/>
                                 </constraints>
@@ -654,7 +661,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-c1-rUZ" userLabel="snowmachine E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="658" y="677" width="110" height="110"/>
+                                <rect key="frame" x="658" y="677" width="110" height="110.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dIX-c1-rUZ" secondAttribute="height" multiplier="1:1" id="PTQ-6y-eYA"/>
                                 </constraints>
@@ -702,7 +709,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-S2-9Tu" userLabel="snowmachine N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="547.5" y="128" width="109" height="109"/>
+                                <rect key="frame" x="547.5" y="128" width="109" height="109.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2b8-S2-9Tu" secondAttribute="height" multiplier="1:1" id="fRu-WA-JXU"/>
                                 </constraints>
@@ -1114,6 +1121,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="owr-MF-kRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1595" y="1320"/>
+        </scene>
+        <!--Traffic Summary-->
+        <scene sceneID="gZR-fX-jJG">
+            <objects>
+                <tableViewController id="HTX-up-wcD" customClass="TrafficSummaryViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kyC-T7-Yf6">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="crossingCell" rowHeight="70" id="tjM-M5-Fju" customClass="TrafficSummaryViewCell" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="768" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tjM-M5-Fju" id="vtf-oC-Wqa">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv-black" translatesAutoresizingMaskIntoConstraints="NO" id="4wG-Om-0IF">
+                                            <rect key="frame" x="20" y="0.0" width="69.5" height="69.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="70" id="0Nt-7V-E6t"/>
+                                                <constraint firstAttribute="width" secondItem="4wG-Om-0IF" secondAttribute="height" multiplier="1:1" id="cv9-dE-xlY"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Right" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="MrY-wX-B5M">
+                                            <rect key="frame" x="581" y="18" width="167" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Through" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="mOZ-Yn-Nc1">
+                                            <rect key="frame" x="109.5" y="18" width="102" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUa-hk-r4d">
+                                            <rect key="frame" x="351" y="18" width="47" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MrY-wX-B5M" firstAttribute="centerY" secondItem="vtf-oC-Wqa" secondAttribute="centerY" id="5j0-p4-Rf2"/>
+                                        <constraint firstItem="4wG-Om-0IF" firstAttribute="leading" secondItem="vtf-oC-Wqa" secondAttribute="leading" constant="20" id="7ci-G3-hcR"/>
+                                        <constraint firstItem="4wG-Om-0IF" firstAttribute="centerY" secondItem="vtf-oC-Wqa" secondAttribute="centerY" id="N6r-v2-f3W"/>
+                                        <constraint firstItem="mOZ-Yn-Nc1" firstAttribute="leading" secondItem="4wG-Om-0IF" secondAttribute="trailing" constant="20" id="Ons-MK-RCf"/>
+                                        <constraint firstItem="MrY-wX-B5M" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mOZ-Yn-Nc1" secondAttribute="trailing" id="Twh-SA-PJ0"/>
+                                        <constraint firstAttribute="bottom" secondItem="4wG-Om-0IF" secondAttribute="bottom" id="YAJ-zE-NJt"/>
+                                        <constraint firstItem="4wG-Om-0IF" firstAttribute="top" secondItem="vtf-oC-Wqa" secondAttribute="top" id="Z0H-Cz-fgy"/>
+                                        <constraint firstItem="mOZ-Yn-Nc1" firstAttribute="centerY" secondItem="vtf-oC-Wqa" secondAttribute="centerY" id="li6-D8-RLe"/>
+                                        <constraint firstAttribute="trailing" secondItem="MrY-wX-B5M" secondAttribute="trailing" constant="20" id="yPK-ub-zG9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HTX-up-wcD" id="7uE-vv-Imi"/>
+                            <outlet property="delegate" destination="HTX-up-wcD" id="6bZ-vN-wPf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Traffic Summary" id="med-5g-tdj"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8M-Nf-59m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2361.71875" y="610.546875"/>
         </scene>
     </scenes>
     <resources>

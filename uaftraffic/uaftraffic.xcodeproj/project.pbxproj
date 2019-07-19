@@ -11,6 +11,8 @@
 		24B702E3222FBCCD007D7755 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B702DC222D132E007D7755 /* Session.swift */; };
 		2653FC6D22C43A9000D65962 /* VehicleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2653FC6C22C43A9000D65962 /* VehicleSelectViewController.swift */; };
 		2654A1ED22C1990B00A4FE25 /* DirectionSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1EC22C1990B00A4FE25 /* DirectionSelectViewController.swift */; };
+		26C9886922E2247C00ED75FA /* TrafficSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C9886822E2247C00ED75FA /* TrafficSummaryViewController.swift */; };
+		26C9886B22E225C200ED75FA /* TrafficSummaryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C9886A22E225C200ED75FA /* TrafficSummaryViewCell.swift */; };
 		9D272DD9227C3083005C5969 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D272DD8227C3083005C5969 /* ding.mp3 */; };
 		9D272DDB227C308A005C5969 /* error.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D272DDA227C308A005C5969 /* error.mp3 */; };
 		9D2EC4902223CE63002FA1DD /* BigFancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EC48F2223CE63002FA1DD /* BigFancyButton.swift */; };
@@ -56,6 +58,8 @@
 		24B702DC222D132E007D7755 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2653FC6C22C43A9000D65962 /* VehicleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSelectViewController.swift; sourceTree = "<group>"; };
 		2654A1EC22C1990B00A4FE25 /* DirectionSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionSelectViewController.swift; sourceTree = "<group>"; };
+		26C9886822E2247C00ED75FA /* TrafficSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSummaryViewController.swift; sourceTree = "<group>"; };
+		26C9886A22E225C200ED75FA /* TrafficSummaryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSummaryViewCell.swift; sourceTree = "<group>"; };
 		9D272DD8227C3083005C5969 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
 		9D272DDA227C308A005C5969 /* error.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = error.mp3; sourceTree = "<group>"; };
 		9D2EC48F2223CE63002FA1DD /* BigFancyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigFancyButton.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 				24B702DA222D0E45007D7755 /* SessionManager.swift */,
 				24B702DC222D132E007D7755 /* Session.swift */,
 				9D62C564225337630080E0EF /* NetworkManager.swift */,
+				26C9886822E2247C00ED75FA /* TrafficSummaryViewController.swift */,
+				26C9886A22E225C200ED75FA /* TrafficSummaryViewCell.swift */,
 				9D62C566225337F40080E0EF /* Settings.bundle */,
 			);
 			path = uaftraffic;
@@ -331,7 +337,9 @@
 				9D2EC4962223D749002FA1DD /* TrafficCountViewController.swift in Sources */,
 				2654A1ED22C1990B00A4FE25 /* DirectionSelectViewController.swift in Sources */,
 				9D2EC4902223CE63002FA1DD /* BigFancyButton.swift in Sources */,
+				26C9886B22E225C200ED75FA /* TrafficSummaryViewCell.swift in Sources */,
 				9DE934D72207CA3D0000255D /* PinEntryViewController.swift in Sources */,
+				26C9886922E2247C00ED75FA /* TrafficSummaryViewController.swift in Sources */,
 				9D62C55F2250D1D90080E0EF /* ResumeSessionCell.swift in Sources */,
 				9D2EC4942223D428002FA1DD /* ManageSessionsViewController.swift in Sources */,
 				9D62C565225337630080E0EF /* NetworkManager.swift in Sources */,
