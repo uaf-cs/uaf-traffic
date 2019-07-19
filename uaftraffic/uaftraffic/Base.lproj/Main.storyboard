@@ -1176,6 +1176,12 @@
                                         <constraint firstAttribute="trailing" secondItem="MrY-wX-B5M" secondAttribute="trailing" constant="20" id="yPK-ub-zG9"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ThroughCount" destination="mOZ-Yn-Nc1" id="17H-R2-qHV"/>
+                                    <outlet property="Vehicle" destination="4wG-Om-0IF" id="l7b-4m-giO"/>
+                                    <outlet property="leftCount" destination="mUa-hk-r4d" id="fWu-DE-S6G"/>
+                                    <outlet property="rightCount" destination="MrY-wX-B5M" id="gPa-47-ckv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

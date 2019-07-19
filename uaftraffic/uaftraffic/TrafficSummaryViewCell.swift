@@ -11,4 +11,11 @@ import UIKit
 
 class TrafficSummaryViewCell: UITableViewCell{
     
+    @IBOutlet weak var vehicle: UIImageView!
+    @IBOutlet weak var throughCount: UILabel!
+    @IBOutlet weak var leftCount: UILabel!
+    @IBOutlet weak var rightCount: UILabel!
+    
+    var selectLabel: String = ""
+    
 }

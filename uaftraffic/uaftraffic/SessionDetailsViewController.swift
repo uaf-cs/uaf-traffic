@@ -36,6 +36,11 @@ class SessionDetailsViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! TrafficSummaryViewController
+        vc.session = session
+    }
+    
     func directionName(_ abbreviation: String) -> String {
         switch abbreviation {
         case "n":
