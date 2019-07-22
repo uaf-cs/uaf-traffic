@@ -12,7 +12,11 @@ import UIKit
 class TrafficSummaryViewController: UITableViewController{
     var session = Session()
     var boundFor: [String] = []
-    var sortedCount: [[Int]] = [[]]
+    var sortedCountFromSouth: [[Int]] = [[]]
+    var sortedCountFromNorth: [[Int]] = [[]]
+    var sortedCountFromEast: [[Int]] = [[]]
+    var sortedCountFromWest: [[Int]] = [[]]
+    //vehicles 1-5 will be the first input, and the directions will be the second input, with the stored values being the total crossings of that direction and vehicle type
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         var count: Int = 0
@@ -23,8 +27,24 @@ class TrafficSummaryViewController: UITableViewController{
         return count
     }
     
+    override func viewDidLoad() {
+        for crossing in session.crossings{
+            let strFrom = crossing.from
+            let strTo = crossing.to
+            switch strFrom{
+            case "n":
+                switch strTo{
+                default:
+                    assert(false, "unrecognized 'to' direction")
+                }
+            default:
+                assert(false, "unrecognized 'from' direction")
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //Since the vehicle selection 
+        //Since the vehicle selection appends the empty strings to the back of the array of vehicles, finding the first empty string will determine how many vehicles are present at the crossing
         if session.vehicle1Type == "" {return 0}
         if session.vehicle2Type == "" {return 1}
         if session.vehicle3Type == "" {return 2}
