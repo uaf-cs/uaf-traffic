@@ -61,12 +61,12 @@ class TrafficSummaryViewController: UITableViewController{
             assert(false, "too many rows")
         }
         //var test = sortedCount[indexPath.section][indexPath.row]
-        let direction = boundFor[indexPath.section]
+        /*let direction = boundFor[indexPath.section]
         switch direction{
         
         default:
             assert(false, "unrecognized direction")
-        }
+        }*/
         cell.vehicle.image = UIImage(named: cell.selectLabel + "-black")
         return cell
     }
