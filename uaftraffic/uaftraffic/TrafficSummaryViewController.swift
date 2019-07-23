@@ -46,12 +46,65 @@ class TrafficSummaryViewController: UITableViewController{
         sortedCountFromNorth = vehicleSeparators
         sortedCountFromWest = vehicleSeparators
         sortedCountFromSouth = vehicleSeparators
+        var vehicleTypeNum: Int = 0
         for crossing in session.crossings{
+            if crossing.type == session.vehicle1Type {vehicleTypeNum = 0}
+            else if crossing.type == session.vehicle2Type {vehicleTypeNum = 1}
+            else if crossing.type == session.vehicle3Type {vehicleTypeNum = 2}
+            else if crossing.type == session.vehicle4Type {vehicleTypeNum = 3}
+            else if crossing.type == session.vehicle5Type {vehicleTypeNum = 4}
             let strFrom = crossing.from
             let strTo = crossing.to
             switch strFrom{
             case "n":
                 switch strTo{
+                case "n":
+                    continue
+                case "s":
+                    sortedCountFromNorth [vehicleTypeNum][1] += 1
+                case "e":
+                    sortedCountFromNorth [vehicleTypeNum][0] += 1
+                case "w":
+                    sortedCountFromNorth [vehicleTypeNum][2] += 1
+                default:
+                    assert(false, "unrecognized 'to' direction")
+                }
+            case "s":
+                switch strTo{
+                case "s":
+                    continue
+                case "n":
+                    sortedCountFromSouth [vehicleTypeNum][1] += 1
+                case "w":
+                    sortedCountFromSouth [vehicleTypeNum][0] += 1
+                case "e":
+                    sortedCountFromSouth [vehicleTypeNum][2] += 1
+                default:
+                    assert(false, "unrecognized 'to' direction")
+                }
+            case "w":
+                switch strTo{
+                case "w":
+                    continue
+                case "e":
+                    sortedCountFromWest [vehicleTypeNum][1] += 1
+                case "n":
+                    sortedCountFromWest [vehicleTypeNum][0] += 1
+                case "s":
+                    sortedCountFromWest [vehicleTypeNum][2] += 1
+                default:
+                    assert(false, "unrecognized 'to' direction")
+                }
+            case "e":
+                switch strTo{
+                case "e":
+                    continue
+                case "w":
+                    sortedCountFromEast [vehicleTypeNum][1] += 1
+                case "s":
+                    sortedCountFromEast [vehicleTypeNum][0] += 1
+                case "n":
+                    sortedCountFromEast [vehicleTypeNum][2] += 1
                 default:
                     assert(false, "unrecognized 'to' direction")
                 }
@@ -89,12 +142,27 @@ class TrafficSummaryViewController: UITableViewController{
             assert(false, "too many rows")
         }
         //var test = sortedCount[indexPath.section][indexPath.row]
-        /*let direction = boundFor[indexPath.section]
+        let direction = boundFor[indexPath.section]
         switch direction{
-        
+        case "Southbound":
+            cell.leftCount.text = String(sortedCountFromNorth [counter][0])
+            cell.rightCount.text = String(sortedCountFromNorth [counter][2])
+            cell.throughCount.text = String(sortedCountFromNorth [counter][1])
+        case "Northbound":
+            cell.leftCount.text = String(sortedCountFromSouth [counter][0])
+            cell.rightCount.text = String(sortedCountFromSouth [counter][2])
+            cell.throughCount.text = String(sortedCountFromSouth [counter][1])
+        case "Eastbound":
+            cell.leftCount.text = String(sortedCountFromWest [counter][0])
+            cell.rightCount.text = String(sortedCountFromWest [counter][2])
+            cell.throughCount.text = String(sortedCountFromWest [counter][1])
+        case "Westbound":
+            cell.leftCount.text = String(sortedCountFromEast [counter][0])
+            cell.rightCount.text = String(sortedCountFromEast [counter][2])
+            cell.throughCount.text = String(sortedCountFromEast [counter][1])
         default:
             assert(false, "unrecognized direction")
-        }*/
+        }
         cell.vehicle.image = UIImage(named: cell.selectLabel + "-black")
         return cell
     }
