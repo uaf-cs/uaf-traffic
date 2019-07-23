@@ -12,22 +12,40 @@ import UIKit
 class TrafficSummaryViewController: UITableViewController{
     var session = Session()
     var boundFor: [String] = []
-    var sortedCountFromSouth: [[Int]] = [[]]
-    var sortedCountFromNorth: [[Int]] = [[]]
-    var sortedCountFromEast: [[Int]] = [[]]
-    var sortedCountFromWest: [[Int]] = [[]]
-    //vehicles 1-5 will be the first input, and the directions will be the second input, with the stored values being the total crossings of that direction and vehicle type
+    var sortedCountFromSouth: [[Int]] = []
+    var sortedCountFromNorth: [[Int]] = []
+    var sortedCountFromEast: [[Int]] = []
+    var sortedCountFromWest: [[Int]] = []
+    var vehicleTypes: Int = 0
+    //vehicles 1-5 will be the first input, and the directions will be the second input, left = 0, through = 1, right = 2, with the stored values being the total crossings of that direction and vehicle type
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        var count: Int = 0
-        if session.hasNorthLink {count += 1}
-        if session.hasEastLink {count += 1}
-        if session.hasWestLink {count += 1}
-        if session.hasSouthLink {count += 1}
-        return count
+        var directionCount: Int = 0
+        if session.hasNorthLink {directionCount += 1}
+        if session.hasEastLink {directionCount += 1}
+        if session.hasWestLink {directionCount += 1}
+        if session.hasSouthLink {directionCount += 1}
+        return directionCount
     }
     
     override func viewDidLoad() {
+        if session.hasNorthLink {boundFor.append("Southbound")}
+        if session.hasSouthLink {boundFor.append("Northbound")}
+        if session.hasWestLink {boundFor.append("Eastbound")}
+        if session.hasEastLink {boundFor.append("Westbound")}
+        //Since the vehicle selection appends the empty strings to the back of the array of vehicles, finding the first empty string will determine how many vehicles are present at the crossing
+        if session.vehicle1Type == "" {vehicleTypes = 0}
+        else if session.vehicle2Type == "" {vehicleTypes = 1}
+        else if session.vehicle3Type == "" {vehicleTypes = 2}
+        else if session.vehicle4Type == "" {vehicleTypes = 3}
+        else if session.vehicle5Type == "" {vehicleTypes = 4}
+        else {vehicleTypes = 5}
+        let crossingCount = Array(repeating: 0, count: 3)
+        let vehicleSeparators = Array(repeating: crossingCount, count: vehicleTypes)
+        sortedCountFromEast = vehicleSeparators
+        sortedCountFromNorth = vehicleSeparators
+        sortedCountFromWest = vehicleSeparators
+        sortedCountFromSouth = vehicleSeparators
         for crossing in session.crossings{
             let strFrom = crossing.from
             let strTo = crossing.to
@@ -44,21 +62,11 @@ class TrafficSummaryViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //Since the vehicle selection appends the empty strings to the back of the array of vehicles, finding the first empty string will determine how many vehicles are present at the crossing
-        if session.vehicle1Type == "" {return 0}
-        if session.vehicle2Type == "" {return 1}
-        if session.vehicle3Type == "" {return 2}
-        if session.vehicle4Type == "" {return 3}
-        if session.vehicle5Type == "" {return 4}
-        return 5
+        return vehicleTypes
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! TrafficSummaryHeaderCell
-        if session.hasNorthLink {boundFor.append("Southbound")}
-        if session.hasSouthLink {boundFor.append("Northbound")}
-        if session.hasWestLink {boundFor.append("Eastbound")}
-        if session.hasEastLink {boundFor.append("Westbound")}
         cell.directionLabel.text = boundFor[section]
         return cell
     }
