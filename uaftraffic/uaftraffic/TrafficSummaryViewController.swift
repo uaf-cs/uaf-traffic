@@ -18,6 +18,7 @@ class TrafficSummaryViewController: UITableViewController{
     var sortedCountFromWest: [[Int]] = []
     var vehicleTypes: Int = 0
     //vehicles 1-5 will be the first input, and the directions will be the second input, left = 0, through = 1, right = 2, with the stored values being the total crossings of that direction and vehicle type
+    @IBOutlet weak var dateItem: UIBarButtonItem!
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         var directionCount: Int = 0
@@ -29,6 +30,8 @@ class TrafficSummaryViewController: UITableViewController{
     }
     
     override func viewDidLoad() {
+        title = "Traffic Summary for " + session.name
+        dateItem.title = session.dateString()
         if session.hasNorthLink {boundFor.append("Southbound")}
         if session.hasSouthLink {boundFor.append("Northbound")}
         if session.hasWestLink {boundFor.append("Eastbound")}
