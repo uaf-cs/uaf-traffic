@@ -53,6 +53,7 @@ class Session: Codable, Equatable {
     var vehicle5Type : String
     var NSRoadName : String = ""
     var EWRoadName : String = ""
+    var technician : String = ""
     var crossings : [Crossing]
     var audioPlayer = AVAudioPlayer()
     
