@@ -398,6 +398,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="hvh-rF-jWp"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="ekq-eH-Qi1"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="fgC-mD-ScP"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="LmP-PS-qWA"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="GDW-OC-U5b"/>
                                 </connections>
@@ -414,6 +415,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="Jgd-P4-PUu"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="sjJ-1M-N4Q"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="ui5-gY-gUu"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="L1j-41-4RF"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="Y9h-F6-sVj"/>
                                 </connections>
@@ -430,6 +432,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="AXj-Z7-wj3"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="bWC-dt-hFL"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="P8W-ne-abi"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="YfW-HJ-C9S"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="0HT-Lj-z5C"/>
                                 </connections>
@@ -446,6 +449,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="FRu-hP-VlQ"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="M7m-CF-1fW"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="yaW-mt-LIV"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="uk0-BJ-4St"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="Lr7-ul-DAz"/>
                                 </connections>
@@ -462,6 +466,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="KSU-me-Sil"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="u6d-A5-JBR"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="3Y2-5J-uwl"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="FfW-bE-9eT"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="1mf-eX-SaT"/>
                                 </connections>
@@ -478,6 +483,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="SzA-oa-JI6"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="Z6M-eg-USK"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="aLY-pi-uTz"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="WqK-Mb-gz3"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="g1L-ot-uR1"/>
                                 </connections>
@@ -494,6 +500,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="ETF-Il-h7Q"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="38M-dC-GPL"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="0uZ-A5-fdx"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="XKm-bR-c4L"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="see-Ic-iWJ"/>
                                 </connections>
@@ -510,6 +517,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="LIB-1m-jZq"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="3So-o1-cwY"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="Ael-cK-ipG"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="qaI-jb-xXz"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="Aj7-wo-9Tx"/>
                                 </connections>
@@ -526,6 +534,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="UlJ-Me-ctL"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="gd4-eb-fEK"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="jSh-oW-maV"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="mRq-XA-ShX"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="JfP-VA-Eqo"/>
                                 </connections>
@@ -542,6 +551,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="vnU-cv-8Gd"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="L3e-U7-TKQ"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="X5B-O3-6by"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="1Sx-h1-xBY"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="tfQ-9m-1KD"/>
                                 </connections>
@@ -558,6 +568,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="TF5-2f-dlv"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="YoG-se-vf1"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="kz4-R3-Cae"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="bds-Rj-hQm"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="tAf-VC-yuh"/>
                                 </connections>
@@ -574,6 +585,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="oXC-Te-Qrm"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="15q-Mu-3mY"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="ZLs-Tb-wZO"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="NFT-xc-fkI"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="Phn-Ls-rbJ"/>
                                 </connections>
@@ -590,6 +602,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="mAb-56-ljg"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="eSM-dF-5HL"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="0bT-0S-mmu"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="vqb-WO-eCK"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="gMV-H0-qaM"/>
                                 </connections>
@@ -606,6 +619,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="46o-RZ-LTl"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="rSQ-Tv-dIa"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="Rew-1f-sYq"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="LH3-DY-ug4"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="fab-SQ-uC4"/>
                                 </connections>
@@ -622,6 +636,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="j2t-Nv-UZd"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="q38-3u-qXC"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="aAX-xi-2bM"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="Efr-Ha-tHr"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="mTP-Wm-x5h"/>
                                 </connections>
@@ -656,6 +671,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="JgS-EE-e8R"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="VF6-UL-keW"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="ABy-RC-wVS"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="d3R-ks-sHS"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="xng-It-JhR"/>
                                 </connections>
@@ -672,6 +688,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="N1k-md-AlU"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="P30-fq-BNN"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="y63-bv-vdO"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="BST-LZ-48n"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="YJP-p8-8YV"/>
                                 </connections>
@@ -688,6 +705,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="jFr-wu-Xcp"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="JfF-wK-HOr"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="dZr-kT-sJ0"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="uz0-Wf-6fL"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="1KR-jW-lkV"/>
                                 </connections>
@@ -704,6 +722,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="Scn-qj-Pcx"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="FCg-tk-V3A"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="5JF-Sa-0lR"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="JaM-Vk-fzr"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="SiA-IN-ejG"/>
                                 </connections>
@@ -720,6 +739,7 @@
                                 <connections>
                                     <outlet property="eastBlock" destination="b3s-Eb-n8l" id="pbd-Xv-tGb"/>
                                     <outlet property="northBlock" destination="SpN-Wr-yNh" id="lQl-5w-Pav"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="Vnu-t7-mr1"/>
                                     <outlet property="southBlock" destination="8wM-Nh-KIp" id="EWQ-pm-YMn"/>
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="46c-dL-6bq"/>
                                 </connections>
@@ -754,6 +774,9 @@
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_grey" translatesAutoresizingMaskIntoConstraints="NO" id="vhY-e7-CF3" userLabel="intersection_grey_south">
                                 <rect key="frame" x="166" y="640" width="436" height="147"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftarrow" translatesAutoresizingMaskIntoConstraints="NO" id="zEg-nD-671">
+                                <rect key="frame" x="256" y="384" width="256" height="256"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -785,6 +808,7 @@
                             <constraint firstItem="vj5-td-ix4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="998" id="DAK-uB-PcR"/>
                             <constraint firstItem="4zQ-mK-S1h" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="DDQ-cO-jhP"/>
                             <constraint firstItem="doH-yU-baY" firstAttribute="leading" secondItem="qTE-P6-x92" secondAttribute="trailing" id="Ewx-hE-hyE"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="height" secondItem="doH-yU-baY" secondAttribute="height" id="FLe-8p-alX"/>
                             <constraint firstItem="85e-eK-tpb" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="FMO-w9-m0A"/>
                             <constraint firstItem="vj5-td-ix4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fmq-Ps-toR"/>
                             <constraint firstItem="pcN-s6-wxM" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="110/768" id="G01-js-dKJ"/>
@@ -796,6 +820,7 @@
                             <constraint firstItem="8wM-Nh-KIp" firstAttribute="top" secondItem="pXf-dZ-bvE" secondAttribute="top" id="JWs-kf-0Oe"/>
                             <constraint firstItem="Buc-r5-Jna" firstAttribute="centerY" secondItem="dIX-c1-rUZ" secondAttribute="centerY" priority="250" id="L6J-9d-dbM"/>
                             <constraint firstItem="zJn-OE-EM8" firstAttribute="trailing" secondItem="vbJ-X3-YNf" secondAttribute="leading" id="LTg-D2-VqN"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="centerY" secondItem="AlR-uj-EeW" secondAttribute="centerY" id="Me6-VG-rsh"/>
                             <constraint firstItem="0yB-mL-HrH" firstAttribute="trailing" secondItem="16A-qB-o4Z" secondAttribute="leading" id="NxJ-oL-7DF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SpN-Wr-yNh" secondAttribute="trailing" id="OeJ-xG-DvF"/>
                             <constraint firstItem="bc2-Me-ewU" firstAttribute="leading" secondItem="vj5-td-ix4" secondAttribute="leading" id="PGY-KM-LKF"/>
@@ -805,16 +830,19 @@
                             <constraint firstItem="dIX-c1-rUZ" firstAttribute="bottom" secondItem="pXf-dZ-bvE" secondAttribute="top" priority="250" id="Q2z-p9-Olh"/>
                             <constraint firstItem="b3s-Eb-n8l" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="QgC-3L-daH"/>
                             <constraint firstItem="2b8-S2-9Tu" firstAttribute="leading" secondItem="EmS-7P-Car" secondAttribute="trailing" id="Ql2-n6-lgO"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="width" secondItem="doH-yU-baY" secondAttribute="width" id="RQH-8A-e4L"/>
                             <constraint firstItem="XSM-fo-cL4" firstAttribute="centerY" secondItem="2b8-S2-9Tu" secondAttribute="centerY" id="RtE-hu-d4H"/>
                             <constraint firstItem="16A-qB-o4Z" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="RuF-fl-KP1"/>
                             <constraint firstItem="AlR-uj-EeW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S2c-MD-N7w"/>
                             <constraint firstItem="s5f-n2-lgm" firstAttribute="top" secondItem="SpN-Wr-yNh" secondAttribute="bottom" id="SKA-c4-DkA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8wM-Nh-KIp" secondAttribute="trailing" id="Sux-GW-ABP"/>
                             <constraint firstItem="XGN-Vi-QgP" firstAttribute="top" secondItem="pcN-s6-wxM" secondAttribute="bottom" id="T2b-Rb-m0N"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="centerY" secondItem="doH-yU-baY" secondAttribute="centerY" id="TBL-jR-Stt"/>
                             <constraint firstItem="2SP-7L-IF1" firstAttribute="leading" secondItem="vj5-td-ix4" secondAttribute="leading" id="TM7-7f-3Dh"/>
                             <constraint firstItem="AlR-uj-EeW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TWm-lp-DZJ"/>
                             <constraint firstItem="0yB-mL-HrH" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="ULM-Jt-aXe"/>
                             <constraint firstItem="qTE-P6-x92" firstAttribute="leading" secondItem="bc2-Me-ewU" secondAttribute="trailing" id="WFu-Z6-VUR"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="centerX" secondItem="AlR-uj-EeW" secondAttribute="centerX" id="WvL-Jq-Zak"/>
                             <constraint firstItem="XSM-fo-cL4" firstAttribute="trailing" secondItem="zJn-OE-EM8" secondAttribute="leading" id="Xah-Vo-bnx"/>
                             <constraint firstItem="16A-qB-o4Z" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerX" id="YYG-0g-XoO"/>
                             <constraint firstItem="qTE-P6-x92" firstAttribute="bottom" secondItem="Buc-r5-Jna" secondAttribute="centerY" id="YvE-So-PvX"/>
@@ -831,6 +859,7 @@
                             <constraint firstItem="xfL-mG-5zd" firstAttribute="top" secondItem="XSM-fo-cL4" secondAttribute="bottom" id="d3N-dD-AM3"/>
                             <constraint firstItem="qTE-P6-x92" firstAttribute="top" secondItem="xfL-mG-5zd" secondAttribute="centerY" id="ePi-zc-xms"/>
                             <constraint firstItem="SpN-Wr-yNh" firstAttribute="bottom" secondItem="XSM-fo-cL4" secondAttribute="bottom" constant="7" id="fEf-Os-guJ"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="height" secondItem="AlR-uj-EeW" secondAttribute="height" id="fzX-Yd-R4f"/>
                             <constraint firstItem="pXf-dZ-bvE" firstAttribute="height" secondItem="16A-qB-o4Z" secondAttribute="height" id="gJu-KM-q3z"/>
                             <constraint firstItem="Kv5-w8-PaP" firstAttribute="top" secondItem="m6l-Gn-Kcd" secondAttribute="centerY" id="gKz-7w-MPJ"/>
                             <constraint firstItem="bc2-Me-ewU" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="gl9-5B-qPH"/>
@@ -850,6 +879,7 @@
                             <constraint firstItem="zJn-OE-EM8" firstAttribute="centerY" secondItem="XSM-fo-cL4" secondAttribute="centerY" id="kYC-V2-RJF"/>
                             <constraint firstItem="Buc-r5-Jna" firstAttribute="centerX" secondItem="PaG-Uc-Wwm" secondAttribute="centerX" id="kte-UW-jal"/>
                             <constraint firstItem="dIX-c1-rUZ" firstAttribute="top" secondItem="XGN-Vi-QgP" secondAttribute="bottom" id="lBe-zl-wGp"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="width" secondItem="AlR-uj-EeW" secondAttribute="width" id="ldv-Jq-o0q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eG0-yF-zc3" secondAttribute="bottom" constant="20" id="lyW-LX-QH5"/>
                             <constraint firstItem="Kv5-w8-PaP" firstAttribute="bottom" secondItem="dIX-c1-rUZ" secondAttribute="centerY" id="m9h-OC-efl"/>
                             <constraint firstItem="Buc-r5-Jna" firstAttribute="top" secondItem="PaG-Uc-Wwm" secondAttribute="bottom" id="n84-1F-63B"/>
@@ -868,6 +898,7 @@
                             <constraint firstItem="pcN-s6-wxM" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="uFX-vU-RAq"/>
                             <constraint firstItem="b3s-Eb-n8l" firstAttribute="leading" secondItem="pcN-s6-wxM" secondAttribute="leading" id="uWd-NI-gdW"/>
                             <constraint firstItem="b3s-Eb-n8l" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="uvu-XE-bfG"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="centerX" secondItem="doH-yU-baY" secondAttribute="centerX" id="vKz-03-WRK"/>
                             <constraint firstItem="SpN-Wr-yNh" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="vLI-cD-IxB"/>
                             <constraint firstItem="SpN-Wr-yNh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vuX-Tp-gqN"/>
                             <constraint firstItem="EmS-7P-Car" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="wwC-xM-69c"/>
@@ -1285,6 +1316,7 @@
         <image name="compass_rot" width="800" height="800"/>
         <image name="intersection_bg" width="1536" height="1474"/>
         <image name="intersection_grey" width="2133" height="2047"/>
+        <image name="leftarrow" width="800" height="800"/>
         <image name="pedestrian" width="807" height="1278"/>
         <image name="snowmachine" width="980" height="644"/>
         <image name="whitey" width="710" height="599"/>

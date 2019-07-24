@@ -16,6 +16,7 @@ import AVFoundation
     @IBOutlet weak var southBlock: UIImageView!
     @IBOutlet weak var eastBlock: UIImageView!
     @IBOutlet weak var westBlock: UIImageView!
+    @IBOutlet weak var roadSigns: UIImageView!
     var startLocation = CGPoint()
     var dragRecognizer = UIGestureRecognizer()
     var audioPlayer = AVAudioPlayer()
@@ -100,7 +101,34 @@ import AVFoundation
         print(from, "->", to)
         let userInfo:[String: String] = ["type": vehicleType, "from": from, "to": to]
         NotificationCenter.default.post(name: .addCrossing, object: nil, userInfo: userInfo)
-//        playDing()
+        switch from{
+        case "n":
+            roadSigns.transform = CGAffineTransform(rotationAngle: .pi)
+            switch to{
+            case "s":
+                roadSigns.image = UIImage.init(named: "straightarrow.png")
+            default:
+                roadSigns.image = UIImage.init(named: "uturn.png")
+            }
+        case "e":
+            roadSigns.transform = CGAffineTransform(rotationAngle: .pi*3/2)
+            switch to{
+            default:
+                roadSigns.image = UIImage.init(named: "uturn.png")
+            }
+        case "w":
+            roadSigns.transform = CGAffineTransform(rotationAngle: .pi/2)
+            switch to{
+            default:
+                roadSigns.image = UIImage.init(named: "uturn.png")
+            }
+        default:
+            roadSigns.transform = CGAffineTransform(rotationAngle: 0.0)
+            switch to{
+            default:
+                roadSigns.image = UIImage.init(named: "uturn.png")
+            }
+        }
         UIView.animate(withDuration: 0.5, animations: { () -> Void in
             self.transform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
         }, completion: { (Bool) -> Void in
