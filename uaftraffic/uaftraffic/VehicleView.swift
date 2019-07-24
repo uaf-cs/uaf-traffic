@@ -107,24 +107,46 @@ import AVFoundation
             switch to{
             case "s":
                 roadSigns.image = UIImage.init(named: "straightarrow.png")
+            case "w":
+                roadSigns.image = UIImage.init(named: "rightarrow.png")
+            case "e":
+                roadSigns.image = UIImage.init(named: "leftarrow.png")
             default:
                 roadSigns.image = UIImage.init(named: "uturn.png")
             }
         case "e":
             roadSigns.transform = CGAffineTransform(rotationAngle: .pi*3/2)
             switch to{
+            case "w":
+                roadSigns.image = UIImage.init(named: "straightarrow.png")
+            case "n":
+                roadSigns.image = UIImage.init(named: "rightarrow.png")
+            case "s":
+                roadSigns.image = UIImage.init(named: "leftarrow.png")
             default:
                 roadSigns.image = UIImage.init(named: "uturn.png")
             }
         case "w":
             roadSigns.transform = CGAffineTransform(rotationAngle: .pi/2)
             switch to{
+            case "e":
+                roadSigns.image = UIImage.init(named: "straightarrow.png")
+            case "s":
+                roadSigns.image = UIImage.init(named: "rightarrow.png")
+            case "n":
+                roadSigns.image = UIImage.init(named: "leftarrow.png")
             default:
                 roadSigns.image = UIImage.init(named: "uturn.png")
             }
         default:
             roadSigns.transform = CGAffineTransform(rotationAngle: 0.0)
             switch to{
+            case "n":
+                roadSigns.image = UIImage.init(named: "straightarrow.png")
+            case "e":
+                roadSigns.image = UIImage.init(named: "rightarrow.png")
+            case "w":
+                roadSigns.image = UIImage.init(named: "leftarrow.png")
             default:
                 roadSigns.image = UIImage.init(named: "uturn.png")
             }
