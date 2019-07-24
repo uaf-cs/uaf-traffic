@@ -152,7 +152,7 @@ class Session: Codable, Equatable {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d yyyy, h:mm a"
-        return formatter.string(from: crossings.first!.time)
+        return formatter.string(from: crossings.first!.time) + " to " + formatter.string(from: crossings.last!.time)
     }
     
     func playDing() {
