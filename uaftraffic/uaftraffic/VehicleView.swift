@@ -151,10 +151,16 @@ import AVFoundation
                 roadSigns.image = UIImage.init(named: "uturn.png")
             }
         }
+        roadSigns.isHidden = false
+        UIViewPropertyAnimator.init(duration: 0.5, curve: .easeInOut, animations: (() -> Void)? {
+            self.roadSigns.alpha = 0.0
+            }).startAnimation()
         UIView.animate(withDuration: 0.5, animations: { () -> Void in
             self.transform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
         }, completion: { (Bool) -> Void in
             self.center = self.startLocation
+            self.roadSigns.isHidden = true
+            self.roadSigns.alpha = 1.0
             UIView.animate(withDuration: 0.1) { () -> Void in
                 self.transform = CGAffineTransform(scaleX: 1, y: 1)
             }
