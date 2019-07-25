@@ -58,10 +58,38 @@ class VehicleSelectViewController: UITableViewController {
         lonPrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak lonPrompt] _ in
             guard let longitutde = lonPrompt!.textFields!.first!.text else { return }
             self.session.lon = longitutde
-            self.getUserName()
+            self.getEWRoad()
         }))
         lonPrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(lonPrompt, animated: true, completion: nil)
+    }
+    
+    func getEWRoad(){
+        let roadPrompt = UIAlertController(title: "East-West Road Name", message: "What is the name of the road running east-west?", preferredStyle: .alert)
+        roadPrompt.addTextField{ textField in
+            textField.placeholder = "Third Avenue"
+        }
+        roadPrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak roadPrompt] _ in
+            guard let roadName = roadPrompt!.textFields!.first!.text else { return }
+            self.session.EWRoadName = roadName
+            self.getNSRoad()
+        }))
+        roadPrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(roadPrompt, animated: true, completion: nil)
+    }
+    
+    func getNSRoad(){
+        let roadPrompt = UIAlertController(title: "North-South Road Name", message: "What is the name of the road running North-South?", preferredStyle: .alert)
+        roadPrompt.addTextField{ textField in
+            textField.placeholder = "Main Street"
+        }
+        roadPrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak roadPrompt] _ in
+            guard let roadName = roadPrompt!.textFields!.first!.text else { return }
+            self.session.NSRoadName = roadName
+            self.getUserName()
+        }))
+        roadPrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(roadPrompt, animated: true, completion: nil)
     }
     
     func getUserName(){
