@@ -28,18 +28,62 @@ class VehicleSelectViewController: UITableViewController {
      }
      namePrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak namePrompt] _ in
      guard let name = namePrompt!.textFields!.first!.text else { return }
-     self.saveSession(name: name)
+     self.session.name = name
+        self.getSessionLat()
+       // self.saveSession(name: name)
      }))
-     namePrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: cancel))
+     namePrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
      present(namePrompt, animated: true, completion: nil)
      }
+    
+    func getSessionLat(){
+        let latPrompt = UIAlertController(title: "Session Latitude", message: "What is the latitude of the session?", preferredStyle: .alert)
+        latPrompt.addTextField { textField in
+            textField.placeholder = "00.00 N"
+        }
+        latPrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak latPrompt] _ in
+            guard let latitude = latPrompt!.textFields!.first!.text else { return }
+            self.session.lat = latitude
+            self.getSessionLon()
+        }))
+        latPrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(latPrompt, animated: true, completion: nil)
+    }
+    
+    func getSessionLon(){
+        let lonPrompt = UIAlertController(title: "Session Longitude", message: "What is the longitude of the session?", preferredStyle: .alert)
+        lonPrompt.addTextField { textField in
+            textField.placeholder = "00.00 W"
+        }
+        lonPrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak lonPrompt] _ in
+            guard let longitutde = lonPrompt!.textFields!.first!.text else { return }
+            self.session.lon = longitutde
+            self.getUserName()
+        }))
+        lonPrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(lonPrompt, animated: true, completion: nil)
+    }
+    
+    func getUserName(){
+        let namePrompt = UIAlertController(title: "User Name", message: "What is your name?", preferredStyle: .alert)
+        namePrompt.addTextField { textField in
+            textField.placeholder = "Joe Smith"
+        }
+        namePrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak namePrompt] _ in
+            guard let name = namePrompt!.textFields!.first!.text else { return }
+            self.session.technician = name
+            self.saveSession()
+        }))
+        namePrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(namePrompt, animated: true, completion: nil)
+    }
      
      func cancel(sender: UIAlertAction){
         self.dismiss(animated: true, completion: nil)
      }
      
-     func saveSession(name: String) {
-     session.name = name
+     func saveSession() {
+//     session.name = name
         if vehicleArray.count < 5{
             let blankArray = Array(repeating: "", count: 5 - vehicleArray.count)
             vehicleArray.append(contentsOf: blankArray)
