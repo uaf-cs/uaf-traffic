@@ -773,8 +773,8 @@
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_grey" translatesAutoresizingMaskIntoConstraints="NO" id="Kv5-w8-PaP" userLabel="intersection_grey_east">
                                 <rect key="frame" x="512" y="292" width="146" height="440"/>
                             </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="intersection_grey" translatesAutoresizingMaskIntoConstraints="NO" id="qTE-P6-x92" userLabel="intersection_grey_west">
-                                <rect key="frame" x="111" y="292" width="146" height="440"/>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_grey" translatesAutoresizingMaskIntoConstraints="NO" id="qTE-P6-x92" userLabel="intersection_grey_west">
+                                <rect key="frame" x="110" y="292" width="146" height="440"/>
                             </imageView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_grey" translatesAutoresizingMaskIntoConstraints="NO" id="s5f-n2-lgm" userLabel="intersection_grey_north">
                                 <rect key="frame" x="166" y="244" width="436" height="140"/>
