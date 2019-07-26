@@ -661,7 +661,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="AlR-uj-EeW">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="AlR-uj-EeW">
                                 <rect key="frame" x="256" y="384" width="256" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="AlR-uj-EeW" secondAttribute="height" multiplier="1:1" id="Vq5-i7-kZt"/>
