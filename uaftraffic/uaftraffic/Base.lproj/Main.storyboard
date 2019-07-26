@@ -381,7 +381,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_bg" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-td-ix4">
-                                <rect key="frame" x="0.0" y="128" width="768" height="768"/>
+                                <rect key="frame" x="0.0" y="128" width="768" height="768.00000000000023"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1:1" id="hry-Ud-D1f"/>
                                 </constraints>
@@ -506,7 +506,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-dZ-bvE" userLabel="snowmachine S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="547.5" y="787" width="109" height="109"/>
+                                <rect key="frame" x="547.5" y="787" width="109" height="109.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pXf-dZ-bvE" secondAttribute="height" multiplier="1:1" id="jrO-xx-fJG"/>
                                 </constraints>
@@ -660,7 +660,7 @@
                                 </constraints>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-r5-Jna" userLabel="snowmachine W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="677" width="110" height="110"/>
+                                <rect key="frame" x="0.0" y="677" width="110" height="110.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Buc-r5-Jna" secondAttribute="height" multiplier="1:1" id="8Vo-T4-hVy"/>
                                 </constraints>
@@ -677,7 +677,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-c1-rUZ" userLabel="snowmachine E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="658" y="677" width="110" height="110"/>
+                                <rect key="frame" x="658" y="677" width="110" height="110.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dIX-c1-rUZ" secondAttribute="height" multiplier="1:1" id="PTQ-6y-eYA"/>
                                 </constraints>
@@ -728,7 +728,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-S2-9Tu" userLabel="snowmachine N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="547.5" y="128" width="109" height="109"/>
+                                <rect key="frame" x="547.5" y="128" width="109" height="109.00000000000011"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2b8-S2-9Tu" secondAttribute="height" multiplier="1:1" id="fRu-WA-JXU"/>
                                 </constraints>
@@ -775,7 +775,7 @@
                                 <rect key="frame" x="166" y="640" width="436" height="147"/>
                             </imageView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftarrow" translatesAutoresizingMaskIntoConstraints="NO" id="zEg-nD-671">
-                                <rect key="frame" x="256" y="384" width="256" height="256"/>
+                                <rect key="frame" x="320" y="448" width="128" height="128"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -808,7 +808,7 @@
                             <constraint firstItem="vj5-td-ix4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="998" id="DAK-uB-PcR"/>
                             <constraint firstItem="4zQ-mK-S1h" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="DDQ-cO-jhP"/>
                             <constraint firstItem="doH-yU-baY" firstAttribute="leading" secondItem="qTE-P6-x92" secondAttribute="trailing" id="Ewx-hE-hyE"/>
-                            <constraint firstItem="zEg-nD-671" firstAttribute="height" secondItem="doH-yU-baY" secondAttribute="height" id="FLe-8p-alX"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="height" secondItem="doH-yU-baY" secondAttribute="height" multiplier="0.5" id="FLe-8p-alX"/>
                             <constraint firstItem="85e-eK-tpb" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="FMO-w9-m0A"/>
                             <constraint firstItem="vj5-td-ix4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fmq-Ps-toR"/>
                             <constraint firstItem="pcN-s6-wxM" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="110/768" id="G01-js-dKJ"/>
@@ -830,7 +830,7 @@
                             <constraint firstItem="dIX-c1-rUZ" firstAttribute="bottom" secondItem="pXf-dZ-bvE" secondAttribute="top" priority="250" id="Q2z-p9-Olh"/>
                             <constraint firstItem="b3s-Eb-n8l" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="QgC-3L-daH"/>
                             <constraint firstItem="2b8-S2-9Tu" firstAttribute="leading" secondItem="EmS-7P-Car" secondAttribute="trailing" id="Ql2-n6-lgO"/>
-                            <constraint firstItem="zEg-nD-671" firstAttribute="width" secondItem="doH-yU-baY" secondAttribute="width" id="RQH-8A-e4L"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="width" secondItem="doH-yU-baY" secondAttribute="width" multiplier="0.5" id="RQH-8A-e4L"/>
                             <constraint firstItem="XSM-fo-cL4" firstAttribute="centerY" secondItem="2b8-S2-9Tu" secondAttribute="centerY" id="RtE-hu-d4H"/>
                             <constraint firstItem="16A-qB-o4Z" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="RuF-fl-KP1"/>
                             <constraint firstItem="AlR-uj-EeW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S2c-MD-N7w"/>
@@ -859,7 +859,7 @@
                             <constraint firstItem="xfL-mG-5zd" firstAttribute="top" secondItem="XSM-fo-cL4" secondAttribute="bottom" id="d3N-dD-AM3"/>
                             <constraint firstItem="qTE-P6-x92" firstAttribute="top" secondItem="xfL-mG-5zd" secondAttribute="centerY" id="ePi-zc-xms"/>
                             <constraint firstItem="SpN-Wr-yNh" firstAttribute="bottom" secondItem="XSM-fo-cL4" secondAttribute="bottom" constant="7" id="fEf-Os-guJ"/>
-                            <constraint firstItem="zEg-nD-671" firstAttribute="height" secondItem="AlR-uj-EeW" secondAttribute="height" id="fzX-Yd-R4f"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="height" secondItem="AlR-uj-EeW" secondAttribute="height" multiplier="0.5" id="fzX-Yd-R4f"/>
                             <constraint firstItem="pXf-dZ-bvE" firstAttribute="height" secondItem="16A-qB-o4Z" secondAttribute="height" id="gJu-KM-q3z"/>
                             <constraint firstItem="Kv5-w8-PaP" firstAttribute="top" secondItem="m6l-Gn-Kcd" secondAttribute="centerY" id="gKz-7w-MPJ"/>
                             <constraint firstItem="bc2-Me-ewU" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="gl9-5B-qPH"/>
@@ -879,7 +879,7 @@
                             <constraint firstItem="zJn-OE-EM8" firstAttribute="centerY" secondItem="XSM-fo-cL4" secondAttribute="centerY" id="kYC-V2-RJF"/>
                             <constraint firstItem="Buc-r5-Jna" firstAttribute="centerX" secondItem="PaG-Uc-Wwm" secondAttribute="centerX" id="kte-UW-jal"/>
                             <constraint firstItem="dIX-c1-rUZ" firstAttribute="top" secondItem="XGN-Vi-QgP" secondAttribute="bottom" id="lBe-zl-wGp"/>
-                            <constraint firstItem="zEg-nD-671" firstAttribute="width" secondItem="AlR-uj-EeW" secondAttribute="width" id="ldv-Jq-o0q"/>
+                            <constraint firstItem="zEg-nD-671" firstAttribute="width" secondItem="AlR-uj-EeW" secondAttribute="width" multiplier="0.5" id="ldv-Jq-o0q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eG0-yF-zc3" secondAttribute="bottom" constant="20" id="lyW-LX-QH5"/>
                             <constraint firstItem="Kv5-w8-PaP" firstAttribute="bottom" secondItem="dIX-c1-rUZ" secondAttribute="centerY" id="m9h-OC-efl"/>
                             <constraint firstItem="Buc-r5-Jna" firstAttribute="top" secondItem="PaG-Uc-Wwm" secondAttribute="bottom" id="n84-1F-63B"/>
