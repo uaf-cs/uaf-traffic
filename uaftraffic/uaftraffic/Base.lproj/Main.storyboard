@@ -388,8 +388,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_bg" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-td-ix4">
-                                <rect key="frame" x="0.0" y="128" width="768" height="768.00000000000023"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road_background" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-td-ix4">
+                                <rect key="frame" x="0.0" y="128" width="768" height="768"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1:1" id="hry-Ud-D1f"/>
                                 </constraints>
@@ -1323,10 +1323,10 @@
         <image name="compass_arrow" width="800" height="800"/>
         <image name="compass_dirs" width="800" height="800"/>
         <image name="cset" width="800" height="289"/>
-        <image name="intersection_bg" width="1536" height="1474"/>
         <image name="intersection_grey" width="2133" height="2047"/>
         <image name="leftarrow" width="800" height="800"/>
         <image name="pedestrian" width="807" height="1278"/>
+        <image name="road_background" width="2048" height="2048"/>
         <image name="snowmachine" width="980" height="644"/>
         <image name="uaflogo" width="202" height="111"/>
         <image name="whitey" width="710" height="599"/>
