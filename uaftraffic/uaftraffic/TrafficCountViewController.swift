@@ -54,7 +54,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
 	
     func northCheck(){
         northBlocker.isHidden = session.hasNorthLink
-        northGrey.isHidden = session.hasNorthLink
+//        northGrey.isHidden = session.hasNorthLink
         if session.hasNorthLink{
             north5.vehicleType = session.vehicle1Type
             north5.image = UIImage(named: session.vehicle1Type + ".pdf")
@@ -78,7 +78,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     
     func eastCheck(){
         eastBlocker.isHidden = session.hasEastLink
-        eastGrey.isHidden = session.hasEastLink
+//        eastGrey.isHidden = session.hasEastLink
         if session.hasEastLink{
             east5.vehicleType = session.vehicle1Type
             east5.image = UIImage(named: session.vehicle1Type + ".pdf")
@@ -103,7 +103,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     
     func southCheck(){
         southBlocker.isHidden = session.hasSouthLink
-        southGrey.isHidden = session.hasSouthLink
+//        southGrey.isHidden = session.hasSouthLink
         if session.hasSouthLink{
             south1.vehicleType = session.vehicle1Type
             south1.image = UIImage(named: session.vehicle1Type + ".pdf")
@@ -127,7 +127,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     
     func westCheck(){
         westBlocker.isHidden = session.hasWestLink
-        westGrey.isHidden = session.hasWestLink
+//        westGrey.isHidden = session.hasWestLink
         if session.hasWestLink{
             west1.vehicleType = session.vehicle1Type
             west1.image = UIImage(named: session.vehicle1Type + ".pdf")
