@@ -22,10 +22,10 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var eastBlocker: UIImageView!
     @IBOutlet weak var southBlocker: UIImageView!
     @IBOutlet weak var westBlocker: UIImageView!
-    @IBOutlet weak var eastGrey: UIImageView!
-    @IBOutlet weak var westGrey: UIImageView!
-    @IBOutlet weak var southGrey: UIImageView!
-    @IBOutlet weak var northGrey: UIImageView!
+//    @IBOutlet weak var eastGrey: UIImageView!
+//    @IBOutlet weak var westGrey: UIImageView!
+//    @IBOutlet weak var southGrey: UIImageView!
+//    @IBOutlet weak var northGrey: UIImageView!
     @IBOutlet weak var north1: VehicleView!
     @IBOutlet weak var north2: VehicleView!
     @IBOutlet weak var north3: VehicleView!
