@@ -394,11 +394,20 @@
                                     <constraint firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1:1" id="hry-Ud-D1f"/>
                                 </constraints>
                             </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="8wM-Nh-KIp">
+                                <rect key="frame" x="96" y="800" width="576" height="96"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="SpN-Wr-yNh">
+                                <rect key="frame" x="96" y="128" width="576" height="96"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-Me-ewU">
+                                <rect key="frame" x="0.0" y="224" width="96" height="576"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="b3s-Eb-n8l">
+                                <rect key="frame" x="672" y="224" width="96" height="576"/>
+                            </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="XSM-fo-cL4" userLabel="atv N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="111.5" y="128" width="109" height="109"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="XSM-fo-cL4" secondAttribute="height" multiplier="1:1" id="Iaa-Hc-utX"/>
-                                </constraints>
+                                <rect key="frame" x="109" y="128" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
@@ -412,10 +421,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="zJn-OE-EM8" userLabel="bike N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="220.5" y="128" width="109" height="109"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="zJn-OE-EM8" secondAttribute="height" multiplier="1:1" id="rDT-fp-q6H"/>
-                                </constraints>
+                                <rect key="frame" x="222.5" y="128" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
@@ -429,10 +435,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="vbJ-X3-YNf" userLabel="car N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="329.5" y="128" width="109" height="109"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="vbJ-X3-YNf" secondAttribute="height" multiplier="1:1" id="NSE-Ta-EEY"/>
-                                </constraints>
+                                <rect key="frame" x="336" y="128" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
@@ -445,11 +448,36 @@
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="0HT-Lj-z5C"/>
                                 </connections>
                             </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="EmS-7P-Car" userLabel="pedestrian N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="449.5" y="128" width="96" height="96"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="Scn-qj-Pcx"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="FCg-tk-V3A"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="5JF-Sa-0lR"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="JaM-Vk-fzr"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="SiA-IN-ejG"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-S2-9Tu" userLabel="snowmachine N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="563" y="128" width="96" height="96.000000000000114"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="pbd-Xv-tGb"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="lQl-5w-Pav"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="Vnu-t7-mr1"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="EWQ-pm-YMn"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="46c-dL-6bq"/>
+                                </connections>
+                            </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="lSv-YX-51Y" userLabel="atv S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="111.5" y="787" width="109" height="109"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="lSv-YX-51Y" secondAttribute="height" multiplier="1:1" id="kO2-aZ-H8f"/>
-                                </constraints>
+                                <rect key="frame" x="109" y="800" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
@@ -463,10 +491,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="0yB-mL-HrH" userLabel="bike S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="220.5" y="787" width="109" height="109"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="0yB-mL-HrH" secondAttribute="height" multiplier="1:1" id="F3e-TD-cGb"/>
-                                </constraints>
+                                <rect key="frame" x="222.5" y="800" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
@@ -480,10 +505,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="16A-qB-o4Z" userLabel="car S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="329.5" y="787" width="109" height="109"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="16A-qB-o4Z" secondAttribute="height" multiplier="1:1" id="eJo-Fc-Cyy"/>
-                                </constraints>
+                                <rect key="frame" x="336" y="800" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
@@ -497,10 +519,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="85e-eK-tpb" userLabel="pedestrian S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="438.5" y="787" width="109" height="109"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="85e-eK-tpb" secondAttribute="height" multiplier="1:1" id="azS-7s-Tue"/>
-                                </constraints>
+                                <rect key="frame" x="449.5" y="800" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
@@ -514,10 +533,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-dZ-bvE" userLabel="snowmachine S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="547.5" y="787" width="109" height="109.00000000000011"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="pXf-dZ-bvE" secondAttribute="height" multiplier="1:1" id="jrO-xx-fJG"/>
-                                </constraints>
+                                <rect key="frame" x="563" y="800" width="96" height="96.000000000000114"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
@@ -530,11 +546,36 @@
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="Aj7-wo-9Tx"/>
                                 </connections>
                             </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="xfL-mG-5zd" userLabel="atv W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="237" width="96" height="96"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="oXC-Te-Qrm"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="15q-Mu-3mY"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="ZLs-Tb-wZO"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="NFT-xc-fkI"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="Phn-Ls-rbJ"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="s3O-c3-SQe" userLabel="bike W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="350.5" width="96" height="96"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="TF5-2f-dlv"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="YoG-se-vf1"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="kz4-R3-Cae"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="bds-Rj-hQm"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="tAf-VC-yuh"/>
+                                </connections>
+                            </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="2SP-7L-IF1" userLabel="car W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="457" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="2SP-7L-IF1" secondAttribute="height" multiplier="1:1" id="nQj-iv-Xtz"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="464" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
@@ -548,10 +589,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="PaG-Uc-Wwm" userLabel="pedestrian W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="567" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="PaG-Uc-Wwm" secondAttribute="height" multiplier="1:1" id="zeB-NB-Geu"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="577.5" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
@@ -564,62 +602,36 @@
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="tfQ-9m-1KD"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="s3O-c3-SQe" userLabel="bike W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="347" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="s3O-c3-SQe" secondAttribute="height" multiplier="1:1" id="lDC-F1-54J"/>
-                                </constraints>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-r5-Jna" userLabel="snowmachine W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="691" width="96" height="96.000000000000114"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="TF5-2f-dlv"/>
-                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="YoG-se-vf1"/>
-                                    <outlet property="roadSigns" destination="zEg-nD-671" id="kz4-R3-Cae"/>
-                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="bds-Rj-hQm"/>
-                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="tAf-VC-yuh"/>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="JgS-EE-e8R"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="VF6-UL-keW"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="ABy-RC-wVS"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="d3R-ks-sHS"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="xng-It-JhR"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="xfL-mG-5zd" userLabel="atv W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="237" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="xfL-mG-5zd" secondAttribute="height" multiplier="1:1" id="bpt-yY-QKf"/>
-                                </constraints>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="m6l-Gn-Kcd" userLabel="atv E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="672" y="237" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="oXC-Te-Qrm"/>
-                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="15q-Mu-3mY"/>
-                                    <outlet property="roadSigns" destination="zEg-nD-671" id="ZLs-Tb-wZO"/>
-                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="NFT-xc-fkI"/>
-                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="Phn-Ls-rbJ"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="pcN-s6-wxM" userLabel="car E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="658" y="457" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="pcN-s6-wxM" secondAttribute="height" multiplier="1:1" id="B7v-Xj-L1V"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="mAb-56-ljg"/>
-                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="eSM-dF-5HL"/>
-                                    <outlet property="roadSigns" destination="zEg-nD-671" id="0bT-0S-mmu"/>
-                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="vqb-WO-eCK"/>
-                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="gMV-H0-qaM"/>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="j2t-Nv-UZd"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="q38-3u-qXC"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="aAX-xi-2bM"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="Efr-Ha-tHr"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="mTP-Wm-x5h"/>
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="4zQ-mK-S1h" userLabel="bike E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="658" y="347" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="4zQ-mK-S1h" secondAttribute="height" multiplier="1:1" id="oiq-P4-DGr"/>
-                                </constraints>
+                                <rect key="frame" x="672" y="350.5" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
@@ -632,21 +644,46 @@
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="fab-SQ-uC4"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="m6l-Gn-Kcd" userLabel="atv E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="658" y="237" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="m6l-Gn-Kcd" secondAttribute="height" multiplier="1:1" id="hSV-Nr-3ve"/>
-                                </constraints>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="pcN-s6-wxM" userLabel="car E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="672" y="464" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="car"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="j2t-Nv-UZd"/>
-                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="q38-3u-qXC"/>
-                                    <outlet property="roadSigns" destination="zEg-nD-671" id="aAX-xi-2bM"/>
-                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="Efr-Ha-tHr"/>
-                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="mTP-Wm-x5h"/>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="mAb-56-ljg"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="eSM-dF-5HL"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="0bT-0S-mmu"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="vqb-WO-eCK"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="gMV-H0-qaM"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-Vi-QgP" userLabel="pedestrian E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="672" y="577.5" width="96" height="96"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="jFr-wu-Xcp"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="JfF-wK-HOr"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="dZr-kT-sJ0"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="uz0-Wf-6fL"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="1KR-jW-lkV"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-c1-rUZ" userLabel="snowmachine E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
+                                <rect key="frame" x="672" y="691" width="96" height="96.000000000000114"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="N1k-md-AlU"/>
+                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="P30-fq-BNN"/>
+                                    <outlet property="roadSigns" destination="zEg-nD-671" id="y63-bv-vdO"/>
+                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="BST-LZ-48n"/>
+                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="YJP-p8-8YV"/>
                                 </connections>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-o9-myX">
@@ -667,120 +704,11 @@
                                     <constraint firstAttribute="width" secondItem="AlR-uj-EeW" secondAttribute="height" multiplier="1:1" id="Vq5-i7-kZt"/>
                                 </constraints>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-r5-Jna" userLabel="snowmachine W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="677" width="110" height="110.00000000000011"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Buc-r5-Jna" secondAttribute="height" multiplier="1:1" id="8Vo-T4-hVy"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="JgS-EE-e8R"/>
-                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="VF6-UL-keW"/>
-                                    <outlet property="roadSigns" destination="zEg-nD-671" id="ABy-RC-wVS"/>
-                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="d3R-ks-sHS"/>
-                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="xng-It-JhR"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-c1-rUZ" userLabel="snowmachine E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="658" y="677" width="110" height="110.00000000000011"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="dIX-c1-rUZ" secondAttribute="height" multiplier="1:1" id="PTQ-6y-eYA"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="N1k-md-AlU"/>
-                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="P30-fq-BNN"/>
-                                    <outlet property="roadSigns" destination="zEg-nD-671" id="y63-bv-vdO"/>
-                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="BST-LZ-48n"/>
-                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="YJP-p8-8YV"/>
-                                </connections>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass_dirs" translatesAutoresizingMaskIntoConstraints="NO" id="doH-yU-baY">
                                 <rect key="frame" x="256" y="384" width="256" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="doH-yU-baY" secondAttribute="height" multiplier="1:1" id="FqX-Sd-P07"/>
                                 </constraints>
-                            </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-Vi-QgP" userLabel="pedestrian E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="658" y="567" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="XGN-Vi-QgP" secondAttribute="height" multiplier="1:1" id="pEG-Bb-oj4"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="jFr-wu-Xcp"/>
-                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="JfF-wK-HOr"/>
-                                    <outlet property="roadSigns" destination="zEg-nD-671" id="dZr-kT-sJ0"/>
-                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="uz0-Wf-6fL"/>
-                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="1KR-jW-lkV"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="EmS-7P-Car" userLabel="pedestrian N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="438.5" y="128" width="109" height="109"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="EmS-7P-Car" secondAttribute="height" multiplier="1:1" id="lsG-xg-Kfd"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="Scn-qj-Pcx"/>
-                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="FCg-tk-V3A"/>
-                                    <outlet property="roadSigns" destination="zEg-nD-671" id="5JF-Sa-0lR"/>
-                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="JaM-Vk-fzr"/>
-                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="SiA-IN-ejG"/>
-                                </connections>
-                            </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-S2-9Tu" userLabel="snowmachine N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="547.5" y="128" width="109" height="109.00000000000011"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="2b8-S2-9Tu" secondAttribute="height" multiplier="1:1" id="fRu-WA-JXU"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="eastBlock" destination="b3s-Eb-n8l" id="pbd-Xv-tGb"/>
-                                    <outlet property="northBlock" destination="SpN-Wr-yNh" id="lQl-5w-Pav"/>
-                                    <outlet property="roadSigns" destination="zEg-nD-671" id="Vnu-t7-mr1"/>
-                                    <outlet property="southBlock" destination="8wM-Nh-KIp" id="EWQ-pm-YMn"/>
-                                    <outlet property="westBlock" destination="bc2-Me-ewU" id="46c-dL-6bq"/>
-                                </connections>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="8wM-Nh-KIp">
-                                <rect key="frame" x="0.0" y="787" width="768" height="109"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="SpN-Wr-yNh">
-                                <rect key="frame" x="0.0" y="128" width="768" height="116"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-Me-ewU">
-                                <rect key="frame" x="0.0" y="128" width="110" height="768"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="b3s-Eb-n8l">
-                                <rect key="frame" x="658" y="128" width="110" height="768"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_grey" translatesAutoresizingMaskIntoConstraints="NO" id="Kv5-w8-PaP" userLabel="intersection_grey_east">
-                                <rect key="frame" x="512" y="292" width="146" height="440"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_grey" translatesAutoresizingMaskIntoConstraints="NO" id="qTE-P6-x92" userLabel="intersection_grey_west">
-                                <rect key="frame" x="110" y="292" width="146" height="440"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_grey" translatesAutoresizingMaskIntoConstraints="NO" id="s5f-n2-lgm" userLabel="intersection_grey_north">
-                                <rect key="frame" x="166" y="244" width="436" height="140"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intersection_grey" translatesAutoresizingMaskIntoConstraints="NO" id="vhY-e7-CF3" userLabel="intersection_grey_south">
-                                <rect key="frame" x="166" y="640" width="436" height="147"/>
                             </imageView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftarrow" translatesAutoresizingMaskIntoConstraints="NO" id="zEg-nD-671">
                                 <rect key="frame" x="320" y="448" width="128" height="128"/>
@@ -793,124 +721,121 @@
                             <constraint firstItem="dIX-c1-rUZ" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="0Z7-DB-cep"/>
                             <constraint firstItem="vbJ-X3-YNf" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerX" id="0rZ-on-E5m"/>
                             <constraint firstItem="AlR-uj-EeW" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/3" id="0zu-PA-v6O"/>
+                            <constraint firstItem="0yB-mL-HrH" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerXWithinMargins" multiplier="0.704492" id="1IC-vw-6f5"/>
                             <constraint firstItem="Buc-r5-Jna" firstAttribute="leading" secondItem="vj5-td-ix4" secondAttribute="leading" id="1YD-9Z-l4G"/>
-                            <constraint firstItem="4zQ-mK-S1h" firstAttribute="centerX" secondItem="m6l-Gn-Kcd" secondAttribute="centerX" id="1wx-00-ibG"/>
                             <constraint firstItem="b3s-Eb-n8l" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="32B-a9-d4B"/>
-                            <constraint firstItem="vhY-e7-CF3" firstAttribute="top" secondItem="doH-yU-baY" secondAttribute="bottom" id="38Y-kf-owm"/>
+                            <constraint firstItem="m6l-Gn-Kcd" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerYWithinMargins" multiplier="0.408984" id="3Fx-yZ-UDI"/>
                             <constraint firstItem="lSv-YX-51Y" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="3io-xx-0Fo"/>
                             <constraint firstItem="m6l-Gn-Kcd" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="3qy-lk-ymr"/>
-                            <constraint firstItem="lSv-YX-51Y" firstAttribute="trailing" secondItem="0yB-mL-HrH" secondAttribute="leading" id="4NI-2x-PC9"/>
-                            <constraint firstItem="85e-eK-tpb" firstAttribute="height" secondItem="16A-qB-o4Z" secondAttribute="height" priority="999" id="5h5-hL-ISg"/>
-                            <constraint firstItem="XGN-Vi-QgP" firstAttribute="centerX" secondItem="pcN-s6-wxM" secondAttribute="centerX" id="5tn-nh-0lz"/>
-                            <constraint firstItem="8wM-Nh-KIp" firstAttribute="top" secondItem="vhY-e7-CF3" secondAttribute="bottom" id="6sb-ir-LKN"/>
-                            <constraint firstItem="8wM-Nh-KIp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Bq-jk-l2B"/>
+                            <constraint firstItem="Buc-r5-Jna" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerYWithinMargins" multiplier="1.59102" id="7ET-lO-9xl"/>
                             <constraint firstItem="2b8-S2-9Tu" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="7Ph-Io-BfE"/>
+                            <constraint firstItem="2b8-S2-9Tu" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerXWithinMargins" multiplier="1.59102" id="7Xm-Jj-8KV"/>
                             <constraint firstItem="eG0-yF-zc3" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="bottom" constant="-2" id="7ex-nJ-DwO"/>
+                            <constraint firstItem="2b8-S2-9Tu" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="7qW-Ud-fkC"/>
                             <constraint firstItem="XSM-fo-cL4" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="8aI-dy-4lT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eG0-yF-zc3" secondAttribute="trailing" constant="20" id="8uC-Wb-TRE"/>
+                            <constraint firstItem="8wM-Nh-KIp" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="0.125" id="93O-pM-suy"/>
                             <constraint firstItem="XGN-Vi-QgP" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="95p-f9-SM4"/>
+                            <constraint firstItem="pXf-dZ-bvE" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerXWithinMargins" multiplier="1.59102" id="9Jc-hZ-PZR"/>
+                            <constraint firstItem="2SP-7L-IF1" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="9LL-1K-WwR"/>
+                            <constraint firstItem="b3s-Eb-n8l" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerY" id="9aH-zp-eqc"/>
+                            <constraint firstItem="8wM-Nh-KIp" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="0.75" id="AAq-d4-sNX"/>
                             <constraint firstItem="2SP-7L-IF1" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerY" id="ACB-B9-XY6"/>
                             <constraint firstItem="vbJ-X3-YNf" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="ADS-cH-ohv"/>
+                            <constraint firstItem="8wM-Nh-KIp" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerX" id="AND-7g-EKt"/>
+                            <constraint firstItem="85e-eK-tpb" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="B5D-Lb-18G"/>
+                            <constraint firstItem="pcN-s6-wxM" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="Bwq-16-Ukz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" priority="998" id="CD7-ye-vha"/>
                             <constraint firstItem="doH-yU-baY" firstAttribute="width" secondItem="AlR-uj-EeW" secondAttribute="width" id="CLb-Co-Qjo"/>
                             <constraint firstItem="vj5-td-ix4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="998" id="DAK-uB-PcR"/>
                             <constraint firstItem="4zQ-mK-S1h" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="DDQ-cO-jhP"/>
-                            <constraint firstItem="doH-yU-baY" firstAttribute="leading" secondItem="qTE-P6-x92" secondAttribute="trailing" id="Ewx-hE-hyE"/>
+                            <constraint firstItem="XGN-Vi-QgP" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="DEE-Ns-s8i"/>
+                            <constraint firstItem="2b8-S2-9Tu" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="DRz-aa-GV1"/>
+                            <constraint firstItem="85e-eK-tpb" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerXWithinMargins" multiplier="1.29551" id="DZg-zd-Fw0"/>
+                            <constraint firstItem="lSv-YX-51Y" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="ErI-gC-UtY"/>
+                            <constraint firstItem="4zQ-mK-S1h" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="FD4-wg-Vvx"/>
                             <constraint firstItem="zEg-nD-671" firstAttribute="height" secondItem="doH-yU-baY" secondAttribute="height" multiplier="0.5" id="FLe-8p-alX"/>
                             <constraint firstItem="85e-eK-tpb" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="FMO-w9-m0A"/>
                             <constraint firstItem="vj5-td-ix4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fmq-Ps-toR"/>
-                            <constraint firstItem="pcN-s6-wxM" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="110/768" id="G01-js-dKJ"/>
+                            <constraint firstItem="pcN-s6-wxM" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="G01-js-dKJ"/>
+                            <constraint firstItem="s3O-c3-SQe" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="GCl-pY-ODw"/>
+                            <constraint firstItem="EmS-7P-Car" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="GOR-kw-vJ2"/>
                             <constraint firstItem="pcN-s6-wxM" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerY" id="HZg-Zp-Xqz"/>
-                            <constraint firstItem="s3O-c3-SQe" firstAttribute="bottom" secondItem="2SP-7L-IF1" secondAttribute="top" id="HnW-gT-mCi"/>
-                            <constraint firstItem="EmS-7P-Car" firstAttribute="leading" secondItem="vbJ-X3-YNf" secondAttribute="trailing" id="HyM-Rw-lT9"/>
+                            <constraint firstItem="b3s-Eb-n8l" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="0.75" id="Hua-wc-8Aq"/>
+                            <constraint firstItem="bc2-Me-ewU" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="0.75" id="I5O-3d-KeA"/>
                             <constraint firstItem="doH-yU-baY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IKp-Xc-AFp"/>
                             <constraint firstItem="pXf-dZ-bvE" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="IvX-AO-2El"/>
-                            <constraint firstItem="8wM-Nh-KIp" firstAttribute="top" secondItem="pXf-dZ-bvE" secondAttribute="top" id="JWs-kf-0Oe"/>
-                            <constraint firstItem="Buc-r5-Jna" firstAttribute="centerY" secondItem="dIX-c1-rUZ" secondAttribute="centerY" priority="250" id="L6J-9d-dbM"/>
-                            <constraint firstItem="zJn-OE-EM8" firstAttribute="trailing" secondItem="vbJ-X3-YNf" secondAttribute="leading" id="LTg-D2-VqN"/>
+                            <constraint firstItem="XSM-fo-cL4" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="Lk7-Hk-JaK"/>
                             <constraint firstItem="zEg-nD-671" firstAttribute="centerY" secondItem="AlR-uj-EeW" secondAttribute="centerY" id="Me6-VG-rsh"/>
-                            <constraint firstItem="0yB-mL-HrH" firstAttribute="trailing" secondItem="16A-qB-o4Z" secondAttribute="leading" id="NxJ-oL-7DF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SpN-Wr-yNh" secondAttribute="trailing" id="OeJ-xG-DvF"/>
+                            <constraint firstItem="SpN-Wr-yNh" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="0.75" id="NcY-xa-8lK"/>
+                            <constraint firstItem="Buc-r5-Jna" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="OwY-CY-N0S"/>
                             <constraint firstItem="bc2-Me-ewU" firstAttribute="leading" secondItem="vj5-td-ix4" secondAttribute="leading" id="PGY-KM-LKF"/>
-                            <constraint firstItem="vhY-e7-CF3" firstAttribute="leading" secondItem="lSv-YX-51Y" secondAttribute="centerX" id="PJX-Fv-kgQ"/>
-                            <constraint firstItem="2b8-S2-9Tu" firstAttribute="bottom" secondItem="m6l-Gn-Kcd" secondAttribute="top" priority="250" id="PUy-FX-EAR"/>
-                            <constraint firstItem="pXf-dZ-bvE" firstAttribute="leading" secondItem="85e-eK-tpb" secondAttribute="trailing" id="PZF-Hm-LFV"/>
-                            <constraint firstItem="dIX-c1-rUZ" firstAttribute="bottom" secondItem="pXf-dZ-bvE" secondAttribute="top" priority="250" id="Q2z-p9-Olh"/>
-                            <constraint firstItem="b3s-Eb-n8l" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="QgC-3L-daH"/>
-                            <constraint firstItem="2b8-S2-9Tu" firstAttribute="leading" secondItem="EmS-7P-Car" secondAttribute="trailing" id="Ql2-n6-lgO"/>
+                            <constraint firstItem="xfL-mG-5zd" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="PVo-0F-P39"/>
+                            <constraint firstItem="SpN-Wr-yNh" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerX" id="Q8q-mu-fpm"/>
+                            <constraint firstItem="vbJ-X3-YNf" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="Qls-JN-ZEk"/>
                             <constraint firstItem="zEg-nD-671" firstAttribute="width" secondItem="doH-yU-baY" secondAttribute="width" multiplier="0.5" id="RQH-8A-e4L"/>
-                            <constraint firstItem="XSM-fo-cL4" firstAttribute="centerY" secondItem="2b8-S2-9Tu" secondAttribute="centerY" id="RtE-hu-d4H"/>
                             <constraint firstItem="16A-qB-o4Z" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="RuF-fl-KP1"/>
                             <constraint firstItem="AlR-uj-EeW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S2c-MD-N7w"/>
-                            <constraint firstItem="s5f-n2-lgm" firstAttribute="top" secondItem="SpN-Wr-yNh" secondAttribute="bottom" id="SKA-c4-DkA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8wM-Nh-KIp" secondAttribute="trailing" id="Sux-GW-ABP"/>
-                            <constraint firstItem="XGN-Vi-QgP" firstAttribute="top" secondItem="pcN-s6-wxM" secondAttribute="bottom" id="T2b-Rb-m0N"/>
+                            <constraint firstItem="EmS-7P-Car" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="Shg-Wh-1KW"/>
                             <constraint firstItem="zEg-nD-671" firstAttribute="centerY" secondItem="doH-yU-baY" secondAttribute="centerY" id="TBL-jR-Stt"/>
                             <constraint firstItem="2SP-7L-IF1" firstAttribute="leading" secondItem="vj5-td-ix4" secondAttribute="leading" id="TM7-7f-3Dh"/>
                             <constraint firstItem="AlR-uj-EeW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TWm-lp-DZJ"/>
+                            <constraint firstItem="PaG-Uc-Wwm" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="TuG-4e-xUT"/>
+                            <constraint firstItem="16A-qB-o4Z" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="UHg-Mn-U8J"/>
                             <constraint firstItem="0yB-mL-HrH" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="ULM-Jt-aXe"/>
-                            <constraint firstItem="qTE-P6-x92" firstAttribute="leading" secondItem="bc2-Me-ewU" secondAttribute="trailing" id="WFu-Z6-VUR"/>
+                            <constraint firstItem="lSv-YX-51Y" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerXWithinMargins" multiplier="0.408984" id="UNQ-pY-C5w"/>
+                            <constraint firstItem="xfL-mG-5zd" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="W1u-p4-gh1"/>
+                            <constraint firstItem="PaG-Uc-Wwm" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerYWithinMargins" multiplier="1.29551" id="Wqf-m0-uhw"/>
                             <constraint firstItem="zEg-nD-671" firstAttribute="centerX" secondItem="AlR-uj-EeW" secondAttribute="centerX" id="WvL-Jq-Zak"/>
-                            <constraint firstItem="XSM-fo-cL4" firstAttribute="trailing" secondItem="zJn-OE-EM8" secondAttribute="leading" id="Xah-Vo-bnx"/>
+                            <constraint firstItem="XSM-fo-cL4" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerXWithinMargins" multiplier="0.408984" id="Xo1-2C-dAl"/>
                             <constraint firstItem="16A-qB-o4Z" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerX" id="YYG-0g-XoO"/>
-                            <constraint firstItem="qTE-P6-x92" firstAttribute="bottom" secondItem="Buc-r5-Jna" secondAttribute="centerY" id="YvE-So-PvX"/>
-                            <constraint firstItem="doH-yU-baY" firstAttribute="top" secondItem="s5f-n2-lgm" secondAttribute="bottom" id="ZNm-TO-73t"/>
-                            <constraint firstItem="dIX-c1-rUZ" firstAttribute="centerX" secondItem="XGN-Vi-QgP" secondAttribute="centerX" id="ZSx-O2-VBQ"/>
-                            <constraint firstItem="bc2-Me-ewU" firstAttribute="trailing" secondItem="2SP-7L-IF1" secondAttribute="trailing" id="aIR-A2-sLb"/>
-                            <constraint firstItem="bc2-Me-ewU" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="aLw-5V-T7h"/>
-                            <constraint firstItem="lSv-YX-51Y" firstAttribute="height" secondItem="16A-qB-o4Z" secondAttribute="height" id="aSK-km-sO0"/>
-                            <constraint firstItem="m6l-Gn-Kcd" firstAttribute="bottom" secondItem="4zQ-mK-S1h" secondAttribute="top" id="aiF-DE-u0t"/>
-                            <constraint firstItem="2SP-7L-IF1" firstAttribute="centerX" secondItem="s3O-c3-SQe" secondAttribute="centerX" id="b5C-es-yy7"/>
+                            <constraint firstItem="vbJ-X3-YNf" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="ZrL-Vf-uPb"/>
+                            <constraint firstItem="0yB-mL-HrH" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="a3M-V9-R4o"/>
+                            <constraint firstItem="4zQ-mK-S1h" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerYWithinMargins" multiplier="0.704492" id="a8B-D3-qwm"/>
+                            <constraint firstItem="pXf-dZ-bvE" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="aBO-n6-yL1"/>
+                            <constraint firstItem="4zQ-mK-S1h" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="akF-3c-ape"/>
                             <constraint firstItem="zJn-OE-EM8" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="bAW-Bi-65h"/>
-                            <constraint firstItem="pcN-s6-wxM" firstAttribute="centerX" secondItem="4zQ-mK-S1h" secondAttribute="centerX" id="bVn-Wr-nu1"/>
-                            <constraint firstItem="85e-eK-tpb" firstAttribute="leading" secondItem="16A-qB-o4Z" secondAttribute="trailing" id="cJH-YK-e6S"/>
-                            <constraint firstItem="xfL-mG-5zd" firstAttribute="top" secondItem="XSM-fo-cL4" secondAttribute="bottom" id="d3N-dD-AM3"/>
-                            <constraint firstItem="qTE-P6-x92" firstAttribute="top" secondItem="xfL-mG-5zd" secondAttribute="centerY" id="ePi-zc-xms"/>
-                            <constraint firstItem="SpN-Wr-yNh" firstAttribute="bottom" secondItem="XSM-fo-cL4" secondAttribute="bottom" constant="7" id="fEf-Os-guJ"/>
+                            <constraint firstItem="PaG-Uc-Wwm" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="d4l-e4-E6W"/>
+                            <constraint firstItem="EmS-7P-Car" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerXWithinMargins" multiplier="1.29551" id="e4p-G1-f3U"/>
+                            <constraint firstItem="0yB-mL-HrH" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="eEx-8e-2FU"/>
+                            <constraint firstItem="dIX-c1-rUZ" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="fGr-e5-XnH"/>
                             <constraint firstItem="zEg-nD-671" firstAttribute="height" secondItem="AlR-uj-EeW" secondAttribute="height" multiplier="0.5" id="fzX-Yd-R4f"/>
-                            <constraint firstItem="pXf-dZ-bvE" firstAttribute="height" secondItem="16A-qB-o4Z" secondAttribute="height" id="gJu-KM-q3z"/>
-                            <constraint firstItem="Kv5-w8-PaP" firstAttribute="top" secondItem="m6l-Gn-Kcd" secondAttribute="centerY" id="gKz-7w-MPJ"/>
-                            <constraint firstItem="bc2-Me-ewU" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="gl9-5B-qPH"/>
-                            <constraint firstItem="0yB-mL-HrH" firstAttribute="height" secondItem="16A-qB-o4Z" secondAttribute="height" priority="999" id="gnC-Pz-qti"/>
                             <constraint firstItem="vj5-td-ix4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7bM-o9-myX" secondAttribute="bottom" id="hB7-un-act"/>
                             <constraint firstItem="xfL-mG-5zd" firstAttribute="leading" secondItem="vj5-td-ix4" secondAttribute="leading" id="hGr-7y-XG1"/>
-                            <constraint firstItem="2SP-7L-IF1" firstAttribute="centerX" secondItem="PaG-Uc-Wwm" secondAttribute="centerX" id="hNa-9l-l30"/>
+                            <constraint firstItem="dIX-c1-rUZ" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="hfX-iT-JUG"/>
                             <constraint firstItem="doH-yU-baY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hwF-r4-64a"/>
-                            <constraint firstItem="Kv5-w8-PaP" firstAttribute="leading" secondItem="doH-yU-baY" secondAttribute="trailing" id="iAi-70-L1r"/>
                             <constraint firstItem="8wM-Nh-KIp" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="iG1-4O-kJ1"/>
-                            <constraint firstItem="s5f-n2-lgm" firstAttribute="leading" secondItem="XSM-fo-cL4" secondAttribute="centerX" id="iOx-IK-4M9"/>
                             <constraint firstItem="eG0-yF-zc3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jsw-cR-trs"/>
-                            <constraint firstItem="s5f-n2-lgm" firstAttribute="trailing" secondItem="2b8-S2-9Tu" secondAttribute="centerX" id="k7d-VJ-LCP"/>
-                            <constraint firstItem="xfL-mG-5zd" firstAttribute="bottom" secondItem="s3O-c3-SQe" secondAttribute="top" id="kBi-Ha-1YE"/>
-                            <constraint firstItem="s3O-c3-SQe" firstAttribute="centerX" secondItem="xfL-mG-5zd" secondAttribute="centerX" id="kFz-su-Zv7"/>
-                            <constraint firstItem="EmS-7P-Car" firstAttribute="centerY" secondItem="vbJ-X3-YNf" secondAttribute="centerY" id="kRO-n6-mGQ"/>
-                            <constraint firstItem="zJn-OE-EM8" firstAttribute="centerY" secondItem="XSM-fo-cL4" secondAttribute="centerY" id="kYC-V2-RJF"/>
-                            <constraint firstItem="Buc-r5-Jna" firstAttribute="centerX" secondItem="PaG-Uc-Wwm" secondAttribute="centerX" id="kte-UW-jal"/>
-                            <constraint firstItem="dIX-c1-rUZ" firstAttribute="top" secondItem="XGN-Vi-QgP" secondAttribute="bottom" id="lBe-zl-wGp"/>
+                            <constraint firstItem="16A-qB-o4Z" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="jvp-Gx-EvN"/>
+                            <constraint firstItem="m6l-Gn-Kcd" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="lWh-gc-PzU"/>
                             <constraint firstItem="zEg-nD-671" firstAttribute="width" secondItem="AlR-uj-EeW" secondAttribute="width" multiplier="0.5" id="ldv-Jq-o0q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eG0-yF-zc3" secondAttribute="bottom" constant="20" id="lyW-LX-QH5"/>
-                            <constraint firstItem="Kv5-w8-PaP" firstAttribute="bottom" secondItem="dIX-c1-rUZ" secondAttribute="centerY" id="m9h-OC-efl"/>
-                            <constraint firstItem="Buc-r5-Jna" firstAttribute="top" secondItem="PaG-Uc-Wwm" secondAttribute="bottom" id="n84-1F-63B"/>
+                            <constraint firstItem="b3s-Eb-n8l" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="0.125" id="m6b-UJ-ZVt"/>
+                            <constraint firstItem="bc2-Me-ewU" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="0.125" id="nBS-iL-Tbk"/>
                             <constraint firstItem="vj5-td-ix4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nzp-5P-l0B"/>
-                            <constraint firstItem="m6l-Gn-Kcd" firstAttribute="centerX" secondItem="dIX-c1-rUZ" secondAttribute="centerX" id="oMj-Nh-FVY"/>
-                            <constraint firstItem="PaG-Uc-Wwm" firstAttribute="top" secondItem="2SP-7L-IF1" secondAttribute="bottom" id="pf2-e0-JRp"/>
-                            <constraint firstItem="Buc-r5-Jna" firstAttribute="bottom" secondItem="lSv-YX-51Y" secondAttribute="top" id="pfx-dV-9AN"/>
-                            <constraint firstItem="b3s-Eb-n8l" firstAttribute="leading" secondItem="Kv5-w8-PaP" secondAttribute="trailing" id="q4L-qs-HrB"/>
-                            <constraint firstItem="xfL-mG-5zd" firstAttribute="centerX" secondItem="Buc-r5-Jna" secondAttribute="centerX" id="rFV-4c-gJF"/>
-                            <constraint firstItem="2b8-S2-9Tu" firstAttribute="centerY" secondItem="EmS-7P-Car" secondAttribute="centerY" id="s9k-Kp-HfW"/>
-                            <constraint firstItem="2SP-7L-IF1" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="110/768" id="shn-Oz-UzP"/>
-                            <constraint firstItem="vbJ-X3-YNf" firstAttribute="centerY" secondItem="zJn-OE-EM8" secondAttribute="centerY" id="t2C-qw-WtR"/>
+                            <constraint firstItem="zJn-OE-EM8" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="ph5-3F-pEh"/>
+                            <constraint firstItem="pXf-dZ-bvE" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="pyM-IR-mbr"/>
+                            <constraint firstItem="xfL-mG-5zd" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerYWithinMargins" multiplier="0.408984" id="qVx-76-vyE"/>
+                            <constraint firstItem="Buc-r5-Jna" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="sSp-8D-Unm"/>
+                            <constraint firstItem="XGN-Vi-QgP" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerYWithinMargins" multiplier="1.29551" id="seG-QQ-RLV"/>
+                            <constraint firstItem="2SP-7L-IF1" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="shn-Oz-UzP"/>
+                            <constraint firstItem="SpN-Wr-yNh" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="0.125" id="sxe-Ng-3h0"/>
                             <constraint firstItem="s3O-c3-SQe" firstAttribute="leading" secondItem="vj5-td-ix4" secondAttribute="leading" id="tV8-Ki-aNw"/>
-                            <constraint firstItem="PaG-Uc-Wwm" firstAttribute="centerY" secondItem="XGN-Vi-QgP" secondAttribute="centerY" priority="250" id="tko-dl-qmb"/>
-                            <constraint firstItem="4zQ-mK-S1h" firstAttribute="bottom" secondItem="pcN-s6-wxM" secondAttribute="top" id="uDY-Ix-w9Q"/>
+                            <constraint firstItem="85e-eK-tpb" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="u2C-Mh-3mI"/>
                             <constraint firstItem="pcN-s6-wxM" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="uFX-vU-RAq"/>
-                            <constraint firstItem="b3s-Eb-n8l" firstAttribute="leading" secondItem="pcN-s6-wxM" secondAttribute="leading" id="uWd-NI-gdW"/>
-                            <constraint firstItem="b3s-Eb-n8l" firstAttribute="bottom" secondItem="vj5-td-ix4" secondAttribute="bottom" id="uvu-XE-bfG"/>
+                            <constraint firstItem="lSv-YX-51Y" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="v7f-cC-O5K"/>
                             <constraint firstItem="zEg-nD-671" firstAttribute="centerX" secondItem="doH-yU-baY" secondAttribute="centerX" id="vKz-03-WRK"/>
                             <constraint firstItem="SpN-Wr-yNh" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="vLI-cD-IxB"/>
-                            <constraint firstItem="SpN-Wr-yNh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vuX-Tp-gqN"/>
+                            <constraint firstItem="m6l-Gn-Kcd" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="wNi-Rj-pqs"/>
+                            <constraint firstItem="XGN-Vi-QgP" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="wcM-1v-yLb"/>
                             <constraint firstItem="EmS-7P-Car" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="wwC-xM-69c"/>
-                            <constraint firstItem="vhY-e7-CF3" firstAttribute="trailing" secondItem="pXf-dZ-bvE" secondAttribute="centerX" id="xSE-Yn-CXL"/>
+                            <constraint firstItem="zJn-OE-EM8" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="xO6-3F-fZe"/>
+                            <constraint firstItem="zJn-OE-EM8" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerXWithinMargins" multiplier="0.704492" id="y6c-8I-EX6"/>
+                            <constraint firstItem="s3O-c3-SQe" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerYWithinMargins" multiplier="0.704492" id="yVc-HZ-FFK"/>
+                            <constraint firstItem="s3O-c3-SQe" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="z2H-oM-6Oy"/>
+                            <constraint firstItem="XSM-fo-cL4" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="zDO-Ie-9QB"/>
+                            <constraint firstItem="bc2-Me-ewU" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerY" id="zrA-S7-SBb"/>
+                            <constraint firstItem="dIX-c1-rUZ" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerYWithinMargins" multiplier="1.59102" id="zzP-Pc-rZh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -936,21 +861,18 @@
                         <outlet property="east4" destination="XGN-Vi-QgP" id="PIR-rc-hU8"/>
                         <outlet property="east5" destination="dIX-c1-rUZ" id="0Rl-Wl-2r5"/>
                         <outlet property="eastBlocker" destination="b3s-Eb-n8l" id="HI1-Qp-Vuc"/>
-                        <outlet property="eastGrey" destination="Kv5-w8-PaP" id="SVa-Lu-vib"/>
                         <outlet property="north1" destination="XSM-fo-cL4" id="Urz-9s-8rc"/>
                         <outlet property="north2" destination="zJn-OE-EM8" id="Okd-wX-6KH"/>
                         <outlet property="north3" destination="vbJ-X3-YNf" id="PPF-cS-6KA"/>
                         <outlet property="north4" destination="EmS-7P-Car" id="go2-Kr-ENY"/>
                         <outlet property="north5" destination="2b8-S2-9Tu" id="xVa-jG-0dM"/>
                         <outlet property="northBlocker" destination="SpN-Wr-yNh" id="7p6-wp-s8n"/>
-                        <outlet property="northGrey" destination="s5f-n2-lgm" id="udG-dJ-bMu"/>
                         <outlet property="south1" destination="lSv-YX-51Y" id="O4G-P8-psb"/>
                         <outlet property="south2" destination="0yB-mL-HrH" id="KiS-vf-9Ba"/>
                         <outlet property="south3" destination="16A-qB-o4Z" id="g5i-QJ-Ylk"/>
                         <outlet property="south4" destination="85e-eK-tpb" id="cth-tm-S4l"/>
                         <outlet property="south5" destination="pXf-dZ-bvE" id="8z1-L4-mH0"/>
                         <outlet property="southBlocker" destination="8wM-Nh-KIp" id="WEu-cB-IHl"/>
-                        <outlet property="southGrey" destination="vhY-e7-CF3" id="RfM-c6-RzC"/>
                         <outlet property="undoButton" destination="069-es-cxg" id="kQJ-6F-uoc"/>
                         <outlet property="west1" destination="xfL-mG-5zd" id="4Hr-uh-g2C"/>
                         <outlet property="west2" destination="s3O-c3-SQe" id="WzJ-5n-iC5"/>
@@ -958,7 +880,6 @@
                         <outlet property="west4" destination="PaG-Uc-Wwm" id="uh4-Rz-PXV"/>
                         <outlet property="west5" destination="Buc-r5-Jna" id="xG8-Gp-Jqd"/>
                         <outlet property="westBlocker" destination="bc2-Me-ewU" id="fno-2d-cic"/>
-                        <outlet property="westGrey" destination="qTE-P6-x92" id="aQB-WZ-EGe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1323,7 +1244,6 @@
         <image name="compass_arrow" width="800" height="800"/>
         <image name="compass_dirs" width="800" height="800"/>
         <image name="cset" width="800" height="289"/>
-        <image name="intersection_grey" width="2133" height="2047"/>
         <image name="leftarrow" width="800" height="800"/>
         <image name="pedestrian" width="807" height="1278"/>
         <image name="road_background" width="2048" height="2048"/>
