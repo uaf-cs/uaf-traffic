@@ -394,18 +394,6 @@
                                     <constraint firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1:1" id="hry-Ud-D1f"/>
                                 </constraints>
                             </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="8wM-Nh-KIp">
-                                <rect key="frame" x="96" y="800" width="576" height="96"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="SpN-Wr-yNh">
-                                <rect key="frame" x="96" y="128" width="576" height="96"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-Me-ewU">
-                                <rect key="frame" x="0.0" y="224" width="96" height="576"/>
-                            </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitey" translatesAutoresizingMaskIntoConstraints="NO" id="b3s-Eb-n8l">
-                                <rect key="frame" x="672" y="224" width="96" height="576"/>
-                            </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="XSM-fo-cL4" userLabel="atv N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
                                 <rect key="frame" x="109" y="128" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
@@ -686,6 +674,18 @@
                                     <outlet property="westBlock" destination="bc2-Me-ewU" id="YJP-p8-8YV"/>
                                 </connections>
                             </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road-block-south" translatesAutoresizingMaskIntoConstraints="NO" id="8wM-Nh-KIp">
+                                <rect key="frame" x="96" y="791.5" width="576" height="104.5"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road-block-north" translatesAutoresizingMaskIntoConstraints="NO" id="SpN-Wr-yNh">
+                                <rect key="frame" x="96" y="128" width="576" height="104.5"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road-block-west" translatesAutoresizingMaskIntoConstraints="NO" id="bc2-Me-ewU">
+                                <rect key="frame" x="0.0" y="224" width="104.5" height="576"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road-block-east" translatesAutoresizingMaskIntoConstraints="NO" id="b3s-Eb-n8l">
+                                <rect key="frame" x="663.5" y="224" width="104.5" height="576"/>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-o9-myX">
                                 <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
                             </navigationBar>
@@ -734,7 +734,7 @@
                             <constraint firstItem="2b8-S2-9Tu" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="7qW-Ud-fkC"/>
                             <constraint firstItem="XSM-fo-cL4" firstAttribute="top" secondItem="vj5-td-ix4" secondAttribute="top" id="8aI-dy-4lT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eG0-yF-zc3" secondAttribute="trailing" constant="20" id="8uC-Wb-TRE"/>
-                            <constraint firstItem="8wM-Nh-KIp" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="0.125" id="93O-pM-suy"/>
+                            <constraint firstItem="8wM-Nh-KIp" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="279/2048" id="93O-pM-suy"/>
                             <constraint firstItem="XGN-Vi-QgP" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="95p-f9-SM4"/>
                             <constraint firstItem="pXf-dZ-bvE" firstAttribute="centerX" secondItem="vj5-td-ix4" secondAttribute="centerXWithinMargins" multiplier="1.59102" id="9Jc-hZ-PZR"/>
                             <constraint firstItem="2SP-7L-IF1" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="9LL-1K-WwR"/>
@@ -810,8 +810,8 @@
                             <constraint firstItem="m6l-Gn-Kcd" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="lWh-gc-PzU"/>
                             <constraint firstItem="zEg-nD-671" firstAttribute="width" secondItem="AlR-uj-EeW" secondAttribute="width" multiplier="0.5" id="ldv-Jq-o0q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eG0-yF-zc3" secondAttribute="bottom" constant="20" id="lyW-LX-QH5"/>
-                            <constraint firstItem="b3s-Eb-n8l" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="0.125" id="m6b-UJ-ZVt"/>
-                            <constraint firstItem="bc2-Me-ewU" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="0.125" id="nBS-iL-Tbk"/>
+                            <constraint firstItem="b3s-Eb-n8l" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="279/2048" id="m6b-UJ-ZVt"/>
+                            <constraint firstItem="bc2-Me-ewU" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="279/2048" id="nBS-iL-Tbk"/>
                             <constraint firstItem="vj5-td-ix4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nzp-5P-l0B"/>
                             <constraint firstItem="zJn-OE-EM8" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="ph5-3F-pEh"/>
                             <constraint firstItem="pXf-dZ-bvE" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="pyM-IR-mbr"/>
@@ -819,7 +819,7 @@
                             <constraint firstItem="Buc-r5-Jna" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="sSp-8D-Unm"/>
                             <constraint firstItem="XGN-Vi-QgP" firstAttribute="centerY" secondItem="vj5-td-ix4" secondAttribute="centerYWithinMargins" multiplier="1.29551" id="seG-QQ-RLV"/>
                             <constraint firstItem="2SP-7L-IF1" firstAttribute="width" secondItem="vj5-td-ix4" secondAttribute="width" multiplier="1/8" id="shn-Oz-UzP"/>
-                            <constraint firstItem="SpN-Wr-yNh" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="0.125" id="sxe-Ng-3h0"/>
+                            <constraint firstItem="SpN-Wr-yNh" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="279/2048" id="sxe-Ng-3h0"/>
                             <constraint firstItem="s3O-c3-SQe" firstAttribute="leading" secondItem="vj5-td-ix4" secondAttribute="leading" id="tV8-Ki-aNw"/>
                             <constraint firstItem="85e-eK-tpb" firstAttribute="height" secondItem="vj5-td-ix4" secondAttribute="height" multiplier="1/8" id="u2C-Mh-3mI"/>
                             <constraint firstItem="pcN-s6-wxM" firstAttribute="trailing" secondItem="vj5-td-ix4" secondAttribute="trailing" id="uFX-vU-RAq"/>
@@ -1246,10 +1246,13 @@
         <image name="cset" width="800" height="289"/>
         <image name="leftarrow" width="800" height="800"/>
         <image name="pedestrian" width="807" height="1278"/>
+        <image name="road-block-east" width="279" height="1536"/>
+        <image name="road-block-north" width="1536" height="279"/>
+        <image name="road-block-south" width="1536" height="279"/>
+        <image name="road-block-west" width="279" height="1536"/>
         <image name="road_background" width="2048" height="2048"/>
         <image name="snowmachine" width="980" height="644"/>
         <image name="uaflogo" width="202" height="111"/>
-        <image name="whitey" width="710" height="599"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YAX-uD-de7"/>
