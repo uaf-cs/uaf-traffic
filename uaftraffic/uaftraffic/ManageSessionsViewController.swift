@@ -92,7 +92,10 @@ class ManageSessionsViewController: UITableViewController {
     /*
      func fileExport(session: Session){
         let fileName = session.name + ".csv"
-        var csvData = "vehicle, from, to, date\n"
+        var csvData = "vehicle, from, left, right, through\n"
+        
+     
+        csvData += "\nvehicle, from, to, date\n"
      
         for crossing in session.crossings{
             csvData += "\(crossing.type), \(crossing.from), \(crossing.to), \(crossing.dateString())\n"
