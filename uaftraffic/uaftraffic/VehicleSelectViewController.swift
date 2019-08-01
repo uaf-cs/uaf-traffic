@@ -79,7 +79,7 @@ class VehicleSelectViewController: UITableViewController {
     }
     
     func getNSRoad(){
-        let roadPrompt = UIAlertController(title: "North-South Road Name", message: "What is the name of the road running North-South?", preferredStyle: .alert)
+        let roadPrompt = UIAlertController(title: "North-South Road Name", message: "What is the name of the road running north-south?", preferredStyle: .alert)
         roadPrompt.addTextField{ textField in
             textField.placeholder = "Main Street"
         }
