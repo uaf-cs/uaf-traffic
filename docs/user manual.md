@@ -1,3 +1,8 @@
+# UAF Traffic User Manual
+-----
+
+## 
+
 1.    Ensure that the iPad or other mobile device has sufficient power to ensure that it remains charged for the expected duration of the vehicle counting session.
 2.    Ensure that the uaftraffic app is installed on the device (it should be a white icon with 6 purple and orange arrows coming out from the bottom of it, as depicted here)
 3.    Once at the intersection or stretch of road intended for study, turn on the device and tap on the uaftraffic app identified previously.
