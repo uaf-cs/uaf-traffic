@@ -1,9 +1,6 @@
 # UAF Traffic User Manual
 
-
 ## Getting Started
-
-![example image](godzilla.png)
 
 When preparing to record data for an intersection or stretch of road, you should first ensure that the *iPad* or other *iOS* device you will be using for recording purposes has sufficient power to remain charged for the expected duration of the vehicle counting session.  You should also ensure that the uaftraffic app is installed on the device (it should be a white icon with 6 purple and orange arrows coming out from the bottom of it, as depicted here ![icon](appstore.png "appIcon")).  Once at the intersection or stretch of road intended for study, turn on the device and tap on the uaftraffic app icon identified previously.
 
