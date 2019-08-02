@@ -30,8 +30,13 @@ The primary data collector should have given you a PIN code to enter in order to
 ## Credits
 
 Brandon Abbott
+
 Chris Bailey
+
 Alan Carvajal
+
 Dr. Jonathan Metzgar
+
 Cameron Titus
+
 Joseph Wolfe
