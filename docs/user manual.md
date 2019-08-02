@@ -32,6 +32,6 @@ The primary data collector should have given you a PIN code to enter in order to
 Brandon Abbott
 Chris Bailey
 Alan Carvajal
-Jonathan Metzgar
+Dr. Jonathan Metzgar
 Cameron Titus
 Joseph Wolfe
