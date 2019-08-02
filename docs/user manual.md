@@ -26,3 +26,12 @@ Now that the session has been saved, you can access its data by tapping the “M
 ## Exporting Data
 
 The primary data collector should have given you a PIN code to enter in order to upload your data.  To enter the PIN, tap on the grey “1234” located at the top of the screen, then tap the numbers on the keyboard, in a similar manner to when the session name was determined.  Upon entering four digits, the PIN will automatically enter itself, and either start to upload the data if the PIN was correct, or to clear the PIN code, allowing for re-entry of a code, and provide you with an error message (shown here).  Tap the “Cancel” button at the top left corner of your screen to return to the “Manage Sessions” screen.
+
+## Credits
+
+Brandon Abbott
+Chris Bailey
+Alan Carvajal
+Jonathan Metzgar
+Cameron Titus
+Joseph Wolfe
