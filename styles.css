@@ -13,7 +13,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'URW Geometric', Futura, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Linux Biolinum O', 'URW Geometric', Futura, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 h1 {
@@ -22,7 +22,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 1.62em;
     font-weight: bold;
 }
 
@@ -37,5 +37,5 @@ h4 {
 }
 
 body {
-    font-family: 'Bodoni MT', 'Georgia', 'Times New Roman', serif;
+    font-family: 'Linux Libertine O', 'Georgia', 'Times New Roman', serif;
 }
