@@ -41,6 +41,7 @@ class Session: Codable, Equatable {
     var lat : String
     var lon : String
     var id : String
+    var dateCreated : String = ""
     var name : String
     var hasNorthLink : Bool
     var hasSouthLink : Bool
@@ -90,7 +91,7 @@ class Session: Codable, Equatable {
         self.vehicle5Type = "snowmachine"
         self.crossings = []
         
-        self.id = randomString()
+        self.initID()
     }
     
     init(lat: String, long: String, id: String, name: String, hasNorthLink: Bool, hasSouthLink: Bool, hasWestLink: Bool, hasEastLink: Bool, vehicle1Type: String, vehicle2Type: String, vehicle3Type: String, vehicle4Type: String, vehicle5Type: String, crossings: [Crossing]) {
@@ -108,6 +109,8 @@ class Session: Codable, Equatable {
         self.vehicle4Type = vehicle4Type
         self.vehicle5Type = vehicle5Type
         self.crossings = crossings
+        
+        self.initID()
     }
     
     static func ==(lhs: Session, rhs: Session) -> Bool{
@@ -126,6 +129,14 @@ class Session: Codable, Equatable {
             lhs.vehicle3Type == rhs.vehicle3Type &&
             lhs.vehicle4Type == rhs.vehicle4Type &&
             lhs.vehicle5Type == rhs.vehicle5Type
+    }
+    
+    func initID() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MMM-d"
+        self.dateCreated = formatter.string(from: Date())
+        
+        self.id = randomString()
     }
     
     func randomString() -> String {
@@ -166,4 +177,23 @@ class Session: Codable, Equatable {
         }
         audioPlayer.play()
     }
+    
+    func getFilename() -> String {
+        
+        return self.dateCreated + "-" + self.id;
+    }
+    
+     func fileExport() -> String{
+        //let fileName = name + ".csv"
+        var csvData = "vehicle, from, left, right, through\n"
+     
+     
+        csvData += "\nvehicle, from, to, date\n"
+     
+        for crossing in crossings{
+            csvData += "\(crossing.type), \(crossing.from), \(crossing.to), \(crossing.dateString())\n"
+        }
+        
+        return csvData
+     }
 }
