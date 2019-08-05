@@ -24,14 +24,16 @@ class SessionManager {
     }
     
     func writeSession(session: Session) {
-        let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        /*let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveurl = documentsdirectory.appendingPathComponent("sessions").appendingPathComponent(session.getFilename()).appendingPathExtension("plist")
-        
+        */
+        session.fileExport()
+        /*
         let plistencod = PropertyListEncoder()
         //plistencod.outputFormat = .xml
         
         let encodeSession = try? plistencod.encode(session)
-        try? encodeSession?.write(to : archiveurl , options : .noFileProtection)
+        try? encodeSession?.write(to : archiveurl , options : .noFileProtection)*/
     }
     
     func getSessions() -> [Session] {

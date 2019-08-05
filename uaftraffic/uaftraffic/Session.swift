@@ -183,9 +183,9 @@ class Session: Codable, Equatable {
         return self.dateCreated + "-" + self.id;
     }
     
-     func fileExport() -> String{
-        //let fileName = name + ".csv"
-        var csvData = "vehicle, from, left, right, through\n"
+     func fileExport(){
+//        let fileName = name + ".csv"
+        var csvData = ""// = "vehicle, from, left, right, through\n"
      
      
         csvData += "\nvehicle, from, to, date\n"
@@ -194,6 +194,7 @@ class Session: Codable, Equatable {
             csvData += "\(crossing.type), \(crossing.from), \(crossing.to), \(crossing.dateString())\n"
         }
         
-        return csvData
+//        let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+//        let archiveurl = documentsdirectory.appendingPathComponent("sessions").appendingPathComponent(fileName)
      }
 }
