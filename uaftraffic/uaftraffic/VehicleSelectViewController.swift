@@ -36,7 +36,7 @@ class VehicleSelectViewController: UITableViewController {
         textField.placeholder = "East-West Road Name"
     }
     namePrompt.addTextField(configurationHandler: { textField in
-        textField.placeholder = "North-Soth Road Name"
+        textField.placeholder = "North-South Road Name"
     })
     namePrompt.addTextField(configurationHandler: { textField in
         textField.placeholder = "Technician Name"

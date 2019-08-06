@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "uaftraffic/ManageSessionsViewController.swift"
-            timestampString = "586821581.592259"
+            timestampString = "586823380.117097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "uploadSession(sender:)"
             landmarkType = "7">
          </BreakpointContent>
