@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24B702E2222FBCCD007D7755 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B702DA222D0E45007D7755 /* SessionManager.swift */; };
 		24B702E3222FBCCD007D7755 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B702DC222D132E007D7755 /* Session.swift */; };
+		263ABEDD22FA46E000D02075 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263ABEDC22FA46E000D02075 /* Formatters.swift */; };
 		2653FC6D22C43A9000D65962 /* VehicleSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2653FC6C22C43A9000D65962 /* VehicleSelectViewController.swift */; };
 		2654A1ED22C1990B00A4FE25 /* DirectionSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1EC22C1990B00A4FE25 /* DirectionSelectViewController.swift */; };
 		26C9886922E2247C00ED75FA /* TrafficSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C9886822E2247C00ED75FA /* TrafficSummaryViewController.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		24B702DA222D0E45007D7755 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		24B702DC222D132E007D7755 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		263ABEDC22FA46E000D02075 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		2653FC6C22C43A9000D65962 /* VehicleSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSelectViewController.swift; sourceTree = "<group>"; };
 		2654A1EC22C1990B00A4FE25 /* DirectionSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionSelectViewController.swift; sourceTree = "<group>"; };
 		26C9886822E2247C00ED75FA /* TrafficSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSummaryViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				9D62C5602250E27E0080E0EF /* SessionDetailsViewController.swift */,
 				9D62C562225329CC0080E0EF /* SessionDetailsCrossingCell.swift */,
 				24B702DA222D0E45007D7755 /* SessionManager.swift */,
+				263ABEDC22FA46E000D02075 /* Formatters.swift */,
 				24B702DC222D132E007D7755 /* Session.swift */,
 				9D62C564225337630080E0EF /* NetworkManager.swift */,
 				26C9886822E2247C00ED75FA /* TrafficSummaryViewController.swift */,
@@ -341,6 +344,7 @@
 				9DE934D72207CA3D0000255D /* PinEntryViewController.swift in Sources */,
 				26C9886922E2247C00ED75FA /* TrafficSummaryViewController.swift in Sources */,
 				9D62C55F2250D1D90080E0EF /* ResumeSessionCell.swift in Sources */,
+				263ABEDD22FA46E000D02075 /* Formatters.swift in Sources */,
 				9D2EC4942223D428002FA1DD /* ManageSessionsViewController.swift in Sources */,
 				9D62C565225337630080E0EF /* NetworkManager.swift in Sources */,
 				9D62C5612250E27E0080E0EF /* SessionDetailsViewController.swift in Sources */,
