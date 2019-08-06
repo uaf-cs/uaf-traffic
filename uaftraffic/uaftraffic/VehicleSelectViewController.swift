@@ -44,17 +44,17 @@ class VehicleSelectViewController: UITableViewController {
      
      
     namePrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak namePrompt] _ in
-        guard let name = namePrompt!.textFields![0].text else { return }
+        let name = namePrompt!.textFields![0].text!
         self.session.name = name
-        guard let lat = namePrompt!.textFields![1].text else { return }
+        let lat = namePrompt!.textFields![1].text!
         self.session.lat = lat
-        guard let lon = namePrompt!.textFields![2].text else { return }
+        let lon = namePrompt!.textFields![2].text!
         self.session.lon = lon
-        guard let ewRoad = namePrompt!.textFields![3].text else { return }
+        let ewRoad = namePrompt!.textFields![3].text!
         self.session.EWRoadName = ewRoad
-        guard let nsRoad = namePrompt!.textFields![4].text else { return }
+        let nsRoad = namePrompt!.textFields![4].text!
         self.session.NSRoadName = nsRoad
-        guard let userName = namePrompt!.textFields![5].text else { return }
+        let userName = namePrompt!.textFields![5].text!
         self.session.technician = userName
 //        self.getSessionLat()
         self.saveSession()
