@@ -78,7 +78,7 @@ class SessionManager {
 
     
     
-    func deleteSession(session: Session) -> Bool {
+    func deleteSession(session: Session){
         let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let sessionURL = documentsdirectory.appendingPathComponent("sessions").appendingPathComponent(session.getFilename())
         print("trying to delete " + sessionURL.lastPathComponent)
@@ -86,8 +86,6 @@ class SessionManager {
             try FileManager.default.removeItem(at: sessionURL)
         } catch {
             print("Failed to delete file " + sessionURL.lastPathComponent)
-            return false
         }
-        return true
     }
 }
