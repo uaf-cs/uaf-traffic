@@ -24,16 +24,12 @@ class SessionManager {
     }
     
     func writeSession(session: Session) {
-        /*let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveurl = documentsdirectory.appendingPathComponent("sessions").appendingPathComponent(session.getFilename()).appendingPathExtension("plist")
-        */
-        session.fileExport()
-        /*
         let plistencod = PropertyListEncoder()
-        //plistencod.outputFormat = .xml
         
         let encodeSession = try? plistencod.encode(session)
-        try? encodeSession?.write(to : archiveurl , options : .noFileProtection)*/
+        try? encodeSession?.write(to : archiveurl , options : .noFileProtection)
     }
     
     func getSessions() -> [Session] {
@@ -50,8 +46,10 @@ class SessionManager {
         
         for file in fileURLs {
             let plistdecode = PropertyListDecoder()
-            if let retriveData = try? Data(contentsOf: file),
-                let decodeSession = try? plistdecode.decode(Session.self, from: retriveData) {
+            if let retrieveData = try? Data(contentsOf: file),
+                let decodeSession = try? plistdecode.decode(Session.self, from: retrieveData) {
+                decodeSession.setFilename(name: file.lastPathComponent)
+                print(file.lastPathComponent)
                 sessionData.append(decodeSession)
             }
         }
@@ -80,13 +78,16 @@ class SessionManager {
 
     
     
-    func deleteSession(session: Session) {
+    func deleteSession(session: Session) -> Bool {
         let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let sessionURL = documentsdirectory.appendingPathComponent("sessions").appendingPathComponent(session.id).appendingPathExtension("plist")
+        let sessionURL = documentsdirectory.appendingPathComponent("sessions").appendingPathComponent(session.getFilename())
+        print("trying to delete " + sessionURL.lastPathComponent)
         do {
             try FileManager.default.removeItem(at: sessionURL)
         } catch {
-            print("Failed to delete file %s", sessionURL.relativeString)
+            print("Failed to delete file " + sessionURL.lastPathComponent)
+            return false
         }
+        return true
     }
 }

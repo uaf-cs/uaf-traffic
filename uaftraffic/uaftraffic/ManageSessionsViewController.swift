@@ -45,6 +45,7 @@ class ManageSessionsViewController: UITableViewController {
         cell.sessionTime?.text = session.dateString()
         cell.deleteButton.addTarget(self, action: #selector(self.deleteSession), for: .touchUpInside)
         cell.uploadButton.addTarget(self, action: #selector(self.uploadSession), for: .touchUpInside)
+        cell.saveCSVButton.addTarget(self, action: #selector(self.saveCSV), for: .touchUpInside)
         return cell
     }
     
@@ -88,7 +89,17 @@ class ManageSessionsViewController: UITableViewController {
             }
         }
     }
-
+    
+    @objc func saveCSV(sender: UIButton) {
+        let cell = sender.superview!.superview! as! ManageSessionCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let session = sessions[indexPath.row]
+        session.saveCSV()
+        let okAlert = UIAlertController(title: "Saved CSV", message: "CSV saved successfully", preferredStyle: .alert)
+        okAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(okAlert, animated: true, completion: nil)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

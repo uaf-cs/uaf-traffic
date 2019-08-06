@@ -35,6 +35,18 @@ class Crossing: Codable, Equatable {
         formatter.dateFormat = "MMM d yyyy, h:mm a"
         return formatter.string(from: time)
     }
+    
+    func csvDateString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: time)
+    }
+
+    func csvTimeString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm:ss"
+        return formatter.string(from: time)
+    }
 }
 
 class Session: Codable, Equatable {
@@ -43,6 +55,7 @@ class Session: Codable, Equatable {
     var id : String
     var dateCreated : String = ""
     var name : String
+    var filename: String = ""
     var hasNorthLink : Bool
     var hasSouthLink : Bool
     var hasWestLink : Bool
@@ -57,6 +70,10 @@ class Session: Codable, Equatable {
     var technician : String = ""
     var crossings : [Crossing]
     var audioPlayer = AVAudioPlayer()
+    
+    // for summaries
+    var totalTravellingNorth = 0
+    var totalTravellingSouth = 0
     
     enum CodingKeys: String, CodingKey {
         case lat
@@ -133,10 +150,11 @@ class Session: Codable, Equatable {
     
     func initID() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MMM-d"
+        formatter.dateFormat = "yyyy-MM-dd"
         self.dateCreated = formatter.string(from: Date())
         
         self.id = randomString()
+        self.filename = self.dateCreated + "-" + self.id + ".plist"
     }
     
     func randomString() -> String {
@@ -178,23 +196,64 @@ class Session: Codable, Equatable {
         audioPlayer.play()
     }
     
-    func getFilename() -> String {
-        
-        return self.dateCreated + "-" + self.id;
+    func setFilename(name: String) {
+        self.filename = name
     }
     
-     func fileExport(){
-//        let fileName = name + ".csv"
+    func getFilename() -> String {
+        return self.filename;
+    }
+    
+    func calculateSummary() {
+        self.totalTravellingNorth = 0
+        self.totalTravellingSouth = 0
+        
+        for crossing in crossings {
+            if (crossing.to == "n") { self.totalTravellingNorth += 1 }
+            if (crossing.to == "s") { self.totalTravellingSouth += 1 }
+        }
+    }
+    
+    func saveCSV() {
+        self.calculateSummary()
+        var cleanName = ""
+        do {
+            let pattern = "[^A-Za-z0-9-_]"
+            let regex = try NSRegularExpression(pattern: pattern)
+            cleanName = regex.stringByReplacingMatches(in: self.name,
+                                                    options: [],
+                                                    range: NSRange(location: 0, length: self.name.count),
+                                                    withTemplate: "-")
+        } catch {
+            print("blah!")
+        }
+        let filename = (cleanName as String) + ".csv"
         var csvData = ""// = "vehicle, from, left, right, through\n"
-     
-     
-        csvData += "\nvehicle, from, to, date\n"
-     
+        
+        csvData += "UAFTRAFFIC EXPORT\n"
+        csvData += "Summary\n"
+        csvData += "Session Name,\"\(self.name)\"\n"
+        csvData += "Latitude,\(self.lat)\n"
+        csvData += "Longitude,\(self.lon)\n"
+        csvData += "Node North-South,\(self.NSRoadName)\n"
+        csvData += "Node East-West,\(self.EWRoadName)\n"
+        csvData += "Total Travelling North,\(self.totalTravellingNorth)\n"
+        csvData += "Total Travelling South,\(self.totalTravellingSouth)\n"
+        csvData += "\nRecorded Data\n"
+        csvData += "Vehicle Type,From,To,Date,Time\n"
         for crossing in crossings{
-            csvData += "\(crossing.type), \(crossing.from), \(crossing.to), \(crossing.dateString())\n"
+            csvData += "\"\(crossing.type)\",\(crossing.from),\(crossing.to),\(crossing.csvDateString()),\(crossing.csvTimeString())\n"
         }
         
-//        let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-//        let archiveurl = documentsdirectory.appendingPathComponent("sessions").appendingPathComponent(fileName)
+        do {
+            let docsFolder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let path = docsFolder.appendingPathComponent(filename)
+            try csvData.write(to: path, atomically: false, encoding: String.Encoding.utf8)
+        }
+        catch {
+        
+        }
+        
+
      }
 }
