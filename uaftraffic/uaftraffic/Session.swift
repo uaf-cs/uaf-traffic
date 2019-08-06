@@ -65,9 +65,9 @@ class Session: Codable, Equatable {
     var vehicle3Type : String
     var vehicle4Type : String
     var vehicle5Type : String
-    var NSRoadName : String = ""
-    var EWRoadName : String = ""
-    var technician : String = ""
+    var NSRoadName : String
+    var EWRoadName : String
+    var technician : String
     var crossings : [Crossing]
     var audioPlayer = AVAudioPlayer()
     
@@ -91,6 +91,9 @@ class Session: Codable, Equatable {
         case vehicle3Type
         case vehicle4Type
         case vehicle5Type
+        case NSRoadName
+        case EWRoadName
+        case technician
         case crossings
     }
     
@@ -108,12 +111,15 @@ class Session: Codable, Equatable {
         self.vehicle3Type = "plane"
         self.vehicle4Type = "pedestrian"
         self.vehicle5Type = "snowmachine"
+        self.NSRoadName = ""
+        self.EWRoadName = ""
+        self.technician = ""
         self.crossings = []
         
         self.initID()
     }
     
-    init(lat: String, long: String, id: String, name: String, hasNorthLink: Bool, hasSouthLink: Bool, hasWestLink: Bool, hasEastLink: Bool, vehicle1Type: String, vehicle2Type: String, vehicle3Type: String, vehicle4Type: String, vehicle5Type: String, crossings: [Crossing]) {
+    init(lat: String, long: String, id: String, name: String, hasNorthLink: Bool, hasSouthLink: Bool, hasWestLink: Bool, hasEastLink: Bool, vehicle1Type: String, vehicle2Type: String, vehicle3Type: String, vehicle4Type: String, vehicle5Type: String, nsRoadName: String, ewRoadName: String, technician: String, crossings: [Crossing]) {
         self.lat = lat
         self.lon = long
         self.id = id
@@ -127,6 +133,9 @@ class Session: Codable, Equatable {
         self.vehicle3Type = vehicle3Type
         self.vehicle4Type = vehicle4Type
         self.vehicle5Type = vehicle5Type
+        self.NSRoadName = nsRoadName
+        self.EWRoadName = ewRoadName
+        self.technician = technician
         self.crossings = crossings
         
         self.initID()
@@ -147,7 +156,10 @@ class Session: Codable, Equatable {
             lhs.vehicle2Type == rhs.vehicle2Type &&
             lhs.vehicle3Type == rhs.vehicle3Type &&
             lhs.vehicle4Type == rhs.vehicle4Type &&
-            lhs.vehicle5Type == rhs.vehicle5Type
+            lhs.vehicle5Type == rhs.vehicle5Type &&
+            lhs.NSRoadName == rhs.NSRoadName &&
+            lhs.EWRoadName == rhs.EWRoadName &&
+            lhs.technician == rhs.technician
     }
     
     func initID() {
@@ -295,6 +307,7 @@ class Session: Codable, Equatable {
         csvData += "Longitude,\(self.lon)\n"
         csvData += "Node North-South,\(self.NSRoadName)\n"
         csvData += "Node East-West,\(self.EWRoadName)\n"
+        csvData += "Technician,\(self.technician)\n"
         csvData += "Total Northbound Traffic,Turning Left,Going Through,Turning Right\n"
         csvData += ",\(self.sortedCountFromSouth[0]),\(self.sortedCountFromSouth[1]),\(self.sortedCountFromSouth[2])\n"
         csvData += "Total Southbound Traffic,Turning Left,Going Through,Turning Right\n"

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "uaftraffic/Session.swift"
-            timestampString = "586812681.006386"
+            timestampString = "586821581.59183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "314"
-            endingLineNumber = "314"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
             landmarkName = "saveCSV()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "uaftraffic/ManageSessionsViewController.swift"
-            timestampString = "586812681.0066839"
+            timestampString = "586821581.592259"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "uaftraffic/Session.swift"
-            timestampString = "586812681.00673"
+            timestampString = "586821581.5923229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "saveCSV()"
             landmarkType = "7">
          </BreakpointContent>
