@@ -72,8 +72,10 @@ class Session: Codable, Equatable {
     var audioPlayer = AVAudioPlayer()
     
     // for summaries
-    var totalTravellingNorth = 0
-    var totalTravellingSouth = 0
+    var sortedCountFromSouth: [Int] = []
+    var sortedCountFromNorth: [Int] = []
+    var sortedCountFromEast: [Int] = []
+    var sortedCountFromWest: [Int] = []
     
     enum CodingKeys: String, CodingKey {
         case lat
@@ -205,12 +207,70 @@ class Session: Codable, Equatable {
     }
     
     func calculateSummary() {
-        self.totalTravellingNorth = 0
-        self.totalTravellingSouth = 0
-        
-        for crossing in crossings {
-            if (crossing.to == "n") { self.totalTravellingNorth += 1 }
-            if (crossing.to == "s") { self.totalTravellingSouth += 1 }
+        let crossingCount = Array(repeating: 0, count: 3)
+        sortedCountFromEast = crossingCount
+        sortedCountFromNorth = crossingCount
+        sortedCountFromWest = crossingCount
+        sortedCountFromSouth = crossingCount
+        for crossing in crossings{
+            let strFrom = crossing.from
+            let strTo = crossing.to
+            switch strFrom{
+            case "n":
+                switch strTo{
+                case "n":
+                    continue
+                case "s":
+                    sortedCountFromNorth [1] += 1
+                case "e":
+                    sortedCountFromNorth [0] += 1
+                case "w":
+                    sortedCountFromNorth [2] += 1
+                default:
+                    assert(false, "unrecognized 'to' direction")
+                }
+            case "s":
+                switch strTo{
+                case "s":
+                    continue
+                case "n":
+                    sortedCountFromSouth [1] += 1
+                case "w":
+                    sortedCountFromSouth [0] += 1
+                case "e":
+                    sortedCountFromSouth [2] += 1
+                default:
+                    assert(false, "unrecognized 'to' direction")
+                }
+            case "w":
+                switch strTo{
+                case "w":
+                    continue
+                case "e":
+                    sortedCountFromWest [1] += 1
+                case "n":
+                    sortedCountFromWest [0] += 1
+                case "s":
+                    sortedCountFromWest [2] += 1
+                default:
+                    assert(false, "unrecognized 'to' direction")
+                }
+            case "e":
+                switch strTo{
+                case "e":
+                    continue
+                case "w":
+                    sortedCountFromEast [1] += 1
+                case "s":
+                    sortedCountFromEast [0] += 1
+                case "n":
+                    sortedCountFromEast [2] += 1
+                default:
+                    assert(false, "unrecognized 'to' direction")
+                }
+            default:
+                assert(false, "unrecognized 'from' direction")
+            }
         }
     }
     
@@ -224,9 +284,7 @@ class Session: Codable, Equatable {
                                                     options: [],
                                                     range: NSRange(location: 0, length: self.name.count),
                                                     withTemplate: "-")
-        } catch {
-            print("blah!")
-        }
+        } catch {}
         let filename = (cleanName as String) + ".csv"
         var csvData = ""// = "vehicle, from, left, right, through\n"
         
@@ -237,8 +295,14 @@ class Session: Codable, Equatable {
         csvData += "Longitude,\(self.lon)\n"
         csvData += "Node North-South,\(self.NSRoadName)\n"
         csvData += "Node East-West,\(self.EWRoadName)\n"
-        csvData += "Total Travelling North,\(self.totalTravellingNorth)\n"
-        csvData += "Total Travelling South,\(self.totalTravellingSouth)\n"
+        csvData += "Total Northbound Traffic,Turning Left,Going Through,Turning Right\n"
+        csvData += ",\(self.sortedCountFromSouth[0]),\(self.sortedCountFromSouth[1]),\(self.sortedCountFromSouth[2])\n"
+        csvData += "Total Southbound Traffic,Turning Left,Going Through,Turning Right\n"
+        csvData += ",\(self.sortedCountFromNorth[0]),\(self.sortedCountFromNorth[1]),\(self.sortedCountFromNorth[2])\n"
+        csvData += "Total Eastbound Traffic,Turning Left,Going Through,Turning Right\n"
+        csvData += ",\(self.sortedCountFromWest[0]),\(self.sortedCountFromWest[1]),\(self.sortedCountFromWest[2])\n"
+        csvData += "Total Westbound Traffic,Turning Left,Going Through,Turning Right\n"
+        csvData += ",\(self.sortedCountFromEast[0]),\(self.sortedCountFromEast[1]),\(self.sortedCountFromEast[2])\n"
         csvData += "\nRecorded Data\n"
         csvData += "Vehicle Type,From,To,Date,Time\n"
         for crossing in crossings{
