@@ -25,7 +25,7 @@ class SessionManager {
     
     func writeSession(session: Session) {
         let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveurl = documentsdirectory.appendingPathComponent("sessions").appendingPathComponent(session.getFilename()).appendingPathExtension("plist")
+        let archiveurl = documentsdirectory.appendingPathComponent("sessions").appendingPathComponent(session.getFilename())
         let plistencod = PropertyListEncoder()
         
         let encodeSession = try? plistencod.encode(session)
