@@ -295,6 +295,7 @@ class Session: Codable, Equatable {
         csvData += "Longitude,\(self.lon)\n"
         csvData += "Node North-South,\(self.NSRoadName)\n"
         csvData += "Node East-West,\(self.EWRoadName)\n"
+        csvData += "Technician,\(self.technician)\n"
         csvData += "Total Northbound Traffic,Turning Left,Going Through,Turning Right\n"
         csvData += ",\(self.sortedCountFromSouth[0]),\(self.sortedCountFromSouth[1]),\(self.sortedCountFromSouth[2])\n"
         csvData += "Total Southbound Traffic,Turning Left,Going Through,Turning Right\n"

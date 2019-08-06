@@ -21,22 +21,52 @@ class VehicleSelectViewController: UITableViewController {
         return 6;
     }
     
-     @IBAction func getSessionName(sender: Any) {
-     let namePrompt = UIAlertController(title: "Session Name", message: "What should this session be called?", preferredStyle: .alert)
-     namePrompt.addTextField { textField in
-     textField.placeholder = "Intersection of main and 3rd"
-     }
-     namePrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak namePrompt] _ in
-     guard let name = namePrompt!.textFields!.first!.text else { return }
-     self.session.name = name
-        self.getSessionLat()
-       // self.saveSession(name: name)
-     }))
-     namePrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-     present(namePrompt, animated: true, completion: nil)
-     }
+    @IBAction func getSessionName(sender: Any) {
+    let namePrompt = UIAlertController(title: "Session Form", message: "Please Input Session Information", preferredStyle: .alert)
+    namePrompt.addTextField { textField in
+    textField.placeholder = "Session Title"
+    }
+    namePrompt.addTextField(configurationHandler: { textField in
+        textField.placeholder = "Latitude"
+    })
+    namePrompt.addTextField(configurationHandler: { textField in
+        textField.placeholder = "Longitude"
+    })
+    namePrompt.addTextField { textField in
+        textField.placeholder = "East-West Road Name"
+    }
+    namePrompt.addTextField(configurationHandler: { textField in
+        textField.placeholder = "North-Soth Road Name"
+    })
+    namePrompt.addTextField(configurationHandler: { textField in
+        textField.placeholder = "User Name"
+    })
+     
+     
+    namePrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak namePrompt] _ in
+        guard let name = namePrompt!.textFields![0].text else { return }
+        self.session.name = name
+        guard let lat = namePrompt!.textFields![1].text else { return }
+        self.session.lat = lat
+        guard let lon = namePrompt!.textFields![2].text else { return }
+        self.session.lon = lon
+        guard let ewRoad = namePrompt!.textFields![3].text else { return }
+        self.session.EWRoadName = ewRoad
+        guard let nsRoad = namePrompt!.textFields![4].text else { return }
+        self.session.NSRoadName = nsRoad
+        guard let userName = namePrompt!.textFields![5].text else { return }
+        self.session.technician = userName
+//        self.getSessionLat()
+        self.saveSession()
+        // self.saveSession(name: name)
+    }))
+        
+    namePrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
     
-    func getSessionLat(){
+    present(namePrompt, animated: true, completion: nil)
+    }
+    
+    /*func getSessionLat(){
         let latPrompt = UIAlertController(title: "Session Latitude", message: "What is the latitude of the session?", preferredStyle: .alert)
         latPrompt.addTextField { textField in
             textField.placeholder = "00.00 N"
@@ -108,7 +138,7 @@ class VehicleSelectViewController: UITableViewController {
      
      func cancel(sender: UIAlertAction){
         self.dismiss(animated: true, completion: nil)
-     }
+     }*/
      
      func saveSession() {
 //     session.name = name
