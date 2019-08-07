@@ -27,7 +27,7 @@ class VehicleSelectViewController: UITableViewController {
         testFormatter.maximumFractionDigits = 2
     let namePrompt = UIAlertController(title: "Session Form", message: "Please Input Session Information", preferredStyle: .alert)
     namePrompt.addTextField { textField in
-    textField.placeholder = "Session Title"
+        textField.placeholder = "Session Title"
     }
     namePrompt.addTextField(configurationHandler: { textField in
         textField.placeholder = "Latitude"
