@@ -22,6 +22,9 @@ class VehicleSelectViewController: UITableViewController {
     }
     
     @IBAction func getSessionName(sender: Any) {
+    let testFormatter = NumberFormatter()
+        testFormatter.maximumIntegerDigits = 2
+        testFormatter.maximumFractionDigits = 2
     let namePrompt = UIAlertController(title: "Session Form", message: "Please Input Session Information", preferredStyle: .alert)
     namePrompt.addTextField { textField in
     textField.placeholder = "Session Title"
