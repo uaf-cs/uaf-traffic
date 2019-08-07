@@ -25,6 +25,8 @@ class VehicleSelectViewController: UITableViewController {
     let testFormatter = NumberFormatter()
         testFormatter.maximumIntegerDigits = 2
         testFormatter.maximumFractionDigits = 2
+        testFormatter.minimumIntegerDigits = 2
+        testFormatter.minimumFractionDigits = 2
     let namePrompt = UIAlertController(title: "Session Form", message: "Please Input Session Information", preferredStyle: .alert)
     namePrompt.addTextField { textField in
         textField.placeholder = "Session Title"
@@ -50,9 +52,9 @@ class VehicleSelectViewController: UITableViewController {
         let name = namePrompt!.textFields![0].text!
         self.session.name = name
         let lat = namePrompt!.textFields![1].text!
-        self.session.lat = testFormatter.number(from: lat)?.stringValue ?? "00.00" + " N"
+        self.session.lat = (testFormatter.number(from: lat)?.stringValue ?? "00.00") + " N"
         let lon = namePrompt!.textFields![2].text!
-        self.session.lon = testFormatter.number(from: lon)?.stringValue ?? "00.00" + " W"
+        self.session.lon = (testFormatter.number(from: lon)?.stringValue ?? "00.00") + " W"
         let ewRoad = namePrompt!.textFields![3].text!
         self.session.EWRoadName = ewRoad
         let nsRoad = namePrompt!.textFields![4].text!
