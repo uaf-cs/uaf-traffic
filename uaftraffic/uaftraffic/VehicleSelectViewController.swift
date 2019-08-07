@@ -50,9 +50,9 @@ class VehicleSelectViewController: UITableViewController {
         let name = namePrompt!.textFields![0].text!
         self.session.name = name
         let lat = namePrompt!.textFields![1].text!
-        self.session.lat = (testFormatter.number(from: lat) as! Float).description + " N"
+        self.session.lat = testFormatter.number(from: lat)?.stringValue ?? "00.00" + " N"
         let lon = namePrompt!.textFields![2].text!
-        self.session.lon = (testFormatter.number(from: lon) as! Float).description + " W"
+        self.session.lon = testFormatter.number(from: lon)?.stringValue ?? "00.00" + " W"
         let ewRoad = namePrompt!.textFields![3].text!
         self.session.EWRoadName = ewRoad
         let nsRoad = namePrompt!.textFields![4].text!
