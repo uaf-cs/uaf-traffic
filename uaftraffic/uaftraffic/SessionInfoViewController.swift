@@ -19,3 +19,26 @@ class SessionInfoViewController: UIViewController{
 
     
 }
+
+extension SessionInfoViewController: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case nameField:
+            latField.becomeFirstResponder()
+        case latField:
+            lonField.becomeFirstResponder()
+        case lonField:
+            ewField.becomeFirstResponder()
+        case ewField:
+            nsField.becomeFirstResponder()
+        case nsField:
+            technicianField.becomeFirstResponder()
+        default:
+            technicianField.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+}
