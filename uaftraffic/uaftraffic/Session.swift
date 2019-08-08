@@ -298,7 +298,7 @@ class Session: Codable, Equatable {
                                                     withTemplate: "-")
         } catch {}
         var filename = (cleanName as String) + ".csv"
-        if filename == ".csv"{
+        if filename.trimmingCharacters(in: .whitespaces) == ".csv"{
             filename = self.id + ".csv"
 //            the simplest way to correct for the empty name bug
         }
