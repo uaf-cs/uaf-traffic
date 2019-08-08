@@ -407,22 +407,6 @@
             </objects>
             <point key="canvasLocation" x="2361.71875" y="1319.53125"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ulV-Xd-6YD">
-            <objects>
-                <navigationController id="BgI-pM-n80" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="09x-r3-A9y">
-                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="FVC-f7-bMd" kind="relationship" relationship="rootViewController" id="fdT-Li-neq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="guS-d7-Ua0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2362" y="-671"/>
-        </scene>
         <!--Count Traffic-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -494,7 +478,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-S2-9Tu" userLabel="snowmachine N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="563" y="128" width="96" height="96.000000000000114"/>
+                                <rect key="frame" x="563" y="128" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
@@ -564,7 +548,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-dZ-bvE" userLabel="snowmachine S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="563" y="800" width="96" height="96.000000000000114"/>
+                                <rect key="frame" x="563" y="800" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
@@ -634,7 +618,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-r5-Jna" userLabel="snowmachine W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="691" width="96" height="96.000000000000114"/>
+                                <rect key="frame" x="0.0" y="691" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
@@ -704,7 +688,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-c1-rUZ" userLabel="snowmachine E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="672" y="691" width="96" height="96.000000000000114"/>
+                                <rect key="frame" x="672" y="691" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
@@ -896,7 +880,7 @@
                             </barButtonItem>
                             <barButtonItem title="Information" id="QJY-4L-pmw">
                                 <connections>
-                                    <segue destination="BgI-pM-n80" kind="show" id="US0-hC-mIc"/>
+                                    <segue destination="FVC-f7-bMd" kind="show" id="1qN-Po-882"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1123,7 +1107,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-mx-kPw">
-                                <rect key="frame" x="20" y="90" width="728" height="392"/>
+                                <rect key="frame" x="20" y="40" width="728" height="392"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Input Session Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9h-Dj-Dyu">
                                         <rect key="frame" x="0.0" y="0.0" width="728" height="60"/>
@@ -1411,7 +1395,7 @@
         <image name="uaflogo" width="202" height="111"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aof-J7-Uva"/>
+        <segue reference="1qN-Po-882"/>
         <segue reference="12W-Xu-TIl"/>
     </inferredMetricsTieBreakers>
 </document>
