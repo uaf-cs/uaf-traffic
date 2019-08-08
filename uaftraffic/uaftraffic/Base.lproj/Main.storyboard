@@ -220,8 +220,8 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saS-fC-cpD" userLabel="Save CSV Button">
-                                            <rect key="frame" x="528" y="-1" width="80" height="80.5"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saS-fC-cpD" userLabel="Save CSV Button">
+                                            <rect key="frame" x="528" y="-0.5" width="80" height="80.5"/>
                                             <color key="backgroundColor" red="0.44017894340474895" green="0.77017891839378239" blue="0.14640512188555344" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="saS-fC-cpD" secondAttribute="height" multiplier="1:1" id="dry-B1-nfT"/>
@@ -231,25 +231,41 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-kT-VUZ" userLabel="Edit Info Button">
+                                            <rect key="frame" x="448" y="-0.5" width="80" height="80.5"/>
+                                            <color key="backgroundColor" red="0.44721706840776487" green="0.76650586203365634" blue="0.77017891839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="dmt-kT-VUZ" secondAttribute="height" multiplier="1:1" id="09O-1S-02a"/>
+                                                <constraint firstAttribute="width" constant="80" id="vx7-DN-Syu"/>
+                                            </constraints>
+                                            <state key="normal" title="Edit Info">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="saS-fC-cpD" firstAttribute="width" secondItem="saS-fC-cpD" secondAttribute="height" multiplier="1:1" id="42c-y0-yWh"/>
                                         <constraint firstItem="wy6-Pf-cWf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="weR-S7-f7e" secondAttribute="trailing" id="D2w-aO-5eO"/>
                                         <constraint firstItem="fmN-LQ-LTc" firstAttribute="leading" secondItem="RrE-o7-12E" secondAttribute="leading" constant="20" id="Duw-PN-61Z"/>
+                                        <constraint firstItem="saS-fC-cpD" firstAttribute="leading" secondItem="dmt-kT-VUZ" secondAttribute="trailing" id="Fus-d7-4Zg"/>
                                         <constraint firstItem="weR-S7-f7e" firstAttribute="leading" secondItem="RrE-o7-12E" secondAttribute="leading" constant="20" id="GWU-HL-BIx"/>
                                         <constraint firstItem="wy6-Pf-cWf" firstAttribute="centerY" secondItem="RrE-o7-12E" secondAttribute="centerY" id="Juz-In-7H7"/>
                                         <constraint firstItem="p4E-ZT-Ovq" firstAttribute="centerY" secondItem="RrE-o7-12E" secondAttribute="centerY" id="KCl-uz-BvP"/>
                                         <constraint firstAttribute="bottom" secondItem="fmN-LQ-LTc" secondAttribute="bottom" constant="11.5" id="MSw-Xa-IxW"/>
                                         <constraint firstAttribute="trailing" secondItem="p4E-ZT-Ovq" secondAttribute="trailing" id="SCs-Ax-DEj"/>
+                                        <constraint firstItem="dmt-kT-VUZ" firstAttribute="centerY" secondItem="RrE-o7-12E" secondAttribute="centerY" id="fSh-fU-AH6"/>
                                         <constraint firstItem="weR-S7-f7e" firstAttribute="top" secondItem="RrE-o7-12E" secondAttribute="top" constant="18" id="g2s-HJ-M6Z"/>
+                                        <constraint firstItem="dmt-kT-VUZ" firstAttribute="width" secondItem="dmt-kT-VUZ" secondAttribute="height" multiplier="1:1" id="hlx-qQ-noI"/>
                                         <constraint firstItem="fmN-LQ-LTc" firstAttribute="top" secondItem="weR-S7-f7e" secondAttribute="bottom" constant="8" id="in9-DR-jfX"/>
                                         <constraint firstItem="wy6-Pf-cWf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fmN-LQ-LTc" secondAttribute="trailing" id="p3f-vx-dGG"/>
                                         <constraint firstItem="p4E-ZT-Ovq" firstAttribute="leading" secondItem="wy6-Pf-cWf" secondAttribute="trailing" id="qOl-aU-nKi"/>
+                                        <constraint firstItem="saS-fC-cpD" firstAttribute="centerY" secondItem="RrE-o7-12E" secondAttribute="centerY" id="sRY-VO-nsY"/>
                                         <constraint firstItem="wy6-Pf-cWf" firstAttribute="leading" secondItem="saS-fC-cpD" secondAttribute="trailing" id="sZl-y3-UD1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="deleteButton" destination="wy6-Pf-cWf" id="dFu-Hw-WtX"/>
+                                    <outlet property="editInfoButton" destination="dmt-kT-VUZ" id="Z7h-Pu-SRA"/>
                                     <outlet property="saveCSVButton" destination="saS-fC-cpD" id="3Jk-cc-aJM"/>
                                     <outlet property="sessionName" destination="weR-S7-f7e" id="pbw-4l-G98"/>
                                     <outlet property="sessionTime" destination="fmN-LQ-LTc" id="v5F-gq-dAQ"/>
