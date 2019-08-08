@@ -1393,21 +1393,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="atv" width="1415" height="1281"/>
-        <image name="atv-black" width="1415" height="1281"/>
-        <image name="bike" width="1242" height="1282"/>
-        <image name="car" width="2226" height="915"/>
+        <image name="atv" width="256" height="256"/>
+        <image name="atv-black" width="256" height="256"/>
+        <image name="bike" width="256" height="256"/>
+        <image name="car" width="256" height="256"/>
         <image name="compass_arrow" width="800" height="800"/>
         <image name="compass_dirs" width="800" height="800"/>
         <image name="cset" width="800" height="289"/>
         <image name="leftarrow" width="800" height="800"/>
-        <image name="pedestrian" width="807" height="1278"/>
+        <image name="pedestrian" width="256" height="256"/>
         <image name="road-block-east" width="279" height="1536"/>
         <image name="road-block-north" width="1536" height="279"/>
         <image name="road-block-south" width="1536" height="279"/>
         <image name="road-block-west" width="279" height="1536"/>
         <image name="road_background" width="2048" height="2048"/>
-        <image name="snowmachine" width="980" height="644"/>
+        <image name="snowmachine" width="256" height="256"/>
         <image name="uaflogo" width="202" height="111"/>
     </resources>
     <inferredMetricsTieBreakers>
