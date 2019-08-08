@@ -17,6 +17,7 @@ class SessionInfoViewController: UIViewController{
     @IBOutlet weak var nsField: UITextField!
     @IBOutlet weak var technicianField: UITextField!
     var session = Session()
+    var toSession = true
 
     override func viewDidLoad() {
         if session.name.trimmingCharacters(in: .whitespaces) != ""{
@@ -57,13 +58,20 @@ class SessionInfoViewController: UIViewController{
         
         let sessionManager = SessionManager()
         sessionManager.writeSession(session: session)
-        performSegue(withIdentifier: "StartSession", sender: self)
+        if toSession{
+            performSegue(withIdentifier: "StartSession", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! TrafficCountViewController
         vc.session = session
         vc.isResumedSession = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        toSession = false
+        saveInfo(self)
     }
     
 }
