@@ -12,6 +12,7 @@ class ManageSessionsViewController: UITableViewController {
     let networkManager = NetworkManager()
     let sessionManager = SessionManager()
     var sessions = [Session]()
+    var infoSession = Session()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +105,10 @@ class ManageSessionsViewController: UITableViewController {
     @objc func editInfo(sender: UIButton){
         let cell = sender.superview!.superview! as! ManageSessionCell
         let indexPath = tableView.indexPath(for: cell)!
+        infoSession = sessions[indexPath.row]
+        performSegue(withIdentifier: "EditInfo", sender: self)
+        /*let cell = sender.superview!.superview! as! ManageSessionCell
+        let indexPath = tableView.indexPath(for: cell)!
         let session = sessions[indexPath.row]
         
         let namePrompt = UIAlertController(title: "Session Form", message: "Please Input Session Information", preferredStyle: .alert)
@@ -144,7 +149,7 @@ class ManageSessionsViewController: UITableViewController {
         
         namePrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
-        present(namePrompt, animated: true, completion: nil)
+        present(namePrompt, animated: true, completion: nil)*/
     }
     
     // MARK: - Navigation
@@ -154,6 +159,10 @@ class ManageSessionsViewController: UITableViewController {
         if segue.identifier == "sessionDetail" {
             let vc = segue.destination as! SessionDetailsViewController
             vc.session = sessions[tableView.indexPathForSelectedRow!.row]
+        }
+        else if segue.identifier == "EditInfo" {
+            let vc = segue.destination as! SessionInfoViewController
+            vc.session = infoSession
         }
     }
 }

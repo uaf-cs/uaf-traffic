@@ -1123,7 +1123,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-mx-kPw">
-                                <rect key="frame" x="20" y="40" width="728" height="392"/>
+                                <rect key="frame" x="20" y="90" width="728" height="392"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Input Session Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9h-Dj-Dyu">
                                         <rect key="frame" x="0.0" y="0.0" width="728" height="60"/>
@@ -1411,7 +1411,7 @@
         <image name="uaflogo" width="202" height="111"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1qN-Po-882"/>
+        <segue reference="Q1w-aj-EIF"/>
         <segue reference="12W-Xu-TIl"/>
     </inferredMetricsTieBreakers>
 </document>
