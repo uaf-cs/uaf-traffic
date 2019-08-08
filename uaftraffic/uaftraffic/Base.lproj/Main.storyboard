@@ -477,7 +477,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-S2-9Tu" userLabel="snowmachine N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="563" y="128" width="96" height="96.000000000000114"/>
+                                <rect key="frame" x="563" y="128" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
@@ -547,7 +547,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-dZ-bvE" userLabel="snowmachine S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="563" y="800" width="96" height="96.000000000000114"/>
+                                <rect key="frame" x="563" y="800" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
@@ -617,7 +617,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-r5-Jna" userLabel="snowmachine W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="691" width="96" height="96.000000000000114"/>
+                                <rect key="frame" x="0.0" y="691" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
@@ -687,7 +687,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-c1-rUZ" userLabel="snowmachine E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="672" y="691" width="96" height="96.000000000000114"/>
+                                <rect key="frame" x="672" y="691" width="96" height="96"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
@@ -1165,6 +1165,9 @@
                                         <rect key="frame" x="0.0" y="340.5" width="728" height="78"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                         <state key="normal" title="Begin Session"/>
+                                        <connections>
+                                            <action selector="saveInfo:" destination="FVC-f7-bMd" eventType="primaryActionTriggered" id="44v-V4-FTH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
