@@ -167,7 +167,7 @@ class Session: Codable, Equatable {
         formatter.dateFormat = "yyyy-MM-dd"
         self.dateCreated = formatter.string(from: Date())
         
-        self.id = randomString()
+        self.id = (self.id == "") ? randomString() : self.id
         self.filename = self.dateCreated + "-" + self.id + ".plist"
     }
     
