@@ -477,7 +477,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-S2-9Tu" userLabel="snowmachine N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="563" y="128" width="96" height="96"/>
+                                <rect key="frame" x="563" y="128" width="96" height="96.000000000000114"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
@@ -547,7 +547,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-dZ-bvE" userLabel="snowmachine S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="563" y="800" width="96" height="96"/>
+                                <rect key="frame" x="563" y="800" width="96" height="96.000000000000114"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
@@ -617,7 +617,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-r5-Jna" userLabel="snowmachine W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="691" width="96" height="96"/>
+                                <rect key="frame" x="0.0" y="691" width="96" height="96.000000000000114"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
@@ -687,7 +687,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-c1-rUZ" userLabel="snowmachine E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="672" y="691" width="96" height="96"/>
+                                <rect key="frame" x="672" y="691" width="96" height="96.000000000000114"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
@@ -1083,27 +1083,96 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="StartSession" id="YAX-uD-de7"/>
+                        <segue destination="FVC-f7-bMd" kind="show" id="aof-J7-Uva"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="teV-Ke-v9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1594.53125" y="-671.484375"/>
         </scene>
-        <!--View Controller-->
+        <!--Session Info View Controller-->
         <scene sceneID="mhj-aA-zJR">
             <objects>
-                <viewController id="FVC-f7-bMd" sceneMemberID="viewController">
+                <viewController id="FVC-f7-bMd" customClass="SessionInfoViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V4Z-1S-nQt">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-mx-kPw">
+                                <rect key="frame" x="20" y="128.5" width="728" height="418.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Input Session Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9h-Dj-Dyu">
+                                        <rect key="frame" x="0.0" y="0.0" width="728" height="44.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Session Title" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9j-95-dA4">
+                                        <rect key="frame" x="0.0" y="52.5" width="728" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Latitude" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-Ut-dpD">
+                                        <rect key="frame" x="0.0" y="100.5" width="728" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Longitude" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="136-Zx-TIo">
+                                        <rect key="frame" x="0.0" y="148.5" width="728" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="East-West Road Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t7I-7Z-0s2">
+                                        <rect key="frame" x="0.0" y="196.5" width="728" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="North-South Road Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gy9-er-55p">
+                                        <rect key="frame" x="0.0" y="244.5" width="728" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Technician Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uZ-0uE">
+                                        <rect key="frame" x="0.0" y="292.5" width="728" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5X-Pq-0VG">
+                                        <rect key="frame" x="0.0" y="340.5" width="728" height="78"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                        <state key="normal" title="Begin Session"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DUQ-mx-kPw" firstAttribute="leading" secondItem="14G-Au-hih" secondAttribute="leading" constant="20" id="HBK-BS-nAr"/>
+                            <constraint firstItem="DUQ-mx-kPw" firstAttribute="centerX" secondItem="14G-Au-hih" secondAttribute="centerX" id="Kyh-qc-bIg"/>
+                            <constraint firstItem="14G-Au-hih" firstAttribute="trailing" secondItem="DUQ-mx-kPw" secondAttribute="trailing" constant="20" id="Yor-AE-LtW"/>
+                            <constraint firstItem="DUQ-mx-kPw" firstAttribute="bottom" secondItem="14G-Au-hih" secondAttribute="centerY" id="q9f-hY-PK0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="14G-Au-hih"/>
                     </view>
+                    <connections>
+                        <outlet property="ewField" destination="t7I-7Z-0s2" id="6cf-E1-iJ6"/>
+                        <outlet property="latField" destination="Klq-Ut-dpD" id="GPc-5P-7j5"/>
+                        <outlet property="lonField" destination="136-Zx-TIo" id="USR-Fv-hvf"/>
+                        <outlet property="nameField" destination="O9j-95-dA4" id="L0R-6Z-ch0"/>
+                        <outlet property="nsField" destination="gy9-er-55p" id="RuZ-lP-bpQ"/>
+                        <outlet property="technicianField" destination="ybv-uZ-0uE" id="27A-aX-l56"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="12W-Xu-TIl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lT-Fq-8qk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2362" y="-671"/>
+            <point key="canvasLocation" x="2361.71875" y="-671.484375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Efs-fp-qvh">
@@ -1296,6 +1365,6 @@
         <image name="uaflogo" width="202" height="111"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YAX-uD-de7"/>
+        <segue reference="12W-Xu-TIl"/>
     </inferredMetricsTieBreakers>
 </document>
