@@ -36,6 +36,13 @@ class SessionInfoViewController: UIViewController{
         
         let sessionManager = SessionManager()
         sessionManager.writeSession(session: session)
+        performSegue(withIdentifier: "StartSession", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! TrafficCountViewController
+        vc.session = session
+        vc.isResumedSession = true
     }
     
 }

@@ -86,14 +86,13 @@ class VehicleSelectViewController: UITableViewController {
         session.vehicle5Type = vehicleArray[4]
      let sessionManager = SessionManager()
      sessionManager.writeSession(session: session)
-     performSegue(withIdentifier: "StartSession", sender: self)
+     performSegue(withIdentifier: "sessionInfo", sender: self)
 
      }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! TrafficCountViewController
+        let vc = segue.destination as! SessionInfoViewController
         vc.session = session
-        vc.isResumedSession = true
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -1083,7 +1083,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="FVC-f7-bMd" kind="show" id="aof-J7-Uva"/>
+                        <segue destination="FVC-f7-bMd" kind="show" identifier="sessionInfo" id="aof-J7-Uva"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="teV-Ke-v9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1188,7 +1188,7 @@
                         <outlet property="nameField" destination="O9j-95-dA4" id="L0R-6Z-ch0"/>
                         <outlet property="nsField" destination="gy9-er-55p" id="RuZ-lP-bpQ"/>
                         <outlet property="technicianField" destination="ybv-uZ-0uE" id="27A-aX-l56"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="12W-Xu-TIl"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="StartSession" id="12W-Xu-TIl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lT-Fq-8qk" userLabel="First Responder" sceneMemberID="firstResponder"/>
