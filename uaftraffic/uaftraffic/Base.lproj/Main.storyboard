@@ -272,6 +272,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="cr6-xH-cCG" kind="presentation" identifier="pinEntry" id="Wjf-7Z-zrT"/>
+                        <segue destination="FVC-f7-bMd" kind="show" identifier="EditInfo" id="Q1w-aj-EIF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbg-bw-QZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1193,7 +1194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lT-Fq-8qk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2361.71875" y="-671.484375"/>
+            <point key="canvasLocation" x="1595" y="-32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Efs-fp-qvh">
@@ -1386,6 +1387,7 @@
         <image name="uaflogo" width="202" height="111"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Q1w-aj-EIF"/>
         <segue reference="12W-Xu-TIl"/>
     </inferredMetricsTieBreakers>
 </document>

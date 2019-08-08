@@ -18,21 +18,42 @@ class SessionInfoViewController: UIViewController{
     @IBOutlet weak var technicianField: UITextField!
     var session = Session()
 
+    override func viewDidLoad() {
+        if session.name.trimmingCharacters(in: .whitespaces) != ""{
+            nameField.placeholder = session.name
+        }
+        if session.lat.trimmingCharacters(in: .whitespaces) != ""{
+            latField.placeholder = session.lat
+        }
+        if session.lon.trimmingCharacters(in: .whitespaces) != ""{
+            lonField.placeholder = session.lon
+        }
+        if session.EWRoadName.trimmingCharacters(in: .whitespaces) != ""{
+            ewField.placeholder = session.EWRoadName
+        }
+        if session.NSRoadName.trimmingCharacters(in: .whitespaces) != ""{
+            nsField.placeholder = session.NSRoadName
+        }
+        if session.technician.trimmingCharacters(in: .whitespaces) != ""{
+            technicianField.placeholder = session.technician
+        }
+    }
+    
     @IBAction func saveInfo(_ sender: Any){
         let name = nameField.text!
-        self.session.name = name
+        self.session.name = (name != "") ? name : session.name
         let lat = latField.text!
-        self.session.lat = lat
-        //        self.session.lat = (testFormatter.number(from: lat)?.stringValue ?? "00.00") + " N"
+        self.session.lat = (lat != "") ? lat : session.lat
+//        self.session.lat = (testFormatter.number(from: lat)?.stringValue ?? "00.00") + " N"
         let lon = lonField.text!
-        self.session.lon = lon
-        //        self.session.lon = (testFormatter.number(from: lon)?.stringValue ?? "00.00") + " W"
+        self.session.lon = (lon != "") ? lon : session.lon
+//        self.session.lon = (testFormatter.number(from: lon)?.stringValue ?? "00.00") + " W"
         let ewRoad = ewField.text!
-        self.session.EWRoadName = ewRoad
+        self.session.EWRoadName = (ewRoad != "") ? ewRoad : session.EWRoadName
         let nsRoad = nsField.text!
-        self.session.NSRoadName = nsRoad
+        self.session.NSRoadName = (nsRoad != "") ? nsRoad : session.NSRoadName
         let userName = technicianField.text!
-        self.session.technician = userName
+        self.session.technician = (userName != "") ? userName : session.technician
         
         let sessionManager = SessionManager()
         sessionManager.writeSession(session: session)
