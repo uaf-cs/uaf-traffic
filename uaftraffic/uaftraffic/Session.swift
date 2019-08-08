@@ -200,7 +200,7 @@ class Session: Codable, Equatable {
     }
     
     func playDing() {
-        let url = Bundle.main.url(forResource: "ding", withExtension: "mp3")
+        let url = Bundle.main.url(forResource: "ding", withExtension: "wav")
         do {
             try audioPlayer = AVAudioPlayer(contentsOf: url!)
         } catch let error {

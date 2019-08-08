@@ -18,7 +18,7 @@ class VehicleSelectViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6;
+        return 8;
     }
      
     @IBAction func saveSession(sender: Any) {
@@ -75,6 +75,10 @@ class VehicleSelectViewController: UITableViewController {
             cell.selectLabel = "pedestrian"
         case 5:
             cell.selectLabel = "snowmachine"
+        case 6:
+            cell.selectLabel = "truck"
+        case 7:
+            cell.selectLabel = "unknown"
             // more vehicles can be added, just be sure to address the row count as well
         default:
             assert(false, "too many rows")

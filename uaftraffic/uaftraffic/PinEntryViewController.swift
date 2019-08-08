@@ -51,7 +51,7 @@ class PinEntryViewController: UIViewController {
     }
     
     func playError() {
-        let url = Bundle.main.url(forResource: "error", withExtension: "mp3")
+        let url = Bundle.main.url(forResource: "error", withExtension: "wav")
         do {
             try audioPlayer = AVAudioPlayer(contentsOf: url!)
         } catch let error {
