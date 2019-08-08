@@ -477,7 +477,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="2b8-S2-9Tu" userLabel="snowmachine N" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="563" y="128" width="96" height="96"/>
+                                <rect key="frame" x="563" y="128" width="96" height="96.000000000000114"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="n"/>
@@ -547,7 +547,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="pXf-dZ-bvE" userLabel="snowmachine S" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="563" y="800" width="96" height="96"/>
+                                <rect key="frame" x="563" y="800" width="96" height="96.000000000000114"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="s"/>
@@ -617,7 +617,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-r5-Jna" userLabel="snowmachine W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="691" width="96" height="96"/>
+                                <rect key="frame" x="0.0" y="691" width="96" height="96.000000000000114"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
@@ -687,7 +687,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-c1-rUZ" userLabel="snowmachine E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="672" y="691" width="96" height="96"/>
+                                <rect key="frame" x="672" y="691" width="96" height="96.000000000000114"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
@@ -1099,7 +1099,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-mx-kPw">
-                                <rect key="frame" x="20" y="155" width="728" height="392"/>
+                                <rect key="frame" x="20" y="90" width="728" height="392"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Input Session Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9h-Dj-Dyu">
                                         <rect key="frame" x="0.0" y="0.0" width="728" height="60"/>
@@ -1177,7 +1177,7 @@
                             <constraint firstItem="DUQ-mx-kPw" firstAttribute="leading" secondItem="14G-Au-hih" secondAttribute="leading" constant="20" id="HBK-BS-nAr"/>
                             <constraint firstItem="DUQ-mx-kPw" firstAttribute="centerX" secondItem="14G-Au-hih" secondAttribute="centerX" id="Kyh-qc-bIg"/>
                             <constraint firstItem="14G-Au-hih" firstAttribute="trailing" secondItem="DUQ-mx-kPw" secondAttribute="trailing" constant="20" id="Yor-AE-LtW"/>
-                            <constraint firstItem="DUQ-mx-kPw" firstAttribute="bottom" secondItem="14G-Au-hih" secondAttribute="centerY" id="q9f-hY-PK0"/>
+                            <constraint firstItem="DUQ-mx-kPw" firstAttribute="top" secondItem="14G-Au-hih" secondAttribute="top" constant="20" id="q9f-hY-PK0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="14G-Au-hih"/>
                     </view>
