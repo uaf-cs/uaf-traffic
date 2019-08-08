@@ -20,60 +20,8 @@ class VehicleSelectViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6;
     }
-    
-    @IBAction func getSessionName(sender: Any) {
-//    let testFormatter = NumberFormatter()
-//        testFormatter.maximumIntegerDigits = 2
-//        testFormatter.maximumFractionDigits = 2
-//        testFormatter.minimumIntegerDigits = 2
-//        testFormatter.minimumFractionDigits = 2
-    let namePrompt = UIAlertController(title: "Session Form", message: "Please Input Session Information", preferredStyle: .alert)
-    namePrompt.addTextField { textField in
-        textField.placeholder = "Session Title"
-    }
-    namePrompt.addTextField(configurationHandler: { textField in
-        textField.placeholder = "Latitude"
-    })
-    namePrompt.addTextField(configurationHandler: { textField in
-        textField.placeholder = "Longitude"
-    })
-    namePrompt.addTextField { textField in
-        textField.placeholder = "East-West Road Name"
-    }
-    namePrompt.addTextField(configurationHandler: { textField in
-        textField.placeholder = "North-Soth Road Name"
-    })
-    namePrompt.addTextField(configurationHandler: { textField in
-        textField.placeholder = "Technician Name"
-    })
      
-     
-    namePrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak namePrompt] _ in
-        let name = namePrompt!.textFields![0].text!
-        self.session.name = name
-        let lat = namePrompt!.textFields![1].text!
-        self.session.lat = lat
-//        self.session.lat = (testFormatter.number(from: lat)?.stringValue ?? "00.00") + " N"
-        let lon = namePrompt!.textFields![2].text!
-        self.session.lon = lon
-//        self.session.lon = (testFormatter.number(from: lon)?.stringValue ?? "00.00") + " W"
-        let ewRoad = namePrompt!.textFields![3].text!
-        self.session.EWRoadName = ewRoad
-        let nsRoad = namePrompt!.textFields![4].text!
-        self.session.NSRoadName = nsRoad
-        let userName = namePrompt!.textFields![5].text!
-        self.session.technician = userName
-//        self.getSessionLat()
-        self.saveSession()
-        // self.saveSession(name: name)
-    }))
-        
-    namePrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-    
-    present(namePrompt, animated: true, completion: nil)
-    }
-     
-     func saveSession() {
+    @IBAction func saveSession(sender: Any) {
 //     session.name = name
         if vehicleArray.count < 5{
             let blankArray = Array(repeating: "", count: 5 - vehicleArray.count)
