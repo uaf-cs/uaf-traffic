@@ -68,6 +68,9 @@ class Session: Codable, Equatable {
     var NSRoadName : String
     var EWRoadName : String
     var technician : String
+    var city : String
+    var state : String
+    var zipCode : String
     var crossings : [Crossing]
     var audioPlayer = AVAudioPlayer()
     
@@ -94,6 +97,9 @@ class Session: Codable, Equatable {
         case NSRoadName
         case EWRoadName
         case technician
+        case city
+        case state
+        case zipCode
         case crossings
     }
     
@@ -114,12 +120,15 @@ class Session: Codable, Equatable {
         self.NSRoadName = ""
         self.EWRoadName = ""
         self.technician = ""
+        self.city = ""
+        self.state = ""
+        self.zipCode = ""
         self.crossings = []
         
         self.initID()
     }
     
-    init(lat: String, long: String, id: String, name: String, hasNorthLink: Bool, hasSouthLink: Bool, hasWestLink: Bool, hasEastLink: Bool, vehicle1Type: String, vehicle2Type: String, vehicle3Type: String, vehicle4Type: String, vehicle5Type: String, nsRoadName: String, ewRoadName: String, technician: String, crossings: [Crossing]) {
+    init(lat: String, long: String, id: String, name: String, hasNorthLink: Bool, hasSouthLink: Bool, hasWestLink: Bool, hasEastLink: Bool, vehicle1Type: String, vehicle2Type: String, vehicle3Type: String, vehicle4Type: String, vehicle5Type: String, nsRoadName: String, ewRoadName: String, technician: String, city: String, state: String, zipCode: String, crossings: [Crossing]) {
         self.lat = lat
         self.lon = long
         self.id = id
@@ -137,6 +146,9 @@ class Session: Codable, Equatable {
         self.EWRoadName = ewRoadName
         self.technician = technician
         self.crossings = crossings
+        self.city = city
+        self.state = state
+        self.zipCode = zipCode
         
         self.initID()
     }
@@ -159,7 +171,10 @@ class Session: Codable, Equatable {
             lhs.vehicle5Type == rhs.vehicle5Type &&
             lhs.NSRoadName == rhs.NSRoadName &&
             lhs.EWRoadName == rhs.EWRoadName &&
-            lhs.technician == rhs.technician
+            lhs.technician == rhs.technician &&
+            lhs.city == rhs.city &&
+            lhs.state == rhs.state &&
+            lhs.zipCode == rhs.zipCode
     }
     
     func initID() {
@@ -312,6 +327,9 @@ class Session: Codable, Equatable {
         csvData += "Node North-South,\(self.NSRoadName)\n"
         csvData += "Node East-West,\(self.EWRoadName)\n"
         csvData += "Technician,\(self.technician)\n"
+        csvData += "City,\(self.city)\n"
+        csvData += "State,\(self.state)\n"
+        csvData += "Zip Code,\(self.zipCode)\n"
         csvData += "Total Northbound Traffic,Turning Left,Going Through,Turning Right\n"
         csvData += ",\(self.sortedCountFromSouth[0]),\(self.sortedCountFromSouth[1]),\(self.sortedCountFromSouth[2])\n"
         csvData += "Total Southbound Traffic,Turning Left,Going Through,Turning Right\n"

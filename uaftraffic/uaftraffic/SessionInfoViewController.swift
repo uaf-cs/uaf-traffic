@@ -16,6 +16,9 @@ class SessionInfoViewController: UIViewController{
     @IBOutlet weak var ewField: UITextField!
     @IBOutlet weak var nsField: UITextField!
     @IBOutlet weak var technicianField: UITextField!
+    @IBOutlet weak var cityField: UITextField!
+    @IBOutlet weak var stateField: UITextField!
+    @IBOutlet weak var zipField: UITextField!
     var session = Session()
     var toSession = true
 
@@ -38,6 +41,15 @@ class SessionInfoViewController: UIViewController{
         if session.technician.trimmingCharacters(in: .whitespaces) != ""{
             technicianField.placeholder = session.technician
         }
+        if session.city.trimmingCharacters(in: .whitespaces) != ""{
+            cityField.placeholder = session.city
+        }
+        if session.state.trimmingCharacters(in: .whitespaces) != ""{
+            stateField.placeholder = session.state
+        }
+        if session.zipCode.trimmingCharacters(in: .whitespaces) != ""{
+            zipField.placeholder = session.zipCode
+        }
     }
     
     @IBAction func saveInfo(_ sender: Any){
@@ -55,6 +67,12 @@ class SessionInfoViewController: UIViewController{
         self.session.NSRoadName = (nsRoad != "") ? nsRoad : session.NSRoadName
         let userName = technicianField.text!
         self.session.technician = (userName != "") ? userName : session.technician
+        let city = cityField.text!
+        self.session.city = (city != "") ? city : session.city
+        let state = stateField.text!
+        self.session.state = (state != "") ? state : session.state
+        let zip = zipField.text!
+        self.session.zipCode = (zip != "") ? zip : session.zipCode
         
         let sessionManager = SessionManager()
         sessionManager.writeSession(session: session)
@@ -90,8 +108,14 @@ extension SessionInfoViewController: UITextFieldDelegate{
             nsField.becomeFirstResponder()
         case nsField:
             technicianField.becomeFirstResponder()
+        case technicianField:
+            cityField.becomeFirstResponder()
+        case cityField:
+            stateField.becomeFirstResponder()
+        case stateField:
+            zipField.becomeFirstResponder()
         default:
-            technicianField.resignFirstResponder()
+            zipField.resignFirstResponder()
         }
         
         return true
