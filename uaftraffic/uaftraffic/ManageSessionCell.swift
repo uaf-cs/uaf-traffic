@@ -14,6 +14,7 @@ class ManageSessionCell: UITableViewCell {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var uploadButton: UIButton!
     @IBOutlet weak var saveCSVButton: UIButton!
+    @IBOutlet weak var editInfoButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
