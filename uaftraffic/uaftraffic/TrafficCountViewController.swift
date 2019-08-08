@@ -76,6 +76,12 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! SessionInfoViewController
+        vc.session = session
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func eastCheck(){
         eastBlocker.isHidden = session.hasEastLink
 //        eastGrey.isHidden = session.hasEastLink

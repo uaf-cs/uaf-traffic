@@ -12,6 +12,7 @@ class ManageSessionsViewController: UITableViewController {
     let networkManager = NetworkManager()
     let sessionManager = SessionManager()
     var sessions = [Session]()
+    var infoSession = Session()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class ManageSessionsViewController: UITableViewController {
         cell.deleteButton.addTarget(self, action: #selector(self.deleteSession), for: .touchUpInside)
         cell.uploadButton.addTarget(self, action: #selector(self.uploadSession), for: .touchUpInside)
         cell.saveCSVButton.addTarget(self, action: #selector(self.saveCSV), for: .touchUpInside)
+        cell.editInfoButton.addTarget(self, action: #selector(self.editInfo), for: .touchUpInside)
         return cell
     }
     
@@ -100,6 +102,56 @@ class ManageSessionsViewController: UITableViewController {
         present(okAlert, animated: true, completion: nil)
     }
     
+    @objc func editInfo(sender: UIButton){
+        let cell = sender.superview!.superview! as! ManageSessionCell
+        let indexPath = tableView.indexPath(for: cell)!
+        infoSession = sessions[indexPath.row]
+        performSegue(withIdentifier: "EditInfo", sender: self)
+        /*let cell = sender.superview!.superview! as! ManageSessionCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let session = sessions[indexPath.row]
+        
+        let namePrompt = UIAlertController(title: "Session Form", message: "Please Input Session Information", preferredStyle: .alert)
+        namePrompt.addTextField { textField in
+            textField.placeholder = (session.name != "") ? session.name : "Session Title"
+        }
+        namePrompt.addTextField(configurationHandler: { textField in
+            textField.placeholder = (session.lat != "") ? session.lat : "Latitude"
+        })
+        namePrompt.addTextField(configurationHandler: { textField in
+            textField.placeholder = (session.lon != "") ? session.lon : "Longitude"
+        })
+        namePrompt.addTextField { textField in
+            textField.placeholder = (session.EWRoadName != "") ? session.EWRoadName : "East-West Road Name"
+        }
+        namePrompt.addTextField(configurationHandler: { textField in
+            textField.placeholder = (session.NSRoadName != "") ? session.NSRoadName : "North-South Road Name"
+        })
+        namePrompt.addTextField(configurationHandler: { textField in
+            textField.placeholder = (session.technician != "") ? session.technician : "Technician Name"
+        })
+        
+        
+        namePrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak namePrompt] _ in
+            let name = namePrompt!.textFields![0].text!
+            session.name = (name != "") ? name : session.name
+            let lat = namePrompt!.textFields![1].text!
+            session.lat = (lat != "") ? lat : session.lat
+            let lon = namePrompt!.textFields![2].text!
+            session.lon = (lon != "") ? lon : session.lon
+            let ewRoad = namePrompt!.textFields![3].text!
+            session.EWRoadName = (ewRoad != "") ? ewRoad : session.EWRoadName
+            let nsRoad = namePrompt!.textFields![4].text!
+            session.NSRoadName = (nsRoad != "") ? nsRoad : session.NSRoadName
+            let technician = namePrompt!.textFields![5].text!
+            session.technician = (technician != "") ? technician : session.technician
+        }))
+        
+        namePrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(namePrompt, animated: true, completion: nil)*/
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -107,6 +159,10 @@ class ManageSessionsViewController: UITableViewController {
         if segue.identifier == "sessionDetail" {
             let vc = segue.destination as! SessionDetailsViewController
             vc.session = sessions[tableView.indexPathForSelectedRow!.row]
+        }
+        else if segue.identifier == "EditInfo" {
+            let vc = segue.destination as! SessionInfoViewController
+            vc.session = infoSession
         }
     }
 }

@@ -98,8 +98,8 @@ class Session: Codable, Equatable {
     }
     
     init() {
-        self.lat = "0.00"
-        self.lon = "0.00"
+        self.lat = ""
+        self.lon = ""
         self.id = ""
         self.name = ""
         self.hasNorthLink = true
@@ -167,7 +167,7 @@ class Session: Codable, Equatable {
         formatter.dateFormat = "yyyy-MM-dd"
         self.dateCreated = formatter.string(from: Date())
         
-        self.id = randomString()
+        self.id = (self.id == "") ? randomString() : self.id
         self.filename = self.dateCreated + "-" + self.id + ".plist"
     }
     

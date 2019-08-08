@@ -220,8 +220,8 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saS-fC-cpD" userLabel="Save CSV Button">
-                                            <rect key="frame" x="528" y="-1" width="80" height="80.5"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saS-fC-cpD" userLabel="Save CSV Button">
+                                            <rect key="frame" x="528" y="-0.5" width="80" height="80.5"/>
                                             <color key="backgroundColor" red="0.44017894340474895" green="0.77017891839378239" blue="0.14640512188555344" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="saS-fC-cpD" secondAttribute="height" multiplier="1:1" id="dry-B1-nfT"/>
@@ -231,25 +231,41 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-kT-VUZ" userLabel="Edit Info Button">
+                                            <rect key="frame" x="448" y="-0.5" width="80" height="80.5"/>
+                                            <color key="backgroundColor" red="0.44721706840776487" green="0.76650586203365634" blue="0.77017891839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="dmt-kT-VUZ" secondAttribute="height" multiplier="1:1" id="09O-1S-02a"/>
+                                                <constraint firstAttribute="width" constant="80" id="vx7-DN-Syu"/>
+                                            </constraints>
+                                            <state key="normal" title="Edit Info">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="saS-fC-cpD" firstAttribute="width" secondItem="saS-fC-cpD" secondAttribute="height" multiplier="1:1" id="42c-y0-yWh"/>
                                         <constraint firstItem="wy6-Pf-cWf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="weR-S7-f7e" secondAttribute="trailing" id="D2w-aO-5eO"/>
                                         <constraint firstItem="fmN-LQ-LTc" firstAttribute="leading" secondItem="RrE-o7-12E" secondAttribute="leading" constant="20" id="Duw-PN-61Z"/>
+                                        <constraint firstItem="saS-fC-cpD" firstAttribute="leading" secondItem="dmt-kT-VUZ" secondAttribute="trailing" id="Fus-d7-4Zg"/>
                                         <constraint firstItem="weR-S7-f7e" firstAttribute="leading" secondItem="RrE-o7-12E" secondAttribute="leading" constant="20" id="GWU-HL-BIx"/>
                                         <constraint firstItem="wy6-Pf-cWf" firstAttribute="centerY" secondItem="RrE-o7-12E" secondAttribute="centerY" id="Juz-In-7H7"/>
                                         <constraint firstItem="p4E-ZT-Ovq" firstAttribute="centerY" secondItem="RrE-o7-12E" secondAttribute="centerY" id="KCl-uz-BvP"/>
                                         <constraint firstAttribute="bottom" secondItem="fmN-LQ-LTc" secondAttribute="bottom" constant="11.5" id="MSw-Xa-IxW"/>
                                         <constraint firstAttribute="trailing" secondItem="p4E-ZT-Ovq" secondAttribute="trailing" id="SCs-Ax-DEj"/>
+                                        <constraint firstItem="dmt-kT-VUZ" firstAttribute="centerY" secondItem="RrE-o7-12E" secondAttribute="centerY" id="fSh-fU-AH6"/>
                                         <constraint firstItem="weR-S7-f7e" firstAttribute="top" secondItem="RrE-o7-12E" secondAttribute="top" constant="18" id="g2s-HJ-M6Z"/>
+                                        <constraint firstItem="dmt-kT-VUZ" firstAttribute="width" secondItem="dmt-kT-VUZ" secondAttribute="height" multiplier="1:1" id="hlx-qQ-noI"/>
                                         <constraint firstItem="fmN-LQ-LTc" firstAttribute="top" secondItem="weR-S7-f7e" secondAttribute="bottom" constant="8" id="in9-DR-jfX"/>
                                         <constraint firstItem="wy6-Pf-cWf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fmN-LQ-LTc" secondAttribute="trailing" id="p3f-vx-dGG"/>
                                         <constraint firstItem="p4E-ZT-Ovq" firstAttribute="leading" secondItem="wy6-Pf-cWf" secondAttribute="trailing" id="qOl-aU-nKi"/>
+                                        <constraint firstItem="saS-fC-cpD" firstAttribute="centerY" secondItem="RrE-o7-12E" secondAttribute="centerY" id="sRY-VO-nsY"/>
                                         <constraint firstItem="wy6-Pf-cWf" firstAttribute="leading" secondItem="saS-fC-cpD" secondAttribute="trailing" id="sZl-y3-UD1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="deleteButton" destination="wy6-Pf-cWf" id="dFu-Hw-WtX"/>
+                                    <outlet property="editInfoButton" destination="dmt-kT-VUZ" id="Z7h-Pu-SRA"/>
                                     <outlet property="saveCSVButton" destination="saS-fC-cpD" id="3Jk-cc-aJM"/>
                                     <outlet property="sessionName" destination="weR-S7-f7e" id="pbw-4l-G98"/>
                                     <outlet property="sessionTime" destination="fmN-LQ-LTc" id="v5F-gq-dAQ"/>
@@ -272,6 +288,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="cr6-xH-cCG" kind="presentation" identifier="pinEntry" id="Wjf-7Z-zrT"/>
+                        <segue destination="FVC-f7-bMd" kind="show" identifier="EditInfo" id="Q1w-aj-EIF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbg-bw-QZq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -871,11 +888,18 @@
                                 <action selector="endSessionButtonTapped:" destination="BYZ-38-t0r" id="PAR-3z-Ga2"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Undo" id="069-es-cxg">
-                            <connections>
-                                <action selector="undoButtonTapped:" destination="BYZ-38-t0r" id="yls-oQ-u65"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Undo" id="069-es-cxg">
+                                <connections>
+                                    <action selector="undoButtonTapped:" destination="BYZ-38-t0r" id="yls-oQ-u65"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Information" id="QJY-4L-pmw">
+                                <connections>
+                                    <segue destination="FVC-f7-bMd" kind="show" id="1qN-Po-882"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="compassArrow" destination="AlR-uj-EeW" id="zsm-Lf-T9s"/>
@@ -1078,32 +1102,123 @@
                     <navigationItem key="navigationItem" title="Vehicle Select" id="Eqm-hd-fN6">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Gd7-qn-LoZ">
                             <connections>
-                                <action selector="getSessionNameWithSender:" destination="kCr-cG-KDd" id="it2-2z-y30"/>
+                                <action selector="saveSessionWithSender:" destination="kCr-cG-KDd" id="VWj-ng-Oye"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="StartSession" id="YAX-uD-de7"/>
+                        <segue destination="FVC-f7-bMd" kind="show" identifier="sessionInfo" id="aof-J7-Uva"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="teV-Ke-v9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1594.53125" y="-671.484375"/>
         </scene>
-        <!--View Controller-->
+        <!--Session Info View Controller-->
         <scene sceneID="mhj-aA-zJR">
             <objects>
-                <viewController id="FVC-f7-bMd" sceneMemberID="viewController">
+                <viewController id="FVC-f7-bMd" customClass="SessionInfoViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V4Z-1S-nQt">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-mx-kPw">
+                                <rect key="frame" x="20" y="90" width="728" height="392"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Input Session Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9h-Dj-Dyu">
+                                        <rect key="frame" x="0.0" y="0.0" width="728" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Session Title" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9j-95-dA4">
+                                        <rect key="frame" x="0.0" y="68" width="728" height="34"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="FVC-f7-bMd" id="6Zk-2a-bpe"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Latitude" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-Ut-dpD">
+                                        <rect key="frame" x="0.0" y="110" width="728" height="34"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="FVC-f7-bMd" id="rkX-7U-rEo"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Longitude" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="136-Zx-TIo">
+                                        <rect key="frame" x="0.0" y="152" width="728" height="34"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="FVC-f7-bMd" id="SbZ-sS-SV2"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="East-West Road Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t7I-7Z-0s2">
+                                        <rect key="frame" x="0.0" y="194" width="728" height="34"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="FVC-f7-bMd" id="xg8-mS-blH"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="North-South Road Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gy9-er-55p">
+                                        <rect key="frame" x="0.0" y="236" width="728" height="34"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="FVC-f7-bMd" id="ELy-No-3gf"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Technician Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uZ-0uE">
+                                        <rect key="frame" x="0.0" y="278" width="728" height="34"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="FVC-f7-bMd" id="7c4-l7-Wwg"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5X-Pq-0VG">
+                                        <rect key="frame" x="0.0" y="320" width="728" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="Begin Session"/>
+                                        <connections>
+                                            <action selector="saveInfo:" destination="FVC-f7-bMd" eventType="primaryActionTriggered" id="44v-V4-FTH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DUQ-mx-kPw" firstAttribute="leading" secondItem="14G-Au-hih" secondAttribute="leading" constant="20" id="HBK-BS-nAr"/>
+                            <constraint firstItem="DUQ-mx-kPw" firstAttribute="centerX" secondItem="14G-Au-hih" secondAttribute="centerX" id="Kyh-qc-bIg"/>
+                            <constraint firstItem="14G-Au-hih" firstAttribute="trailing" secondItem="DUQ-mx-kPw" secondAttribute="trailing" constant="20" id="Yor-AE-LtW"/>
+                            <constraint firstItem="DUQ-mx-kPw" firstAttribute="top" secondItem="14G-Au-hih" secondAttribute="top" constant="20" id="q9f-hY-PK0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="14G-Au-hih"/>
                     </view>
+                    <navigationItem key="navigationItem" id="u5t-A3-cyh"/>
+                    <connections>
+                        <outlet property="ewField" destination="t7I-7Z-0s2" id="6cf-E1-iJ6"/>
+                        <outlet property="latField" destination="Klq-Ut-dpD" id="GPc-5P-7j5"/>
+                        <outlet property="lonField" destination="136-Zx-TIo" id="USR-Fv-hvf"/>
+                        <outlet property="nameField" destination="O9j-95-dA4" id="L0R-6Z-ch0"/>
+                        <outlet property="nsField" destination="gy9-er-55p" id="RuZ-lP-bpQ"/>
+                        <outlet property="technicianField" destination="ybv-uZ-0uE" id="27A-aX-l56"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="StartSession" id="12W-Xu-TIl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lT-Fq-8qk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2362" y="-671"/>
+            <point key="canvasLocation" x="1595" y="-32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Efs-fp-qvh">
@@ -1296,6 +1411,7 @@
         <image name="uaflogo" width="202" height="111"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YAX-uD-de7"/>
+        <segue reference="Q1w-aj-EIF"/>
+        <segue reference="12W-Xu-TIl"/>
     </inferredMetricsTieBreakers>
 </document>
