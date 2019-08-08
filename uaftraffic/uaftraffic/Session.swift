@@ -297,7 +297,11 @@ class Session: Codable, Equatable {
                                                     range: NSRange(location: 0, length: self.name.count),
                                                     withTemplate: "-")
         } catch {}
-        let filename = (cleanName as String) + ".csv"
+        var filename = (cleanName as String) + ".csv"
+        if filename.trimmingCharacters(in: .whitespaces) == ".csv"{
+            filename = self.id + ".csv"
+//            the simplest way to correct for the empty name bug
+        }
         var csvData = ""// = "vehicle, from, left, right, through\n"
         
         csvData += "UAFTRAFFIC EXPORT\n"
