@@ -56,6 +56,11 @@ class SessionInfoViewController: UIViewController{
             zipField.placeholder = session.zipCode
         }
         
+        if !session.hasNorthLink {trackDirs -= 1}
+        if !session.hasSouthLink {trackDirs -= 1}
+        if !session.hasWestLink {trackDirs -= 1}
+        if !session.hasEastLink {trackDirs -= 1}
+        
         northToggle.isSelected = session.hasNorthLink
         southToggle.isSelected = session.hasSouthLink
         eastToggle.isSelected = session.hasEastLink
@@ -68,19 +73,47 @@ class SessionInfoViewController: UIViewController{
     }
     
     @objc func toggleNorth(sender: Any){
-        northToggle.isSelected = !northToggle.isSelected
+        if !northToggle.isSelected {trackDirs += 1}
+        if northToggle.isSelected && trackDirs > 2 {
+            northToggle.isSelected = false
+            trackDirs -= 1
+        }
+        else{
+            northToggle.isSelected = true
+        }
     }
     
     @objc func toggleSouth(sender: Any){
-        southToggle.isSelected = !southToggle.isSelected
+        if !southToggle.isSelected {trackDirs += 1}
+        if southToggle.isSelected && trackDirs > 2 {
+            southToggle.isSelected = false
+            trackDirs -= 1
+        }
+        else{
+            southToggle.isSelected = true
+        }
     }
     
     @objc func toggleEast(sender: Any){
-        eastToggle.isSelected = !eastToggle.isSelected
+        if !eastToggle.isSelected {trackDirs += 1}
+        if eastToggle.isSelected && trackDirs > 2 {
+            eastToggle.isSelected = false
+            trackDirs -= 1
+        }
+        else{
+            eastToggle.isSelected = true
+        }
     }
     
     @objc func toggleWest(sender: Any){
-        westToggle.isSelected = !westToggle.isSelected
+        if !westToggle.isSelected {trackDirs += 1}
+        if westToggle.isSelected && trackDirs > 2 {
+            westToggle.isSelected = false
+            trackDirs -= 1
+        }
+        else{
+            westToggle.isSelected = true
+        }
     }
     
     @IBAction func saveInfo(_ sender: Any){
