@@ -1114,7 +1114,7 @@
             </objects>
             <point key="canvasLocation" x="1594.53125" y="-671.484375"/>
         </scene>
-        <!--Session Info View Controller-->
+        <!--Session Details-->
         <scene sceneID="mhj-aA-zJR">
             <objects>
                 <viewController id="FVC-f7-bMd" customClass="SessionInfoViewController" customModule="uaftraffic" customModuleProvider="target" sceneMemberID="viewController">
@@ -1123,16 +1123,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-mx-kPw">
-                                <rect key="frame" x="20" y="90" width="728" height="402"/>
+                                <rect key="frame" x="20" y="90" width="728" height="338"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Input Session Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9h-Dj-Dyu">
-                                        <rect key="frame" x="0.0" y="0.0" width="728" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Session Title" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="O9j-95-dA4">
-                                        <rect key="frame" x="0.0" y="64" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -1141,7 +1135,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Latitude" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-Ut-dpD">
-                                        <rect key="frame" x="0.0" y="102" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="38" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -1150,7 +1144,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Longitude" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="136-Zx-TIo">
-                                        <rect key="frame" x="0.0" y="140" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="76" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -1159,7 +1153,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="East-West Road Name" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="t7I-7Z-0s2">
-                                        <rect key="frame" x="0.0" y="178" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="114" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -1168,7 +1162,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="North-South Road Name" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gy9-er-55p">
-                                        <rect key="frame" x="0.0" y="216" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="152" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -1177,7 +1171,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Technician Name" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uZ-0uE">
-                                        <rect key="frame" x="0.0" y="254" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="190" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
@@ -1186,64 +1180,73 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="City" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZuY-yt-wRU">
-                                        <rect key="frame" x="0.0" y="292" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="228" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="State" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gw6-Bo-dgg">
-                                        <rect key="frame" x="0.0" y="330" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="266" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Zip Code" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eSx-sa-MQF">
-                                        <rect key="frame" x="0.0" y="368" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="304" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htt-3q-j6Q">
-                                <rect key="frame" x="328" y="977" width="83" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htt-3q-j6Q">
+                                <rect key="frame" x="308" y="977" width="76" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="South"/>
+                                <state key="normal" title=" South "/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4f9-zl-DuG">
-                                <rect key="frame" x="486" y="977" width="88" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4f9-zl-DuG">
+                                <rect key="frame" x="384" y="977" width="76" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="East"/>
+                                <state key="normal" title="  East  "/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHm-FJ-6m9">
-                                <rect key="frame" x="616" y="977" width="94" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxF-HE-nre">
+                                <rect key="frame" x="232" y="977" width="76" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="West"/>
+                                <state key="normal" title=" North "/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxF-HE-nre">
-                                <rect key="frame" x="168" y="977" width="86" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHm-FJ-6m9">
+                                <rect key="frame" x="456" y="977" width="76" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="North"/>
+                                <state key="normal" title=" West "/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="14G-Au-hih" firstAttribute="bottom" secondItem="Htt-3q-j6Q" secondAttribute="bottom" constant="5" id="2uD-ws-dX2"/>
+                            <constraint firstItem="14G-Au-hih" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eHm-FJ-6m9" secondAttribute="trailing" constant="5" id="3jz-Xk-D2g"/>
+                            <constraint firstItem="4f9-zl-DuG" firstAttribute="leading" secondItem="Htt-3q-j6Q" secondAttribute="trailing" id="DDw-tD-hD8"/>
                             <constraint firstItem="DUQ-mx-kPw" firstAttribute="leading" secondItem="14G-Au-hih" secondAttribute="leading" constant="20" id="HBK-BS-nAr"/>
+                            <constraint firstItem="4f9-zl-DuG" firstAttribute="width" secondItem="eHm-FJ-6m9" secondAttribute="width" id="JcV-Ac-Eb3"/>
                             <constraint firstItem="DUQ-mx-kPw" firstAttribute="centerX" secondItem="14G-Au-hih" secondAttribute="centerX" id="Kyh-qc-bIg"/>
                             <constraint firstItem="14G-Au-hih" firstAttribute="bottom" secondItem="eHm-FJ-6m9" secondAttribute="bottom" constant="5" id="QWu-tC-z1U"/>
+                            <constraint firstItem="Htt-3q-j6Q" firstAttribute="leading" secondItem="rxF-HE-nre" secondAttribute="trailing" id="S09-ZN-ke5"/>
+                            <constraint firstItem="Htt-3q-j6Q" firstAttribute="width" secondItem="4f9-zl-DuG" secondAttribute="width" id="TPm-GV-4aP"/>
                             <constraint firstItem="14G-Au-hih" firstAttribute="bottom" secondItem="4f9-zl-DuG" secondAttribute="bottom" constant="5" id="VK0-XI-A33"/>
+                            <constraint firstItem="4f9-zl-DuG" firstAttribute="leading" secondItem="14G-Au-hih" secondAttribute="centerX" id="WNc-Hu-ltr"/>
                             <constraint firstItem="14G-Au-hih" firstAttribute="trailing" secondItem="DUQ-mx-kPw" secondAttribute="trailing" constant="20" id="Yor-AE-LtW"/>
+                            <constraint firstItem="eHm-FJ-6m9" firstAttribute="leading" secondItem="4f9-zl-DuG" secondAttribute="trailing" constant="-4" id="gv6-PR-Ufh"/>
+                            <constraint firstItem="rxF-HE-nre" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="14G-Au-hih" secondAttribute="leading" constant="5" id="lcW-s4-7e4"/>
                             <constraint firstItem="14G-Au-hih" firstAttribute="bottom" secondItem="rxF-HE-nre" secondAttribute="bottom" constant="5" id="n00-0R-hdK"/>
                             <constraint firstItem="DUQ-mx-kPw" firstAttribute="top" secondItem="14G-Au-hih" secondAttribute="top" constant="20" id="q9f-hY-PK0"/>
+                            <constraint firstItem="rxF-HE-nre" firstAttribute="width" secondItem="Htt-3q-j6Q" secondAttribute="width" id="tPx-AD-baI"/>
                             <constraint firstItem="14G-Au-hih" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DUQ-mx-kPw" secondAttribute="bottom" constant="50" id="tk0-1O-6Iu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="14G-Au-hih"/>
                     </view>
-                    <navigationItem key="navigationItem" id="u5t-A3-cyh">
+                    <navigationItem key="navigationItem" title="Session Details" id="u5t-A3-cyh">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="mY3-ca-8xs">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Q5X-Pq-0VG">
-                                <rect key="frame" x="398" y="650" width="113" height="33"/>
+                                <rect key="frame" x="635" y="8.5" width="113" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Begin Session"/>
@@ -1386,7 +1389,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Through" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="mOZ-Yn-Nc1">
-                                            <rect key="frame" x="109.5" y="18" width="102" height="34"/>
+                                            <rect key="frame" x="47.5" y="18" width="169" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="169" id="wcq-O9-yIf"/>
                                             </constraints>
@@ -1395,7 +1398,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUa-hk-r4d">
-                                            <rect key="frame" x="351" y="18" width="47" height="34"/>
+                                            <rect key="frame" x="216.5" y="18" width="143.5" height="34"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="143.5" id="vIg-8B-iDY"/>
                                             </constraints>
