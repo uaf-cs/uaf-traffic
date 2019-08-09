@@ -19,6 +19,11 @@ class SessionInfoViewController: UIViewController{
     @IBOutlet weak var cityField: UITextField!
     @IBOutlet weak var stateField: UITextField!
     @IBOutlet weak var zipField: UITextField!
+    @IBOutlet weak var northToggle: UIButton!
+    @IBOutlet weak var southToggle: UIButton!
+    @IBOutlet weak var eastToggle: UIButton!
+    @IBOutlet weak var westToggle: UIButton!
+    var trackDirs = 4
     var session = Session()
     var toSession = true
 
@@ -50,6 +55,27 @@ class SessionInfoViewController: UIViewController{
         if session.zipCode.trimmingCharacters(in: .whitespaces) != ""{
             zipField.placeholder = session.zipCode
         }
+        
+        northToggle.addTarget(self, action: #selector(self.toggleNorth), for: .touchUpInside)
+        southToggle.addTarget(self, action: #selector(self.toggleSouth), for: .touchUpInside)
+        eastToggle.addTarget(self, action: #selector(self.toggleEast), for: .touchUpInside)
+        westToggle.addTarget(self, action: #selector(self.toggleWest), for: .touchUpInside)
+    }
+    
+    @objc func toggleNorth(sender: Any){
+        northToggle.isSelected = !northToggle.isSelected
+    }
+    
+    @objc func toggleSouth(sender: Any){
+        southToggle.isSelected = !southToggle.isSelected
+    }
+    
+    @objc func toggleEast(sender: Any){
+        eastToggle.isSelected = !eastToggle.isSelected
+    }
+    
+    @objc func toggleWest(sender: Any){
+        westToggle.isSelected = !westToggle.isSelected
     }
     
     @IBAction func saveInfo(_ sender: Any){

@@ -1122,8 +1122,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-mx-kPw">
-                                <rect key="frame" x="20" y="90" width="728" height="518"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-mx-kPw">
+                                <rect key="frame" x="20" y="90" width="728" height="662"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Input Session Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9h-Dj-Dyu">
                                         <rect key="frame" x="0.0" y="0.0" width="728" height="60"/>
@@ -1132,7 +1132,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Session Title" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9j-95-dA4">
-                                        <rect key="frame" x="0.0" y="68" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="64" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -1141,7 +1141,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Latitude" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-Ut-dpD">
-                                        <rect key="frame" x="0.0" y="110" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="102" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -1150,7 +1150,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Longitude" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="136-Zx-TIo">
-                                        <rect key="frame" x="0.0" y="152" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="140" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -1159,7 +1159,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="East-West Road Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t7I-7Z-0s2">
-                                        <rect key="frame" x="0.0" y="194" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="178" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -1168,7 +1168,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="North-South Road Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gy9-er-55p">
-                                        <rect key="frame" x="0.0" y="236" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="216" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -1177,7 +1177,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Technician Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uZ-0uE">
-                                        <rect key="frame" x="0.0" y="278" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="254" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
@@ -1186,25 +1186,45 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="City" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZuY-yt-wRU">
-                                        <rect key="frame" x="0.0" y="320" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="292" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gw6-Bo-dgg">
-                                        <rect key="frame" x="0.0" y="362" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="330" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Zip Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eSx-sa-MQF">
-                                        <rect key="frame" x="0.0" y="404" width="728" height="34"/>
+                                        <rect key="frame" x="0.0" y="368" width="728" height="34"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxF-HE-nre">
+                                        <rect key="frame" x="0.0" y="406" width="728" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="North"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htt-3q-j6Q">
+                                        <rect key="frame" x="0.0" y="452" width="728" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="South"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4f9-zl-DuG">
+                                        <rect key="frame" x="0.0" y="498" width="728" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="East"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHm-FJ-6m9">
+                                        <rect key="frame" x="0.0" y="544" width="728" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="West"/>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5X-Pq-0VG">
-                                        <rect key="frame" x="0.0" y="446" width="728" height="72"/>
+                                        <rect key="frame" x="0.0" y="590" width="728" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Begin Session"/>
                                         <connections>
@@ -1226,13 +1246,17 @@
                     <navigationItem key="navigationItem" id="u5t-A3-cyh"/>
                     <connections>
                         <outlet property="cityField" destination="ZuY-yt-wRU" id="8mf-2m-eFu"/>
+                        <outlet property="eastToggle" destination="4f9-zl-DuG" id="kvv-5p-BEq"/>
                         <outlet property="ewField" destination="t7I-7Z-0s2" id="6cf-E1-iJ6"/>
                         <outlet property="latField" destination="Klq-Ut-dpD" id="GPc-5P-7j5"/>
                         <outlet property="lonField" destination="136-Zx-TIo" id="USR-Fv-hvf"/>
                         <outlet property="nameField" destination="O9j-95-dA4" id="L0R-6Z-ch0"/>
+                        <outlet property="northToggle" destination="rxF-HE-nre" id="nb3-ph-hph"/>
                         <outlet property="nsField" destination="gy9-er-55p" id="RuZ-lP-bpQ"/>
+                        <outlet property="southToggle" destination="Htt-3q-j6Q" id="h7W-dp-AgC"/>
                         <outlet property="stateField" destination="gw6-Bo-dgg" id="YYe-x4-cWV"/>
                         <outlet property="technicianField" destination="ybv-uZ-0uE" id="27A-aX-l56"/>
+                        <outlet property="westToggle" destination="eHm-FJ-6m9" id="nQT-uu-utU"/>
                         <outlet property="zipField" destination="eSx-sa-MQF" id="0tM-09-Qyj"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="StartSession" id="12W-Xu-TIl"/>
                     </connections>
