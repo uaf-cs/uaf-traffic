@@ -26,11 +26,11 @@ The Vehicle Select page, shown here, should now appear on your device:
 
 ![vehicles](vehicle_select.png)
 
-Tapping on the symbols depicted will place a checkmark next to them, symbolizing that the vehicle represented by that symbol is expected to be seen at the location being studied.  Tapping on a symbol with a checkmark next to it will remove the checkmark, in case the symbol was not intentionally tapped on.  No more than five symbols may have checkmarks next to them at any time.  Once the list of vehicles with checkmarks next to them is satisfactory, tap the “Next” button at the top right once more to proceed.  You will now be presented with a prompt to name your session, with a screen that appears as follows:
+Tapping on the symbols depicted will place a checkmark next to them, symbolizing that the vehicle represented by that symbol is expected to be seen at the location being studied.  Tapping on a symbol with a checkmark next to it will remove the checkmark, in case the symbol was not intentionally tapped on.  No more than five symbols may have checkmarks next to them at any time.  Once the list of vehicles with checkmarks next to them is satisfactory, tap the “Next” button at the top right once more to proceed.  You will now be presented with a page dedicated to entering information about your session, with a screen that appears as follows:
 
-![entry](text_input.png)
+![info](session_info.png)
 
-Tap on the letters on the keyboard to add them to the prompt box, and remove them again using the delete button, which appears as a house shape pointing left with an x in the middle of it.  Once the name of the session (preferably something related to the road or roads being observed) is entered correctly, tap either the “return” button on the keyboard or the “Save” button at the bottom of the box which requested the session name.  You will then be prompted to input the latitude of the session, using the same techniques used for the session's name.  This will be followed by Longitude, the road running east to west, the road running north to south, and, finally, your name.  Once all of this information has been entered, the screen will change.
+Tap on a box to enter keyboard mode, then tap on the letters on the keyboard to add them to the box.  You can remove them again using the delete button, which appears as a house shape pointing left with an x in the middle of it.  Once you have entered the requested piece of information to your satisfaction, tap either the “return” button on the keyboard or another box to continue entering information about your session.  Additionally, if you changed your mind about the directions you selected for the intersection, you can tap on the direction names at the  bottom of the screen to decide them again.  A direction is active if it is surrounded by a blue box, and inactive if it is not.  Once you have entered all the session information you have, tap the "begin session" button at the top right corner of your screen to start collecting data.
 
 ## Collecting Data
 
@@ -38,7 +38,7 @@ You should now see a screen similar to the “Count Traffic” screen depicted h
 
 ![road](count_screen.png)
 
-As you observe vehicles traversing the intersection or stretch of road, place your finger on the symbol representing the vehicle you witnessed, drag your finger across the screen to the direction it went, and remove your finger from the screen to register the transition.  If the transition was registered correctly, the vehicle symbol will shrink down before reappearing at its point of origin.  If the transition was not registered correctly, the vehicle symbol will instead slide across the screen back to its point of origin.  If a crossing which did not occur is registered, press the “Undo” button in the top right corner of the screen to remove the crossing from the list of registered crossings.  Once you have completed the session, press the “End Session” button in the top left corner of the screen to return to the main menu.
+As you observe vehicles traversing the intersection or stretch of road, place your finger on the symbol representing the vehicle you witnessed, drag your finger across the screen to the direction it went, and remove your finger from the screen to register the transition.  If the transition was registered correctly, the vehicle symbol will shrink down before reappearing at its point of origin.  If the transition was not registered correctly, the vehicle symbol will instead slide across the screen back to its point of origin.  If a crossing which did not occur is registered, press the “Undo” button in the top right corner of the screen to remove the crossing from the list of registered crossings.  If you want to modify the information you entered about the session, tap the "Information" button to the left of the "Undo" button to return to the session details page from which you can press the begin session button to resume the session currently in progress.  Once you have completed the session, press the “End Session” button in the top left corner of the screen to return to the main menu.
 
 ## Resuming a Prior Session
 
@@ -59,7 +59,7 @@ you can tap on a session name to access its data (data interface shown here
 
 ![details](session_details.png)
 
-You can also tap on the delete button if the session should need to be deleted, or the upload button to sync the data with the collection website.  To return to the “Manage Sessions” screen from the session data screen tap on the “Manage Sessions” button at the top left of the session data screen.  To return to the main menu, tap the “Close” button at the top left of the “Manage Sessions” screen.
+You can also tap on the delete button if the session should need to be deleted, the csv button to export the data as a spreadsheet for personal analysis, the edit info button to change the information you entered about the session and optionally resume the session directly, or the upload button to sync the data with the collection website.  To return to the “Manage Sessions” screen from the session data screen tap on the “Manage Sessions” button at the top left of the session data screen.  To return to the main menu, tap the “Close” button at the top left of the “Manage Sessions” screen.
 
 ## Exporting Data
 
