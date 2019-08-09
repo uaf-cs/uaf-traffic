@@ -341,7 +341,7 @@ class Session: Codable, Equatable {
         csvData += "\nRecorded Data\n"
         csvData += "Vehicle Type,From,To,Date,Time\n"
         for crossing in crossings{
-            csvData += "\"\(crossing.type)\",\(crossing.from),\(crossing.to),\(crossing.csvDateString()),\(crossing.csvTimeString())\n"
+            csvData += "\"\(crossing.type)\",\(crossing.from),\(crossing.to),\"\(crossing.csvDateString())\",\(crossing.csvTimeString())\n"
         }
         
         do {
