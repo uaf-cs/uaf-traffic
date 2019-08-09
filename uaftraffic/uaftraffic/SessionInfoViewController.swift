@@ -56,6 +56,11 @@ class SessionInfoViewController: UIViewController{
             zipField.placeholder = session.zipCode
         }
         
+        northToggle.isSelected = session.hasNorthLink
+        southToggle.isSelected = session.hasSouthLink
+        eastToggle.isSelected = session.hasEastLink
+        westToggle.isSelected = session.hasWestLink
+        
         northToggle.addTarget(self, action: #selector(self.toggleNorth), for: .touchUpInside)
         southToggle.addTarget(self, action: #selector(self.toggleSouth), for: .touchUpInside)
         eastToggle.addTarget(self, action: #selector(self.toggleEast), for: .touchUpInside)
@@ -99,6 +104,11 @@ class SessionInfoViewController: UIViewController{
         self.session.state = (state != "") ? state : session.state
         let zip = zipField.text!
         self.session.zipCode = (zip != "") ? zip : session.zipCode
+        
+        self.session.hasNorthLink = self.northToggle.isSelected
+        self.session.hasSouthLink = self.southToggle.isSelected
+        self.session.hasEastLink = self.eastToggle.isSelected
+        self.session.hasWestLink = self.westToggle.isSelected
         
         let sessionManager = SessionManager()
         sessionManager.writeSession(session: session)
