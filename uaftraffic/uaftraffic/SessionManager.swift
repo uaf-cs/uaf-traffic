@@ -26,10 +26,17 @@ class SessionManager {
     func writeSession(session: Session) {
         let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveurl = documentsdirectory.appendingPathComponent("sessions").appendingPathComponent(session.getFilename())
-        let plistencod = PropertyListEncoder()
+//        let plistencod = PropertyListEncoder()
+//        
+//        let encodeSession = try? plistencod.encode(session)
+//        try? encodeSession?.write(to : archiveurl , options : .noFileProtection)
         
-        let encodeSession = try? plistencod.encode(session)
-        try? encodeSession?.write(to : archiveurl , options : .noFileProtection)
+        let encodeSession = try? PropertyListEncoder().encode(session)
+        if let encodeSession = encodeSession {
+            try? encodeSession.write(to : archiveurl, options : .noFileProtection)
+        } else {
+            print("unable to encode or write session")
+        }
     }
     
     func getSessions() -> [Session] {

@@ -19,6 +19,11 @@ class SessionInfoViewController: UIViewController{
     @IBOutlet weak var cityField: UITextField!
     @IBOutlet weak var stateField: UITextField!
     @IBOutlet weak var zipField: UITextField!
+    @IBOutlet weak var northToggle: UIButton!
+    @IBOutlet weak var southToggle: UIButton!
+    @IBOutlet weak var eastToggle: UIButton!
+    @IBOutlet weak var westToggle: UIButton!
+    var trackDirs = 4
     var session = Session()
     var toSession = true
 
@@ -50,6 +55,65 @@ class SessionInfoViewController: UIViewController{
         if session.zipCode.trimmingCharacters(in: .whitespaces) != ""{
             zipField.placeholder = session.zipCode
         }
+        
+        if !session.hasNorthLink {trackDirs -= 1}
+        if !session.hasSouthLink {trackDirs -= 1}
+        if !session.hasWestLink {trackDirs -= 1}
+        if !session.hasEastLink {trackDirs -= 1}
+        
+        northToggle.isSelected = session.hasNorthLink
+        southToggle.isSelected = session.hasSouthLink
+        eastToggle.isSelected = session.hasEastLink
+        westToggle.isSelected = session.hasWestLink
+        
+        northToggle.addTarget(self, action: #selector(self.toggleNorth), for: .touchUpInside)
+        southToggle.addTarget(self, action: #selector(self.toggleSouth), for: .touchUpInside)
+        eastToggle.addTarget(self, action: #selector(self.toggleEast), for: .touchUpInside)
+        westToggle.addTarget(self, action: #selector(self.toggleWest), for: .touchUpInside)
+    }
+    
+    @objc func toggleNorth(sender: Any){
+        if !northToggle.isSelected {trackDirs += 1}
+        if northToggle.isSelected && trackDirs > 2 {
+            northToggle.isSelected = false
+            trackDirs -= 1
+        }
+        else{
+            northToggle.isSelected = true
+        }
+    }
+    
+    @objc func toggleSouth(sender: Any){
+        if !southToggle.isSelected {trackDirs += 1}
+        if southToggle.isSelected && trackDirs > 2 {
+            southToggle.isSelected = false
+            trackDirs -= 1
+        }
+        else{
+            southToggle.isSelected = true
+        }
+    }
+    
+    @objc func toggleEast(sender: Any){
+        if !eastToggle.isSelected {trackDirs += 1}
+        if eastToggle.isSelected && trackDirs > 2 {
+            eastToggle.isSelected = false
+            trackDirs -= 1
+        }
+        else{
+            eastToggle.isSelected = true
+        }
+    }
+    
+    @objc func toggleWest(sender: Any){
+        if !westToggle.isSelected {trackDirs += 1}
+        if westToggle.isSelected && trackDirs > 2 {
+            westToggle.isSelected = false
+            trackDirs -= 1
+        }
+        else{
+            westToggle.isSelected = true
+        }
     }
     
     @IBAction func saveInfo(_ sender: Any){
@@ -73,6 +137,11 @@ class SessionInfoViewController: UIViewController{
         self.session.state = (state != "") ? state : session.state
         let zip = zipField.text!
         self.session.zipCode = (zip != "") ? zip : session.zipCode
+        
+        self.session.hasNorthLink = self.northToggle.isSelected
+        self.session.hasSouthLink = self.southToggle.isSelected
+        self.session.hasEastLink = self.eastToggle.isSelected
+        self.session.hasWestLink = self.westToggle.isSelected
         
         let sessionManager = SessionManager()
         sessionManager.writeSession(session: session)
