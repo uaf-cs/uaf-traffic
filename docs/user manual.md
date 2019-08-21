@@ -75,13 +75,17 @@ Tap the “Cancel” button at the top left corner of your screen to return to t
 
 ## Credits
 
+### Lead Developer and Designer
+
+Dr. Jonathan Metzgar, Assistant Professor, University of Alaska Fairbanks
+
+### Software Developers
+
 Brandon Abbott
 
 Chris Bailey
 
 Alan Carvajal
-
-Dr. Jonathan Metzgar
 
 Cameron Titus
 
