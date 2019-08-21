@@ -268,13 +268,16 @@
 				TargetAttributes = {
 					C3A2F09721FACD060078E15C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
 					};
 					C3A2F0AB21FACD070078E15C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
 						TestTargetID = C3A2F09721FACD060078E15C;
 					};
 					C3A2F0B621FACD070078E15C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
 						TestTargetID = C3A2F09721FACD060078E15C;
 					};
 				};
@@ -539,7 +542,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.alaska.uaf.cs.uaftraffic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -558,7 +561,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.alaska.uaf.cs.uaftraffic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -578,7 +581,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uaf.cs.uaftrafficTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/uaftraffic.app/uaftraffic";
 			};
@@ -599,7 +602,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uaf.cs.uaftrafficTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/uaftraffic.app/uaftraffic";
 			};
@@ -619,7 +622,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uaf.cs.uaftrafficUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = uaftraffic;
 			};
@@ -639,7 +642,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uaf.cs.uaftrafficUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = uaftraffic;
 			};
