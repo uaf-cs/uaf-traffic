@@ -13,6 +13,7 @@ class ManageSessionsViewController: UITableViewController {
     let sessionManager = SessionManager()
     var sessions = [Session]()
     var infoSession = Session()
+    var usingNetwork: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,9 @@ class ManageSessionsViewController: UITableViewController {
         cell.sessionName?.text = session.name
         cell.sessionTime?.text = session.dateString()
         cell.deleteButton.addTarget(self, action: #selector(self.deleteSession), for: .touchUpInside)
-        cell.uploadButton.addTarget(self, action: #selector(self.uploadSession), for: .touchUpInside)
+        if (usingNetwork) {
+            cell.uploadButton.addTarget(self, action: #selector(self.uploadSession), for: .touchUpInside)
+        }
         cell.saveCSVButton.addTarget(self, action: #selector(self.saveCSV), for: .touchUpInside)
         cell.editInfoButton.addTarget(self, action: #selector(self.editInfo), for: .touchUpInside)
         return cell
@@ -71,6 +74,9 @@ class ManageSessionsViewController: UITableViewController {
     }
     
     @objc func uploadSession(sender: UIButton) {
+        if (!usingNetwork) {
+            return
+        }
         let cell = sender.superview!.superview! as! ManageSessionCell
         let indexPath = tableView.indexPath(for: cell)!
         let session = sessions[indexPath.row]

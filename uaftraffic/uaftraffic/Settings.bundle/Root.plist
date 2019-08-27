@@ -2,26 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Old Text Field - Endpoint</key>
+	<dict>
+		<key>Type</key>
+		<string>PSTextFieldSpecifier</string>
+		<key>Title</key>
+		<string>Endpoint</string>
+		<key>Key</key>
+		<string>endpoint</string>
+		<key>AutocapitalizationType</key>
+		<string>None</string>
+		<key>AutocorrectionType</key>
+		<string>No</string>
+		<key>KeyboardType</key>
+		<string>URL</string>
+		<key>DefaultValue</key>
+		<string>http://traffictest.chrisbailey.io</string>
+	</dict>
 	<key>StringsTable</key>
 	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
-	<array>
-		<dict>
-			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
-			<key>Title</key>
-			<string>Endpoint</string>
-			<key>Key</key>
-			<string>endpoint</string>
-			<key>AutocapitalizationType</key>
-			<string>None</string>
-			<key>AutocorrectionType</key>
-			<string>No</string>
-			<key>KeyboardType</key>
-			<string>URL</string>
-			<key>DefaultValue</key>
-			<string>http://traffictest.chrisbailey.io</string>
-		</dict>
-	</array>
+	<array/>
 </dict>
 </plist>

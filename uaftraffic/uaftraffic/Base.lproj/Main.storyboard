@@ -198,7 +198,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wy6-Pf-cWf">
-                                            <rect key="frame" x="864" y="-0.5" width="80" height="80.5"/>
+                                            <rect key="frame" x="944" y="-0.5" width="80" height="80.5"/>
                                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="OMZ-Bz-xdQ"/>
@@ -209,10 +209,10 @@
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4E-ZT-Ovq">
-                                            <rect key="frame" x="944" y="-0.5" width="80" height="80.5"/>
+                                            <rect key="frame" x="1024" y="40" width="0.0" height="0.0"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="DyW-XW-Od9"/>
+                                                <constraint firstAttribute="width" id="DyW-XW-Od9"/>
                                                 <constraint firstAttribute="width" secondItem="p4E-ZT-Ovq" secondAttribute="height" multiplier="1:1" id="P7e-X8-FN1"/>
                                             </constraints>
                                             <state key="normal" title="Upload">
@@ -220,7 +220,7 @@
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saS-fC-cpD" userLabel="Save CSV Button">
-                                            <rect key="frame" x="784" y="-0.5" width="80" height="80.5"/>
+                                            <rect key="frame" x="864" y="-0.5" width="80" height="80.5"/>
                                             <color key="backgroundColor" red="0.44017894340474895" green="0.77017891839378239" blue="0.14640512188555344" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="saS-fC-cpD" secondAttribute="height" multiplier="1:1" id="dry-B1-nfT"/>
@@ -231,7 +231,7 @@
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-kT-VUZ" userLabel="Edit Info Button">
-                                            <rect key="frame" x="704" y="-0.5" width="80" height="80.5"/>
+                                            <rect key="frame" x="784" y="-0.5" width="80" height="80.5"/>
                                             <color key="backgroundColor" red="0.44721706840776487" green="0.76650586203365634" blue="0.77017891839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="dmt-kT-VUZ" secondAttribute="height" multiplier="1:1" id="09O-1S-02a"/>
@@ -577,7 +577,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="xfL-mG-5zd" userLabel="atv W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="195" y="157" width="79.5" height="79.5"/>
+                                <rect key="frame" x="195" y="157.5" width="79.5" height="79.5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
@@ -591,7 +591,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="s3O-c3-SQe" userLabel="bike W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="195" y="250.5" width="79.5" height="79.5"/>
+                                <rect key="frame" x="195" y="252" width="79.5" height="79"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
@@ -619,7 +619,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="PaG-Uc-Wwm" userLabel="pedestrian W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="195" y="438" width="79.5" height="79.5"/>
+                                <rect key="frame" x="195" y="440" width="79.5" height="79"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
@@ -633,7 +633,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-r5-Jna" userLabel="snowmachine W" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="195" y="531.5" width="79.5" height="79.5"/>
+                                <rect key="frame" x="195" y="534" width="79.5" height="79.5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="w"/>
@@ -647,7 +647,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atv" translatesAutoresizingMaskIntoConstraints="NO" id="m6l-Gn-Kcd" userLabel="atv E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="750" y="157" width="79" height="79.5"/>
+                                <rect key="frame" x="750" y="157.5" width="79" height="79.5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="atv"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
@@ -661,7 +661,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="4zQ-mK-S1h" userLabel="bike E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="750" y="250.5" width="79" height="79.5"/>
+                                <rect key="frame" x="750" y="252" width="79" height="79"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="bike"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
@@ -689,7 +689,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pedestrian" translatesAutoresizingMaskIntoConstraints="NO" id="XGN-Vi-QgP" userLabel="pedestrian E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="750" y="438" width="79" height="79.5"/>
+                                <rect key="frame" x="750" y="440" width="79" height="79"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="pedestrian"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
@@ -703,7 +703,7 @@
                                 </connections>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snowmachine" translatesAutoresizingMaskIntoConstraints="NO" id="dIX-c1-rUZ" userLabel="snowmachine E" customClass="VehicleView" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="750" y="531.5" width="79" height="79.5"/>
+                                <rect key="frame" x="750" y="534" width="79" height="79.5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="vehicleType" value="snowmachine"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="direction" value="e"/>
@@ -1122,7 +1122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-mx-kPw">
-                                <rect key="frame" x="20" y="40" width="984" height="338"/>
+                                <rect key="frame" x="20" y="90" width="984" height="338"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Session Title" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="O9j-95-dA4">
                                         <rect key="frame" x="0.0" y="0.0" width="984" height="34"/>
@@ -1245,7 +1245,7 @@
                     <navigationItem key="navigationItem" title="Session Details" id="u5t-A3-cyh">
                         <barButtonItem key="rightBarButtonItem" id="mY3-ca-8xs">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Q5X-Pq-0VG">
-                                <rect key="frame" x="635" y="8.5" width="113" height="33"/>
+                                <rect key="frame" x="891" y="8.5" width="113" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Begin Session"/>
@@ -1467,7 +1467,7 @@
         <image name="uaflogo" width="202" height="111"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1qN-Po-882"/>
+        <segue reference="Q1w-aj-EIF"/>
         <segue reference="12W-Xu-TIl"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,9 +9,13 @@
 import Foundation
 
 class NetworkManager {
-    var endpointBaseUrl: URL
+    var endpointBaseUrl = URL(string: "nourl")!
+    var usingNetwork = false
     
     init() {
+        if (!usingNetwork) {
+            return
+        }
         var endpointBase = UserDefaults.standard.string(forKey: "endpoint")
         if endpointBase == nil {
             endpointBase = "http://traffictest.chrisbailey.io"
@@ -20,6 +24,9 @@ class NetworkManager {
     }
     
     func pinValid(pin: String, callback: @escaping (_ result: Bool) -> ()) {
+        if (!usingNetwork) {
+            return
+        }
         let url = endpointBaseUrl.appendingPathComponent("checkpin.php")
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -42,6 +49,9 @@ class NetworkManager {
     }
     
     func uploadSession(session: Session, callback: @escaping (_ result: Bool) -> ()) {
+        if (!usingNetwork) {
+            return
+        }
         let url = endpointBaseUrl.appendingPathComponent("upload.php")
         
         var payload: Data
