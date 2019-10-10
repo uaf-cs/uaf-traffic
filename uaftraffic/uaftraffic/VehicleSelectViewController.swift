@@ -22,7 +22,7 @@ class VehicleSelectViewController: UITableViewController {
     }
      
     @IBAction func saveSession(sender: Any) {
-//     session.name = name
+        //     session.name = name
         if vehicleArray.count < 5{
             let blankArray = Array(repeating: "", count: 5 - vehicleArray.count)
             vehicleArray.append(contentsOf: blankArray)
@@ -32,11 +32,11 @@ class VehicleSelectViewController: UITableViewController {
         session.vehicle3Type = vehicleArray[2]
         session.vehicle4Type = vehicleArray[3]
         session.vehicle5Type = vehicleArray[4]
-     let sessionManager = SessionManager()
-     sessionManager.writeSession(session: session)
-     performSegue(withIdentifier: "sessionInfo", sender: self)
-
-     }
+        let sessionManager = SessionManager()
+        sessionManager.writeSession(session: session)
+        performSegue(withIdentifier: "sessionInfo", sender: self)
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! SessionInfoViewController

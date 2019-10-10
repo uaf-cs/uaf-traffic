@@ -2,6 +2,7 @@
 //  DirectionSelectViewController.swift
 //  uaftraffic
 //
+//  Modified by Jonathan Metzgar on 10/10/2019
 //  Created by Joseph Wolf on 6/24/19.
 //  Copyright © 2019 University of Alaska Fairbanks. All rights reserved.
 //
@@ -13,12 +14,15 @@ class DirectionSelectViewController: UITableViewController {
     var directionCount = 4
     
     @IBAction func cancelButtonTapped(_ sender: Any){
-    self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! VehicleSelectViewController
-        vc.session = session
+        if let vc = segue.destination as? VehicleSelectViewController {
+            vc.session = session
+        } else {
+            print("segue.destination could not be downcast as VehicleSelectViewController")
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

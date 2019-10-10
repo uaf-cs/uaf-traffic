@@ -37,8 +37,11 @@ class SessionDetailsViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! TrafficSummaryViewController
-        vc.session = session
+        if let vc = segue.destination as? TrafficSummaryViewController {
+            vc.session = session
+        } else {
+            print("TrafficSummaryViewController could not be upcast")
+        }
     }
     
     func directionName(_ abbreviation: String) -> String {

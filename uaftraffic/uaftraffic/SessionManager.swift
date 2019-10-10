@@ -26,10 +26,10 @@ class SessionManager {
     func writeSession(session: Session) {
         let documentsdirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveurl = documentsdirectory.appendingPathComponent("sessions").appendingPathComponent(session.getFilename())
-//        let plistencod = PropertyListEncoder()
-//        
-//        let encodeSession = try? plistencod.encode(session)
-//        try? encodeSession?.write(to : archiveurl , options : .noFileProtection)
+        //        let plistencod = PropertyListEncoder()
+        //        
+        //        let encodeSession = try? plistencod.encode(session)
+        //        try? encodeSession?.write(to : archiveurl , options : .noFileProtection)
         
         let encodeSession = try? PropertyListEncoder().encode(session)
         if let encodeSession = encodeSession {
@@ -68,21 +68,21 @@ class SessionManager {
                 return true;
             }
             else{
-            return session1.crossings.first!.time.compare(session2.crossings.first!.time) == ComparisonResult.orderedDescending
+                return session1.crossings.first!.time.compare(session2.crossings.first!.time) == ComparisonResult.orderedDescending
             }
         }
         return sessionData
     }
     
-//    for dat in testArray {
-//    let date = dateFormatter.date(from: dat)
-//    if let date = date {
-//    convertedArray.append(date)
-//    }
-//    }
-//
-//    var ready = convertedArray.sorted(by: { $0.compare($1) == .orderedDescending })
-
+    //    for dat in testArray {
+    //    let date = dateFormatter.date(from: dat)
+    //    if let date = date {
+    //    convertedArray.append(date)
+    //    }
+    //    }
+    //
+    //    var ready = convertedArray.sorted(by: { $0.compare($1) == .orderedDescending })
+    
     
     
     func deleteSession(session: Session){
