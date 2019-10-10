@@ -26,15 +26,17 @@ class DirectionSelectViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == nil {
-            print("segue is nil!")
-            return
+        if let id = segue.identifier {
+            print("DEBUGGER: segue id is " + id)
+        } else {
+            print("DEBUGGER: segue id is nil!")
         }
+
         if let session = session_ {
             let vc = segue.destination as! VehicleSelectViewController
             vc.setSession(session: session)
         } else {
-            print("segue.destination could not be downcast as VehicleSelectViewController")
+            print("session_ must be initialized before segue!")
         }
     }
 

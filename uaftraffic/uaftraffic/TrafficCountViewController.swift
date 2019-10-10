@@ -89,6 +89,12 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier {
+            print("DEBUGGER: segue id is " + id)
+        } else {
+            print("DEBUGGER: segue id is nil!")
+        }
+
         if let session = session_ {
             let vc = segue.destination as! SessionInfoViewController
             vc.setSession(session: session)

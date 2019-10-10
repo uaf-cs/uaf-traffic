@@ -47,20 +47,16 @@ class VehicleSelectViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == nil {
-            print("segue identifier is nil!")
-            return
-        }
-        if segue.identifier == "sessionInfo" {
-            if let session = session_ {
-                let vc = segue.destination as! SessionInfoViewController
-                print("DEBUGGING: " + session.name)
-                vc.setSession(session: session)
-            }
-        } else if let segueId = segue.identifier {
-            print("unhandled segue identifier: " + segueId)
+        if let id = segue.identifier {
+            print("DEBUGGER: segue id is " + id)
         } else {
-            print("unhandled segue identifier: UNKNOWN!")
+            print("DEBUGGER: segue id is nil!")
+        }
+
+        if let session = session_ {
+            let vc = segue.destination as! SessionInfoViewController
+            print("DEBUGGING: " + session.name)
+            vc.setSession(session: session)
         }
     }
 
