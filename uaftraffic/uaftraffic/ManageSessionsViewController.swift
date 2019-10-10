@@ -65,7 +65,8 @@ class ManageSessionsViewController: UITableViewController {
         confirmation.addAction(UIAlertAction(title: "Yes, discard data", style: .destructive, handler: { _ in
             self.tableView.beginUpdates()
             self.sessionManager.deleteSession(session: session)
-            self.sessions = self.sessionManager.getSessions()
+            let refreshedSessionList: [Session] = self.sessionManager.getSessions()
+            self.sessions = refreshedSessionList
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             self.tableView.endUpdates()
         }))
