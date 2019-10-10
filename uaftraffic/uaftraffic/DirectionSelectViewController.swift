@@ -36,7 +36,7 @@ class DirectionSelectViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let cell = tableView.cellForRow(at: indexPath)
-        if cell?.accessoryType == UITableViewCell.AccessoryType.none{
+        if cell?.accessoryType == UITableViewCell.AccessoryType.none {
             cell?.accessoryType = UITableViewCell.AccessoryType.checkmark
             switch cell?.textLabel?.text{
             case "North":
@@ -55,7 +55,7 @@ class DirectionSelectViewController: UITableViewController {
         else{
             if directionCount > 2{
                 cell?.accessoryType = UITableViewCell.AccessoryType.none
-                switch cell?.textLabel?.text{
+                switch cell?.textLabel?.text {
                 case "North":
                     session.hasNorthLink = false
                 case "South":
@@ -75,7 +75,7 @@ class DirectionSelectViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let counter = indexPath.row
-        switch counter{
+        switch counter {
         case 0:
             cell.textLabel?.text = "North"
         case 1:
