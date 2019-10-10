@@ -18,12 +18,12 @@ class DirectionSelectViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? VehicleSelectViewController {
-            if vc.session != nil {
-                vc.session = session
-            } else {
-                print("vc.session does not appear to work")
-            }
+        if segue.identifier == nil {
+            print("segue is nil!")
+            return
+        }
+        if let vsvc = segue.destination as? VehicleSelectViewController {
+            vsvc.session = session
         } else {
             print("segue.destination could not be downcast as VehicleSelectViewController")
         }

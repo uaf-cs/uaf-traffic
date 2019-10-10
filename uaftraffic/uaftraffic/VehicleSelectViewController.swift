@@ -20,7 +20,7 @@ class VehicleSelectViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 8;
     }
-     
+    
     @IBAction func saveSession(sender: Any) {
         //     session.name = name
         if vehicleArray.count < 5 {
@@ -39,8 +39,17 @@ class VehicleSelectViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! SessionInfoViewController
-        vc.session = session
+        if segue.identifier == nil {
+            print("segue identifier is ni!")
+            return
+        }
+        if segue.identifier == "sessionInfo" {
+            if let vc = segue.destination as? SessionInfoViewController {
+                vc.session = session
+            }
+        } else {
+            print("unhandled segue identifier: " + (segue.identifier as! String))
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -81,7 +90,7 @@ class VehicleSelectViewController: UITableViewController {
             cell.selectLabel = "plane"
         case 8:
             cell.selectLabel = "unknown"
-            // more vehicles can be added, just be sure to address the row count as well
+        // more vehicles can be added, just be sure to address the row count as well
         default:
             assert(false, "too many rows")
         }
