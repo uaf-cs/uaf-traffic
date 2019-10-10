@@ -42,7 +42,7 @@ class ResumeSessionViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! TrafficCountViewController
-        vc.session = sessions[tableView.indexPathForSelectedRow!.row]
+        vc.setSession(session: sessions[tableView.indexPathForSelectedRow!.row])
         vc.isResumedSession = true
     }
 }

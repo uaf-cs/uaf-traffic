@@ -21,70 +21,72 @@ class DirectionSelectViewController: UITableViewController {
         }
     }
 
-    @IBAction func cancelButtonTapped(_ sender: Any){
+    @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == nil {
             print("segue is nil!")
             return
         }
         if let session = session_ {
-            let vc = segue.destination as? VehicleSelectViewController
+            let vc = segue.destination as! VehicleSelectViewController
             vc.setSession(session: session)
         } else {
             print("segue.destination could not be downcast as VehicleSelectViewController")
         }
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4;
+        return 4
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        let cell = tableView.cellForRow(at: indexPath)
-        if cell?.accessoryType == UITableViewCell.AccessoryType.none {
-            cell?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            switch cell?.textLabel?.text{
-            case "North":
-                session.hasNorthLink = true
-            case "South":
-                session.hasSouthLink = true
-            case "East":
-                session.hasEastLink = true
-            case "West":
-                session.hasWestLink = true
-            default:
-                assert(false, "unrecognized direction")
-            }
-            directionCount += 1
-        }
-        else{
-            if directionCount > 2{
-                cell?.accessoryType = UITableViewCell.AccessoryType.none
+        if let session = session_ {
+            tableView.deselectRow(at: indexPath, animated: false)
+            let cell = tableView.cellForRow(at: indexPath)
+            if cell?.accessoryType == UITableViewCell.AccessoryType.none {
+                cell?.accessoryType = UITableViewCell.AccessoryType.checkmark
                 switch cell?.textLabel?.text {
                 case "North":
-                    session.hasNorthLink = false
+                    session.hasNorthLink = true
                 case "South":
-                    session.hasSouthLink = false
+                    session.hasSouthLink = true
                 case "East":
-                    session.hasEastLink = false
+                    session.hasEastLink = true
                 case "West":
-                    session.hasWestLink = false
+                    session.hasWestLink = true
                 default:
                     assert(false, "unrecognized direction")
                 }
-                directionCount -= 1
+                directionCount += 1
+            }
+            else {
+                if directionCount > 2 {
+                    cell?.accessoryType = UITableViewCell.AccessoryType.none
+                    switch cell?.textLabel?.text {
+                    case "North":
+                        session.hasNorthLink = false
+                    case "South":
+                        session.hasSouthLink = false
+                    case "East":
+                        session.hasEastLink = false
+                    case "West":
+                        session.hasWestLink = false
+                    default:
+                        assert(false, "unrecognized direction")
+                    }
+                    directionCount -= 1
+                }
             }
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let counter = indexPath.row

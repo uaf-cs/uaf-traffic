@@ -48,11 +48,12 @@ class VehicleSelectViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == nil {
-            print("segue identifier is ni!")
+            print("segue identifier is nil!")
             return
         }
         if segue.identifier == "sessionInfo" {
-            if let vc = segue.destination as? SessionInfoViewController {
+            if let session = session_ {
+                let vc = segue.destination as! SessionInfoViewController
                 print("DEBUGGING: " + session.name)
                 vc.setSession(session: session)
             }

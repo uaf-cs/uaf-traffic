@@ -170,7 +170,7 @@ class SessionInfoViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? TrafficCountViewController {
             if let session = session_ {
-                vc.session = session
+                vc.setSession(session: session)
                 vc.isResumedSession = true
             } else {
                 assert(session_ == nil, "session_ must be initialized before segue!")

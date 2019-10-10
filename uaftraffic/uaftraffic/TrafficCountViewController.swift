@@ -97,81 +97,90 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func eastCheck() {
-        eastBlocker.isHidden = session.hasEastLink
+        if let session = session_ {
+            eastBlocker.isHidden = session.hasEastLink
 //        eastGrey.isHidden = session.hasEastLink
-        if session.hasEastLink {
-            east5.vehicleType = session.vehicle1Type
-            east5.image = UIImage(named: session.vehicle1Type + ".pdf")
-            east4.vehicleType = session.vehicle2Type
-            east4.image = UIImage(named: session.vehicle2Type + ".pdf")
-            east3.vehicleType = session.vehicle3Type
-            east3.image = UIImage(named: session.vehicle3Type + ".pdf")
-            east2.vehicleType = session.vehicle4Type
-            east2.image = UIImage(named: session.vehicle4Type + ".pdf")
-            east1.vehicleType = session.vehicle5Type
-            east1.image = UIImage(named: session.vehicle5Type + ".pdf")
+            if session.hasEastLink {
+                east5.vehicleType = session.vehicle1Type
+                east5.image = UIImage(named: session.vehicle1Type + ".pdf")
+                east4.vehicleType = session.vehicle2Type
+                east4.image = UIImage(named: session.vehicle2Type + ".pdf")
+                east3.vehicleType = session.vehicle3Type
+                east3.image = UIImage(named: session.vehicle3Type + ".pdf")
+                east2.vehicleType = session.vehicle4Type
+                east2.image = UIImage(named: session.vehicle4Type + ".pdf")
+                east1.vehicleType = session.vehicle5Type
+                east1.image = UIImage(named: session.vehicle5Type + ".pdf")
 
-        }
-        else {
-            east1.isActive = false
-            east2.isActive = false
-            east3.isActive = false
-            east4.isActive = false
-            east5.isActive = false
+            }
+            else {
+                east1.isActive = false
+                east2.isActive = false
+                east3.isActive = false
+                east4.isActive = false
+                east5.isActive = false
+            }
         }
     }
 
     func southCheck() {
-        southBlocker.isHidden = session.hasSouthLink
+        if let session = session_ {
+            southBlocker.isHidden = session.hasSouthLink
 //        southGrey.isHidden = session.hasSouthLink
-        if session.hasSouthLink {
-            south1.vehicleType = session.vehicle1Type
-            south1.image = UIImage(named: session.vehicle1Type + ".pdf")
-            south2.vehicleType = session.vehicle2Type
-            south2.image = UIImage(named: session.vehicle2Type + ".pdf")
-            south3.vehicleType = session.vehicle3Type
-            south3.image = UIImage(named: session.vehicle3Type + ".pdf")
-            south4.vehicleType = session.vehicle4Type
-            south4.image = UIImage(named: session.vehicle4Type + ".pdf")
-            south5.vehicleType = session.vehicle5Type
-            south5.image = UIImage(named: session.vehicle5Type + ".pdf")
-        }
-        else {
-            south1.isActive = false
-            south2.isActive = false
-            south3.isActive = false
-            south4.isActive = false
-            south5.isActive = false
+            if session.hasSouthLink {
+                south1.vehicleType = session.vehicle1Type
+                south1.image = UIImage(named: session.vehicle1Type + ".pdf")
+                south2.vehicleType = session.vehicle2Type
+                south2.image = UIImage(named: session.vehicle2Type + ".pdf")
+                south3.vehicleType = session.vehicle3Type
+                south3.image = UIImage(named: session.vehicle3Type + ".pdf")
+                south4.vehicleType = session.vehicle4Type
+                south4.image = UIImage(named: session.vehicle4Type + ".pdf")
+                south5.vehicleType = session.vehicle5Type
+                south5.image = UIImage(named: session.vehicle5Type + ".pdf")
+            }
+            else {
+                south1.isActive = false
+                south2.isActive = false
+                south3.isActive = false
+                south4.isActive = false
+                south5.isActive = false
+            }
         }
     }
 
     func westCheck() {
-        westBlocker.isHidden = session.hasWestLink
+        if let session = session_ {
+            westBlocker.isHidden = session.hasWestLink
 //        westGrey.isHidden = session.hasWestLink
-        if session.hasWestLink {
-            west1.vehicleType = session.vehicle1Type
-            west1.image = UIImage(named: session.vehicle1Type + ".pdf")
-            west2.vehicleType = session.vehicle2Type
-            west2.image = UIImage(named: session.vehicle2Type + ".pdf")
-            west3.vehicleType = session.vehicle3Type
-            west3.image = UIImage(named: session.vehicle3Type + ".pdf")
-            west4.vehicleType = session.vehicle4Type
-            west4.image = UIImage(named: session.vehicle4Type + ".pdf")
-            west5.vehicleType = session.vehicle5Type
-            west5.image = UIImage(named: session.vehicle5Type + ".pdf")
-        }
-        else {
-            west1.isActive = false
-            west2.isActive = false
-            west3.isActive = false
-            west4.isActive = false
-            west5.isActive = false
+            if session.hasWestLink {
+                west1.vehicleType = session.vehicle1Type
+                west1.image = UIImage(named: session.vehicle1Type + ".pdf")
+                west2.vehicleType = session.vehicle2Type
+                west2.image = UIImage(named: session.vehicle2Type + ".pdf")
+                west3.vehicleType = session.vehicle3Type
+                west3.image = UIImage(named: session.vehicle3Type + ".pdf")
+                west4.vehicleType = session.vehicle4Type
+                west4.image = UIImage(named: session.vehicle4Type + ".pdf")
+                west5.vehicleType = session.vehicle5Type
+                west5.image = UIImage(named: session.vehicle5Type + ".pdf")
+            }
+            else {
+                west1.isActive = false
+                west2.isActive = false
+                west3.isActive = false
+                west4.isActive = false
+                west5.isActive = false
+            }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.addCrossing(notification:)), name: .addCrossing, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.addCrossing(notification:)),
+                                               name: .addCrossing,
+                                               object: nil)
         locationManager.delegate = self
         locationManager.startUpdatingHeading()
         crossingCountChanged()
@@ -183,10 +192,11 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     @IBAction func endSessionButtonTapped(_ sender: Any) {
-        //if isResumedSession {
-        sessionManager.writeSession(session: session)
-        dismiss(animated: true, completion: nil)
-        /* } else if session.crossings.count == 0 {
+        if let session = session_ {
+            //if isResumedSession {
+            sessionManager.writeSession(session: session)
+            dismiss(animated: true, completion: nil)
+            /* } else if session.crossings.count == 0 {
             dismiss(animated: true, completion: nil)
         } else {
             let confirmation = UIAlertController(title: "End Session", message: "Are you sure you want to end this session?", preferredStyle: .alert)
@@ -194,11 +204,14 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
             confirmation.addAction(UIAlertAction(title: "No, continue", style: .cancel, handler: nil))
             present(confirmation, animated: true, completion: nil)
         }*/
+        }
     }
 
     @IBAction func undoButtonTapped(_ sender: Any) {
-        session.undo()
-        crossingCountChanged()
+        if let session = session_ {
+            session.undo()
+            crossingCountChanged()
+        }
     }
 
     /*func getSessionName(sender: UIAlertAction) {
@@ -230,15 +243,19 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     }*/
 
     @objc func addCrossing(notification: Notification) {
-        let userInfo = notification.userInfo! as! Dictionary<String, String>
-        print("got crossing:", userInfo)
-        session.addCrossing(type: userInfo["type"]!, from: userInfo["from"]!, to: userInfo["to"]!)
-        crossingCountChanged()
+        if let session = session_ {
+            let userInfo = notification.userInfo! as! Dictionary<String, String>
+            print("got crossing:", userInfo)
+            session.addCrossing(type: userInfo["type"]!, from: userInfo["from"]!, to: userInfo["to"]!)
+            crossingCountChanged()
+        }
     }
 
     func crossingCountChanged() {
-        undoButton.isEnabled = session.crossings.count != 0
-        countLabel.text = "Total Counted: " + String(session.crossings.count)
+        if let session = session_ {
+            undoButton.isEnabled = session.crossings.count != 0
+            countLabel.text = "Total Counted: " + String(session.crossings.count)
+        }
     }
 
     /*func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
