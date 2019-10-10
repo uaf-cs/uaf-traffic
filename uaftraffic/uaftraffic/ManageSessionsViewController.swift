@@ -66,6 +66,7 @@ class ManageSessionsViewController: UITableViewController {
             self.tableView.beginUpdates()
             self.sessionManager.deleteSession(session: session)
             let refreshedSessionList: [Session] = self.sessionManager.getSessions()
+            print(self.sessions)
             self.sessions = refreshedSessionList
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             self.tableView.endUpdates()

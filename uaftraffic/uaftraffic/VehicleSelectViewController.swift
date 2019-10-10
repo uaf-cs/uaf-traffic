@@ -45,10 +45,14 @@ class VehicleSelectViewController: UITableViewController {
         }
         if segue.identifier == "sessionInfo" {
             if let vc = segue.destination as? SessionInfoViewController {
+                print("DEBUGGING: " + vc.session.name)
+                print("DEBUGGING: " + session.name)
                 vc.session = session
             }
+        } else if let segueId = segue.identifier {
+            print("unhandled segue identifier: " + segueId)
         } else {
-            print("unhandled segue identifier: " + (segue.identifier as! String))
+            print("unhandled segue identifier: UNKNOWN!")
         }
     }
     

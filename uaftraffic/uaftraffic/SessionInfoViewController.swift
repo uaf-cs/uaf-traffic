@@ -25,52 +25,56 @@ class SessionInfoViewController: UIViewController{
     @IBOutlet weak var westToggle: UIButton!
     
     var trackDirs = 4
-    var session = Session()
+    var session_: Session?   // Session may not be initialized until after a segue
     var toSession = true
 
     override func viewDidLoad() {
-        if session.name.trimmingCharacters(in: .whitespaces) != "" {
-            nameField.placeholder = session.name
+        if let session = session_ {
+            if session.name.trimmingCharacters(in: .whitespaces) != "" {
+                nameField.placeholder = session.name
+            }
+            if session.lat.trimmingCharacters(in: .whitespaces) != "" {
+                latField.placeholder = session.lat
+            }
+            if session.lon.trimmingCharacters(in: .whitespaces) != "" {
+                lonField.placeholder = session.lon
+            }
+            if session.EWRoadName.trimmingCharacters(in: .whitespaces) != "" {
+                ewField.placeholder = session.EWRoadName
+            }
+            if session.NSRoadName.trimmingCharacters(in: .whitespaces) != "" {
+                nsField.placeholder = session.NSRoadName
+            }
+            if session.technician.trimmingCharacters(in: .whitespaces) != "" {
+                technicianField.placeholder = session.technician
+            }
+            if session.city.trimmingCharacters(in: .whitespaces) != "" {
+                cityField.placeholder = session.city
+            }
+            if session.state.trimmingCharacters(in: .whitespaces) != "" {
+                stateField.placeholder = session.state
+            }
+            if session.zipCode.trimmingCharacters(in: .whitespaces) != "" {
+                zipField.placeholder = session.zipCode
+            }
+            
+            if !session.hasNorthLink { trackDirs -= 1 }
+            if !session.hasSouthLink { trackDirs -= 1 }
+            if !session.hasWestLink  { trackDirs -= 1 }
+            if !session.hasEastLink  { trackDirs -= 1 }
+            
+            northToggle.isSelected = session.hasNorthLink
+            southToggle.isSelected = session.hasSouthLink
+            eastToggle.isSelected = session.hasEastLink
+            westToggle.isSelected = session.hasWestLink
+            
+            northToggle.addTarget(self, action: #selector(self.toggleNorth), for: .touchUpInside)
+            southToggle.addTarget(self, action: #selector(self.toggleSouth), for: .touchUpInside)
+            eastToggle.addTarget(self, action: #selector(self.toggleEast), for: .touchUpInside)
+            westToggle.addTarget(self, action: #selector(self.toggleWest), for: .touchUpInside)
+        } else {
+            print("DEBUGGING: session_ not initialized before ViewController loaded!")
         }
-        if session.lat.trimmingCharacters(in: .whitespaces) != "" {
-            latField.placeholder = session.lat
-        }
-        if session.lon.trimmingCharacters(in: .whitespaces) != "" {
-            lonField.placeholder = session.lon
-        }
-        if session.EWRoadName.trimmingCharacters(in: .whitespaces) != "" {
-            ewField.placeholder = session.EWRoadName
-        }
-        if session.NSRoadName.trimmingCharacters(in: .whitespaces) != "" {
-            nsField.placeholder = session.NSRoadName
-        }
-        if session.technician.trimmingCharacters(in: .whitespaces) != "" {
-            technicianField.placeholder = session.technician
-        }
-        if session.city.trimmingCharacters(in: .whitespaces) != "" {
-            cityField.placeholder = session.city
-        }
-        if session.state.trimmingCharacters(in: .whitespaces) != "" {
-            stateField.placeholder = session.state
-        }
-        if session.zipCode.trimmingCharacters(in: .whitespaces) != "" {
-            zipField.placeholder = session.zipCode
-        }
-        
-        if !session.hasNorthLink { trackDirs -= 1 }
-        if !session.hasSouthLink { trackDirs -= 1 }
-        if !session.hasWestLink  { trackDirs -= 1 }
-        if !session.hasEastLink  { trackDirs -= 1 }
-        
-        northToggle.isSelected = session.hasNorthLink
-        southToggle.isSelected = session.hasSouthLink
-        eastToggle.isSelected = session.hasEastLink
-        westToggle.isSelected = session.hasWestLink
-        
-        northToggle.addTarget(self, action: #selector(self.toggleNorth), for: .touchUpInside)
-        southToggle.addTarget(self, action: #selector(self.toggleSouth), for: .touchUpInside)
-        eastToggle.addTarget(self, action: #selector(self.toggleEast), for: .touchUpInside)
-        westToggle.addTarget(self, action: #selector(self.toggleWest), for: .touchUpInside)
     }
     
     @objc func toggleNorth(sender: Any){
