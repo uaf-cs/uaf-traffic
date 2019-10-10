@@ -26,8 +26,9 @@ class ManageSessionsViewController: UITableViewController {
     }
 
     @IBAction func closeButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,28 +40,27 @@ class ManageSessionsViewController: UITableViewController {
         return sessions.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath) as! ManageSessionCell
         let session = sessions[indexPath.row]
         cell.sessionName?.text = session.name
         cell.sessionTime?.text = session.dateString()
-        cell.deleteButton.addTarget(self, action: #selector(self.deleteSession), for: .touchUpInside)
-        if (usingNetwork) {
-            cell.uploadButton.addTarget(self, action: #selector(self.uploadSession), for: .touchUpInside)
+        cell.deleteButton.addTarget(self, action: #selector(deleteSession), for: .touchUpInside)
+        if usingNetwork {
+            cell.uploadButton.addTarget(self, action: #selector(uploadSession), for: .touchUpInside)
         }
-        cell.saveCSVButton.addTarget(self, action: #selector(self.saveCSV), for: .touchUpInside)
-        cell.editInfoButton.addTarget(self, action: #selector(self.editInfo), for: .touchUpInside)
+        cell.saveCSVButton.addTarget(self, action: #selector(saveCSV), for: .touchUpInside)
+        cell.editInfoButton.addTarget(self, action: #selector(editInfo), for: .touchUpInside)
         return cell
     }
-    
+
     @objc func deleteSession(sender: UIButton) {
         let cell = sender.superview!.superview! as! ManageSessionCell
         let indexPath = tableView.indexPath(for: cell)!
         let index = indexPath.row
         let session = sessions[index]
         let confirmationMessage = "Are you sure you want to delete " + session.name + "?"
-        
+
         let confirmation = UIAlertController(title: "Delete session", message: confirmationMessage, preferredStyle: .alert)
         confirmation.addAction(UIAlertAction(title: "Yes, discard data", style: .destructive, handler: { _ in
             self.tableView.beginUpdates()
@@ -73,15 +73,15 @@ class ManageSessionsViewController: UITableViewController {
         confirmation.addAction(UIAlertAction(title: "No, keep data", style: .cancel, handler: nil))
         present(confirmation, animated: true, completion: nil)
     }
-    
+
     @objc func uploadSession(sender: UIButton) {
-        if (!usingNetwork) {
+        if !usingNetwork {
             return
         }
         let cell = sender.superview!.superview! as! ManageSessionCell
         let indexPath = tableView.indexPath(for: cell)!
         let session = sessions[indexPath.row]
-        networkManager.uploadSession(session: session) { (success) -> () in
+        networkManager.uploadSession(session: session) { (success) -> Void in
             if success {
                 DispatchQueue.main.async {
                     self.tableView.beginUpdates()
@@ -98,7 +98,7 @@ class ManageSessionsViewController: UITableViewController {
             }
         }
     }
-    
+
     @objc func saveCSV(sender: UIButton) {
         let cell = sender.superview!.superview! as! ManageSessionCell
         let indexPath = tableView.indexPath(for: cell)!
@@ -108,57 +108,56 @@ class ManageSessionsViewController: UITableViewController {
         okAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(okAlert, animated: true, completion: nil)
     }
-    
-    @objc func editInfo(sender: UIButton){
+
+    @objc func editInfo(sender: UIButton) {
         let cell = sender.superview!.superview! as! ManageSessionCell
         let indexPath = tableView.indexPath(for: cell)!
         infoSession = sessions[indexPath.row]
         performSegue(withIdentifier: "EditInfo", sender: self)
-        /*let cell = sender.superview!.superview! as! ManageSessionCell
-        let indexPath = tableView.indexPath(for: cell)!
-        let session = sessions[indexPath.row]
-        
-        let namePrompt = UIAlertController(title: "Session Form", message: "Please Input Session Information", preferredStyle: .alert)
-        namePrompt.addTextField { textField in
-            textField.placeholder = (session.name != "") ? session.name : "Session Title"
-        }
-        namePrompt.addTextField(configurationHandler: { textField in
-            textField.placeholder = (session.lat != "") ? session.lat : "Latitude"
-        })
-        namePrompt.addTextField(configurationHandler: { textField in
-            textField.placeholder = (session.lon != "") ? session.lon : "Longitude"
-        })
-        namePrompt.addTextField { textField in
-            textField.placeholder = (session.EWRoadName != "") ? session.EWRoadName : "East-West Road Name"
-        }
-        namePrompt.addTextField(configurationHandler: { textField in
-            textField.placeholder = (session.NSRoadName != "") ? session.NSRoadName : "North-South Road Name"
-        })
-        namePrompt.addTextField(configurationHandler: { textField in
-            textField.placeholder = (session.technician != "") ? session.technician : "Technician Name"
-        })
-        
-        
-        namePrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak namePrompt] _ in
-            let name = namePrompt!.textFields![0].text!
-            session.name = (name != "") ? name : session.name
-            let lat = namePrompt!.textFields![1].text!
-            session.lat = (lat != "") ? lat : session.lat
-            let lon = namePrompt!.textFields![2].text!
-            session.lon = (lon != "") ? lon : session.lon
-            let ewRoad = namePrompt!.textFields![3].text!
-            session.EWRoadName = (ewRoad != "") ? ewRoad : session.EWRoadName
-            let nsRoad = namePrompt!.textFields![4].text!
-            session.NSRoadName = (nsRoad != "") ? nsRoad : session.NSRoadName
-            let technician = namePrompt!.textFields![5].text!
-            session.technician = (technician != "") ? technician : session.technician
-        }))
-        
-        namePrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(namePrompt, animated: true, completion: nil)*/
+        /* let cell = sender.superview!.superview! as! ManageSessionCell
+         let indexPath = tableView.indexPath(for: cell)!
+         let session = sessions[indexPath.row]
+
+         let namePrompt = UIAlertController(title: "Session Form", message: "Please Input Session Information", preferredStyle: .alert)
+         namePrompt.addTextField { textField in
+             textField.placeholder = (session.name != "") ? session.name : "Session Title"
+         }
+         namePrompt.addTextField(configurationHandler: { textField in
+             textField.placeholder = (session.lat != "") ? session.lat : "Latitude"
+         })
+         namePrompt.addTextField(configurationHandler: { textField in
+             textField.placeholder = (session.lon != "") ? session.lon : "Longitude"
+         })
+         namePrompt.addTextField { textField in
+             textField.placeholder = (session.EWRoadName != "") ? session.EWRoadName : "East-West Road Name"
+         }
+         namePrompt.addTextField(configurationHandler: { textField in
+             textField.placeholder = (session.NSRoadName != "") ? session.NSRoadName : "North-South Road Name"
+         })
+         namePrompt.addTextField(configurationHandler: { textField in
+             textField.placeholder = (session.technician != "") ? session.technician : "Technician Name"
+         })
+
+         namePrompt.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak namePrompt] _ in
+             let name = namePrompt!.textFields![0].text!
+             session.name = (name != "") ? name : session.name
+             let lat = namePrompt!.textFields![1].text!
+             session.lat = (lat != "") ? lat : session.lat
+             let lon = namePrompt!.textFields![2].text!
+             session.lon = (lon != "") ? lon : session.lon
+             let ewRoad = namePrompt!.textFields![3].text!
+             session.EWRoadName = (ewRoad != "") ? ewRoad : session.EWRoadName
+             let nsRoad = namePrompt!.textFields![4].text!
+             session.NSRoadName = (nsRoad != "") ? nsRoad : session.NSRoadName
+             let technician = namePrompt!.textFields![5].text!
+             session.technician = (technician != "") ? technician : session.technician
+         }))
+
+         namePrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+         present(namePrompt, animated: true, completion: nil) */
     }
-    
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -166,8 +165,7 @@ class ManageSessionsViewController: UITableViewController {
         if segue.identifier == "sessionDetail" {
             let vc = segue.destination as! SessionDetailsViewController
             vc.session = sessions[tableView.indexPathForSelectedRow!.row]
-        }
-        else if segue.identifier == "EditInfo" {
+        } else if segue.identifier == "EditInfo" {
             let vc = segue.destination as! SessionInfoViewController
             vc.session = infoSession
         }
