@@ -2,6 +2,7 @@
 //  Sessions.swift
 //  uaftraffic
 //
+//  Modified by Jonathan Metzgar on 10/10/2019
 //  Created by Brandon Abbott on 3/3/19.
 //  Copyright © 2019 University of Alaska Fairbanks. All rights reserved.
 //
@@ -9,55 +10,13 @@
 import AVFoundation
 import Foundation
 
-class Crossing: Codable, Equatable {
-    var type: String
-    var from: String
-    var to: String
-    var time: Date
-    
-    static func == (lhs: Crossing, rhs: Crossing) -> Bool {
-        return
-            lhs.type == rhs.type &&
-                lhs.from == rhs.from &&
-                lhs.to == rhs.to &&
-                lhs.time == rhs.time
-    }
-    
-    init(type: String, from: String, to: String, time: Date) {
-        self.type = type
-        self.from = from
-        self.to = to
-        self.time = time
-    }
-    
-    func dateString() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d yyyy, h:mm a"
-        return formatter.string(from: time)
-    }
-    
-    func csvDateString() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.string(from: time)
-    }
-    
-    func csvTimeString() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss"
-        return formatter.string(from: time)
-    }
-}
-
-class Session: Codable, Equatable {
+public class Session: Codable, Equatable {
+    // Corresponds to CodingKeys
     var lat : String = ""
     var lon : String = ""
     var id : String		= ""
     var dateCreated : String = ""
     var name : String = ""
-    var basename: String = ""
-    var savePath: String = ""
-    var exportPath: String = ""
     var hasNorthLink : Bool = true
     var hasSouthLink : Bool = true
     var hasWestLink : Bool = true
@@ -74,8 +33,13 @@ class Session: Codable, Equatable {
     var state : String = ""
     var zipCode : String = ""
     var crossings : [Crossing] = []
-    var audioPlayer = AVAudioPlayer()
     
+    // extra items not related to the internal Session file
+    var audioPlayer = AVAudioPlayer()
+    var basename: String = ""
+    var savePath: String = ""
+    var exportPath: String = ""
+
     // for summaries
     var sortedCountFromSouth: [Int] = []
     var sortedCountFromNorth: [Int] = []
@@ -156,7 +120,7 @@ class Session: Codable, Equatable {
         self.initID()
     }
     
-    static func ==(lhs: Session, rhs: Session) -> Bool {
+    public static func ==(lhs: Session, rhs: Session) -> Bool {
         return lhs.lat == rhs.lat &&
             lhs.lon == rhs.lon &&
             lhs.id == rhs.id &&
@@ -202,7 +166,7 @@ class Session: Codable, Equatable {
     }
     
     func undo() {
-        if !(crossings.count == 0) {
+        if crossings.count > 0 {
             crossings.removeLast()
         }
     }
@@ -243,64 +207,81 @@ class Session: Codable, Equatable {
         sortedCountFromWest = crossingCount
         sortedCountFromSouth = crossingCount
         for crossing in crossings{
-            let strFrom = crossing.from
-            let strTo = crossing.to
-            switch strFrom{
-            case "n":
-                switch strTo{
-                case "n":
-                    continue
-                case "s":
-                    sortedCountFromNorth [1] += 1
-                case "e":
-                    sortedCountFromNorth [0] += 1
-                case "w":
-                    sortedCountFromNorth [2] += 1
-                default:
-                    assert(false, "unrecognized 'to' direction")
-                }
-            case "s":
-                switch strTo{
-                case "s":
-                    continue
-                case "n":
-                    sortedCountFromSouth [1] += 1
-                case "w":
-                    sortedCountFromSouth [0] += 1
-                case "e":
-                    sortedCountFromSouth [2] += 1
-                default:
-                    assert(false, "unrecognized 'to' direction")
-                }
-            case "w":
-                switch strTo{
-                case "w":
-                    continue
-                case "e":
-                    sortedCountFromWest [1] += 1
-                case "n":
-                    sortedCountFromWest [0] += 1
-                case "s":
-                    sortedCountFromWest [2] += 1
-                default:
-                    assert(false, "unrecognized 'to' direction")
-                }
-            case "e":
-                switch strTo{
-                case "e":
-                    continue
-                case "w":
-                    sortedCountFromEast [1] += 1
-                case "s":
-                    sortedCountFromEast [0] += 1
-                case "n":
-                    sortedCountFromEast [2] += 1
-                default:
-                    assert(false, "unrecognized 'to' direction")
-                }
-            default:
-                assert(false, "unrecognized 'from' direction")
+            let fromto = crossing.from + crossing.to;
+            switch fromto {
+            case "ns": sortedCountFromNorth[1] += 1
+            case "ne": sortedCountFromNorth[0] += 1
+            case "nw": sortedCountFromNorth[2] += 1
+            case "sn": sortedCountFromSouth[1] += 1
+            case "sw": sortedCountFromSouth[0] += 1
+            case "se": sortedCountFromSouth[2] += 1
+            case "we": sortedCountFromWest[1] += 1;
+            case "wn": sortedCountFromWest[0] += 1;
+            case "ws": sortedCountFromWest[2] += 1;
+            case "ew": sortedCountFromEast[1] += 1;
+            case "es": sortedCountFromEast[0] += 1;
+            case "en": sortedCountFromEast[2] += 1;
+            default: assert(false, "unrecognized from/to direction")
             }
+
+//            let strFrom = crossing.from
+//            let strTo = crossing.to
+//            switch strFrom {
+//            case "n":
+//                switch strTo {
+//                case "n":
+//                    continue
+//                case "s":
+//                    sortedCountFromNorth [1] += 1
+//                case "e":
+//                    sortedCountFromNorth [0] += 1
+//                case "w":
+//                    sortedCountFromNorth [2] += 1
+//                default:
+//                    assert(false, "unrecognized 'to' direction")
+//                }
+//            case "s":
+//                switch strTo {
+//                case "s":
+//                    continue
+//                case "n":
+//                    sortedCountFromSouth [1] += 1
+//                case "w":
+//                    sortedCountFromSouth [0] += 1
+//                case "e":
+//                    sortedCountFromSouth [2] += 1
+//                default:
+//                    assert(false, "unrecognized 'to' direction")
+//                }
+//            case "w":
+//                switch strTo {
+//                case "w":
+//                    continue
+//                case "e":
+//                    sortedCountFromWest [1] += 1
+//                case "n":
+//                    sortedCountFromWest [0] += 1
+//                case "s":
+//                    sortedCountFromWest [2] += 1
+//                default:
+//                    assert(false, "unrecognized 'to' direction")
+//                }
+//            case "e":
+//                switch strTo {
+//                case "e":
+//                    continue
+//                case "w":
+//                    sortedCountFromEast [1] += 1
+//                case "s":
+//                    sortedCountFromEast [0] += 1
+//                case "n":
+//                    sortedCountFromEast [2] += 1
+//                default:
+//                    assert(false, "unrecognized 'to' direction")
+//                }
+//            default:
+//                assert(false, "unrecognized 'from' direction")
+//            }
         }
     }
     
@@ -316,12 +297,15 @@ class Session: Codable, Equatable {
                                                          withTemplate: "-")
             cleanName = cleaned as String
         } catch {}
+        
         var filename = dateCreated + "-" + (cleanName as String) + ".csv"
         if filename.trimmingCharacters(in: .whitespaces) == ".csv" {
             filename = self.id + ".csv"
-            //            the simplest way to correct for the empty name bug
+            // the simplest way to correct for the empty name bug
         }
-        var csvData = ""// = "vehicle, from, left, right, through\n"
+        
+        // = "vehicle, from, left, right, through\n"
+        var csvData = ""
         
         csvData += "UAFTRAFFIC EXPORT\n"
         csvData += "Summary\n"
@@ -344,6 +328,7 @@ class Session: Codable, Equatable {
         csvData += ",\(self.sortedCountFromEast[0]),\(self.sortedCountFromEast[1]),\(self.sortedCountFromEast[2])\n"
         csvData += "\nRecorded Data\n"
         csvData += "Vehicle Type,From,To,Date,Time\n"
+        
         for crossing in crossings {
             csvData += "\"\(crossing.type)\",\(crossing.from),\(crossing.to),\"\(crossing.csvDateString())\",\(crossing.csvTimeString())\n"
         }

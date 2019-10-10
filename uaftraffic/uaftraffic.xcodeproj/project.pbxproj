@@ -31,6 +31,7 @@
 		9DBF1484222CF1F100285979 /* SessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1483222CF1F100285979 /* SessionTests.swift */; };
 		9DE934CE2207B8540000255D /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934CD2207B8540000255D /* VehicleView.swift */; };
 		9DE934D72207CA3D0000255D /* PinEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934D62207CA3D0000255D /* PinEntryViewController.swift */; };
+		C33D02CE234FC5B4005C5B52 /* Crossing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D02CD234FC5B4005C5B52 /* Crossing.swift */; };
 		C3A2F09C21FACD060078E15C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2F09B21FACD060078E15C /* AppDelegate.swift */; };
 		C3A2F0A121FACD060078E15C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A2F09F21FACD060078E15C /* Main.storyboard */; };
 		C3A2F0A321FACD070078E15C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A2F0A221FACD070078E15C /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		9DBF1483222CF1F100285979 /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		9DE934CD2207B8540000255D /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
 		9DE934D62207CA3D0000255D /* PinEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinEntryViewController.swift; sourceTree = "<group>"; };
+		C33D02CD234FC5B4005C5B52 /* Crossing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crossing.swift; sourceTree = "<group>"; };
 		C3A2F09821FACD060078E15C /* uaftraffic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uaftraffic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A2F09B21FACD060078E15C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3A2F0A021FACD060078E15C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		C3A2F09A21FACD060078E15C /* uaftraffic */ = {
 			isa = PBXGroup;
 			children = (
+				C33D02CD234FC5B4005C5B52 /* Crossing.swift */,
 				9DE934C22207AEC90000255D /* Assets */,
 				C3A2F09B21FACD060078E15C /* AppDelegate.swift */,
 				C3A2F0A221FACD070078E15C /* Assets.xcassets */,
@@ -357,6 +360,7 @@
 				26651C1E22FBAAF4001EFFD5 /* SessionInfoViewController.swift in Sources */,
 				9D62C563225329CC0080E0EF /* SessionDetailsCrossingCell.swift in Sources */,
 				C3A2F09C21FACD060078E15C /* AppDelegate.swift in Sources */,
+				C33D02CE234FC5B4005C5B52 /* Crossing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
