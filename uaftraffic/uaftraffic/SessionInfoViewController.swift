@@ -23,43 +23,44 @@ class SessionInfoViewController: UIViewController{
     @IBOutlet weak var southToggle: UIButton!
     @IBOutlet weak var eastToggle: UIButton!
     @IBOutlet weak var westToggle: UIButton!
+    
     var trackDirs = 4
     var session = Session()
     var toSession = true
 
     override func viewDidLoad() {
-        if session.name.trimmingCharacters(in: .whitespaces) != ""{
+        if session.name.trimmingCharacters(in: .whitespaces) != "" {
             nameField.placeholder = session.name
         }
-        if session.lat.trimmingCharacters(in: .whitespaces) != ""{
+        if session.lat.trimmingCharacters(in: .whitespaces) != "" {
             latField.placeholder = session.lat
         }
-        if session.lon.trimmingCharacters(in: .whitespaces) != ""{
+        if session.lon.trimmingCharacters(in: .whitespaces) != "" {
             lonField.placeholder = session.lon
         }
-        if session.EWRoadName.trimmingCharacters(in: .whitespaces) != ""{
+        if session.EWRoadName.trimmingCharacters(in: .whitespaces) != "" {
             ewField.placeholder = session.EWRoadName
         }
-        if session.NSRoadName.trimmingCharacters(in: .whitespaces) != ""{
+        if session.NSRoadName.trimmingCharacters(in: .whitespaces) != "" {
             nsField.placeholder = session.NSRoadName
         }
-        if session.technician.trimmingCharacters(in: .whitespaces) != ""{
+        if session.technician.trimmingCharacters(in: .whitespaces) != "" {
             technicianField.placeholder = session.technician
         }
-        if session.city.trimmingCharacters(in: .whitespaces) != ""{
+        if session.city.trimmingCharacters(in: .whitespaces) != "" {
             cityField.placeholder = session.city
         }
-        if session.state.trimmingCharacters(in: .whitespaces) != ""{
+        if session.state.trimmingCharacters(in: .whitespaces) != "" {
             stateField.placeholder = session.state
         }
-        if session.zipCode.trimmingCharacters(in: .whitespaces) != ""{
+        if session.zipCode.trimmingCharacters(in: .whitespaces) != "" {
             zipField.placeholder = session.zipCode
         }
         
-        if !session.hasNorthLink {trackDirs -= 1}
-        if !session.hasSouthLink {trackDirs -= 1}
-        if !session.hasWestLink {trackDirs -= 1}
-        if !session.hasEastLink {trackDirs -= 1}
+        if !session.hasNorthLink { trackDirs -= 1 }
+        if !session.hasSouthLink { trackDirs -= 1 }
+        if !session.hasWestLink  { trackDirs -= 1 }
+        if !session.hasEastLink  { trackDirs -= 1 }
         
         northToggle.isSelected = session.hasNorthLink
         southToggle.isSelected = session.hasSouthLink
@@ -73,7 +74,7 @@ class SessionInfoViewController: UIViewController{
     }
     
     @objc func toggleNorth(sender: Any){
-        if !northToggle.isSelected {trackDirs += 1}
+        if !northToggle.isSelected { trackDirs += 1 }
         if northToggle.isSelected && trackDirs > 2 {
             northToggle.isSelected = false
             trackDirs -= 1
