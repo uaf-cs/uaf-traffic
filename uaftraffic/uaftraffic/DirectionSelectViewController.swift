@@ -10,9 +10,17 @@
 import UIKit
 
 class DirectionSelectViewController: UITableViewController {
-    var session = Session()
     var directionCount = 4
-    
+
+    private var session_: Session? // Session may not be initialized until after a segue
+    func setSession(session: Session?) {
+        if let s = session {
+            session_ = s
+        } else {
+            assert(session == nil, "session_ must be initialized before segue!")
+        }
+    }
+
     @IBAction func cancelButtonTapped(_ sender: Any){
         self.dismiss(animated: true, completion: nil)
     }
@@ -22,8 +30,9 @@ class DirectionSelectViewController: UITableViewController {
             print("segue is nil!")
             return
         }
-        if let vsvc = segue.destination as? VehicleSelectViewController {
-            vsvc.session = session
+        if let session = session_ {
+            let vc = segue.destination as? VehicleSelectViewController
+            vc.setSession(session: session)
         } else {
             print("segue.destination could not be downcast as VehicleSelectViewController")
         }

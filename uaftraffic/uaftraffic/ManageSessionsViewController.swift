@@ -12,7 +12,7 @@ class ManageSessionsViewController: UITableViewController {
     let networkManager = NetworkManager()
     let sessionManager = SessionManager()
     var sessions = [Session]()
-    var infoSession = Session()
+    private var infoSession = Session()
     var usingNetwork: Bool = false
 
     override func viewDidLoad() {
@@ -168,7 +168,7 @@ class ManageSessionsViewController: UITableViewController {
             vc.session = sessions[tableView.indexPathForSelectedRow!.row]
         } else if segue.identifier == "EditInfo" {
             let vc = segue.destination as! SessionInfoViewController
-            vc.session = infoSession
+            vc.setSession(session: infoSession)
         }
     }
 }

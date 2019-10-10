@@ -16,8 +16,8 @@ extension Notification.Name {
 class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var undoButton: UIBarButtonItem!
     @IBOutlet weak var countLabel: UILabel!
-	@IBOutlet weak var compassArrow: UIImageView!
-	@IBOutlet weak var compassLetters: UIImageView!
+    @IBOutlet weak var compassArrow: UIImageView!
+    @IBOutlet weak var compassLetters: UIImageView!
     @IBOutlet weak var northBlocker: UIImageView!
     @IBOutlet weak var eastBlocker: UIImageView!
     @IBOutlet weak var southBlocker: UIImageView!
@@ -46,46 +46,60 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var east3: VehicleView!
     @IBOutlet weak var east4: VehicleView!
     @IBOutlet weak var east5: VehicleView!
-    
-	let locationManager = CLLocationManager()
-	var session = Session()
+
+    let locationManager = CLLocationManager()
     let sessionManager = SessionManager()
     var isResumedSession = true
-	
-    func northCheck(){
-        northBlocker.isHidden = session.hasNorthLink
-//        northGrey.isHidden = session.hasNorthLink
-        if session.hasNorthLink{
-            north5.vehicleType = session.vehicle1Type
-            north5.image = UIImage(named: session.vehicle1Type + ".pdf")
-            north4.vehicleType = session.vehicle2Type
-            north4.image = UIImage(named: session.vehicle2Type + ".pdf")
-            north3.vehicleType = session.vehicle3Type
-            north3.image = UIImage(named: session.vehicle3Type + ".pdf")
-            north2.vehicleType = session.vehicle4Type
-            north2.image = UIImage(named: session.vehicle4Type + ".pdf")
-            north1.vehicleType = session.vehicle5Type
-            north1.image = UIImage(named: session.vehicle5Type + ".pdf")
-        }
-        else{
-            north1.isActive = false
-            north2.isActive = false
-            north3.isActive = false
-            north4.isActive = false
-            north5.isActive = false
+
+    private var session_: Session? // Session may not be initialized until after a segue
+    func setSession(session: Session?) {
+        if let s = session {
+            session_ = s
+        } else {
+            assert(session == nil, "session_ must be initialized before segue!")
         }
     }
-    
+
+    func northCheck() {
+        if let session = session_ {
+            northBlocker.isHidden = session.hasNorthLink
+//            northGrey.isHidden = session.hasNorthLink
+            if session.hasNorthLink {
+                north5.vehicleType = session.vehicle1Type
+                north5.image = UIImage(named: session.vehicle1Type + ".pdf")
+                north4.vehicleType = session.vehicle2Type
+                north4.image = UIImage(named: session.vehicle2Type + ".pdf")
+                north3.vehicleType = session.vehicle3Type
+                north3.image = UIImage(named: session.vehicle3Type + ".pdf")
+                north2.vehicleType = session.vehicle4Type
+                north2.image = UIImage(named: session.vehicle4Type + ".pdf")
+                north1.vehicleType = session.vehicle5Type
+                north1.image = UIImage(named: session.vehicle5Type + ".pdf")
+            }
+            else {
+                north1.isActive = false
+                north2.isActive = false
+                north3.isActive = false
+                north4.isActive = false
+                north5.isActive = false
+            }
+        } else {
+            print("DEBUGGING: session_ is nil!")
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! SessionInfoViewController
-        vc.session = session
-        NotificationCenter.default.removeObserver(self)
+        if let session = session_ {
+            let vc = segue.destination as! SessionInfoViewController
+            vc.setSession(session: session)
+            NotificationCenter.default.removeObserver(self)
+        }
     }
-    
-    func eastCheck(){
+
+    func eastCheck() {
         eastBlocker.isHidden = session.hasEastLink
 //        eastGrey.isHidden = session.hasEastLink
-        if session.hasEastLink{
+        if session.hasEastLink {
             east5.vehicleType = session.vehicle1Type
             east5.image = UIImage(named: session.vehicle1Type + ".pdf")
             east4.vehicleType = session.vehicle2Type
@@ -98,7 +112,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
             east1.image = UIImage(named: session.vehicle5Type + ".pdf")
 
         }
-        else{
+        else {
             east1.isActive = false
             east2.isActive = false
             east3.isActive = false
@@ -106,11 +120,11 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
             east5.isActive = false
         }
     }
-    
-    func southCheck(){
+
+    func southCheck() {
         southBlocker.isHidden = session.hasSouthLink
 //        southGrey.isHidden = session.hasSouthLink
-        if session.hasSouthLink{
+        if session.hasSouthLink {
             south1.vehicleType = session.vehicle1Type
             south1.image = UIImage(named: session.vehicle1Type + ".pdf")
             south2.vehicleType = session.vehicle2Type
@@ -122,7 +136,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
             south5.vehicleType = session.vehicle5Type
             south5.image = UIImage(named: session.vehicle5Type + ".pdf")
         }
-        else{
+        else {
             south1.isActive = false
             south2.isActive = false
             south3.isActive = false
@@ -130,11 +144,11 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
             south5.isActive = false
         }
     }
-    
-    func westCheck(){
+
+    func westCheck() {
         westBlocker.isHidden = session.hasWestLink
 //        westGrey.isHidden = session.hasWestLink
-        if session.hasWestLink{
+        if session.hasWestLink {
             west1.vehicleType = session.vehicle1Type
             west1.image = UIImage(named: session.vehicle1Type + ".pdf")
             west2.vehicleType = session.vehicle2Type
@@ -146,7 +160,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
             west5.vehicleType = session.vehicle5Type
             west5.image = UIImage(named: session.vehicle5Type + ".pdf")
         }
-        else{
+        else {
             west1.isActive = false
             west2.isActive = false
             west3.isActive = false
@@ -158,8 +172,8 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.addCrossing(notification:)), name: .addCrossing, object: nil)
-		locationManager.delegate = self
-		locationManager.startUpdatingHeading()
+        locationManager.delegate = self
+        locationManager.startUpdatingHeading()
         crossingCountChanged()
         northCheck()
         eastCheck()
@@ -167,12 +181,12 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         westCheck()
         countLabel.layer.zPosition = 21
     }
-    
+
     @IBAction func endSessionButtonTapped(_ sender: Any) {
         //if isResumedSession {
-            sessionManager.writeSession(session: session)
-            dismiss(animated: true, completion: nil)
-       /* } else if session.crossings.count == 0 {
+        sessionManager.writeSession(session: session)
+        dismiss(animated: true, completion: nil)
+        /* } else if session.crossings.count == 0 {
             dismiss(animated: true, completion: nil)
         } else {
             let confirmation = UIAlertController(title: "End Session", message: "Are you sure you want to end this session?", preferredStyle: .alert)
@@ -181,12 +195,12 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
             present(confirmation, animated: true, completion: nil)
         }*/
     }
-    
+
     @IBAction func undoButtonTapped(_ sender: Any) {
         session.undo()
         crossingCountChanged()
     }
-    
+
     /*func getSessionName(sender: UIAlertAction) {
         let namePrompt = UIAlertController(title: "Session Name", message: "What should this session be called?", preferredStyle: .alert)
         namePrompt.addTextField { textField in
@@ -214,20 +228,20 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         sessionManager.writeSession(session: session)
         self.dismiss(animated: true, completion: nil)
     }*/
-    
+
     @objc func addCrossing(notification: Notification) {
         let userInfo = notification.userInfo! as! Dictionary<String, String>
         print("got crossing:", userInfo)
         session.addCrossing(type: userInfo["type"]!, from: userInfo["from"]!, to: userInfo["to"]!)
         crossingCountChanged()
     }
-    
+
     func crossingCountChanged() {
         undoButton.isEnabled = session.crossings.count != 0
         countLabel.text = "Total Counted: " + String(session.crossings.count)
     }
-    
-	/*func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+
+    /*func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         let angle = abs((newHeading.trueHeading * .pi/180) - (2.0 * .pi))
         compassArrow.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
         //variable will be necessary here (or in options menu, if that implementation is preferred) to ensure that directions remain accurate

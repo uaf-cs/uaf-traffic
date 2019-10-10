@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SessionInfoViewController: UIViewController{
-    
+class SessionInfoViewController: UIViewController {
+
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var latField: UITextField!
     @IBOutlet weak var lonField: UITextField!
@@ -23,10 +23,18 @@ class SessionInfoViewController: UIViewController{
     @IBOutlet weak var southToggle: UIButton!
     @IBOutlet weak var eastToggle: UIButton!
     @IBOutlet weak var westToggle: UIButton!
-    
+
     var trackDirs = 4
-    var session_: Session?   // Session may not be initialized until after a segue
     var toSession = true
+
+    private var session_: Session? // Session may not be initialized until after a segue
+    func setSession(session: Session?) {
+        if let s = session {
+            session_ = s
+        } else {
+            assert(session == nil, "session_ must be initialized before segue!")
+        }
+    }
 
     override func viewDidLoad() {
         if let session = session_ {
@@ -57,17 +65,17 @@ class SessionInfoViewController: UIViewController{
             if session.zipCode.trimmingCharacters(in: .whitespaces) != "" {
                 zipField.placeholder = session.zipCode
             }
-            
+
             if !session.hasNorthLink { trackDirs -= 1 }
             if !session.hasSouthLink { trackDirs -= 1 }
-            if !session.hasWestLink  { trackDirs -= 1 }
-            if !session.hasEastLink  { trackDirs -= 1 }
-            
+            if !session.hasWestLink { trackDirs -= 1 }
+            if !session.hasEastLink { trackDirs -= 1 }
+
             northToggle.isSelected = session.hasNorthLink
             southToggle.isSelected = session.hasSouthLink
             eastToggle.isSelected = session.hasEastLink
             westToggle.isSelected = session.hasWestLink
-            
+
             northToggle.addTarget(self, action: #selector(self.toggleNorth), for: .touchUpInside)
             southToggle.addTarget(self, action: #selector(self.toggleSouth), for: .touchUpInside)
             eastToggle.addTarget(self, action: #selector(self.toggleEast), for: .touchUpInside)
@@ -76,100 +84,109 @@ class SessionInfoViewController: UIViewController{
             print("DEBUGGING: session_ not initialized before ViewController loaded!")
         }
     }
-    
-    @objc func toggleNorth(sender: Any){
+
+    @objc func toggleNorth(sender: Any) {
         if !northToggle.isSelected { trackDirs += 1 }
         if northToggle.isSelected && trackDirs > 2 {
             northToggle.isSelected = false
             trackDirs -= 1
         }
-        else{
+        else {
             northToggle.isSelected = true
         }
     }
-    
-    @objc func toggleSouth(sender: Any){
-        if !southToggle.isSelected {trackDirs += 1}
+
+    @objc func toggleSouth(sender: Any) {
+        if !southToggle.isSelected { trackDirs += 1 }
         if southToggle.isSelected && trackDirs > 2 {
             southToggle.isSelected = false
             trackDirs -= 1
         }
-        else{
+        else {
             southToggle.isSelected = true
         }
     }
-    
-    @objc func toggleEast(sender: Any){
-        if !eastToggle.isSelected {trackDirs += 1}
+
+    @objc func toggleEast(sender: Any) {
+        if !eastToggle.isSelected { trackDirs += 1 }
         if eastToggle.isSelected && trackDirs > 2 {
             eastToggle.isSelected = false
             trackDirs -= 1
         }
-        else{
+        else {
             eastToggle.isSelected = true
         }
     }
-    
-    @objc func toggleWest(sender: Any){
-        if !westToggle.isSelected {trackDirs += 1}
+
+    @objc func toggleWest(sender: Any) {
+        if !westToggle.isSelected { trackDirs += 1 }
         if westToggle.isSelected && trackDirs > 2 {
             westToggle.isSelected = false
             trackDirs -= 1
         }
-        else{
+        else {
             westToggle.isSelected = true
         }
     }
-    
-    @IBAction func saveInfo(_ sender: Any){
-        let name = nameField.text!
-        self.session.name = (name != "") ? name : session.name
-        let lat = latField.text!
-        self.session.lat = (lat != "") ? lat : session.lat
-//        self.session.lat = (testFormatter.number(from: lat)?.stringValue ?? "00.00") + " N"
-        let lon = lonField.text!
-        self.session.lon = (lon != "") ? lon : session.lon
-//        self.session.lon = (testFormatter.number(from: lon)?.stringValue ?? "00.00") + " W"
-        let ewRoad = ewField.text!
-        self.session.EWRoadName = (ewRoad != "") ? ewRoad : session.EWRoadName
-        let nsRoad = nsField.text!
-        self.session.NSRoadName = (nsRoad != "") ? nsRoad : session.NSRoadName
-        let userName = technicianField.text!
-        self.session.technician = (userName != "") ? userName : session.technician
-        let city = cityField.text!
-        self.session.city = (city != "") ? city : session.city
-        let state = stateField.text!
-        self.session.state = (state != "") ? state : session.state
-        let zip = zipField.text!
-        self.session.zipCode = (zip != "") ? zip : session.zipCode
-        
-        self.session.hasNorthLink = self.northToggle.isSelected
-        self.session.hasSouthLink = self.southToggle.isSelected
-        self.session.hasEastLink = self.eastToggle.isSelected
-        self.session.hasWestLink = self.westToggle.isSelected
-        
-        let sessionManager = SessionManager()
-        sessionManager.writeSession(session: session)
-        if toSession {
-            performSegue(withIdentifier: "StartSession", sender: self)
+
+    @IBAction func saveInfo(_ sender: Any) {
+        if let session = self.session_ {
+            let name = nameField.text!
+            session.name = (name != "") ? name : session.name
+            let lat = latField.text!
+            session.lat = (lat != "") ? lat : session.lat
+            //        self.session.lat = (testFormatter.number(from: lat)?.stringValue ?? "00.00") + " N"
+            let lon = lonField.text!
+            session.lon = (lon != "") ? lon : session.lon
+            //        self.session.lon = (testFormatter.number(from: lon)?.stringValue ?? "00.00") + " W"
+            let ewRoad = ewField.text!
+            session.EWRoadName = (ewRoad != "") ? ewRoad : session.EWRoadName
+            let nsRoad = nsField.text!
+            session.NSRoadName = (nsRoad != "") ? nsRoad : session.NSRoadName
+            let userName = technicianField.text!
+            session.technician = (userName != "") ? userName : session.technician
+            let city = cityField.text!
+            session.city = (city != "") ? city : session.city
+            let state = stateField.text!
+            session.state = (state != "") ? state : session.state
+            let zip = zipField.text!
+            session.zipCode = (zip != "") ? zip : session.zipCode
+
+            session.hasNorthLink = self.northToggle.isSelected
+            session.hasSouthLink = self.southToggle.isSelected
+            session.hasEastLink = self.eastToggle.isSelected
+            session.hasWestLink = self.westToggle.isSelected
+
+            let sessionManager = SessionManager()
+            sessionManager.writeSession(session: session)
+            if toSession {
+                performSegue(withIdentifier: "StartSession", sender: self)
+            }
+        } else {
+            assert(session_ == nil, "session_ must be initialized before segue!")
         }
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! TrafficCountViewController
-        vc.session = session
-        vc.isResumedSession = true
+        if let vc = segue.destination as? TrafficCountViewController {
+            if let session = session_ {
+                vc.session = session
+                vc.isResumedSession = true
+            } else {
+                assert(session_ == nil, "session_ must be initialized before segue!")
+            }
+        }
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         toSession = false
         saveInfo(self)
     }
-    
+
 }
 
-extension SessionInfoViewController: UITextFieldDelegate{
-    
+extension SessionInfoViewController: UITextFieldDelegate {
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case nameField:
@@ -191,8 +208,8 @@ extension SessionInfoViewController: UITextFieldDelegate{
         default:
             zipField.resignFirstResponder()
         }
-        
+
         return true
     }
-    
+
 }
