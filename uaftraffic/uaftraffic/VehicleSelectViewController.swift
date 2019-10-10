@@ -23,7 +23,7 @@ class VehicleSelectViewController: UITableViewController {
      
     @IBAction func saveSession(sender: Any) {
         //     session.name = name
-        if vehicleArray.count < 5{
+        if vehicleArray.count < 5 {
             let blankArray = Array(repeating: "", count: 5 - vehicleArray.count)
             vehicleArray.append(contentsOf: blankArray)
         }
@@ -62,7 +62,7 @@ class VehicleSelectViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "crossingCell", for: indexPath) as! SessionDetailsCrossingCell
         let counter = indexPath.row
-        switch counter{
+        switch counter {
         case 0:
             cell.selectLabel = "atv"
         case 1:
@@ -78,6 +78,8 @@ class VehicleSelectViewController: UITableViewController {
         case 6:
             cell.selectLabel = "truck"
         case 7:
+            cell.selectLabel = "plane"
+        case 8:
             cell.selectLabel = "unknown"
             // more vehicles can be added, just be sure to address the row count as well
         default:

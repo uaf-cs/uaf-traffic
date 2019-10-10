@@ -145,7 +145,7 @@ class SessionInfoViewController: UIViewController{
         
         let sessionManager = SessionManager()
         sessionManager.writeSession(session: session)
-        if toSession{
+        if toSession {
             performSegue(withIdentifier: "StartSession", sender: self)
         }
     }
