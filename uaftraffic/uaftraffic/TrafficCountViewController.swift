@@ -96,7 +96,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
                 if let session = session_ {
                     sessionManager.writeSession(session: session)
                 }
-            case "toSessionInfo":
+            case "toSessionDetails":
                 if let session = session_ {
                     let vc = segue.destination as! SessionInfoViewController
                     vc.setSession(session: session)
@@ -207,18 +207,11 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBAction func endSessionButtonTapped(_ sender: Any) {
         if let session = session_ {
-            //if isResumedSession {
             sessionManager.writeSession(session: session)
-            dismiss(animated: true, completion: nil)
-            /* } else if session.crossings.count == 0 {
-            dismiss(animated: true, completion: nil)
         } else {
-            let confirmation = UIAlertController(title: "End Session", message: "Are you sure you want to end this session?", preferredStyle: .alert)
-            confirmation.addAction(UIAlertAction(title: "Yes, end session", style: .destructive, handler: getSessionName))
-            confirmation.addAction(UIAlertAction(title: "No, continue", style: .cancel, handler: nil))
-            present(confirmation, animated: true, completion: nil)
-        }*/
+            print(#function + "DEBUGGER: Unable to write session!")
         }
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func undoButtonTapped(_ sender: Any) {

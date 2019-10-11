@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akq-B0-M0s" customClass="BigFancyButton" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="20" y="133" width="627" height="41.5"/>
+                                <rect key="frame" x="20" y="117" width="627" height="41.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="akq-B0-M0s" secondAttribute="height" multiplier="15:1" id="ucb-bx-6hN"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iad-kE-I7w" customClass="BigFancyButton" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="20" y="182.5" width="627" height="42"/>
+                                <rect key="frame" x="20" y="166.5" width="627" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iad-kE-I7w" secondAttribute="height" multiplier="15:1" id="mtG-Gw-JcY"/>
                                 </constraints>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMT-d5-p6V" customClass="BigFancyButton" customModule="uaftraffic" customModuleProvider="target">
-                                <rect key="frame" x="20" y="232.5" width="627" height="41.5"/>
+                                <rect key="frame" x="20" y="216.5" width="627" height="41.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pMT-d5-p6V" secondAttribute="height" multiplier="15:1" id="8MB-5a-23k"/>
                                 </constraints>
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UAF TRAFFIC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7jO-pG-Ytc">
-                                <rect key="frame" x="20" y="48" width="627" height="103"/>
+                                <rect key="frame" x="20" y="16" width="627" height="112.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="75"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -723,7 +723,7 @@
                                 <rect key="frame" x="421" y="97" width="33" height="181"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bM-o9-myX">
-                                <rect key="frame" x="0.0" y="-4" width="667" height="44"/>
+                                <rect key="frame" x="0.0" y="-36" width="667" height="44"/>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Counted: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eG0-yF-zc3">
                                 <rect key="frame" x="20" y="306" width="627" height="49"/>
@@ -882,7 +882,6 @@
                         <barButtonItem key="leftBarButtonItem" title="End Session" id="Eg8-Ir-tjF">
                             <connections>
                                 <action selector="endSessionButtonTapped:" destination="BYZ-38-t0r" id="PAR-3z-Ga2"/>
-                                <segue destination="cum-J2-gna" kind="show" identifier="toMainMenu" id="Ure-Vp-giE"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
@@ -1124,7 +1123,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DUQ-mx-kPw">
-                                <rect key="frame" x="20" y="52" width="627" height="273"/>
+                                <rect key="frame" x="20" y="20" width="627" height="305"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Session Title" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="O9j-95-dA4">
                                         <rect key="frame" x="0.0" y="0.0" width="627" height="0.0"/>
@@ -1135,7 +1134,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Latitude" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-Ut-dpD">
-                                        <rect key="frame" x="0.0" y="4" width="627" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="4" width="627" height="7"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
@@ -1143,7 +1142,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Longitude" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="136-Zx-TIo">
-                                        <rect key="frame" x="0.0" y="8" width="627" height="13"/>
+                                        <rect key="frame" x="0.0" y="15" width="627" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
@@ -1151,7 +1150,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="East-West Road Name" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="t7I-7Z-0s2">
-                                        <rect key="frame" x="0.0" y="25" width="627" height="38"/>
+                                        <rect key="frame" x="0.0" y="57" width="627" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
@@ -1159,7 +1158,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="North-South Road Name" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gy9-er-55p">
-                                        <rect key="frame" x="0.0" y="67" width="627" height="38"/>
+                                        <rect key="frame" x="0.0" y="99" width="627" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
@@ -1167,7 +1166,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Technician Name" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-uZ-0uE">
-                                        <rect key="frame" x="0.0" y="109" width="627" height="38"/>
+                                        <rect key="frame" x="0.0" y="141" width="627" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                                         <connections>
@@ -1175,17 +1174,17 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="City" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZuY-yt-wRU">
-                                        <rect key="frame" x="0.0" y="151" width="627" height="38"/>
+                                        <rect key="frame" x="0.0" y="183" width="627" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="State" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gw6-Bo-dgg">
-                                        <rect key="frame" x="0.0" y="193" width="627" height="38"/>
+                                        <rect key="frame" x="0.0" y="225" width="627" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Zip Code" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eSx-sa-MQF">
-                                        <rect key="frame" x="0.0" y="235" width="627" height="38"/>
+                                        <rect key="frame" x="0.0" y="267" width="627" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
@@ -1460,7 +1459,7 @@
         <image name="uaflogo" width="202" height="111"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rwT-Lg-cE0"/>
+        <segue reference="1qN-Po-882"/>
         <segue reference="12W-Xu-TIl"/>
     </inferredMetricsTieBreakers>
 </document>
