@@ -13,7 +13,7 @@ class PinEntryViewController: UIViewController {
     @IBOutlet weak var pinField: UITextField!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var errorMessage: UITextField!
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer!
     
     let networkManager = NetworkManager()
     

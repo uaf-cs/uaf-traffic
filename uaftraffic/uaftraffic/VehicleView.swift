@@ -19,7 +19,7 @@ import AVFoundation
     @IBOutlet weak var roadSigns: UIImageView!
     var startLocation = CGPoint()
     var dragRecognizer = UIGestureRecognizer()
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer!
     var centerSet = false
     var screenWidth = UIScreen.main.bounds.width
     var isActive: Bool = true
@@ -186,6 +186,5 @@ import AVFoundation
             print(error.localizedDescription)
             return
         }
-        audioPlayer.play()
     }
 }

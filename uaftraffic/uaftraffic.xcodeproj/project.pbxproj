@@ -31,6 +31,7 @@
 		9DBF1484222CF1F100285979 /* SessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF1483222CF1F100285979 /* SessionTests.swift */; };
 		9DE934CE2207B8540000255D /* VehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934CD2207B8540000255D /* VehicleView.swift */; };
 		9DE934D72207CA3D0000255D /* PinEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE934D62207CA3D0000255D /* PinEntryViewController.swift */; };
+		C33B153623501F9A007FE022 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33B153523501F9A007FE022 /* AVFoundation.framework */; };
 		C33D02CE234FC5B4005C5B52 /* Crossing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D02CD234FC5B4005C5B52 /* Crossing.swift */; };
 		C3A2F09C21FACD060078E15C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A2F09B21FACD060078E15C /* AppDelegate.swift */; };
 		C3A2F0A121FACD060078E15C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A2F09F21FACD060078E15C /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 		9DBF1483222CF1F100285979 /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		9DE934CD2207B8540000255D /* VehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleView.swift; sourceTree = "<group>"; };
 		9DE934D62207CA3D0000255D /* PinEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinEntryViewController.swift; sourceTree = "<group>"; };
+		C33B153523501F9A007FE022 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C33D02CD234FC5B4005C5B52 /* Crossing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crossing.swift; sourceTree = "<group>"; };
 		C3A2F09821FACD060078E15C /* uaftraffic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uaftraffic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A2F09B21FACD060078E15C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33B153623501F9A007FE022 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +133,14 @@
 			path = ../../assets;
 			sourceTree = "<group>";
 		};
+		C33B153423501F99007FE022 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C33B153523501F9A007FE022 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C3A2F08F21FACD060078E15C = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +148,7 @@
 				C3A2F0AF21FACD070078E15C /* uaftrafficTests */,
 				C3A2F0BA21FACD070078E15C /* uaftrafficUITests */,
 				C3A2F09921FACD060078E15C /* Products */,
+				C33B153423501F99007FE022 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import AVFoundation
 
 extension Notification.Name {
     static let addCrossing = Notification.Name("addCrossing")
@@ -51,6 +52,10 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     let sessionManager = SessionManager()
     var isResumedSession = true
 
+    var dingloaded = false
+    var dingexists = true
+    var audioPlayer_: AVAudioPlayer!
+
     private var session_: Session? // Session may not be initialized until after a segue
     func setSession(session: Session?) {
         if let s = session {
@@ -58,6 +63,8 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             assert(session == nil, "session_ must be initialized before segue!")
         }
+        
+        loadSounds()
     }
 
     func northCheck() {
@@ -89,13 +96,16 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let session = session_ {
+            sessionManager.writeSession(session: session)
+        }
+        unloadSounds()
+
         if let id = segue.identifier {
             print(#function + ": DEBUGGER: segue id is " + id)
             switch id {
             case "toMainMenu":
-                if let session = session_ {
-                    sessionManager.writeSession(session: session)
-                }
+                print(#function + ": DEBUGGER: going to main menu")
             case "toSessionDetails":
                 if let session = session_ {
                     let vc = segue.destination as! SessionInfoViewController
@@ -254,6 +264,7 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
             let userInfo = notification.userInfo! as! Dictionary<String, String>
             print("got crossing:", userInfo)
             session.addCrossing(type: userInfo["type"]!, from: userInfo["from"]!, to: userInfo["to"]!)
+            playDing()
             crossingCountChanged()
         }
     }
@@ -262,6 +273,35 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
         if let session = session_ {
             undoButton.isEnabled = session.crossings.count != 0
             countLabel.text = "Total Counted: " + String(session.crossings.count)
+        }
+    }
+    
+    func unloadSounds() {
+        audioPlayer_ = nil
+        dingloaded = false
+        dingexists = true
+        print(#function + "DEBUGGER: sounds unloaded!")
+    }
+    
+    func loadSounds() {
+        if !dingloaded && dingexists {
+            let ding = Bundle.main.path(forResource: "ding", ofType: "wav")
+            do {
+                audioPlayer_ = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: ding!))
+                dingloaded = true
+                print(#function + "DEBUGGER: ding loaded!")
+            } catch {
+                dingexists = false
+                print(#function + "DEBUGGER: ding not loaded!")
+            }
+        }
+    }
+
+    func playDing() {
+        if dingloaded {
+            audioPlayer_.play()
+        } else if dingexists {
+            loadSounds()
         }
     }
 

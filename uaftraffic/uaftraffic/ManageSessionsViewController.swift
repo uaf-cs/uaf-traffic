@@ -98,7 +98,7 @@ class ManageSessionsViewController: UITableViewController {
             } else {
                 print("upload failed")
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "pinEntry", sender: self)
+                    self.performSegue(withIdentifier: "toPinEntry", sender: self)
                 }
             }
         }
@@ -118,7 +118,7 @@ class ManageSessionsViewController: UITableViewController {
         let cell = sender.superview!.superview! as! ManageSessionCell
         let indexPath = tableView.indexPath(for: cell)!
         infoSession = sessions_[indexPath.row]
-        performSegue(withIdentifier: "EditInfo", sender: self)
+        performSegue(withIdentifier: "toSessionDetails", sender: self)
         /* let cell = sender.superview!.superview! as! ManageSessionCell
          let indexPath = tableView.indexPath(for: cell)!
          let session = sessions[indexPath.row]
@@ -173,12 +173,14 @@ class ManageSessionsViewController: UITableViewController {
             print(#function + ": DEBUGGER: segue id is nil!")
         }
 
-        if segue.identifier == "sessionDetail" {
+        if segue.identifier == "toSessionData" {
             let vc = segue.destination as! SessionDetailsViewController
             vc.setSession(session: sessions_[tableView.indexPathForSelectedRow!.row])
-        } else if segue.identifier == "EditInfo" {
-            let vc = segue.destination as! SessionInfoViewController
+        } else if segue.identifier == "toSessionDetails" {
+            print(segue.destination)
+            if let vc = segue.destination as? SessionInfoViewController {
             vc.setSession(session: infoSession)
+            }
         }
     }
 }

@@ -7,7 +7,6 @@
 //  Copyright © 2019 University of Alaska Fairbanks. All rights reserved.
 //
 
-import AVFoundation
 import Foundation
 
 public class Session: Codable, Equatable {
@@ -35,7 +34,6 @@ public class Session: Codable, Equatable {
     var crossings: [Crossing] = []
 
     // extra items not related to the internal Session file
-    var audioPlayer_: AVAudioPlayer?
     var basename: String = ""
     var savePath: String = ""
     var exportPath: String = ""
@@ -162,7 +160,6 @@ public class Session: Codable, Equatable {
     func addCrossing(type: String, from: String, to: String) {
         let newCrossing = Crossing(type: type, from: from, to: to, time: Date())
         crossings.append(newCrossing)
-        playDing()
     }
 
     func undo() {
@@ -179,22 +176,6 @@ public class Session: Codable, Equatable {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d yyyy, h:mm a"
         return formatter.string(from: crossings.first!.time) + " to " + formatter.string(from: crossings.last!.time)
-    }
-
-    func playDing() {
-        if audioPlayer_ == nil {
-            let url = Bundle.main.url(forResource: "ding", withExtension: "wav")
-            do {
-                try audioPlayer_ = AVAudioPlayer(contentsOf: url!)
-            } catch let error {
-                print(error.localizedDescription)
-                return
-            }
-        }
-
-        if let audioplayer = audioPlayer_ {
-            audioplayer.play()
-        }
     }
 
     func setFilename(name: String) {

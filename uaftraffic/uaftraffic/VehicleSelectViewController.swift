@@ -42,7 +42,7 @@ class VehicleSelectViewController: UITableViewController {
             session.vehicle5Type = vehicleArray[4]
             let sessionManager = SessionManager()
             sessionManager.writeSession(session: session)
-            performSegue(withIdentifier: "sessionInfo", sender: self)
+            performSegue(withIdentifier: "toSessionDetails", sender: self)
         }
     }
 
