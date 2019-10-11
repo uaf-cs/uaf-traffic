@@ -11,18 +11,23 @@ import UIKit
 class ManageSessionsViewController: UITableViewController {
     let networkManager = NetworkManager()
     let sessionManager = SessionManager()
-    var sessions = [Session]()
+    var sessions_: [Session] = []
     private var infoSession = Session()
     var usingNetwork: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        sessions = sessionManager.getSessions()
+        replaceSessions(replacementSessions: sessionManager.getSessions())
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+
+    func replaceSessions(replacementSessions: [Session]) {
+        sessions_.removeAll()
+        sessions_.append(contentsOf: replacementSessions)
     }
 
     @IBAction func closeButtonTapped(_ sender: Any) {
@@ -36,13 +41,13 @@ class ManageSessionsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(sessions.count)
-        return sessions.count
+        print(sessions_.count)
+        return sessions_.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath) as! ManageSessionCell
-        let session = sessions[indexPath.row]
+        let session = sessions_[indexPath.row]
         cell.sessionName?.text = session.name
         cell.sessionTime?.text = session.dateString()
         cell.deleteButton.addTarget(self, action: #selector(deleteSession), for: .touchUpInside)
@@ -58,7 +63,7 @@ class ManageSessionsViewController: UITableViewController {
         let cell = sender.superview!.superview! as! ManageSessionCell
         let indexPath = tableView.indexPath(for: cell)!
         let index = indexPath.row
-        let session = sessions[index]
+        let session = sessions_[index]
         let confirmationMessage = "Are you sure you want to delete " + session.name + "?"
 
         let confirmation = UIAlertController(title: "Delete session", message: confirmationMessage, preferredStyle: .alert)
@@ -66,8 +71,7 @@ class ManageSessionsViewController: UITableViewController {
             self.tableView.beginUpdates()
             self.sessionManager.deleteSession(session: session)
             let refreshedSessionList: [Session] = self.sessionManager.getSessions()
-            print(self.sessions)
-            self.sessions = refreshedSessionList
+            self.replaceSessions(replacementSessions: refreshedSessionList)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             self.tableView.endUpdates()
         }))
@@ -81,13 +85,13 @@ class ManageSessionsViewController: UITableViewController {
         }
         let cell = sender.superview!.superview! as! ManageSessionCell
         let indexPath = tableView.indexPath(for: cell)!
-        let session = sessions[indexPath.row]
+        let session = sessions_[indexPath.row]
         networkManager.uploadSession(session: session) { (success) -> Void in
             if success {
                 DispatchQueue.main.async {
                     self.tableView.beginUpdates()
                     self.sessionManager.deleteSession(session: session)
-                    self.sessions = self.sessionManager.getSessions()
+                    self.replaceSessions(replacementSessions: self.sessionManager.getSessions())
                     self.tableView.deleteRows(at: [indexPath], with: .fade)
                     self.tableView.endUpdates()
                 }
@@ -103,7 +107,7 @@ class ManageSessionsViewController: UITableViewController {
     @objc func saveCSV(sender: UIButton) {
         let cell = sender.superview!.superview! as! ManageSessionCell
         let indexPath = tableView.indexPath(for: cell)!
-        let session = sessions[indexPath.row]
+        let session = sessions_[indexPath.row]
         session.saveCSV()
         let okAlert = UIAlertController(title: "Saved CSV", message: "CSV saved successfully", preferredStyle: .alert)
         okAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -113,7 +117,7 @@ class ManageSessionsViewController: UITableViewController {
     @objc func editInfo(sender: UIButton) {
         let cell = sender.superview!.superview! as! ManageSessionCell
         let indexPath = tableView.indexPath(for: cell)!
-        infoSession = sessions[indexPath.row]
+        infoSession = sessions_[indexPath.row]
         performSegue(withIdentifier: "EditInfo", sender: self)
         /* let cell = sender.superview!.superview! as! ManageSessionCell
          let indexPath = tableView.indexPath(for: cell)!
@@ -164,14 +168,14 @@ class ManageSessionsViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
-            print("DEBUGGER: segue id is " + id)
+            print(#function + ": DEBUGGER: segue id is " + id)
         } else {
-            print("DEBUGGER: segue id is nil!")
+            print(#function + ": DEBUGGER: segue id is nil!")
         }
 
         if segue.identifier == "sessionDetail" {
             let vc = segue.destination as! SessionDetailsViewController
-            vc.setSession(session:  sessions[tableView.indexPathForSelectedRow!.row])
+            vc.setSession(session: sessions_[tableView.indexPathForSelectedRow!.row])
         } else if segue.identifier == "EditInfo" {
             let vc = segue.destination as! SessionInfoViewController
             vc.setSession(session: infoSession)

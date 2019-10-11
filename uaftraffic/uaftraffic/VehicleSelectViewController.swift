@@ -48,14 +48,14 @@ class VehicleSelectViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
-            print("DEBUGGER: segue id is " + id)
+            print(#function + ": DEBUGGER: segue id is " + id)
         } else {
-            print("DEBUGGER: segue id is nil!")
+            print(#function + ": DEBUGGER: segue id is nil!")
         }
 
         if let session = session_ {
             let vc = segue.destination as! SessionInfoViewController
-            print("DEBUGGING: " + session.name)
+            print(#function + ": DEBUGGER: " + session.name)
             vc.setSession(session: session)
         }
     }

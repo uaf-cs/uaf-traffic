@@ -12,30 +12,30 @@ import Foundation
 
 public class Session: Codable, Equatable {
     // Corresponds to CodingKeys
-    var lat : String = ""
-    var lon : String = ""
-    var id : String		= ""
-    var dateCreated : String = ""
-    var name : String = ""
-    var hasNorthLink : Bool = true
-    var hasSouthLink : Bool = true
-    var hasWestLink : Bool = true
-    var hasEastLink : Bool = true
-    var vehicle1Type : String = "atv"
-    var vehicle2Type : String = "bike"
-    var vehicle3Type : String = "plane"
-    var vehicle4Type : String = "pedestrian"
-    var vehicle5Type : String = "snowmachine"
-    var NSRoadName : String = ""
-    var EWRoadName : String = ""
-    var technician : String = ""
-    var city : String = ""
-    var state : String = ""
-    var zipCode : String = ""
-    var crossings : [Crossing] = []
-    
+    var lat: String = ""
+    var lon: String = ""
+    var id: String = ""
+    var dateCreated: String = ""
+    var name: String = ""
+    var hasNorthLink: Bool = true
+    var hasSouthLink: Bool = true
+    var hasWestLink: Bool = true
+    var hasEastLink: Bool = true
+    var vehicle1Type: String = "atv"
+    var vehicle2Type: String = "bike"
+    var vehicle3Type: String = "plane"
+    var vehicle4Type: String = "pedestrian"
+    var vehicle5Type: String = "snowmachine"
+    var NSRoadName: String = ""
+    var EWRoadName: String = ""
+    var technician: String = ""
+    var city: String = ""
+    var state: String = ""
+    var zipCode: String = ""
+    var crossings: [Crossing] = []
+
     // extra items not related to the internal Session file
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer_: AVAudioPlayer?
     var basename: String = ""
     var savePath: String = ""
     var exportPath: String = ""
@@ -45,7 +45,7 @@ public class Session: Codable, Equatable {
     var sortedCountFromNorth: [Int] = []
     var sortedCountFromEast: [Int] = []
     var sortedCountFromWest: [Int] = []
-    
+
     /// This is used to encode the fields in the save file
     enum CodingKeys: String, CodingKey {
         case lat
@@ -70,11 +70,11 @@ public class Session: Codable, Equatable {
         case zipCode
         case crossings
     }
-    
+
     init() {
         self.initID()
     }
-    
+
     init(lat: String,
          long: String,
          id: String,
@@ -116,11 +116,11 @@ public class Session: Codable, Equatable {
         self.city = city
         self.state = state
         self.zipCode = zipCode
-        
+
         self.initID()
     }
-    
-    public static func ==(lhs: Session, rhs: Session) -> Bool {
+
+    public static func == (lhs: Session, rhs: Session) -> Bool {
         return lhs.lat == rhs.lat &&
             lhs.lon == rhs.lon &&
             lhs.id == rhs.id &&
@@ -142,7 +142,7 @@ public class Session: Codable, Equatable {
             lhs.state == rhs.state &&
             lhs.zipCode == rhs.zipCode
     }
-    
+
     func initID() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -152,62 +152,67 @@ public class Session: Codable, Equatable {
         self.savePath = self.basename + ".plist"
         self.exportPath = self.basename + ".csv"
     }
-    
+
     func randomString() -> String {
         let length = 10
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        return String((0...length-1).map{ _ in letters.randomElement()! })
+        return String((0...length - 1).map { _ in letters.randomElement()! })
     }
-    
-    func addCrossing( type: String, from: String, to: String ) {
+
+    func addCrossing(type: String, from: String, to: String) {
         let newCrossing = Crossing(type: type, from: from, to: to, time: Date())
         crossings.append(newCrossing)
         playDing()
     }
-    
+
     func undo() {
         if crossings.count > 0 {
             crossings.removeLast()
         }
     }
-    
+
     func dateString() -> String {
         if crossings.count == 0 {
             return "Never"
         }
-        
+
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d yyyy, h:mm a"
         return formatter.string(from: crossings.first!.time) + " to " + formatter.string(from: crossings.last!.time)
     }
-    
+
     func playDing() {
-        let url = Bundle.main.url(forResource: "ding", withExtension: "wav")
-        do {
-            try audioPlayer = AVAudioPlayer(contentsOf: url!)
-        } catch let error {
-            print(error.localizedDescription)
-            return
+        if audioPlayer_ == nil {
+            let url = Bundle.main.url(forResource: "ding", withExtension: "wav")
+            do {
+                try audioPlayer_ = AVAudioPlayer(contentsOf: url!)
+            } catch let error {
+                print(error.localizedDescription)
+                return
+            }
         }
-        audioPlayer.play()
+
+        if let audioplayer = audioPlayer_ {
+            audioplayer.play()
+        }
     }
-    
+
     func setFilename(name: String) {
         self.savePath = name
     }
-    
+
     func getFilename() -> String {
-        return self.savePath;
+        return self.savePath
     }
-    
+
     func calculateSummary() {
         let crossingCount = Array(repeating: 0, count: 3)
         sortedCountFromEast = crossingCount
         sortedCountFromNorth = crossingCount
         sortedCountFromWest = crossingCount
         sortedCountFromSouth = crossingCount
-        for crossing in crossings{
-            let fromto = crossing.from + crossing.to;
+        for crossing in crossings {
+            let fromto = crossing.from + crossing.to
             switch fromto {
             case "ns": sortedCountFromNorth[1] += 1
             case "ne": sortedCountFromNorth[0] += 1
@@ -215,12 +220,12 @@ public class Session: Codable, Equatable {
             case "sn": sortedCountFromSouth[1] += 1
             case "sw": sortedCountFromSouth[0] += 1
             case "se": sortedCountFromSouth[2] += 1
-            case "we": sortedCountFromWest[1] += 1;
-            case "wn": sortedCountFromWest[0] += 1;
-            case "ws": sortedCountFromWest[2] += 1;
-            case "ew": sortedCountFromEast[1] += 1;
-            case "es": sortedCountFromEast[0] += 1;
-            case "en": sortedCountFromEast[2] += 1;
+            case "we": sortedCountFromWest[1] += 1
+            case "wn": sortedCountFromWest[0] += 1
+            case "ws": sortedCountFromWest[2] += 1
+            case "ew": sortedCountFromEast[1] += 1
+            case "es": sortedCountFromEast[0] += 1
+            case "en": sortedCountFromEast[2] += 1
             default: assert(false, "unrecognized from/to direction")
             }
 
@@ -284,7 +289,7 @@ public class Session: Codable, Equatable {
 //            }
         }
     }
-    
+
     func saveCSV() {
         self.calculateSummary()
         var cleanName = ""
@@ -296,17 +301,17 @@ public class Session: Codable, Equatable {
                                                          range: NSRange(location: 0, length: self.name.count),
                                                          withTemplate: "-")
             cleanName = cleaned as String
-        } catch {}
-        
+        } catch { }
+
         var filename = dateCreated + "-" + (cleanName as String) + ".csv"
         if filename.trimmingCharacters(in: .whitespaces) == ".csv" {
             filename = self.id + ".csv"
             // the simplest way to correct for the empty name bug
         }
-        
+
         // = "vehicle, from, left, right, through\n"
         var csvData = ""
-        
+
         csvData += "UAFTRAFFIC EXPORT\n"
         csvData += "Summary\n"
         csvData += "Session Name,\"\(self.name)\"\n"
@@ -328,15 +333,15 @@ public class Session: Codable, Equatable {
         csvData += ",\(self.sortedCountFromEast[0]),\(self.sortedCountFromEast[1]),\(self.sortedCountFromEast[2])\n"
         csvData += "\nRecorded Data\n"
         csvData += "Vehicle Type,From,To,Date,Time\n"
-        
+
         for crossing in crossings {
             csvData += "\"\(crossing.type)\",\(crossing.from),\(crossing.to),\"\(crossing.csvDateString())\",\(crossing.csvTimeString())\n"
         }
-        
+
         do {
             let docsFolder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             let path = docsFolder.appendingPathComponent(filename)
             try csvData.write(to: path, atomically: false, encoding: String.Encoding.utf8)
-        } catch {}
+        } catch { }
     }
 }

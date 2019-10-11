@@ -62,7 +62,7 @@ class SessionDetailsViewController: UITableViewController {
             let vc = segue.destination as! TrafficSummaryViewController
             vc.setSession(session: session)
         } else {
-            print("DEBUGGER: session_ must not be nil!")
+            print(#function + ": DEBUGGER: session_ must not be nil!")
         }
     }
 

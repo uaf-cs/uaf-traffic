@@ -81,7 +81,7 @@ class SessionInfoViewController: UIViewController {
             eastToggle.addTarget(self, action: #selector(self.toggleEast), for: .touchUpInside)
             westToggle.addTarget(self, action: #selector(self.toggleWest), for: .touchUpInside)
         } else {
-            print("DEBUGGING: session_ not initialized before ViewController loaded!")
+            print(#function + ": DEBUGGER: session_ must be initialized before segue!")
         }
     }
 
@@ -160,18 +160,18 @@ class SessionInfoViewController: UIViewController {
             let sessionManager = SessionManager()
             sessionManager.writeSession(session: session)
             if toSession {
-                performSegue(withIdentifier: "StartSession", sender: self)
+                performSegue(withIdentifier: "toCountTraffic", sender: self)
             }
         } else {
-            assert(session_ == nil, "session_ must be initialized before segue!")
+            print(#function + ": DEBUGGER: session_ must be initialized before segue!")
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
-            print("DEBUGGER: segue id is " + id)
+            print(#function + ": DEBUGGER: segue id is " + id)
         } else {
-            print("DEBUGGER: segue id is nil!")
+            print(#function + ": DEBUGGER: segue id is nil!")
         }
 
         let vc = segue.destination as! TrafficCountViewController
@@ -179,7 +179,7 @@ class SessionInfoViewController: UIViewController {
             vc.setSession(session: session)
             vc.isResumedSession = true
         } else {
-            assert(session_ == nil, "session_ must be initialized before segue!")
+            print(#function + ": DEBUGGER: session_ must be initialized before segue!")
         }
     }
 

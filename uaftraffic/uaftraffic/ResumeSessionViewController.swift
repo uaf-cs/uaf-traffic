@@ -42,9 +42,9 @@ class ResumeSessionViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
-            print("DEBUGGER: segue id is " + id)
+            print(#function + ": DEBUGGER: segue id is " + id)
         } else {
-            print("DEBUGGER: segue id is nil!")
+            print(#function + ": DEBUGGER: segue id is nil!")
         }
 
         let vc = segue.destination as! TrafficCountViewController

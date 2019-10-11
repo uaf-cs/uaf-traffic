@@ -90,15 +90,23 @@ class TrafficCountViewController: UIViewController, CLLocationManagerDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
-            print("DEBUGGER: segue id is " + id)
+            print(#function + ": DEBUGGER: segue id is " + id)
+            switch id {
+            case "toMainMenu":
+                if let session = session_ {
+                    sessionManager.writeSession(session: session)
+                }
+            case "toSessionInfo":
+                if let session = session_ {
+                    let vc = segue.destination as! SessionInfoViewController
+                    vc.setSession(session: session)
+                    NotificationCenter.default.removeObserver(self)
+                }
+            default:
+                print(#function + ": DEBUGGER: segue id " + id + " is not handled")
+            }
         } else {
-            print("DEBUGGER: segue id is nil!")
-        }
-
-        if let session = session_ {
-            let vc = segue.destination as! SessionInfoViewController
-            vc.setSession(session: session)
-            NotificationCenter.default.removeObserver(self)
+            print(#function + ": DEBUGGER: segue id is nil!")
         }
     }
 

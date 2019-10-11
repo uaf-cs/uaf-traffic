@@ -17,7 +17,8 @@ class DirectionSelectViewController: UITableViewController {
         if let s = session {
             session_ = s
         } else {
-            assert(session == nil, "session_ must be initialized before segue!")
+            session_ = Session()
+            print(#function + ": DEBUGGER: session_ initialized!")
         }
     }
 
@@ -27,16 +28,23 @@ class DirectionSelectViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier {
-            print("DEBUGGER: segue id is " + id)
+            print(#function + ": DEBUGGER: segue id is " + id)
         } else {
-            print("DEBUGGER: segue id is nil!")
+            print(#function + ": DEBUGGER: segue id is nil!")
         }
 
         if let session = session_ {
             let vc = segue.destination as! VehicleSelectViewController
             vc.setSession(session: session)
+        }
+
+        // Try to create the session and retry
+        session_ = Session()
+        if let session = session_ {
+            let vc = segue.destination as! VehicleSelectViewController
+            vc.setSession(session: session)
         } else {
-            print("session_ must be initialized before segue!")
+                print(#function + ": DEBUGGER: session_ must be initialized before segue!")
         }
     }
 
