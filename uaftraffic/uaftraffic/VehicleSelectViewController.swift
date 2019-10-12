@@ -25,7 +25,7 @@ class VehicleSelectViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return 9
     }
 
     @IBAction func saveSession(sender: Any) {
