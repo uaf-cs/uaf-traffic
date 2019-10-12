@@ -179,7 +179,7 @@ class ManageSessionsViewController: UITableViewController {
         } else if segue.identifier == "toSessionDetails" {
             print(segue.destination)
             if let vc = segue.destination as? SessionInfoViewController {
-            vc.setSession(session: infoSession)
+                vc.setSession(session: infoSession)
             }
         }
     }
